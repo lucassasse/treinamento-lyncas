@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <div id="calculator">
+            <input type="text" id="panel" name="panel" min="3" placeholder="0" disabled>
+
+            <div id="numbers">
+                <button value="1" onclick="updateValueOnScreen(this.value)">1</button>
+                <button value="2" onclick="updateValueOnScreen(this.value)">2</button>
+                <button value="3" onclick="updateValueOnScreen(this.value)">3</button>
+
+                <button value="4" onclick="updateValueOnScreen(this.value)">4</button>
+                <button value="5" onclick="updateValueOnScreen(this.value)">5</button>
+                <button value="6" onclick="updateValueOnScreen(this.value)">6</button>
+
+                <button value="7" onclick="updateValueOnScreen(this.value)">7</button>
+                <button value="8" onclick="updateValueOnScreen(this.value)">8</button>
+                <button value="9" onclick="updateValueOnScreen(this.value)">9</button>
+
+                <button value="0" onclick="updateValueOnScreen(this.value)">0</button>
+                <button value="." onclick="updateValueOnScreen(this.value)"><b>.</b></button>
+                <button onclick="clearArea()">C</button>
+            </div>
+
+            <div id="operators">
+                <button value="+" onclick="updateValueOnScreen(this.value)">+</button>
+                <button value="-" onclick="updateValueOnScreen(this.value)">-</button>
+                <button value="x" onclick="updateValueOnScreen(this.value)">x</button>
+                <button value="/" onclick="updateValueOnScreen(this.value)">/</button>
+
+                <button id="" onclick="equal()">=</button>
+
+                <button id="" onclick="del()">del</button>
+
+            </div>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>
