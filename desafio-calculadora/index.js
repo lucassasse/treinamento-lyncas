@@ -1,7 +1,7 @@
 const panel = document.querySelector('#panel')
 
 function updateValueOnScreen(value){
-    if(value == "+" || value == "-" || value == "x" || value == "/"){
+    if(value == "+" || value == "-" || value == "x" || value == "/" || value == "*"){
         if(panel.value != ""){
             verifyPoint()
             verifyDoubleOperator()
@@ -30,7 +30,7 @@ function verifyDoublePoint(){
 
 function verifyDoubleOperator(){
     let char = panel.value[panel.value.length - 1]
-    if(char == "+" || char == "-" || char == "x" || char == "/"){
+    if(char == "+" || char == "-" || char == "x" || char == "/" || char == "*"){
         panel.value = panel.value.slice(0, -1)
     }
 }
@@ -44,9 +44,12 @@ function changeXtoX(value){
 }
 
 function verifyDoubleZero(){
-
-    //Resolver 00.7 + n || n + 00.7 --- eval() não entende vários 0 antes do . --- Deve remover os 0 excedentes antes do ., deixando apenas um 0
-    //Se tiver um "0.", verificar se há outro número antes de algum operador. Se houver, remover os 0 excedentes
+    let char = panel.value[panel.value.length - 3]
+    let char2 = panel.value[panel.value.length - 2]
+    let char3 = panel.value[panel.value.length - 1]
+    if((char == "+" || char == "-" || char == "x" || char == "/" || char == "*") && char2 == "0" && char3 == "0"){
+        panel.value = panel.value.slice(0, -1)
+    }
 }
 
 function equal(){
@@ -62,7 +65,7 @@ function equal(){
 
 function verifyString(){
     const char = panel.value[panel.value.length - 1]
-    if(char == "+" || char == "-" || char == "x" || char == "/" || char == "."){
+    if(char == "+" || char == "-" || char == "x" || char == "/" || char == "*"|| char == "."){
         panel.value = panel.value.slice(0,-1)
     }
 }
