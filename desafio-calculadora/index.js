@@ -1,14 +1,17 @@
 const panel = document.querySelector('#panel')
+let pointPostOperator = false
 
 function updateValueOnScreen(value){
-    if(value == "+" || value == "-" || value == "x" || value == "/" || value == "*"){
-        if(panel.value != ""){
-            verifyPoint()
-            verifyDoubleOperator()
-            changeXtoX(value)
-        }
+    if(verifyIsOperator(value)){
+        modifyPointPostOperator("operator")
+        verifyPoint()
+        verifyDoubleOperator()
+        changeXtoX(value)
     }else if(value == "."){
-        panel.value += value
+        if(!pointPostOperator){
+            panel.value += value
+        }
+        modifyPointPostOperator("point")
         verifyDoublePoint()
     }else if(value == "0"){
         panel.value += value
@@ -18,9 +21,17 @@ function updateValueOnScreen(value){
     }
 }
 
+function modifyPointPostOperator(value){
+    if(value == "operator"){
+        pointPostOperator = false
+    }else{
+        pointPostOperator = true
+    }
+}
+
 function verifyPoint(){
     if(panel.value[panel.value.length - 1] == "."){
-        panel.value = panel.value.slice(0, -1)
+        slice()
     } 
 }
 
@@ -30,8 +41,8 @@ function verifyDoublePoint(){
 
 function verifyDoubleOperator(){
     let char = panel.value[panel.value.length - 1]
-    if(char == "+" || char == "-" || char == "x" || char == "/" || char == "*"){
-        panel.value = panel.value.slice(0, -1)
+    if(verifyIsOperator(char)){
+        slice()
     }
 }
 
@@ -44,11 +55,14 @@ function changeXtoX(value){
 }
 
 function verifyDoubleZero(){
-    let char = panel.value[panel.value.length - 3]
-    let char2 = panel.value[panel.value.length - 2]
-    let char3 = panel.value[panel.value.length - 1]
-    if((char == "+" || char == "-" || char == "x" || char == "/" || char == "*") && char2 == "0" && char3 == "0"){
-        panel.value = panel.value.slice(0, -1)
+    let char1 = panel.value[panel.value.length - 2]
+    let char2 = panel.value[panel.value.length - 3]
+    //se 1 antes do 0 for 0 e 2 antes do 0 for operador, slice()
+    if(char1 == "0" && verifyIsOperator(char2)){ 
+        slice()
+    }
+    if(char1 == "0" && char2 == undefined){
+        slice()
     }
 }
 
@@ -59,14 +73,14 @@ function equal(){
         panel.value = result
     }else{
         alert(panel.value + " é uma operação matemática inválida!")
-        clearArea()
+        clearPanel()
     }
 }
 
 function verifyString(){
     const char = panel.value[panel.value.length - 1]
-    if(char == "+" || char == "-" || char == "x" || char == "/" || char == "*"|| char == "."){
-        panel.value = panel.value.slice(0,-1)
+    if(verifyIsOperator(char) || char == "."){
+        slice()
     }
 }
 
@@ -80,10 +94,26 @@ function verifyResult(result){
     }
 }
 
-function clearArea(){
+function verifyIsOperator(value){
+    if(value == "+" || value == "-" || value == "x" || value == "/" || value == "*"){
+        return true
+    } else{
+        return false
+    }
+}
+
+function clearPanel(){
+    pointPostOperator = false
     panel.value = ''
 }
 
 function del(){
-    panel.value = panel.value.slice(0,-1)
+    if(panel.value[panel.value.length - 1]){
+        pointPostOperator = false
+    }
+    slice()
+}
+
+function slice(){
+    panel.value = panel.value.slice(0, -1)
 }
