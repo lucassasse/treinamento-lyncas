@@ -71,6 +71,7 @@ import { reactive } from 'vue'
 import { useField } from 'vee-validate'
 import useModal from '../../hooks/useModal'
 import { validadeEmptyAndLength3, validateEmptyAndEmail } from '../../utils/validators'
+import services from '../../services'
 
 export default {
   setup(){
@@ -99,8 +100,22 @@ export default {
       }
     })
 
-    function handleSubmit(){
+    async function handleSubmit(){
+      try{
+        state.isLoading = true
+        const { data, errors } = await services.auth.login({
+          email: state.email.value,
+          password: state.password.value
+        })
 
+        if(!errors){
+          window.localStorage.setItem('token', data.token)
+        }
+
+      }catch(error){
+        state.isLoading = false
+        state.hasErrors = !!false
+      }
     }
 
     return{
