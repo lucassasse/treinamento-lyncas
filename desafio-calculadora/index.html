@@ -26,18 +26,17 @@
 
                 <button value="0" onclick="updateValueOnScreen(this.value)">0</button>
                 <button value="." onclick="updateValueOnScreen(this.value)"><b>.</b></button>
-                <button onclick="clearArea()">C</button>
+                <button id="" onclick="equal()">=</button>
             </div>
-
+            
             <div id="operators">
                 <button value="+" onclick="updateValueOnScreen(this.value)">+</button>
                 <button value="-" onclick="updateValueOnScreen(this.value)">-</button>
                 <button value="x" onclick="updateValueOnScreen(this.value)">x</button>
                 <button value="/" onclick="updateValueOnScreen(this.value)">/</button>
-
-                <button id="" onclick="equal()">=</button>
-
-                <button id="" onclick="del()">del</button>
+                
+                <button id="" onclick="del()">Del</button>
+                <button onclick="clearPanel()">C</button>
 
             </div>
         </div>

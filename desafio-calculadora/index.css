@@ -12,32 +12,40 @@ body {
 }
 
 #calculator{
-    width: 500px;
+    width: 300px;
     padding: 5px;
-    background-color: brown;
-    border-radius: 10px;
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color: rgb(174, 194, 212);
 }
 
 #panel{
-    background-color: white;
+    background-color: rgb(230, 230, 230);
     color: black;
     font-size: large;
     margin: 10px;
-    width: 92%;
+    width: 90%;
     height: 35px;
     text-align: end;
-    border-radius: 5px;
+    border: 1px solid black;
+    border-radius: 3px;
 }
 
 button{
-    margin: 10px;
+    margin: 11px;
     width: 75px;
     height: 50px;
-    border-radius: 5px;
+    border: 1px solid black;
+    border-radius: 3px;
 }
 
 button:hover{
     cursor: pointer;
+    background-color: rgb(187, 183, 183);
+}
+
+button:active {
+    background-color: rgb(94, 94, 94);
 }
 
 @media only screen and (max-width: 550px) {
@@ -46,7 +54,7 @@ button:hover{
     }
 
     #panel{
-        width: 85%;
+        width: 87%;
         height: 35px;
     }
     
