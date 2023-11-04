@@ -61,7 +61,7 @@ export default {
 
 		<div id="importants">
 			<h3>Importants:</h3>
-			<ul v-if="items.length > 0" >
+			<ul v-if="filteredCheckedItems.length > 0" >
 				<template v-for="item in filteredCheckedItems">
 					<li v-if="item.important" :key="item.id">
 						<input type="checkbox" v-model="item.checked">
@@ -79,7 +79,7 @@ export default {
 
 		<div id="notImportants">
 			<h3>Not Importants:</h3>
-			<ul v-if="items.length > 0" >
+			<ul v-if="filteredCheckedItems.length > 0" >
 				<template v-for="item in filteredCheckedItems">
 					<li v-if="!item.important" :key="item.id">
 						<input type="checkbox" v-model="item.checked">
