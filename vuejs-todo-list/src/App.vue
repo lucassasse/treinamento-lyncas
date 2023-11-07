@@ -8,7 +8,7 @@
     </div> <br>
     <button @click="insertItemOnList" :disabled="!newItem.length || newItem.length > 100">Save</button> <br>
     
-    <div id="importants">
+    <div>
       <h3>List:</h3>
       <ul v-if="filteredCheckedItems.length > 0" >
           <div v-for="item in filteredCheckedItems" :key="item.id">
@@ -48,7 +48,7 @@ export default {
       hideCheckedItems: false,
       items:[
         {id: 1, important: true, label: "Item teste - checked + important", checked:true},
-        {id: 2, important: false, label: "Teste 01", checked:false},
+        {id: 2, important: true, label: "Teste 01 - important", checked:false},
         {id: 3, important: false, label: "Texto 02 - checked", checked:true},
         {id: 4, important: false, label: "Valor 03", checked:false},
       ]
@@ -70,7 +70,7 @@ export default {
         return false
       } else {
         if(this.important){
-          this.items.splice(0,0, {
+          this.items.splice(this.findIndexLastImportant() + 1, 0, {
             id:this.items.length + 1, 
             important:this.important,
             checked: false,
@@ -89,6 +89,11 @@ export default {
         this.newItem = ""
         this.important = false
       }
+    },
+    findIndexLastImportant(){
+      const index = this.items.findLastIndex(item => item.important);
+      console.log(index)
+      return index
     },
     toggleEditItem(item){
       item.editing = !item.editing
