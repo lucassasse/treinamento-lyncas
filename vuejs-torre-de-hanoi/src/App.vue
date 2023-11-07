@@ -37,17 +37,18 @@ export default {
   data(){
     return{
       loosePiece: '',
-      tower1: [ '3', '2', ' '],
-      tower2: ['1', ' ', ' '],
-      tower3: [' ', ' ', ' '],
+      tower1: [ '3', '2'],
+      tower2: ['1'],
+      tower3: [],
     }
   },
   computed:{
 
   },
   methods:{
-    movePiece(){
-      this.loosePiece = 1
+    movePiece(piece){
+      this.loosePiece = piece
+      console.log("Preciso saber de qual torre vem a peça")
     }
   }
 }
@@ -79,8 +80,10 @@ h1{
 }
 
 .tower{
+  display: flex;
+  flex-direction: column-reverse;
   width: 35px;
-  height: 90px;
+  height: 114px;
   padding: 5px;
   margin: 10px;
   border: 1px solid gray;
