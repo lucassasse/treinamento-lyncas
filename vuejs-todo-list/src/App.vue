@@ -11,20 +11,20 @@
     <div id="importants">
       <h3>List:</h3>
       <ul v-if="filteredCheckedItems.length > 0" >
-        <template v-for="item in filteredCheckedItems" :key="item.id">
-          <li class="itemList" :class="{ important: item.important }">
-            <input type="checkbox" v-model="item.checked">
-            <span :class="[item.checked ? 'checked' : '']">
-              {{item.label}}
-            </span>
-            <button @click="toggleEditItem(item)" :disabled="!item.label.length">{{!item.editing ? "Edit" : "Cancel"}}</button>
-            <button @click="removeItem(item)">X</button>
-            <div v-if="item.editing" id="btnEdit">
-              <input class="inputEdit" v-model="item.label" @keypress.enter="saveChanges(item)">
-              <button @click="saveChanges(item)" :disabled="!item.label.length">Save changes</button>
-            </div>
-          </li>
-        </template>
+          <div v-for="item in filteredCheckedItems" :key="item.id">
+            <li class="itemList" :class="{ important: item.important }" >
+              <input type="checkbox" v-model="item.checked">
+              <span :class="[item.checked ? 'checked' : '']">
+                {{item.label}}
+              </span>
+              <button @click="toggleEditItem(item)" :disabled="!item.label.length">{{!item.editing ? "Edit" : "Cancel"}}</button>
+              <button @click="removeItem(item)">X</button>
+              <div v-if="item.editing" id="btnEdit">
+                <input class="inputEdit" v-model="item.label" @keypress.enter="saveChanges(item)">
+                <button @click="saveChanges(item)" :disabled="!item.label.length">Save changes</button>
+              </div>
+            </li>
+          </div>
       </ul>
     </div>
   
