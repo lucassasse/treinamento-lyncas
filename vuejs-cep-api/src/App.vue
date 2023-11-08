@@ -5,35 +5,43 @@
         CEP API
       </h1>
       <p>Informe o CEP</p>
-      <input maxlength="9" placeholder="12345-678" v-model="cep"/>
+      <input maxlength="9" placeholder="12345678" v-model="cep"/>
     </div>
 
-    <div id="bottom" v-if="response !== null">
-      <p>Estado</p>
-      <input disabled :value="estado"/>
-      <p>Cidade</p>
-      <input disabled :value="cidade"/>
-      <p>Bairro</p>
-      <input disabled :value="bairro"/>
-      <p>Rua</p>
-      <input disabled :value="logradouro"/>
-      <p>Número</p>
-      <input/>
-      <p>Complemento</p>
-      <input/> <br>
-      <button>Enviar</button>
-    </div>
+    <div v-if="loading">
+      <h1>LOADING...</h1>
+    </div> 
+
+    <div v-else>
+      <div id="bottom" v-if="response !== null">
+        <p>Estado</p>
+        <input disabled :value="estado"/>
+        <p>Cidade</p>
+        <input disabled :value="cidade"/>
+        <p>Bairro</p>
+        <input disabled :value="bairro"/>
+        <p>Rua</p>
+        <input disabled :value="logradouro"/>
+        <p>Número</p>
+        <input/>
+        <p>Complemento</p>
+        <input/> <br>
+        <button>Enviar</button>
+      </div>
+    </div>       
   </div>
 </template>
 
 <script>
 import axios from 'axios';
+
   export default{
     data(){
       return{
         cep: '',
         baseUrl: 'https://viacep.com.br/ws/',
         response: null,
+        loading: false,
         estado: '',
         cidade: '',
         bairro: '',
@@ -41,45 +49,46 @@ import axios from 'axios';
       }
     },
     methods:{
-       getCep(){
-        const url = `${this.baseUrl}${this.cep}/json/`
-        axios.get(url).then(resp =>{
-          const data = resp.data
-          if(!data.erro){
-            this.response = data
-            this.estado = data.uf
-            this.cidade = data.localidade
-            this.bairro = data.bairro
-            this.logradouro = data.logradouro
-          } else{
-            alert("CEP não encontrado!")
-          }
-        }).catch(error => {
-          console.log(error)
-        })
+       async getCep(){
+        this.loading = true
+          const url = `${this.baseUrl}${this.cep}/json/`
+          await axios.get(url)
+          .then(resp => {
+            this.inputValues(resp.data)
+          })
+          .catch((error) => {
+            console.log("[ERROR] = " + error)
+            alert("Ops, algo de errado aconteceu.\n\nCEP inválido!")
+          })
+          .finally(() => {this.loading = false})
       },
-      cepMask(data){
-        console.log(data)
-        let cep = data.toString().replace(/\D/g,'')
-        cep = data.toString().replace(/(\d{5})(\d)/,'$1-$2')
-        return cep
+      inputValues(data){
+        if(!data.erro){
+          this.response = data
+          this.estado = data.uf
+          this.cidade = data.localidade
+          this.bairro = data.bairro
+          this.logradouro = data.logradouro
+        } else{
+          alert("CEP não encontrado!")
+        }
       }
     },
       watch: {
-        cep: function (newCep) {
-          this.cep = newCep.replace("-", "")
-          if (newCep.length === 8) this.getCep()
+        cep: function(newCep) {
+          this.cep = newCep.replace(/\D/g,'')
+          this.cep = newCep.replace(/(\d{5})(\d)/,'$1-$2') 
+
+          if (newCep.length === 9) this.getCep()
           else this.response = null
         }
       }
-
   }
 </script>
 
 <style>
 #main {
   font-family: Arial, Helvetica, sans-serif;
-
   display: flex;
   flex-direction: column; 
   align-items: center;
