@@ -11,26 +11,27 @@
   </div>
 
   <div id="towers">
-    <div class="tower">
+    <div class="tower" @click="movePiece('tower1')">
       <div v-for="piece in tower1" :key="piece">
-        <p @click="movePiece(piece)" class="piece">{{piece}}</p>
+        <p class="piece">{{piece}}</p>
       </div>
     </div>
     
-    <div class="tower">
+    <div class="tower" @click="movePiece('tower2')">
       <div v-for="piece in tower2" :key="piece">
-        <p @click="movePiece(piece)" class="piece">{{piece}}</p>
+        <p class="piece">{{piece}}</p>
       </div>
     </div>
 
-    <div class="tower">
+    <div class="tower" @click="movePiece('tower3')">
       <div v-for="piece in tower3" :key="piece">
-        <p @click="movePiece(piece)" class="piece">{{piece}}</p>
+        <p class="piece">{{piece}}</p>
       </div>
     </div>
   </div>
 </div>
 </template>
+
 
 <script>
 export default {
@@ -42,17 +43,25 @@ export default {
       tower3: [],
     }
   },
-  computed:{
-
-  },
   methods:{
-    movePiece(piece){
-      this.loosePiece = piece
-      console.log("Preciso saber de qual torre vem a peça")
+    movePiece(tower){
+      if(tower == 'tower1'){
+        this.loosePiece = this.tower1[this.tower1.length - 1]
+        this.tower1.pop()
+      }
+      if(tower == 'tower2'){
+        this.loosePiece = this.tower2[this.tower2.length - 1]
+        this.tower2.pop()
+      }
+      if(tower == 'tower3'){
+        this.loosePiece = this.tower3[this.tower3.length - 1]
+        this.tower3.pop()
+      }
     }
   }
 }
 </script>
+
 
 <style>
 #main{
@@ -94,7 +103,7 @@ h1{
   margin: 10px;
 }
 
-.piece:hover{
+.tower:hover{
   cursor: pointer;
 }
 </style>
