@@ -1,18 +1,27 @@
 <template>
-<div id="main">
-  <div>
+<div id="divMain">
+  <div id="header">
     <h1>Torre de Hanoi</h1>
     <p>Peça menor sempre deve estar acima de uma maior</p>
   </div>
 
-  <div>
-    <p>Peça em mãos: {{loosePiece}}</p>
-    <h3>Torres:</h3>
+  <div id="divQuantityPieces">
+    <p>Com quantas peças você deseja jogar?</p>
+    <select v-model="quantityPieces" name="quantityPieces" id="quantityPieces">
+      <option disabled value="0">Quantidade de peças</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
   </div>
+
+  <p id="pieces">Peça em mãos: {{loosePiece[0] ? loosePiece[0] : "Nenhuma"}}</p>
+    
+  <h3 id="txtTowers">Torres:</h3>
 
   <div id="towers">
     <div class="tower" @click="movePiece('tower1')">
-      <div v-for="piece in tower1" :key="piece">
+      <div v-for="piece in quantityPiecesInTower" :key="piece">
         <p class="piece">{{piece}}</p>
       </div>
     </div>
@@ -29,6 +38,7 @@
       </div>
     </div>
   </div>
+  <p id="clicks">Jogadas totais: {{clicks}}</p>
 </div>
 </template>
 
@@ -37,26 +47,80 @@
 export default {
   data(){
     return{
-      loosePiece: '',
-      tower1: [ '3', '2'],
-      tower2: ['1'],
+      quantityPieces: 0,
+      loosePiece: [],
+      tower1: [],
+      tower2: [],
       tower3: [],
+      clicks: 0
+    }
+  },
+  computed:{
+    quantityPiecesInTower(){
+      if(this.quantityPieces == 0) return this.tower1;
+      this.clearGame()
+      for(var i=0; i < this.quantityPieces; i++){
+        this.tower1.unshift((i+1).toString())
+      }
+      return this.tower1
     }
   },
   methods:{
     movePiece(tower){
+      if(this.loosePiece.length != 0){
+        this.putPiece(tower)
+      } else{
+        this.pickPiece(tower)
+      }
+    },
+    pickPiece(tower){
       if(tower == 'tower1'){
-        this.loosePiece = this.tower1[this.tower1.length - 1]
-        this.tower1.pop()
+        if(this.tower1.length){
+          this.loosePiece = this.tower1[this.tower1.length - 1]
+          this.tower1.pop()
+        }
       }
       if(tower == 'tower2'){
-        this.loosePiece = this.tower2[this.tower2.length - 1]
-        this.tower2.pop()
+        if(this.tower2.length){
+          this.loosePiece = this.tower2[this.tower2.length - 1]
+          this.tower2.pop()
+        }
       }
       if(tower == 'tower3'){
-        this.loosePiece = this.tower3[this.tower3.length - 1]
-        this.tower3.pop()
+        if(this.tower3.length){
+          this.loosePiece = this.tower3[this.tower3.length - 1]
+          this.tower3.pop()
+        }
       }
+    },
+    putPiece(tower){
+      if(tower == 'tower1'){
+        if(this.loosePiece[0] < this.tower1[this.tower1.length - 1] || this.tower1.length == 0){
+          this.tower1.push(this.loosePiece[0])
+          this.loosePiece = []
+          this.clicks++
+        }
+      }
+      if(tower == 'tower2'){ // problema na lógica de putPiece
+        if(this.loosePiece[0] < this.tower2[this.tower2.length - 1] || this.tower2.length == 0){
+          this.tower2.push(this.loosePiece[0])
+          this.loosePiece = []
+          this.clicks++
+        }
+      }
+      if(tower == 'tower3'){
+        if(this.loosePiece[0] < this.tower3[this.tower3.length - 1] || this.tower3.length == 0){
+          this.tower3.push(this.loosePiece[0])
+          this.loosePiece = []
+          this.clicks++
+        }
+      }
+    },
+    clearGame(){
+      this.loosePiece = []
+      this.tower1 = []
+      this.tower2 = []
+      this.tower3 = []
     }
   }
 }
@@ -64,7 +128,7 @@ export default {
 
 
 <style>
-#main{
+#divMain{
   margin-top: 25px;
 	font-family: Arial, Helvetica, sans-serif;
 	width: 350px;
@@ -76,6 +140,8 @@ export default {
 
   display: flex;
   flex-direction: column;
+
+  text-align: center;
 }
 
 h1{
@@ -86,13 +152,15 @@ h1{
   display: flex;
 	margin-left: auto;
   margin-right: auto;
+
+  text-align: center;
 }
 
 .tower{
   display: flex;
   flex-direction: column-reverse;
+  min-height: 202px;
   width: 35px;
-  height: 114px;
   padding: 5px;
   margin: 10px;
   border: 1px solid gray;
