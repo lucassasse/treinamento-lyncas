@@ -28,7 +28,10 @@
       </ul>
     </div>
   
-    <button @click="removeAllItem">Remove all items</button> <br>
+    <button @click="removeAllItem" :disabled="!items.length">Remove all items</button> <br>
+    <button @click="checkOrDescheckAllItems" :disabled="!items.length">Check all items
+      {{ checkAllItems ? "check all items" : "Deschecked all items" }}
+    </button> <br>
     <button @click="hideCheckedItems = !hideCheckedItems">
       {{ hideCheckedItems ? "Show all items" : "Hide checked items"}}
     </button>
@@ -45,13 +48,9 @@ export default {
       checked: false,
       important: false,
       editing: false,
+      checkAllItems: false,
       hideCheckedItems: false,
-      items:[
-        {id: 1, important: true, label: "Item teste - checked + important", checked:true},
-        {id: 2, important: true, label: "Teste 01 - important", checked:false},
-        {id: 3, important: false, label: "Texto 02 - checked", checked:true},
-        {id: 4, important: false, label: "Valor 03", checked:false},
-      ]
+      items: JSON.parse(localStorage.getItem('itemsList')) || []
     }
   },
   computed:{
@@ -68,31 +67,28 @@ export default {
     insertItemOnList(){
       if(!this.newItem){
         return false
-      } else {
-        if(this.important){
-          this.items.splice(this.findIndexLastImportant() + 1, 0, {
-            id:this.items.length + 1, 
-            important:this.important,
-            checked: false,
-            editing: false,
-            label: this.newItem
-          })
-        }else{
-          this.items.push({
-            id:this.items.length + 1, 
-            important:this.important,
-            checked: false,
-            editing: false,
-            label: this.newItem
-          })
-        }
-        this.newItem = ""
-        this.important = false
       }
+      
+      const newItemObject = {
+        id: this.items.length + 1 || 1,
+        important: this.important,
+        checked: false,
+        editing: false,
+        label: this.newItem,
+      }
+      
+      if(this.important){
+        this.items.splice(this.findIndexLastImportant() + 1, 0, newItemObject)
+      } else{
+        this.items.push(newItemObject)
+      }
+
+      this.newItem = ""
+      this.important = false
+      localStorage.setItem('itemsList', JSON.stringify(this.items));
     },
     findIndexLastImportant(){
       const index = this.items.findLastIndex(item => item.important);
-      console.log(index)
       return index
     },
     toggleEditItem(item){
@@ -106,14 +102,18 @@ export default {
       ? this.item.checked = "checked" 
       : this.item.checked = ""
     },
-    checkAllItem(){
+    checkOrDescheckAllItems(){
       this.items.map((i) => i.checked = true)
+      this.checkAllItems = true
+      localStorage.setItem('itemsList', JSON.stringify(this.items));
     },
     removeItem(item){
       this.items = this.items.filter((i) => i !== item)
+      localStorage.setItem('itemsList', JSON.stringify(this.items));
     },
     removeAllItem(){
       this.items = []
+      localStorage.removeItem('itemsList');
     }
   }
 }
