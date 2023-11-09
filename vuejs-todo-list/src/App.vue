@@ -144,7 +144,7 @@ export default {
 }
 
 .important{
-  background-color: yellow;
+  color: red;
 }
 
 .itemList{
