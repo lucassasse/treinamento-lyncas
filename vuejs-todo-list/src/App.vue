@@ -2,50 +2,49 @@
   <div id="main">
     <h1>{{ header || "Welcome" }}</h1>
     <div>
-      <input v-model="newItem" @keypress.enter="insertItemOnList" placeholder="Item...">
+      <input v-model="newItem" @keypress.enter="insertItemOnList" placeholder="Item..." v-focus>
       <span class="characterCount" :class="[characterCount <= 100 ? '' : 'characterCountError']">{{ characterCount }}/100</span>
       <input type="checkbox" v-model="important">Important
     </div> <br>
+
     <button @click="insertItemOnList" :disabled="!newItem.length || newItem.length > 100">Save</button> <br>
+    <h3>List:</h3>
     
     <div>
-      <h3>List:</h3>
-      <ul v-if="filteredCheckedItems.length > 0" >
-          <div v-for="item in filteredCheckedItems" :key="item.id">
-            <li class="itemList" :class="{ important: item.important }" >
-              <input type="checkbox" v-model="item.checked">
-              <span :class="[item.checked ? 'checked' : '']">
-                {{item.label}}
-              </span>
-              <button @click="toggleEditItem(item)" :disabled="!item.label.length">{{!item.editing ? "Edit" : "Cancel"}}</button>
-              <button @click="removeItem(item)">X</button>
-              <div v-if="item.editing" id="btnEdit">
-                <input class="inputEdit" v-model="item.label" @keypress.enter="saveChanges(item)">
-                <button @click="saveChanges(item)" :disabled="!item.label.length">Save changes</button>
-              </div>
-            </li>
-          </div>
-      </ul>
+      <div>
+        <ItemList vIf="showItens" :filteredCheckedItems="filteredCheckedItems" @check-item="checkItem" @toggle-edit-item="toggleEditItem" @remove-item="removeItem"></ItemList>
+      </div>
     </div>
   
     <button @click="removeAllItem" :disabled="!items.length">Remove all items</button> <br>
-    <button @click="checkOrDescheckAllItems" :disabled="!items.length">Check all items
-      {{ checkAllItems ? "check all items" : "Deschecked all items" }}
+    <button @click="checkOrDescheckAllItems" :disabled="!items.length">
+      "Check/ Deschecked all items"
     </button> <br>
-    <button @click="hideCheckedItems = !hideCheckedItems">
-      {{ hideCheckedItems ? "Show all items" : "Hide checked items"}}
+    <button @click="hideCheckedItems = !hideCheckedItems" :disabled="!items.length">
+      {{ hideCheckedItemsBtn }}
     </button>
+
+    
   </div>
 </template>
 
 
 <script>
+import ItemList from './components/ItemList.vue'
+
+const focus = {
+  mounted: (el) => el.focus()
+}
+
 export default {
+  components:{
+    ItemList
+  },
+
   data() {
     return {
       header: "ToDo List",
       newItem: "",
-      checked: false,
       important: false,
       editing: false,
       checkAllItems: false,
@@ -55,12 +54,16 @@ export default {
   },
   computed:{
     filteredCheckedItems(){
-      return this.hideCheckedItems
-      ? this.items.filter((i) => !i.checked)
-      : this.items
+      return this.hideCheckedItems ? this.items.filter((i) => !i.checked) : this.items
     },
     characterCount(){
       return this.newItem.length
+    },
+    showItens () {
+      return filteredCheckedItems.length > 0
+    },
+    hideCheckedItemsBtn(){
+      return this.hideCheckedItems ? "Show all items" : "Hide checked items"
     }
   },
   methods:{
@@ -96,15 +99,21 @@ export default {
     },
     saveChanges(item){
       this.toggleEditItem(item)
+      localStorage.setItem('itemsList', JSON.stringify(this.items));
     },
-    checkItem(){
-      this.item.checked !== "checked" 
-      ? this.item.checked = "checked" 
-      : this.item.checked = ""
+    checkItem(item){
+      item.checked = !item.checked
+      localStorage.setItem('itemsList', JSON.stringify(this.items));
     },
     checkOrDescheckAllItems(){
-      this.items.map((i) => i.checked = true)
-      this.checkAllItems = true
+      let verifyCheck = false
+      this.items.forEach(e => {
+        if(!e.checked){
+          verifyCheck = true
+        }
+      });
+
+      verifyCheck ? this.items.map((i) => i.checked = true) : this.items.map((i) => i.checked = false)
       localStorage.setItem('itemsList', JSON.stringify(this.items));
     },
     removeItem(item){
@@ -115,6 +124,9 @@ export default {
       this.items = []
       localStorage.removeItem('itemsList');
     }
+  },
+  directives:{
+    focus
   }
 }
 </script>
@@ -135,26 +147,6 @@ export default {
   flex-direction: column;
 }
 
-#btnEdit{
-  margin: 5px 0 10px 0;
-}
-
-.checked{
-  text-decoration: line-through;
-}
-
-.important{
-  color: red;
-}
-
-.itemList{
-  margin-bottom: 10px;
-}
-
-.inputEdit{
-  margin: 0 5px 3px 3px;
-}
-
 .characterCount{
   margin: 0 5px;
 }
@@ -165,6 +157,51 @@ export default {
 
 h1{
   margin-top: 0;
+}
+
+h3{
+  margin: 20px 0 0 0;
+}
+
+
+
+
+
+.itemList{
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row nowrap;
+  align-items: center;
+}
+
+.itemText{
+  display: inline-block;
+  max-width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0 10px;
+}
+
+.inputEdit{
+  margin: 0 5px 0;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.inputEdit:focus{
+  margin: 0 5px 0;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+}
+
+.important{
+  color: red;
+}
+
+.checked{
+  text-decoration: line-through;
 }
 
 ul{
