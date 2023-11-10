@@ -22,9 +22,7 @@
     </button> <br>
     <button @click="hideCheckedItems = !hideCheckedItems" :disabled="!items.length">
       {{ hideCheckedItemsBtn }}
-    </button>
-
-    
+    </button>    
   </div>
 </template>
 
