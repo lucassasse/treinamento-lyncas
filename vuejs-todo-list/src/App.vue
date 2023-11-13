@@ -11,9 +11,7 @@
     <h3>List:</h3>
     
     <div>
-      <div>
-        <ItemList vIf="showItens" :filteredCheckedItems="filteredCheckedItems" @check-item="checkItem" @toggle-edit-item="toggleEditItem" @remove-item="removeItem"></ItemList>
-      </div>
+      <ItemsList vIf="showItens" :filteredCheckedItems="filteredCheckedItems" @check-item="checkItem" @toggle-edit-item="toggleEditItem" @remove-item="removeItem"></ItemsList>
     </div>
   
     <button @click="removeAllItem" :disabled="!items.length">Remove all items</button> <br>
@@ -28,7 +26,7 @@
 
 
 <script>
-import ItemList from './components/ItemList.vue'
+import ItemsList from './components/ItemsList.vue'
 
 const focus = {
   mounted: (el) => el.focus()
@@ -36,7 +34,7 @@ const focus = {
 
 export default {
   components:{
-    ItemList
+    ItemsList
   },
 
   data() {
