@@ -1,9 +1,23 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <template id="body">
+    <nav id="nav">
+      <div>
+        <img src="@/assets/images/img_bucket.png" alt="">
+      </div>
+      <div>
+        <router-link to="/">Home</router-link>
+        <router-link to="/projects">Projects</router-link>
+        <router-link to="/about">About</router-link>
+        <router-link to="/contact">Contact</router-link>
+        <router-link to="/login">Login</router-link>
+      </div>
+    </nav>
+    <router-view/>
+    
+    <div>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque ullam quibusdam ab eum quae accusamus eaque saepe consectetur temporibus. Debitis, ullam! Itaque deleniti porro expedita reprehenderit optio voluptatem repellendus asperiores?</p>
+    </div>
+  </template>
 </template>
 
 <style>
@@ -12,19 +26,36 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  background-color: #DEDEDE;
+  color: #183E6F;
 }
 
-nav {
-  padding: 30px;
+#body{
+  height: 100vh;
+}
+
+#nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+img{
+  width: 100px;
+  margin-left: 25px;
 }
 
 nav a {
   font-weight: bold;
-  color: #2c3e50;
+  background-color: #183E6F;
+  color: #DEDEDE;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 5px;
+  text-decoration: none;
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  background-color: #2F6A99;
 }
 </style>

@@ -1,4 +1,4 @@
-# vuejs-portifolio
+# vuejs-portfolio
 
 ## Project setup
 ```
