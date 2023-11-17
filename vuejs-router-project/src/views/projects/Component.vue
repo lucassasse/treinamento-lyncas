@@ -1,6 +1,7 @@
 <template>
     <div>
         <input type="text" v-model="user.name">
+        <h1>Sim</h1>
     </div>
 </template>
 
