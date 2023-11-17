@@ -5,7 +5,7 @@
         CEP API
       </h1>
       <p>Informe o CEP</p>
-      <input maxlength="9" placeholder="12345678" v-model="cep"/>
+      <input maxlength="9" placeholder="12345-678" v-model="cep"/>
     </div>
 
     <div v-if="loading">
@@ -77,7 +77,7 @@ import axios from 'axios';
       watch: {
         cep: function(newCep) {
           this.cep = newCep.replace(/\D/g,'')
-          this.cep = newCep.replace(/(\d{5})(\d)/,'$1-$2') 
+          this.cep = newCep.replace(/(\d{5})(\d)/,'$1-$2')
 
           if (newCep.length === 9) this.getCep()
           else this.response = null
