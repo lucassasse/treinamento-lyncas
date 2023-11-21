@@ -56,7 +56,7 @@ import axios from 'axios';
           .then(resp => {
             this.inputValues(resp.data)
           })
-          .catch((error) => {
+          .catch(error => {
             console.log("[ERROR] = " + error)
             alert("Ops, algo de errado aconteceu.\n\nCEP inválido!")
           })

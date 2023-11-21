@@ -48,6 +48,7 @@ export default {
       items: JSON.parse(localStorage.getItem('itemsList')) || []
     }
   },
+
   computed:{
     filteredCheckedItems(){
       return this.hideCheckedItems ? this.items.filter((i) => !i.checked) : this.items
@@ -62,6 +63,7 @@ export default {
       return this.hideCheckedItems ? "Show all items" : "Hide checked items"
     }
   },
+  
   methods:{
     insertItemOnList(){
       if(!this.newItem){
