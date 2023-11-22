@@ -3,7 +3,9 @@
 
     <nav id="nav">
       <div>
-        <img src="@/assets/images/img_bucket.png" alt="Chapéu estilo bucket">
+        <router-link to="/" id="imgHome">
+          <img src="@/assets/images/img_bucket.png" alt="Chapéu estilo bucket" >
+        </router-link>
       </div>
       <div>
         <router-link to="/">Home</router-link>
@@ -17,7 +19,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -41,6 +43,10 @@ nav img{
   margin-left: 25px;
 }
 
+#imgHome{
+  border: none;
+}
+
 nav img:hover{
   cursor: pointer;
 }
@@ -54,10 +60,17 @@ nav a {
 }
 
 nav a:hover{
-  border-bottom: 2px solid black;
+  border-bottom: 2px dashed black;
 }
 
 nav a.router-link-exact-active {
   color: black;
+  border-bottom: 2px solid black;
+}
+
+@media only screen and (max-width: 950px) {
+  nav a{
+    margin-right: 20px;
+  }
 }
 </style>

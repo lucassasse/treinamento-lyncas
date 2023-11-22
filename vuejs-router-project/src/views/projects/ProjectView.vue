@@ -3,7 +3,7 @@
     <h1>Project page</h1>
   </div>
   <div v-for="project in projects" :key="project.id" class="project">
-    <router-link :to="{ name: 'projectDetails', params: { id: project.id } }">
+    <router-link :to="{ name: 'ProjectDetails', params: { id: project.id } }">
       <h2>{{project.title}}</h2>
     </router-link>
   </div>

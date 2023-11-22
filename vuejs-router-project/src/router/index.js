@@ -29,7 +29,7 @@ const routes = [
   },
   {
     path: '/projects/:id',
-    name: 'projectDetails',
+    name: 'ProjectDetails',
     component: ProjectDetails,
     props: true
   },

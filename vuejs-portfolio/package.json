@@ -7,8 +7,14 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
+    "axios": "^1.6.2",
+    "bootstrap": "^5.3.2",
+    "emailjs-com": "^3.2.0",
+    "json-server": "^0.17.4",
     "vue": "^3.2.13",
-    "vue-router": "^4.0.3"
+    "vue-router": "^4.0.3",
+    "vue3-carousel": "^0.3.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-router": "~5.0.0",
