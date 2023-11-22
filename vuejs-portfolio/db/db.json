@@ -1,48 +1,90 @@
 {
-    "projects": [
-        {
-            "id": 1,
-            "name": "Calculadora",
-            "description": "Projeto de uma calculadora simples, elaborada em HTML, CSS e Javascript Vanilla.",
-            "linkImg": "img_calculadora.png"
-        },
-        {
-            "id": 2,
-            "name": "CEP API",
-            "description": "Uma aplicação para preenchimento automático de campos de endereço, de acordo com o CEP buscado, utilizando API ViaCEP.",
-            "linkImg": "img_cep.png"
-        },
-        {
-            "id": 3,
-            "name": "Todo List",
-            "description": "Lista de tarefas simples, com gravação em LocalStorage.",
-            "linkImg": "img_todo.png"
-        },
-        {
-            "id": 4,
-            "name": "Torre de Hanoi",
-            "description": "Clássico desafio de lógica, a torre de Hanoi, onde o desafiado deve mover todas as peças de uma torre para outra, sem colocar uma peça maior sobre uma menor.",
-            "linkImg": "img_torre.png"
-        },
-        {
-            "id": 5,
-            "name": "Vue.js Routes",
-            "description": "Aplicação simples de rotas.",
-            "linkImg": "img_routes.png"
-        }
-    ],
-    "users":[
-        {
-            "id": 1,
-            "fullName": "Elvis Preslei da Silva",
-            "email": "Elvis@gmail.com",
-            "password": "12345678"
-        },
-        {
-            "id": 2,
-            "fullName": "Lusca Sasse",
-            "email": "lusca@gmail.com",
-            "password": "12345678"
-        }
-    ]
+  "projects": [
+    {
+      "id": 1,
+      "name": "Torre de Hanoi",
+      "description": "Clássico desafio de lógica, a torre de Hanoi, onde o desafiado deve mover todas as peças de uma torre para outra, sem colocar uma peça maior sobre uma menor.",
+      "linkImg": "img_torre.png"
+    },
+    {
+      "id": 2,
+      "name": "CEP API",
+      "description": "Uma aplicação para preenchimento automático de campos de endereço, de acordo com o CEP buscado, utilizando API ViaCEP.",
+      "linkImg": "img_cep.png"
+    },
+    {
+      "id": 3,
+      "name": "Todo List",
+      "description": "Lista de tarefas simples, com gravação em LocalStorage.",
+      "linkImg": "img_todo.png"
+    },
+    {
+      "id": 4,
+      "name": "Calculadora",
+      "description": "Projeto de uma calculadora simples, elaborada em HTML, CSS e Javascript Vanilla.",
+      "linkImg": "img_calculadora.png"
+    },
+    {
+      "id": 5,
+      "name": "Vue.js Routes",
+      "description": "Aplicação simples de rotas.",
+      "linkImg": "img_routes.png"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "fullName": "Elvis Preslei da Silva",
+      "email": "Elvis@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": 2,
+      "fullName": "Lusca Sasse",
+      "email": "lusca@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "fullName": "Lucas Eduardo Sasse",
+      "email": "lucas@gmail.com",
+      "password": "lucas123",
+      "id": 3
+    },
+    {
+      "fullName": "zeca",
+      "email": "zecapaugordinho@gmail.com",
+      "password": "zecazeca",
+      "id": 4
+    },
+    {
+      "fullName": "Lucas Eduardo Sasse",
+      "email": "lucas@gmail.com",
+      "password": "ssdddddddddd",
+      "id": 5
+    },
+    {
+      "fullName": "Lucas Eduardo Sasse",
+      "email": "lucas1sasse@gmail.com",
+      "password": "rvhervjknerv",
+      "id": 6
+    },
+    {
+      "fullName": "Lucas Eduardo Sasse",
+      "email": "lucas1sasse@gmail.com",
+      "password": "fffffffffffff",
+      "id": 7
+    },
+    {
+      "fullName": "Lucas Eduardo Sasse",
+      "email": "lucas1sasse@gmail.com",
+      "password": "444444444444444",
+      "id": 8
+    },
+    {
+      "fullName": "lusca",
+      "email": "lucas@gmail.com",
+      "password": "verververer",
+      "id": 9
+    }
+  ]
 }

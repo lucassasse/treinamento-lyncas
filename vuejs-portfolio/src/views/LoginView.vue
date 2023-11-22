@@ -7,7 +7,7 @@
       <input v-model="email" name="user_email" type="email" class="form-control" id="inputEmail" required/>
     
       <label for="inputPassword" class="form-label">Senha</label>
-      <input v-model="password" name="password" type="text" class="form-control" id="inputPassword" required/>
+      <input v-model="password" name="InputPassword" type="password" class="form-control" id="inputPassword" autocomplete="on" required/>
 
       <button @click="login()" value="login" id="buttonLogin" class="btn btn-primary">Entrar</button>
       
@@ -16,8 +16,6 @@
         <button id="buttonRegister" class="btn btn-primary">Criar Conta</button>
       </router-link>
     </form>
-    
-
   </div>
 </template>
 
@@ -37,9 +35,8 @@ export default {
         return
       } else{
         await axios.get(`${this.baseUrl}/users?email=${this.email}`)
-          .then(response => {
-            
-            console.log("result: " + this.verifyLogin(response.data))
+          .then(response => {            
+            this.verifyLogin(response.data) ? alert("Login efetuado com sucesso!") : alert("E-mail ou senha incorretos!")
           })
           .catch(error => {
             console.error('Error fetching data:', error);
@@ -48,10 +45,9 @@ export default {
       }
     },
     verifyLogin(data){
-      console.log(data);
       let verifyEmail = data.length > 0 ? true : false
       if(verifyEmail){
-        return this.password == data.password ? true : false
+        return this.password == data[0].password ? true : false
       }
     }
   } 

@@ -1,6 +1,5 @@
 <template>
   <div id="body">
-
     <nav id="nav">
       <div>
         <router-link to="/" id="imgHome">

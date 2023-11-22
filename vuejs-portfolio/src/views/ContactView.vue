@@ -73,7 +73,8 @@ export default {
 #divMain{
   color: rgb(50, 50, 50);
   display: flex;
-  justify-content: space-around
+  align-items: center;
+  justify-content: center
 }
 
 #divLeft{
@@ -92,7 +93,7 @@ export default {
 }
 
 #divRight{
-  margin: 50px;
+  margin: 50px 100px;
 }
 
 form{
@@ -107,7 +108,9 @@ form{
 }
 
 .card{
+  height: 557px;
   width: 450px;
+  margin: 0 100px;
 }
 
 .card-title{

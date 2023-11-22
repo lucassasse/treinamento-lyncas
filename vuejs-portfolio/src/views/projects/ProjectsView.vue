@@ -1,18 +1,17 @@
 <template>
   <div id="projects">
     <h2 id="title">Selecione o Projeto para saber mais sobre...</h2>
-    
+
     <div id="divCarousel">
       <Carousel :itemsToShow="3.95" :wrapAround="true" :transition="500">
         <Slide v-for="project in projects" :key="project.id">
           <div class="carousel__item">
             <router-link :to="{ name: 'ProjectDetails', params: { id: project.id } }">
-              <!--<img :src="require('@/assets/images/projects/' + project.linkImg)" :alt="project.name">-->
               <img :src="getImgUrl(project.linkImg)" :alt="project.name">
             </router-link>
           </div>
         </Slide>
-    
+
         <template #addons>
           <Pagination />
           <Navigation />
@@ -26,9 +25,8 @@
 <script>
 import { defineComponent } from 'vue'
 import { Carousel, Pagination, Slide, Navigation } from 'vue3-carousel'
-import 'vue3-carousel/dist/carousel.css'
-
 import axios from 'axios'
+import 'vue3-carousel/dist/carousel.css'
 
 export default defineComponent({
   name: 'Autoplay',
