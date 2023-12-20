@@ -32,4 +32,10 @@ export default {
         cursor: pointer;
         background-color: #049b5a;
     }
+
+    @media only screen and (max-width: 900px) {
+        #btn-save{
+            width: 100%;
+        }
+    }
 </style>

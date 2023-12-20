@@ -37,7 +37,7 @@ export default {
     },
     computed:{
         verifyError(){
-            return this.isValid ? "" : "error"
+            return this.isValid ? "" : "errorInput"
         }
     },
     methods:{
@@ -64,7 +64,7 @@ export default {
                     this.textError = 'Telefone inválido'
                     return false
                 }
-            } 
+            }
             return true
         },
         cpfValid(){

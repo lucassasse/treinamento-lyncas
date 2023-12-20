@@ -1,7 +1,7 @@
 <template>
     <Header>
         <template #btnAdd>
-            <router-link to="/sales" tag="button" class="btn-back">Voltar</router-link>
+            <router-link to="/sales" tag="button" class="btn-back">&lsaquo;</router-link>
         </template>
     </Header>
 
@@ -36,35 +36,38 @@
             </div>
         </form>
 
-        <table v-if="itemsList.length > 0">
-            <thead>
-                <tr>
-                    <th class="tg-0lax column-header-table">Descrição</th>
-                    <th class="tg-0lax column-header-table">Valor Unitário</th>
-                    <th class="tg-0lax column-header-table">Quantidade</th>
-                    <th class="tg-0lax column-header-table">Valor Total</th>
-                    <th class="tg-0lax column-header-table">Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="(item, index) in itemsList" :key="index" class="list-table">
-                    <td class="tg-0lax column-list-table first-td">{{item.description}}</td>
-                    <td class="tg-0lax column-list-table">{{item.unityValue}}</td>
-                    <td class="tg-0lax column-list-table">{{item.quantity}}</td>
-                    <td class="tg-0lax column-list-table last-td">{{item.totalValueItem}}</td>
-                    <td class="tg-0lax column-list-form last-td">
-                        <ButtonTable :text="'Deletar'"/>
-                        <ButtonTable :text="'Editar'"/>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div id="div-table-items">
+            <table v-if="itemsList.length > 0">
+                <thead>
+                    <tr>
+                        <th class="tg-0lax column-header-table">Descrição</th>
+                        <th class="tg-0lax column-header-table">Valor Unitário</th>
+                        <th class="tg-0lax column-header-table">Quantidade</th>
+                        <th class="tg-0lax column-header-table">Valor Total</th>
+                        <th class="tg-0lax column-header-table">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(item, index) in itemsList" :key="index" class="list-table">
+                        <td class="tg-0lax column-list-table first-td">{{item.description}}</td>
+                        <td class="tg-0lax column-list-table">{{item.unityValue}}</td>
+                        <td class="tg-0lax column-list-table">{{item.quantity}}</td>
+                        <td class="tg-0lax column-list-table last-td">{{item.totalValueItem}}</td>
+                        <td class="tg-0lax column-list-form last-td">
+                            <ButtonTable classBtn="delete" textButton="Deletar" @click="togglePopUp()"/>
+                            <ButtonTable classBtn="edit" textButton="Editar"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
         <div id="total-and-save">
             <p id="total-value">Total: {{ finalValue || "R$ 0,00" }}</p>
             <ButtonSave @click.prevent="sendForm()"/>
         </div>
         <pop-up v-if="popUp" @close="togglePopUpSucess()" :message="messagePopUp" :popUpClass="popUpSucessOrError"/>
+        <PopUpDelete v-if="showPopUpDelete" @close="togglePopUp()" @deleteItem="deleteConfirm()"/>
     </div>
 </template>
 
@@ -78,6 +81,7 @@ import Header from '@/layouts/Header.vue'
 import ButtonSave from '@/components/ButtonSave.vue'
 import ButtonTable from '@/components/ButtonTable.vue'
 import PopUp from '@/components/PopUp.vue'
+import PopUpDelete from '@/components/PopUpDelete.vue'
     export default{
         emits: ['input-change'],
         components:{
@@ -89,7 +93,8 @@ import PopUp from '@/components/PopUp.vue'
             Header,
             ButtonSave,
             ButtonTable,
-            PopUp
+            PopUp,
+            PopUpDelete
         },
         data(){
             return{
@@ -104,11 +109,18 @@ import PopUp from '@/components/PopUp.vue'
                     totalValueItem: ''
                 },
                 finalValue: '',
-                itemsList: [],
+                itemsList: [{
+                    description: 'Batatinha',
+                    unityValue: 'R$ 4,25',
+                    quantity: '2',
+                    totalValueItem: 'R$ 8,50'
+
+                }],
                 popUp: false,
                 popUpSucessOrError: 'sucess',
                 messagePopUp: '',
-                popUpRedirect: false
+                popUpRedirect: false,
+                showPopUpDelete: false,
             }
         },
         computed:{
@@ -189,6 +201,13 @@ import PopUp from '@/components/PopUp.vue'
                 if(this.popUpRedirect) this.$router.push('/sales')
                 this.messagePopUp = messagePopUp
                 this.popUp = !this.popUp
+            },
+            deleteConfirm(){
+                console.log("Item excluído com sucesso!")
+                this.togglePopUp()
+            },
+            togglePopUp(){
+                this.showPopUpDelete = !this.showPopUpDelete
             }
         },
     }
@@ -249,16 +268,16 @@ import PopUp from '@/components/PopUp.vue'
         border: 1px solid #203c7e;
     }
 
-    #total-value{
-        font-size:xx-large;
-        font-weight: 700;
-    }
-
     #total-and-save{
         margin-top: 15px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+
+    #total-value{
+        font-size:xx-large;
+        font-weight: 700;
     }
 
     table{
@@ -304,5 +323,55 @@ import PopUp from '@/components/PopUp.vue'
         width: 100%;
         margin-bottom: 25px;
         font-family: 'Jost', sans-serif;
+    }
+
+    @media only screen and (max-width: 900px) {
+        #form-top{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        #div-main{
+            margin-top: 25px;
+            padding: 0 20px 10px;
+        }
+
+        #div-table-items{
+            overflow: auto;
+            margin: 0 10px;
+        }
+
+        .form{
+            flex-direction: column;
+        }
+
+        table{
+            margin: 0;
+        }
+
+        .div-left,
+        .div-right{
+            width: 100%;
+        }
+        
+        .column-list-table{
+            min-width: 150px;
+        }
+
+        #total-and-save{
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #total-value{
+            font-size: x-large;
+            font-weight: 600;
+        }
+
+        #btn-add-item{
+            width: 100%;
+        }
     }
 </style>

@@ -33,7 +33,6 @@ export default {
     h2{
         margin-top: 0;
     }
-
     .pop-up{
         position: fixed;
         top: 0;
@@ -83,5 +82,32 @@ export default {
 
     .btn:hover{
         cursor: pointer;
+    }
+
+    @media only screen and (max-width: 900px) {
+        h2{
+            margin-top: 0;
+        }
+        .pop-up{
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            padding: 32px 16px;
+            height: 100vh;
+            width: 100%;
+            background-color: rgba(116, 116, 116, 0.5);
+            display: grid;
+            place-items: center;
+        }
+    
+        .pop-up-inner{
+            width: 90%;
+            padding: 20px;
+        }
+    
+        .btn{
+            width: 100%;
+        }
     }
 </style>

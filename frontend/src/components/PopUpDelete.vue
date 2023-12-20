@@ -3,7 +3,7 @@
         <div class="pop-up-inner" :class="popUpInnerClass">
             <h2>Deseja mesmo excluir?</h2>
             <div id="buttons-confirm">
-                <button class="btn" :class="btnClass" @click="close()">Excluir</button>
+                <button class="btn" :class="btnClass" @click="deleteItem()">Excluir</button>
                 <button class="btn" :class="btnClass" @click="close()">Cancelar</button>
             </div>
         </div>
@@ -26,7 +26,10 @@ export default {
     },
     methods:{
         close(){
-            this.$emit('close')
+            this.$emit('close')            
+        },
+        deleteItem(){
+            this.$emit('deleteItem')
         }
     }
 }
@@ -81,5 +84,37 @@ export default {
     
     .btn:hover{
         cursor: pointer;
+    }
+
+    @media only screen and (max-width: 900px) {
+        .pop-up{
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            padding: 32px 16px;
+            height: 100vh;
+            width: 100%;
+            background-color: rgba(116, 116, 116, 0.5);
+            display: grid;
+            place-items: center;
+        }
+    
+        .pop-up-inner{
+            width: 90%;
+            padding: 20px;
+
+        }
+    
+        #buttons-confirm{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .btn{
+            width: 100%;
+            margin: 10px;
+        }
     }
 </style>

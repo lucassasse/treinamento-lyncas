@@ -126,9 +126,48 @@ nav a.router-link-exact-active,
     background-color: #142957;
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 900px) {
     nav{
-        
+        bottom: 0;
+        position: fixed;
+        background-color: #1C3B85;
+        width: 100vw;
+        height: 75px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    #div-img-logo{
+        display: none;
+    }
+
+    #div-links{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        top: 0;
+        margin-top: 0;
+    }
+
+    nav a{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: small;
+        color: rgb(180, 180, 180);
+        text-decoration: none;
+        border: none;
+    }
+
+    .icon{
+        color: rgb(180, 180, 180);
+    }
+
+    nav a.router-link-exact-active,
+    .active-route{
+        background-color: rgba(255, 255, 255, 0);
+        color: white;
     }
 }
 </style>

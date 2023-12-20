@@ -1,7 +1,7 @@
 <template>
     <Header>
         <template #btnAdd>
-            <router-link to="/customers" tag="button" class="btn-back">Voltar</router-link>
+            <router-link to="/customers" tag="button" class="btn-back">&lsaquo;</router-link>
         </template>
     </Header>
 
@@ -12,7 +12,7 @@
         <form action="send" id="customers-form">
             <div id="div-top">
                 <div id="div-left">
-                    <InputText type="text" textLabel="Nome" id="name" labelFor="name" v-model="customers.name" ref="customerName" required/> 
+                    <InputText type="text" textLabel="Nome" id="name" labelFor="name" v-model="customers.name" ref="customerName" autocomplete required/> 
                     <InputMask type="tel" textLabel="Telefone" id="tel" labelFor="tel" v-model="customers.tel" ref="customerTelephone" mask="['(##)####-####', '(##)#####-####']" required/>
                 </div>
                 <div id="div-right">
@@ -20,14 +20,13 @@
                     <InputMask type="text" textLabel="CPF" id="cpf" labelFor="cpf" v-model="customers.cpf" ref="customerCpf" mask="###.###.###-##" required/>
                 </div>
             </div>
-
             <div id="div-bottom">
                 <div id="div-btn">
                     <ButtonSave @click.prevent="sendForm()"/>
                 </div>
             </div>
         </form>
-        <pop-up v-if="popUp" @close="togglePopUpSucess()" :message="messagePopUp" popUpClass="sucess"/>
+        <pop-up v-if="popUp" @close="togglePopUp()" :message="messagePopUp" popUpClass="sucess"/>
     </div>
 </template>
 
@@ -62,7 +61,7 @@ import PopUp from '@/components/PopUp.vue'
             sendForm(){
                 this.validate()
                 if(this.$refs.customerName.valid() && this.$refs.customerEmail.valid() && this.$refs.customerTelephone.valid() && this.$refs.customerCpf.valid()){
-                    this.togglePopUpSucess("Cliente adicionado com sucesso!")
+                    this.togglePopUp("Cliente adicionado com sucesso!")
                     this.popUpRedirect = true
                     this.clearInputs()
                 } else{
@@ -81,7 +80,7 @@ import PopUp from '@/components/PopUp.vue'
                 this.$refs.customerTelephone.valid()
                 this.$refs.customerCpf.valid()
             },
-            togglePopUpSucess(message) {
+            togglePopUp(message) {
                 if(this.popUpRedirect) this.$router.push('/customers')
                 this.messagePopUp = message
                 this.popUp = !this.popUp
@@ -125,7 +124,19 @@ import PopUp from '@/components/PopUp.vue'
         flex-direction: row-reverse
     }
 
-    @media only screen and (max-width: 550px) {
-        
+    @media only screen and (max-width: 900px) {
+        #div-form{
+            margin-top: 25px;
+            padding: 0 20px 10px;
+        }
+
+        #div-top{
+            flex-direction: column;
+        }
+
+        #div-left,
+        #div-right{
+            width: 100%;
+        }
     }
 </style>

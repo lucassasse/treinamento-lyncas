@@ -30,6 +30,14 @@ export default{
 }
 
 @media only screen and (max-width: 900px) {
-    
+    #template{
+        flex-direction: column-reverse;
+    }
+
+    #right{
+        padding: 0;
+        margin: 0 0 75px 0;
+        margin-left: 0;
+    }
 }
 </style>

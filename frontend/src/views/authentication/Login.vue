@@ -85,9 +85,14 @@ p{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 30%;
     height: 100%;
-    margin: auto;
+    margin: 25px auto;
+}
+
+form{
+    min-width: 100%;
 }
 
 h1{
@@ -114,5 +119,33 @@ h1{
 #btn-login:hover{
     cursor: pointer;
     background-color: #049b5a;
+}
+
+@media only screen and (max-width: 900px) {
+    #main{
+        flex-direction: column;
+    }
+
+    #div-left{
+        width: 100%;
+        height: 100%;
+    }
+
+    img{
+        width: 50%;
+        margin: 10px 0px;
+    }
+
+    #div-right{
+        width: 85%;
+    }
+
+    #btn-login{
+        width: 100%;
+    }
+
+    p{
+        width: 80%;
+    }
 }
 </style>

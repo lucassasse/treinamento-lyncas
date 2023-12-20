@@ -1,7 +1,8 @@
 <template>
     <Header>
         <template #btnAdd>
-            <router-link to="/sales-form" tag="button" class="btn-add">Adicionar</router-link>
+            <router-link to="/sales-form" tag="button" class="btn-add btn-add-web">Adicionar</router-link>
+            <router-link to="/sales-form" tag="button" class="btn-add btn-add-mobile">+</router-link>
         </template>
     </Header>
 
@@ -11,42 +12,39 @@
             <InputSearch/>
         </div>
         
-        <table>
-            <thead>
-                <tr>
-                    <th class="tg-0lax column-header-table">Cliente</th>
-                    <th class="tg-0lax column-header-table">Qtd. itens</th>
-                    <th class="tg-0lax column-header-table">Data da venda</th>
-                    <th class="tg-0lax column-header-table">Data faturamento</th>
-                    <th class="tg-0lax column-header-table">Valor total</th>
-                    <th class="tg-0lax column-header-table">Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="list-table">
-                    <td class="tg-0lax column-list-table first-td">Genara Souza</td>
-                    <td class="tg-0lax column-list-table">1</td>
-                    <td class="tg-0lax column-list-table">14/05/2022</td>
-                    <td class="tg-0lax column-list-table">14/05/2022</td>
-                    <td class="tg-0lax column-list-table">R$ 90,00</td>
-                    <td class="tg-0lax column-list-table last-td">
-                        <ButtonTable classBtn="delete" textButton="Deletar"/>
-                        <ButtonTable classBtn="edit" textButton="Editar"/>
-                    </td>
-                </tr>
-                <tr class="list-table">
-                    <td class="tg-0lax column-list-table first-td">Genara Souza</td>
-                    <td class="tg-0lax column-list-table">5</td>
-                    <td class="tg-0lax column-list-table">14/05/2022</td>
-                    <td class="tg-0lax column-list-table">14/05/2022</td>
-                    <td class="tg-0lax column-list-table">R$ 450,00</td>
-                    <td class="tg-0lax column-list-table last-td">
-                        <ButtonTable classBtn="delete" textButton="Deletar"/>
-                        <ButtonTable classBtn="edit" textButton="Editar"/>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div id="table-div">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="tg-0lax column-header-table">Cliente</th>
+                        <th class="tg-0lax column-header-table">Qtd. itens</th>
+                        <th class="tg-0lax column-header-table">Data da venda</th>
+                        <th class="tg-0lax column-header-table">Data faturamento</th>
+                        <th class="tg-0lax column-header-table">Valor total</th>
+                        <th class="tg-0lax column-header-table">Ações</th>
+                    </tr>
+                </thead>
+                <tbody v-if="mokSales.length">
+                    <tr v-for="(sale, index) in mokSales" :key="index"  class="list-table">
+                        <td class="tg-0lax column-list-table first-td">{{ sale.name }}</td>
+                        <td class="tg-0lax column-list-table">{{ sale.quantity }}</td>
+                        <td class="tg-0lax column-list-table">{{ sale.saleDate }}</td>
+                        <td class="tg-0lax column-list-table">{{ sale.billingDate }}</td>
+                        <td class="tg-0lax column-list-table">{{ sale.totalValueItem }}</td>
+                        <td class="tg-0lax column-list-table last-td">
+                            <ButtonTable classBtn="delete" textButton="Deletar" @click="togglePopUp()"/>
+                            <ButtonTable classBtn="edit" textButton="Editar"/>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody v-if="!mokSales.length">
+                    <tr class="list-table">
+                        <td colspan="6" class="tg-0lax column-list-table first-td last-td nullAlert">Nenhuma venda foi cadastrada!</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <PopUpDelete v-if="showPopUpDelete" @close="togglePopUp()" @deleteItem="deleteConfirm()"/>
     </div>
 </template>
 
@@ -54,14 +52,49 @@
 import InputSearch from '@/components/InputSearch.vue'
 import ButtonTable from '@/components/ButtonTable.vue'
 import Header from '@/layouts/Header.vue'
+import PopUpDelete from '@/components/PopUpDelete.vue'
     export default{
         props: {
-            text: String
+            text: String,
         },
         components:{
             InputSearch,
             ButtonTable,
-            Header
+            Header,
+            PopUpDelete
+        },
+        data(){
+            return{
+                showPopUpDelete: false,
+                mokSales:[{
+                    name: 'Genara Souza',
+                    quantity: '5',
+                    saleDate: '18/09/2023',
+                    billingDate: '19/09/2023',
+                    totalValueItem: 'R$ 450,00'
+                },{
+                    name: 'Pedro Pedrinho',
+                    quantity: '7',
+                    saleDate: '27/10/2023',
+                    billingDate: '28/10/2023',
+                    totalValueItem: 'R$ 39,50'
+                },{
+                    name: 'Pedro Pedrinho',
+                    quantity: '7',
+                    saleDate: '27/10/2023',
+                    billingDate: '28/10/2023',
+                    totalValueItem: 'R$ 39,50'
+                }]
+            }
+        },
+        methods:{
+            deleteConfirm(){
+                console.log("Item excluído com sucesso!")
+                this.togglePopUp()
+            },
+            togglePopUp(){
+                this.showPopUpDelete = !this.showPopUpDelete
+            }
         }
     }
 </script>
@@ -86,6 +119,7 @@ h1{
 }
 
 table{
+    width: 100%;
     margin-top: 30px;
     border-spacing: 0 15px;
 }
@@ -117,5 +151,38 @@ table{
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     width: 250px;
+}
+
+.nullAlert{
+    color: red;
+    text-align: center;
+}
+
+@media only screen and (max-width: 900px) {
+    #main{
+        margin: 0;
+    }
+
+    #header{
+        margin-top: 15px;
+        flex-direction: column-reverse;
+    }
+    
+    #table-div{
+        overflow: auto;
+        margin: 0 15px;
+    }
+
+    table{
+        margin-top: 0;
+    }
+
+    .column-list-table{
+        min-width: 150px;
+    }
+
+    .last-td{
+        max-width: 250px;
+    }
 }
 </style>

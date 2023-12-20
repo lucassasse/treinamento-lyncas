@@ -9,6 +9,7 @@
     :value="modelValue"
     @input="sendInputValue"
     :required="required"
+    :autocomplete="autocomplete"
     >
     <div class="errorText" v-if="!isValid">{{ textError }}</div>
 </template>
@@ -24,6 +25,7 @@ export default {
         modelValue: String,
         type: {type: String, default: "text"},
         required: {type: Boolean, default: false},
+        autocomplete: {type: Boolean, default: true}
     },
     data() {
         return {

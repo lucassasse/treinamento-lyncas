@@ -71,3 +71,26 @@ body{
     color: red;
     margin: -25px 0 10px 0;
 }
+
+.btn-add-mobile{
+    display: none;
+}
+
+@media only screen and (max-width: 900px) {
+    .btn-add-web{
+        display: none;
+    }
+    
+    .btn-add-mobile{
+        display: block;
+        padding: 5px 15px;
+    }
+
+    .btn-add{
+        height: auto;
+    }
+
+    .btn-back{
+        height: auto;
+    }
+}

@@ -47,4 +47,10 @@
 .icon:hover{
     cursor: pointer;
 }
+
+@media only screen and (max-width: 900px) {
+    #input_search{
+        width: 225px;
+    }
+}
 </style>
