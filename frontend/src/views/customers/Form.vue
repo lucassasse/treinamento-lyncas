@@ -1,7 +1,8 @@
 <template>
     <Header>
         <template #btnAdd>
-            <router-link to="/customers" tag="button" class="btn-back">&lsaquo;</router-link>
+            <router-link to="/customers" tag="button" class="btn-back btn-return-web">Voltar</router-link>
+            <router-link to="/customers" tag="button" class="btn-back btn-return-mobile">&lsaquo;</router-link>
         </template>
     </Header>
 
@@ -26,7 +27,9 @@
                 </div>
             </div>
         </form>
-        <pop-up v-if="popUp" @close="togglePopUp()" :message="messagePopUp" popUpClass="sucess"/>
+        <Transition>
+            <pop-up v-if="popUp" @close="togglePopUp()" :message="messagePopUp" popUpClass="sucess"/>
+        </Transition>
     </div>
 </template>
 

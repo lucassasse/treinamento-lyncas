@@ -63,6 +63,16 @@ body{
     font-family: 'Jost', sans-serif;
 }
 
+.v-enter-active,
+.v-leave-active {
+    transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+    opacity: 0;
+}
+
 .errorInput{
     border: 1px solid red;
 }
@@ -76,12 +86,25 @@ body{
     display: none;
 }
 
+.btn-return-mobile{
+    display: none;
+}
+
 @media only screen and (max-width: 900px) {
     .btn-add-web{
         display: none;
     }
     
     .btn-add-mobile{
+        display: block;
+        padding: 5px 15px;
+    }
+
+    .btn-return-web{
+        display: none;
+    }
+    
+    .btn-return-mobile{
         display: block;
         padding: 5px 15px;
     }

@@ -44,7 +44,9 @@
                 </tbody>
             </table>
         </div>
-        <PopUpDelete v-if="showPopUpDelete" @close="togglePopUp()" @deleteItem="deleteConfirm()"/>
+        <Transition>
+            <PopUpDelete v-if="showPopUpDelete" @close="togglePopUp()" @deleteItem="deleteConfirm()"/>
+        </Transition>
     </div>
 </template>
 

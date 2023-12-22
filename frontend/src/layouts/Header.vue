@@ -4,7 +4,7 @@
             <img src="@/assets/images/img_user.png" alt="foto do usuário">
             <div id="div-user">
                 <div id="div-wellcome">
-                    <p class="text-user">Olá</p>
+                    <p class="text-user">Olá,</p>
                     <p class="text-user txt-name-user">{{ userName }}</p>
                 </div>
                 <router-link to="/login" class="text-user link-logout">Sair</router-link>

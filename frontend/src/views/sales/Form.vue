@@ -1,7 +1,8 @@
 <template>
     <Header>
         <template #btnAdd>
-            <router-link to="/sales" tag="button" class="btn-back">&lsaquo;</router-link>
+            <router-link to="/sales" tag="button" class="btn-back btn-return-web">Voltar</router-link>
+            <router-link to="/sales" tag="button" class="btn-back btn-return-mobile">&lsaquo;</router-link>
         </template>
     </Header>
 
@@ -36,8 +37,8 @@
             </div>
         </form>
 
-        <div id="div-table-items">
-            <table v-if="itemsList.length > 0">
+        <div id="div-table-items" v-if="itemsList.length > 0">
+            <table>
                 <thead>
                     <tr>
                         <th class="tg-0lax column-header-table">Descrição</th>
@@ -61,13 +62,17 @@
                 </tbody>
             </table>
         </div>
-
+        
         <div id="total-and-save">
             <p id="total-value">Total: {{ finalValue || "R$ 0,00" }}</p>
             <ButtonSave @click.prevent="sendForm()"/>
         </div>
-        <pop-up v-if="popUp" @close="togglePopUpSucess()" :message="messagePopUp" :popUpClass="popUpSucessOrError"/>
-        <PopUpDelete v-if="showPopUpDelete" @close="togglePopUp()" @deleteItem="deleteConfirm()"/>
+        <Transition>
+            <pop-up v-if="popUp" @close="togglePopUpSucess()" :message="messagePopUp" :popUpClass="popUpSucessOrError"/>
+        </Transition>
+        <Transition>
+            <PopUpDelete v-if="showPopUpDelete" @close="togglePopUp()" @deleteItem="deleteConfirm()"/>
+        </Transition>
     </div>
 </template>
 
@@ -111,10 +116,9 @@ import PopUpDelete from '@/components/PopUpDelete.vue'
                 finalValue: '',
                 itemsList: [{
                     description: 'Batatinha',
-                    unityValue: 'R$ 4,25',
                     quantity: '2',
-                    totalValueItem: 'R$ 8,50'
-
+                    unityValue: '2,25',
+                    totalValueItem: '4,50'
                 }],
                 popUp: false,
                 popUpSucessOrError: 'sucess',
