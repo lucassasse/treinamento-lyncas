@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UCZKHb+BwWx4Xd4yGxzTe4lsm9EAC1PW/p7B0HsNzO28aHjSD5M5UZoWYWiEv+hW++SOLrl93O9VNx6Wry2Z/w==",
+  "dgSpecHash": "9+74FYCF+x0f2oAnsfVgVdsgyXChETg+Nhp8p2NlfefHOnTrI/zd2i3aq7Numj8Z1+rmAKaSiBiEfv4spWsuWQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lyncas\\Desktop\\WebAPI\\WebAPI\\WebAPI.csproj",
+  "projectFilePath": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\WebAPI\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lyncas\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Lyncas\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
