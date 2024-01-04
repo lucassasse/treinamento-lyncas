@@ -66,7 +66,7 @@ export default {
             this.$emit('update:modelValue', unformat(event.target.value))
         },
         valid() {
-            return this.requiredValid() ? this.isValid = true : this.isValid = false
+            return this.requiredValid() && this.moneyValid() ? this.isValid = true : this.isValid = false
         },
         requiredValid() {
             if(this.required && this.modelValue){
@@ -75,7 +75,18 @@ export default {
                 this.textError = `Preencha o campo ${this.textLabel}`
                 return false
             }
-        }
+        },
+        moneyValid(){
+            if(this.id == "unityValue"){
+                if(this.modelValue != "0.00"){
+                    return true
+                }else{
+                    this.textError = `Preencha o campo ${this.textLabel}`
+                    return false
+                }
+            }
+            return true
+        },
     }
 }
 </script>

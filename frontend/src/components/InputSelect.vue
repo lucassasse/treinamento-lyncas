@@ -11,9 +11,7 @@
         :required="required"
     >
         <option class="options" value="0" selected disabled></option>
-        <option class="options" value="1">Ciente Um</option>
-        <option class="options" value="2">Ciente Dois</option>
-        <option class="options" value="3">Ciente Três</option>
+        <option v-for="customer in customers" :value="customer.id" :key="customer.id">{{ customer.full_name }}</option>
     </select>
     <div class="errorText" v-if="!isValid">{{ textError }}</div>
 </template>
@@ -27,6 +25,7 @@ export default {
         modelValue: String,
         isDisabled: {type: Boolean, default: false},
         required: {type: Boolean, default: false},
+        customers: {type: Array, default: []}
     },
     emits: ['update:modelValue', 'input-change'],
     data(){

@@ -24,8 +24,8 @@
                         <th class="tg-0lax column-header-table">Ações</th>
                     </tr>
                 </thead>
-                <tbody v-if="mokSales.length">
-                    <tr v-for="(sale, index) in mokSales" :key="index"  class="list-table">
+                <tbody v-if="sales.length">
+                    <tr v-for="(sale, index) in sales" :key="index"  class="list-table">
                         <td class="tg-0lax column-list-table first-td">{{ sale.name }}</td>
                         <td class="tg-0lax column-list-table">{{ sale.quantity }}</td>
                         <td class="tg-0lax column-list-table">{{ sale.saleDate }}</td>
@@ -37,7 +37,7 @@
                         </td>
                     </tr>
                 </tbody>
-                <tbody v-if="!mokSales.length">
+                <tbody v-if="!sales.length">
                     <tr class="list-table">
                         <td colspan="6" class="tg-0lax column-list-table first-td last-td nullAlert">Nenhuma venda foi cadastrada!</td>
                     </tr>
@@ -68,7 +68,19 @@ import PopUpDelete from '@/components/PopUpDelete.vue'
         data(){
             return{
                 showPopUpDelete: false,
-                mokSales:[{
+                sales:[]
+            }
+        },
+        methods:{
+            deleteConfirm(){
+                console.log("Item excluído com sucesso!")
+                this.togglePopUp()
+            },
+            togglePopUp(){
+                this.showPopUpDelete = !this.showPopUpDelete
+            },
+            getSales(){
+                this.sales =[{
                     name: 'Genara Souza',
                     quantity: '5',
                     saleDate: '18/09/2023',
@@ -80,23 +92,11 @@ import PopUpDelete from '@/components/PopUpDelete.vue'
                     saleDate: '27/10/2023',
                     billingDate: '28/10/2023',
                     totalValueItem: 'R$ 39,50'
-                },{
-                    name: 'Pedro Pedrinho',
-                    quantity: '7',
-                    saleDate: '27/10/2023',
-                    billingDate: '28/10/2023',
-                    totalValueItem: 'R$ 39,50'
                 }]
             }
         },
-        methods:{
-            deleteConfirm(){
-                console.log("Item excluído com sucesso!")
-                this.togglePopUp()
-            },
-            togglePopUp(){
-                this.showPopUpDelete = !this.showPopUpDelete
-            }
+        created(){
+            this.getSales()
         }
     }
 </script>

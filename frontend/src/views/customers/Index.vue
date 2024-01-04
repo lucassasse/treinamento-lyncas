@@ -23,20 +23,20 @@
                         <th class="tg-0lax column-header-table">Ações</th>
                     </tr>
                 </thead>
-                <tbody v-if="mokCustomers.length">
-                    <tr v-for="(customer, index) in mokCustomers" :key="index" class="list-table">
+                <tbody v-if="customers.length">
+                    <tr v-for="(customer, index) in customers" :key="index" class="list-table">
                         <td class="tg-0lax column-list-table first-td">{{ customer.name }}</td>
                         <td class="tg-0lax column-list-table">{{ customer.email }}</td>
                         <td class="tg-0lax column-list-table">{{ customer.tel }}</td>
                         <td class="tg-0lax column-list-table">{{ customer.cpf }}</td>
                         <td class="tg-0lax column-list-table last-td">
-                            <ButtonTable classBtn="delete" textButton="Deletar" @click="togglePopUp()"/>
+                            <ButtonTable classBtn="delete" textButton="Deletar" @click="togglePopUpDelete()"/>
                             <ButtonTable classBtn="edit" textButton="Editar"/>
                         </td>
                     </tr>
                 </tbody>
     
-                <tbody v-if="!mokCustomers.length">
+                <tbody v-if="!customers.length">
                     <tr class="list-table">
                         <td colspan="5" class="tg-0lax column-list-table first-td last-td nullAlert">Nenhum cliente foi cadastrado!</td>
                     </tr>
@@ -44,7 +44,7 @@
             </table>
         </div>
         <Transition>
-            <PopUpDelete v-if="showPopUpDelete" @close="togglePopUp()" @deleteItem="deleteConfirm()"/>
+            <PopUpDelete v-if="showPopUpDelete" @close="togglePopUpDelete()" @deleteItem="deleteConfirm()"/>
         </Transition>
     </div>
 </template>
@@ -67,32 +67,33 @@ import PopUpDelete from '@/components/PopUpDelete.vue'
         data(){
             return{
                 showPopUpDelete: false,
-                mokCustomers:[{
+                customers:[]
+            }
+        },
+        methods:{
+            deleteConfirm(){
+                console.log("Item excluído com sucesso!")
+                this.togglePopUpDelete()
+            },
+            togglePopUpDelete(){
+                this.showPopUpDelete = !this.showPopUpDelete
+            },
+            getCustomers(){
+                this.customers = [{
                     name: 'Genara Souza',
                     email: 'genara7souza@gmail.com',
                     tel: '(91) 99844-3343',
                     cpf: '000.000.000-00'
                 },{
-                    name: 'Genara Souza',
-                    email: 'genara7souza@gmail.com',
-                    tel: '(91) 99844-3343',
-                    cpf: '000.000.000-00'
-                },{
-                    name: 'Genara Souza',
+                    name: 'Genara Souza 2',
                     email: 'genara7souza@gmail.com',
                     tel: '(91) 99844-3343',
                     cpf: '000.000.000-00'
                 }]
             }
         },
-        methods:{
-            deleteConfirm(){
-                console.log("Item excluído com sucesso!")
-                this.togglePopUp()
-            },
-            togglePopUp(){
-                this.showPopUpDelete = !this.showPopUpDelete
-            }
+        created(){
+            this.getCustomers()
         }
     }
 </script>

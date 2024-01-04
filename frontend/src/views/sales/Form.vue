@@ -11,7 +11,7 @@
             <h1>Adicionar venda</h1>
             <div class="form" id="form-top">
                 <div class="div-left">
-                    <InputSelect id="selectClient" label-for="selectClient" text-label="Cliente" v-model="sale.client" ref="saleClient" required/>
+                    <InputSelect id="selectCustomer" label-for="selectCustomer" text-label="Cliente" v-model="sale.customer" ref="saleCustomer" :customers="customers" required/>
                 </div>
                 <div class="div-right">
                     <InputDate id="date" label-for="date" text-label="Data de faturamento" v-model="sale.billingDate" ref="saleBillingDate" required/>
@@ -55,8 +55,7 @@
                         <td class="tg-0lax column-list-table">{{item.quantity}}</td>
                         <td class="tg-0lax column-list-table last-td">{{item.totalValueItem}}</td>
                         <td class="tg-0lax column-list-form last-td">
-                            <ButtonTable classBtn="delete" textButton="Deletar" @click="togglePopUp()"/>
-                            <ButtonTable classBtn="edit" textButton="Editar"/>
+                            <ButtonTable classBtn="delete" textButton="Deletar" @click="togglePopUpDelete(item)"/>
                         </td>
                     </tr>
                 </tbody>
@@ -71,7 +70,7 @@
             <pop-up v-if="popUp" @close="togglePopUpSucess()" :message="messagePopUp" :popUpClass="popUpSucessOrError"/>
         </Transition>
         <Transition>
-            <PopUpDelete v-if="showPopUpDelete" @close="togglePopUp()" @deleteItem="deleteConfirm()"/>
+            <PopUpDelete v-if="showPopUpDelete" @close="togglePopUpDelete()" @deleteItem="deleteConfirm()"/>
         </Transition>
     </div>
 </template>
@@ -103,8 +102,9 @@ import PopUpDelete from '@/components/PopUpDelete.vue'
         },
         data(){
             return{
+                customers: [],
                 sale:{
-                    client: '',
+                    customer: '',
                     billingDate: '',
                 },
                 item: {
@@ -114,12 +114,8 @@ import PopUpDelete from '@/components/PopUpDelete.vue'
                     totalValueItem: ''
                 },
                 finalValue: '',
-                itemsList: [{
-                    description: 'Batatinha',
-                    quantity: '2',
-                    unityValue: '2,25',
-                    totalValueItem: '4,50'
-                }],
+                itemsList: [],
+                index: '',
                 popUp: false,
                 popUpSucessOrError: 'sucess',
                 messagePopUp: '',
@@ -155,7 +151,7 @@ import PopUpDelete from '@/components/PopUpDelete.vue'
                 this.$refs.itemUnityValue.valid()
             },
             validadeSale(){
-                this.$refs.saleClient.valid()
+                this.$refs.saleCustomer.valid()
                 this.$refs.saleBillingDate.valid()
             },
             sendForm(){
@@ -166,7 +162,7 @@ import PopUpDelete from '@/components/PopUpDelete.vue'
                 }
 
                 this.validadeSale()
-                if(this.$refs.saleClient.valid() && this.$refs.saleBillingDate.valid()){
+                if(this.$refs.saleCustomer.valid() && this.$refs.saleBillingDate.valid()){
                     this.popUpSucessOrError = 'sucess'
                     this.togglePopUpSucess("Formulário enviado com sucesso!")
                     this.popUpRedirect = true
@@ -188,7 +184,7 @@ import PopUpDelete from '@/components/PopUpDelete.vue'
                 this.itemsList = []
                 this.finalValue = ''
                 this.sale = {
-                    client: '',
+                    customer: '',
                     billingDate: ''
                 }
             },
@@ -207,13 +203,30 @@ import PopUpDelete from '@/components/PopUpDelete.vue'
                 this.popUp = !this.popUp
             },
             deleteConfirm(){
-                console.log("Item excluído com sucesso!")
-                this.togglePopUp()
+                this.itemsList.splice(this.index, 1)
+                this.togglePopUpDelete()
             },
-            togglePopUp(){
+            togglePopUpDelete(item){
+                if (item)
+                    this.index = this.itemsList.indexOf(item)
                 this.showPopUpDelete = !this.showPopUpDelete
+            },
+            getCustomers(){
+                this.customers = [{
+                    id: 1,
+                    full_name: 'Cliente n. 1'
+                },{
+                    id: 2,
+                    full_name: 'Nome do 2º Cliente'
+                },{
+                    id: 3,
+                    full_name: 'Terceiro Cliente'
+                }]
             }
         },
+        created(){
+            this.getCustomers()
+        }
     }
 </script>
 
