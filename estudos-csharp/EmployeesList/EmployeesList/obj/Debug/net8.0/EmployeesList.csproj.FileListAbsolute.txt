@@ -1,0 +1,14 @@
+C:\Users\Lyncas\Desktop\estudos-csharp\EmployeesList\EmployeesList\bin\Debug\net8.0\EmployeesList.exe
+C:\Users\Lyncas\Desktop\estudos-csharp\EmployeesList\EmployeesList\bin\Debug\net8.0\EmployeesList.deps.json
+C:\Users\Lyncas\Desktop\estudos-csharp\EmployeesList\EmployeesList\bin\Debug\net8.0\EmployeesList.runtimeconfig.json
+C:\Users\Lyncas\Desktop\estudos-csharp\EmployeesList\EmployeesList\bin\Debug\net8.0\EmployeesList.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\EmployeesList\EmployeesList\bin\Debug\net8.0\EmployeesList.pdb
+C:\Users\Lyncas\Desktop\estudos-csharp\EmployeesList\EmployeesList\obj\Debug\net8.0\EmployeesList.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lyncas\Desktop\estudos-csharp\EmployeesList\EmployeesList\obj\Debug\net8.0\EmployeesList.AssemblyInfoInputs.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\EmployeesList\EmployeesList\obj\Debug\net8.0\EmployeesList.AssemblyInfo.cs
+C:\Users\Lyncas\Desktop\estudos-csharp\EmployeesList\EmployeesList\obj\Debug\net8.0\EmployeesList.csproj.CoreCompileInputs.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\EmployeesList\EmployeesList\obj\Debug\net8.0\EmployeesList.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\EmployeesList\EmployeesList\obj\Debug\net8.0\refint\EmployeesList.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\EmployeesList\EmployeesList\obj\Debug\net8.0\EmployeesList.pdb
+C:\Users\Lyncas\Desktop\estudos-csharp\EmployeesList\EmployeesList\obj\Debug\net8.0\EmployeesList.genruntimeconfig.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\EmployeesList\EmployeesList\obj\Debug\net8.0\ref\EmployeesList.dll

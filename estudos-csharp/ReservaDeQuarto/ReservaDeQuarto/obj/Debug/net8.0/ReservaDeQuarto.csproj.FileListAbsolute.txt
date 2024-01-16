@@ -1,0 +1,14 @@
+C:\Users\Lyncas\Desktop\estudos-csharp\ReservaDeQuarto\ReservaDeQuarto\obj\Debug\net8.0\ReservaDeQuarto.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lyncas\Desktop\estudos-csharp\ReservaDeQuarto\ReservaDeQuarto\obj\Debug\net8.0\ReservaDeQuarto.AssemblyInfoInputs.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\ReservaDeQuarto\ReservaDeQuarto\obj\Debug\net8.0\ReservaDeQuarto.AssemblyInfo.cs
+C:\Users\Lyncas\Desktop\estudos-csharp\ReservaDeQuarto\ReservaDeQuarto\obj\Debug\net8.0\ReservaDeQuarto.csproj.CoreCompileInputs.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\ReservaDeQuarto\ReservaDeQuarto\bin\Debug\net8.0\ReservaDeQuarto.exe
+C:\Users\Lyncas\Desktop\estudos-csharp\ReservaDeQuarto\ReservaDeQuarto\bin\Debug\net8.0\ReservaDeQuarto.deps.json
+C:\Users\Lyncas\Desktop\estudos-csharp\ReservaDeQuarto\ReservaDeQuarto\bin\Debug\net8.0\ReservaDeQuarto.runtimeconfig.json
+C:\Users\Lyncas\Desktop\estudos-csharp\ReservaDeQuarto\ReservaDeQuarto\bin\Debug\net8.0\ReservaDeQuarto.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\ReservaDeQuarto\ReservaDeQuarto\bin\Debug\net8.0\ReservaDeQuarto.pdb
+C:\Users\Lyncas\Desktop\estudos-csharp\ReservaDeQuarto\ReservaDeQuarto\obj\Debug\net8.0\ReservaDeQuarto.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\ReservaDeQuarto\ReservaDeQuarto\obj\Debug\net8.0\refint\ReservaDeQuarto.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\ReservaDeQuarto\ReservaDeQuarto\obj\Debug\net8.0\ReservaDeQuarto.pdb
+C:\Users\Lyncas\Desktop\estudos-csharp\ReservaDeQuarto\ReservaDeQuarto\obj\Debug\net8.0\ReservaDeQuarto.genruntimeconfig.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\ReservaDeQuarto\ReservaDeQuarto\obj\Debug\net8.0\ref\ReservaDeQuarto.dll

@@ -1,0 +1,7 @@
+C:\Users\Lyncas\Desktop\estudos-csharp\triangulo\triangulo\bin\Debug\triangulo.exe.config
+C:\Users\Lyncas\Desktop\estudos-csharp\triangulo\triangulo\bin\Debug\triangulo.exe
+C:\Users\Lyncas\Desktop\estudos-csharp\triangulo\triangulo\bin\Debug\triangulo.pdb
+C:\Users\Lyncas\Desktop\estudos-csharp\triangulo\triangulo\obj\Debug\triangulo.csproj.AssemblyReference.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\triangulo\triangulo\obj\Debug\triangulo.csproj.CoreCompileInputs.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\triangulo\triangulo\obj\Debug\triangulo.exe
+C:\Users\Lyncas\Desktop\estudos-csharp\triangulo\triangulo\obj\Debug\triangulo.pdb

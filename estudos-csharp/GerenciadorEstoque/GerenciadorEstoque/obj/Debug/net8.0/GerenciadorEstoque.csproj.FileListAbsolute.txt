@@ -1,0 +1,14 @@
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciadorEstoque\GerenciadorEstoque\bin\Debug\net8.0\GerenciadorEstoque.exe
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciadorEstoque\GerenciadorEstoque\bin\Debug\net8.0\GerenciadorEstoque.deps.json
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciadorEstoque\GerenciadorEstoque\bin\Debug\net8.0\GerenciadorEstoque.runtimeconfig.json
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciadorEstoque\GerenciadorEstoque\bin\Debug\net8.0\GerenciadorEstoque.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciadorEstoque\GerenciadorEstoque\bin\Debug\net8.0\GerenciadorEstoque.pdb
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciadorEstoque\GerenciadorEstoque\obj\Debug\net8.0\GerenciadorEstoque.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciadorEstoque\GerenciadorEstoque\obj\Debug\net8.0\GerenciadorEstoque.AssemblyInfoInputs.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciadorEstoque\GerenciadorEstoque\obj\Debug\net8.0\GerenciadorEstoque.AssemblyInfo.cs
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciadorEstoque\GerenciadorEstoque\obj\Debug\net8.0\GerenciadorEstoque.csproj.CoreCompileInputs.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciadorEstoque\GerenciadorEstoque\obj\Debug\net8.0\GerenciadorEstoque.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciadorEstoque\GerenciadorEstoque\obj\Debug\net8.0\refint\GerenciadorEstoque.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciadorEstoque\GerenciadorEstoque\obj\Debug\net8.0\GerenciadorEstoque.pdb
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciadorEstoque\GerenciadorEstoque\obj\Debug\net8.0\GerenciadorEstoque.genruntimeconfig.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciadorEstoque\GerenciadorEstoque\obj\Debug\net8.0\ref\GerenciadorEstoque.dll

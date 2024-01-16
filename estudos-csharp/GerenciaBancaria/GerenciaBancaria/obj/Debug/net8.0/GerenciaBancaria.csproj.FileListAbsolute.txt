@@ -1,0 +1,14 @@
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciaBancaria\GerenciaBancaria\bin\Debug\net8.0\GerenciaBancaria.exe
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciaBancaria\GerenciaBancaria\bin\Debug\net8.0\GerenciaBancaria.deps.json
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciaBancaria\GerenciaBancaria\bin\Debug\net8.0\GerenciaBancaria.runtimeconfig.json
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciaBancaria\GerenciaBancaria\bin\Debug\net8.0\GerenciaBancaria.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciaBancaria\GerenciaBancaria\bin\Debug\net8.0\GerenciaBancaria.pdb
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciaBancaria\GerenciaBancaria\obj\Debug\net8.0\GerenciaBancaria.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciaBancaria\GerenciaBancaria\obj\Debug\net8.0\GerenciaBancaria.AssemblyInfoInputs.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciaBancaria\GerenciaBancaria\obj\Debug\net8.0\GerenciaBancaria.AssemblyInfo.cs
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciaBancaria\GerenciaBancaria\obj\Debug\net8.0\GerenciaBancaria.csproj.CoreCompileInputs.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciaBancaria\GerenciaBancaria\obj\Debug\net8.0\GerenciaBancaria.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciaBancaria\GerenciaBancaria\obj\Debug\net8.0\refint\GerenciaBancaria.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciaBancaria\GerenciaBancaria\obj\Debug\net8.0\GerenciaBancaria.pdb
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciaBancaria\GerenciaBancaria\obj\Debug\net8.0\GerenciaBancaria.genruntimeconfig.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciaBancaria\GerenciaBancaria\obj\Debug\net8.0\ref\GerenciaBancaria.dll
