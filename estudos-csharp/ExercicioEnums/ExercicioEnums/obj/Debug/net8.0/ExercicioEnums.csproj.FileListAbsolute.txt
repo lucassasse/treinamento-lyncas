@@ -1,0 +1,14 @@
+C:\Users\Lyncas\Desktop\estudos-csharp\ExercicioEnums\ExercicioEnums\bin\Debug\net8.0\ExercicioEnums.exe
+C:\Users\Lyncas\Desktop\estudos-csharp\ExercicioEnums\ExercicioEnums\bin\Debug\net8.0\ExercicioEnums.deps.json
+C:\Users\Lyncas\Desktop\estudos-csharp\ExercicioEnums\ExercicioEnums\bin\Debug\net8.0\ExercicioEnums.runtimeconfig.json
+C:\Users\Lyncas\Desktop\estudos-csharp\ExercicioEnums\ExercicioEnums\bin\Debug\net8.0\ExercicioEnums.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\ExercicioEnums\ExercicioEnums\bin\Debug\net8.0\ExercicioEnums.pdb
+C:\Users\Lyncas\Desktop\estudos-csharp\ExercicioEnums\ExercicioEnums\obj\Debug\net8.0\ExercicioEnums.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lyncas\Desktop\estudos-csharp\ExercicioEnums\ExercicioEnums\obj\Debug\net8.0\ExercicioEnums.AssemblyInfoInputs.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\ExercicioEnums\ExercicioEnums\obj\Debug\net8.0\ExercicioEnums.AssemblyInfo.cs
+C:\Users\Lyncas\Desktop\estudos-csharp\ExercicioEnums\ExercicioEnums\obj\Debug\net8.0\ExercicioEnums.csproj.CoreCompileInputs.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\ExercicioEnums\ExercicioEnums\obj\Debug\net8.0\ExercicioEnums.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\ExercicioEnums\ExercicioEnums\obj\Debug\net8.0\refint\ExercicioEnums.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\ExercicioEnums\ExercicioEnums\obj\Debug\net8.0\ExercicioEnums.pdb
+C:\Users\Lyncas\Desktop\estudos-csharp\ExercicioEnums\ExercicioEnums\obj\Debug\net8.0\ExercicioEnums.genruntimeconfig.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\ExercicioEnums\ExercicioEnums\obj\Debug\net8.0\ref\ExercicioEnums.dll
