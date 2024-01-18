@@ -1,4 +1,6 @@
 ﻿using GerenciamentoPedidos.Entities.Enums;
+using System.Globalization;
+using System.Text;
 
 namespace GerenciamentoPedidos.Entities {
     internal class Order {
@@ -32,7 +34,16 @@ namespace GerenciamentoPedidos.Entities {
         }
 
         public override string ToString() {
-            return "return";
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("Order moment: " + Moment.ToString("dd/MM/yyyy HH:mm:ss"));
+            sb.AppendLine("Order status: " + Status.ToString());
+            sb.AppendLine("Client: " + Client);
+            sb.AppendLine("Order items:");
+            foreach (OrderItem item in Items) {
+                sb.AppendLine(item.ToString());
+            }
+            sb.AppendLine("Total price: R$" + Total().ToString("F2", CultureInfo.InvariantCulture));
+            return sb.ToString();
         }
     }
 }

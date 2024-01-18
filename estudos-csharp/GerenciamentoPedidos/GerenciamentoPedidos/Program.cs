@@ -1,4 +1,8 @@
-﻿namespace GerenciamentoPedidos {
+﻿using System;
+using GerenciamentoPedidos.Entities;
+using GerenciamentoPedidos.Entities.Enums;
+
+namespace GerenciamentoPedidos {
     internal class Program {
         static void Main(string[] args) {
             Console.WriteLine("Enter client data");
@@ -9,9 +13,13 @@
             Console.Write("Birth date (DD/MM/YYYY): ");
             string date = Console.ReadLine();
 
+            Client client = new Client(name, email, date);
+
             Console.WriteLine("Enter order data");
-            Console.Write("Status: ");
-            string status = Console.ReadLine();
+            Console.Write("Status (PendingPayment/ Processing/ Shipped/ Delivery): ");
+            OrderStatus status = Enum.Parse<OrderStatus>(Console.ReadLine());
+
+            Order order = new Order(DateTime.Now, status, client);
 
             Console.Write("How many items to this order?: ");
             int n = int.Parse(Console.ReadLine());
@@ -23,11 +31,16 @@
                 double productPrice = double.Parse(Console.ReadLine());
                 Console.Write("Quantity: ");
                 int quantity = int.Parse(Console.ReadLine());
+
+                Product product = new Product(productName, productPrice);
+                OrderItem orderItem = new OrderItem(quantity, productPrice, product);
+                
+                order.AddItem(orderItem);
             }
 
-            Console.WriteLine("ORDER SUMARY");
-
-            Console.WriteLine("Order items");
+            Console.WriteLine();
+            Console.WriteLine("ORDER SUMMARY");
+            Console.WriteLine(order);
         }
     }
 }

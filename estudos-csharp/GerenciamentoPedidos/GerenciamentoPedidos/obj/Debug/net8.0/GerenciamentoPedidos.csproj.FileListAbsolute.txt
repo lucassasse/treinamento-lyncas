@@ -1,0 +1,14 @@
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoPedidos\GerenciamentoPedidos\bin\Debug\net8.0\GerenciamentoPedidos.exe
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoPedidos\GerenciamentoPedidos\bin\Debug\net8.0\GerenciamentoPedidos.deps.json
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoPedidos\GerenciamentoPedidos\bin\Debug\net8.0\GerenciamentoPedidos.runtimeconfig.json
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoPedidos\GerenciamentoPedidos\bin\Debug\net8.0\GerenciamentoPedidos.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoPedidos\GerenciamentoPedidos\bin\Debug\net8.0\GerenciamentoPedidos.pdb
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoPedidos\GerenciamentoPedidos\obj\Debug\net8.0\GerenciamentoPedidos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoPedidos\GerenciamentoPedidos\obj\Debug\net8.0\GerenciamentoPedidos.AssemblyInfoInputs.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoPedidos\GerenciamentoPedidos\obj\Debug\net8.0\GerenciamentoPedidos.AssemblyInfo.cs
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoPedidos\GerenciamentoPedidos\obj\Debug\net8.0\GerenciamentoPedidos.csproj.CoreCompileInputs.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoPedidos\GerenciamentoPedidos\obj\Debug\net8.0\GerenciamentoPedidos.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoPedidos\GerenciamentoPedidos\obj\Debug\net8.0\refint\GerenciamentoPedidos.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoPedidos\GerenciamentoPedidos\obj\Debug\net8.0\GerenciamentoPedidos.pdb
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoPedidos\GerenciamentoPedidos\obj\Debug\net8.0\GerenciamentoPedidos.genruntimeconfig.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoPedidos\GerenciamentoPedidos\obj\Debug\net8.0\ref\GerenciamentoPedidos.dll
