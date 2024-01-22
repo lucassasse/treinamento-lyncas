@@ -1,0 +1,14 @@
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoContribuintes\GerenciamentoContribuintes\bin\Debug\net8.0\GerenciamentoContribuintes.exe
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoContribuintes\GerenciamentoContribuintes\bin\Debug\net8.0\GerenciamentoContribuintes.deps.json
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoContribuintes\GerenciamentoContribuintes\bin\Debug\net8.0\GerenciamentoContribuintes.runtimeconfig.json
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoContribuintes\GerenciamentoContribuintes\bin\Debug\net8.0\GerenciamentoContribuintes.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoContribuintes\GerenciamentoContribuintes\bin\Debug\net8.0\GerenciamentoContribuintes.pdb
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoContribuintes\GerenciamentoContribuintes\obj\Debug\net8.0\GerenciamentoContribuintes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoContribuintes\GerenciamentoContribuintes\obj\Debug\net8.0\GerenciamentoContribuintes.AssemblyInfoInputs.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoContribuintes\GerenciamentoContribuintes\obj\Debug\net8.0\GerenciamentoContribuintes.AssemblyInfo.cs
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoContribuintes\GerenciamentoContribuintes\obj\Debug\net8.0\GerenciamentoContribuintes.csproj.CoreCompileInputs.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoContribuintes\GerenciamentoContribuintes\obj\Debug\net8.0\GerenciamentoContribuintes.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoContribuintes\GerenciamentoContribuintes\obj\Debug\net8.0\refint\GerenciamentoContribuintes.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoContribuintes\GerenciamentoContribuintes\obj\Debug\net8.0\GerenciamentoContribuintes.pdb
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoContribuintes\GerenciamentoContribuintes\obj\Debug\net8.0\GerenciamentoContribuintes.genruntimeconfig.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoContribuintes\GerenciamentoContribuintes\obj\Debug\net8.0\ref\GerenciamentoContribuintes.dll

@@ -1,0 +1,14 @@
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoEtiquetas\GerenciamentoEtiquetas\bin\Debug\net8.0\GerenciamentoEtiquetas.exe
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoEtiquetas\GerenciamentoEtiquetas\bin\Debug\net8.0\GerenciamentoEtiquetas.deps.json
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoEtiquetas\GerenciamentoEtiquetas\bin\Debug\net8.0\GerenciamentoEtiquetas.runtimeconfig.json
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoEtiquetas\GerenciamentoEtiquetas\bin\Debug\net8.0\GerenciamentoEtiquetas.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoEtiquetas\GerenciamentoEtiquetas\bin\Debug\net8.0\GerenciamentoEtiquetas.pdb
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoEtiquetas\GerenciamentoEtiquetas\obj\Debug\net8.0\GerenciamentoEtiquetas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoEtiquetas\GerenciamentoEtiquetas\obj\Debug\net8.0\GerenciamentoEtiquetas.AssemblyInfoInputs.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoEtiquetas\GerenciamentoEtiquetas\obj\Debug\net8.0\GerenciamentoEtiquetas.AssemblyInfo.cs
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoEtiquetas\GerenciamentoEtiquetas\obj\Debug\net8.0\GerenciamentoEtiquetas.csproj.CoreCompileInputs.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoEtiquetas\GerenciamentoEtiquetas\obj\Debug\net8.0\GerenciamentoEtiquetas.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoEtiquetas\GerenciamentoEtiquetas\obj\Debug\net8.0\refint\GerenciamentoEtiquetas.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoEtiquetas\GerenciamentoEtiquetas\obj\Debug\net8.0\GerenciamentoEtiquetas.pdb
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoEtiquetas\GerenciamentoEtiquetas\obj\Debug\net8.0\GerenciamentoEtiquetas.genruntimeconfig.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoEtiquetas\GerenciamentoEtiquetas\obj\Debug\net8.0\ref\GerenciamentoEtiquetas.dll
