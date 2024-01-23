@@ -1,0 +1,14 @@
+C:\Users\Lyncas\Desktop\estudos-csharp\AluguelCarros\AluguelCarros\bin\Debug\net8.0\AluguelCarros.exe
+C:\Users\Lyncas\Desktop\estudos-csharp\AluguelCarros\AluguelCarros\bin\Debug\net8.0\AluguelCarros.deps.json
+C:\Users\Lyncas\Desktop\estudos-csharp\AluguelCarros\AluguelCarros\bin\Debug\net8.0\AluguelCarros.runtimeconfig.json
+C:\Users\Lyncas\Desktop\estudos-csharp\AluguelCarros\AluguelCarros\bin\Debug\net8.0\AluguelCarros.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\AluguelCarros\AluguelCarros\bin\Debug\net8.0\AluguelCarros.pdb
+C:\Users\Lyncas\Desktop\estudos-csharp\AluguelCarros\AluguelCarros\obj\Debug\net8.0\AluguelCarros.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lyncas\Desktop\estudos-csharp\AluguelCarros\AluguelCarros\obj\Debug\net8.0\AluguelCarros.AssemblyInfoInputs.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\AluguelCarros\AluguelCarros\obj\Debug\net8.0\AluguelCarros.AssemblyInfo.cs
+C:\Users\Lyncas\Desktop\estudos-csharp\AluguelCarros\AluguelCarros\obj\Debug\net8.0\AluguelCarros.csproj.CoreCompileInputs.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\AluguelCarros\AluguelCarros\obj\Debug\net8.0\AluguelCarros.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\AluguelCarros\AluguelCarros\obj\Debug\net8.0\refint\AluguelCarros.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\AluguelCarros\AluguelCarros\obj\Debug\net8.0\AluguelCarros.pdb
+C:\Users\Lyncas\Desktop\estudos-csharp\AluguelCarros\AluguelCarros\obj\Debug\net8.0\AluguelCarros.genruntimeconfig.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\AluguelCarros\AluguelCarros\obj\Debug\net8.0\ref\AluguelCarros.dll
