@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "4tHERAxDIwhQYMTOICvFQrSoZJwoxmboFrnGNQCF7AgqlRsUD7N9BwEmzV5ZQLsgpQCzme9k7UtrcpOu9JFHIQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Lyncas\\Desktop\\InvercaoDependencia\\InvercaoDependencia\\InvercaoDependencia.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Lyncas\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.0\\microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "C:\\Users\\Lyncas\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Lyncas\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.14\\microsoft.windowsdesktop.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\Lyncas\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.14\\microsoft.netcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\Lyncas\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.14\\microsoft.aspnetcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\Lyncas\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.14\\microsoft.netcore.app.host.win-x64.7.0.14.nupkg.sha512"
+  ],
+  "logs": []
+}

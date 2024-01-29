@@ -1,0 +1,14 @@
+C:\Users\Lyncas\Desktop\estudos-csharp\OrganizacaoDadosTabelaLINQ\OrganizacaoDadosTabelaLINQ\bin\Debug\net8.0\OrganizacaoDadosTabelaLINQ.exe
+C:\Users\Lyncas\Desktop\estudos-csharp\OrganizacaoDadosTabelaLINQ\OrganizacaoDadosTabelaLINQ\bin\Debug\net8.0\OrganizacaoDadosTabelaLINQ.deps.json
+C:\Users\Lyncas\Desktop\estudos-csharp\OrganizacaoDadosTabelaLINQ\OrganizacaoDadosTabelaLINQ\bin\Debug\net8.0\OrganizacaoDadosTabelaLINQ.runtimeconfig.json
+C:\Users\Lyncas\Desktop\estudos-csharp\OrganizacaoDadosTabelaLINQ\OrganizacaoDadosTabelaLINQ\bin\Debug\net8.0\OrganizacaoDadosTabelaLINQ.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\OrganizacaoDadosTabelaLINQ\OrganizacaoDadosTabelaLINQ\bin\Debug\net8.0\OrganizacaoDadosTabelaLINQ.pdb
+C:\Users\Lyncas\Desktop\estudos-csharp\OrganizacaoDadosTabelaLINQ\OrganizacaoDadosTabelaLINQ\obj\Debug\net8.0\OrganizacaoDadosTabelaLINQ.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lyncas\Desktop\estudos-csharp\OrganizacaoDadosTabelaLINQ\OrganizacaoDadosTabelaLINQ\obj\Debug\net8.0\OrganizacaoDadosTabelaLINQ.AssemblyInfoInputs.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\OrganizacaoDadosTabelaLINQ\OrganizacaoDadosTabelaLINQ\obj\Debug\net8.0\OrganizacaoDadosTabelaLINQ.AssemblyInfo.cs
+C:\Users\Lyncas\Desktop\estudos-csharp\OrganizacaoDadosTabelaLINQ\OrganizacaoDadosTabelaLINQ\obj\Debug\net8.0\OrganizacaoDadosTabelaLINQ.csproj.CoreCompileInputs.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\OrganizacaoDadosTabelaLINQ\OrganizacaoDadosTabelaLINQ\obj\Debug\net8.0\OrganizacaoDadosTabelaLINQ.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\OrganizacaoDadosTabelaLINQ\OrganizacaoDadosTabelaLINQ\obj\Debug\net8.0\refint\OrganizacaoDadosTabelaLINQ.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\OrganizacaoDadosTabelaLINQ\OrganizacaoDadosTabelaLINQ\obj\Debug\net8.0\OrganizacaoDadosTabelaLINQ.pdb
+C:\Users\Lyncas\Desktop\estudos-csharp\OrganizacaoDadosTabelaLINQ\OrganizacaoDadosTabelaLINQ\obj\Debug\net8.0\OrganizacaoDadosTabelaLINQ.genruntimeconfig.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\OrganizacaoDadosTabelaLINQ\OrganizacaoDadosTabelaLINQ\obj\Debug\net8.0\ref\OrganizacaoDadosTabelaLINQ.dll

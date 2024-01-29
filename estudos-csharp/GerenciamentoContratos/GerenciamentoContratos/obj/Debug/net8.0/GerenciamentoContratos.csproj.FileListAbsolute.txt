@@ -1,0 +1,14 @@
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoContratos\GerenciamentoContratos\bin\Debug\net8.0\GerenciamentoContratos.exe
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoContratos\GerenciamentoContratos\bin\Debug\net8.0\GerenciamentoContratos.deps.json
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoContratos\GerenciamentoContratos\bin\Debug\net8.0\GerenciamentoContratos.runtimeconfig.json
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoContratos\GerenciamentoContratos\bin\Debug\net8.0\GerenciamentoContratos.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoContratos\GerenciamentoContratos\bin\Debug\net8.0\GerenciamentoContratos.pdb
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoContratos\GerenciamentoContratos\obj\Debug\net8.0\GerenciamentoContratos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoContratos\GerenciamentoContratos\obj\Debug\net8.0\GerenciamentoContratos.AssemblyInfoInputs.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoContratos\GerenciamentoContratos\obj\Debug\net8.0\GerenciamentoContratos.AssemblyInfo.cs
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoContratos\GerenciamentoContratos\obj\Debug\net8.0\GerenciamentoContratos.csproj.CoreCompileInputs.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoContratos\GerenciamentoContratos\obj\Debug\net8.0\GerenciamentoContratos.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoContratos\GerenciamentoContratos\obj\Debug\net8.0\refint\GerenciamentoContratos.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoContratos\GerenciamentoContratos\obj\Debug\net8.0\GerenciamentoContratos.pdb
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoContratos\GerenciamentoContratos\obj\Debug\net8.0\GerenciamentoContratos.genruntimeconfig.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\GerenciamentoContratos\GerenciamentoContratos\obj\Debug\net8.0\ref\GerenciamentoContratos.dll

@@ -1,0 +1,14 @@
+C:\Users\Lyncas\Desktop\estudos-csharp\RoletaDeletadoraDePasta\RoletaDeletadoraDePasta\bin\Debug\net8.0\RoletaDeletadoraDePasta.exe
+C:\Users\Lyncas\Desktop\estudos-csharp\RoletaDeletadoraDePasta\RoletaDeletadoraDePasta\bin\Debug\net8.0\RoletaDeletadoraDePasta.deps.json
+C:\Users\Lyncas\Desktop\estudos-csharp\RoletaDeletadoraDePasta\RoletaDeletadoraDePasta\bin\Debug\net8.0\RoletaDeletadoraDePasta.runtimeconfig.json
+C:\Users\Lyncas\Desktop\estudos-csharp\RoletaDeletadoraDePasta\RoletaDeletadoraDePasta\bin\Debug\net8.0\RoletaDeletadoraDePasta.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\RoletaDeletadoraDePasta\RoletaDeletadoraDePasta\bin\Debug\net8.0\RoletaDeletadoraDePasta.pdb
+C:\Users\Lyncas\Desktop\estudos-csharp\RoletaDeletadoraDePasta\RoletaDeletadoraDePasta\obj\Debug\net8.0\RoletaDeletadoraDePasta.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lyncas\Desktop\estudos-csharp\RoletaDeletadoraDePasta\RoletaDeletadoraDePasta\obj\Debug\net8.0\RoletaDeletadoraDePasta.AssemblyInfoInputs.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\RoletaDeletadoraDePasta\RoletaDeletadoraDePasta\obj\Debug\net8.0\RoletaDeletadoraDePasta.AssemblyInfo.cs
+C:\Users\Lyncas\Desktop\estudos-csharp\RoletaDeletadoraDePasta\RoletaDeletadoraDePasta\obj\Debug\net8.0\RoletaDeletadoraDePasta.csproj.CoreCompileInputs.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\RoletaDeletadoraDePasta\RoletaDeletadoraDePasta\obj\Debug\net8.0\RoletaDeletadoraDePasta.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\RoletaDeletadoraDePasta\RoletaDeletadoraDePasta\obj\Debug\net8.0\refint\RoletaDeletadoraDePasta.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\RoletaDeletadoraDePasta\RoletaDeletadoraDePasta\obj\Debug\net8.0\RoletaDeletadoraDePasta.pdb
+C:\Users\Lyncas\Desktop\estudos-csharp\RoletaDeletadoraDePasta\RoletaDeletadoraDePasta\obj\Debug\net8.0\RoletaDeletadoraDePasta.genruntimeconfig.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\RoletaDeletadoraDePasta\RoletaDeletadoraDePasta\obj\Debug\net8.0\ref\RoletaDeletadoraDePasta.dll

@@ -1,0 +1,14 @@
+C:\Users\Lyncas\Desktop\estudos-csharp\ControleExibicaoProdutosLINQ\ControleExibicaoProdutosLINQ\bin\Debug\net8.0\ControleExibicaoProdutosLINQ.exe
+C:\Users\Lyncas\Desktop\estudos-csharp\ControleExibicaoProdutosLINQ\ControleExibicaoProdutosLINQ\bin\Debug\net8.0\ControleExibicaoProdutosLINQ.deps.json
+C:\Users\Lyncas\Desktop\estudos-csharp\ControleExibicaoProdutosLINQ\ControleExibicaoProdutosLINQ\bin\Debug\net8.0\ControleExibicaoProdutosLINQ.runtimeconfig.json
+C:\Users\Lyncas\Desktop\estudos-csharp\ControleExibicaoProdutosLINQ\ControleExibicaoProdutosLINQ\bin\Debug\net8.0\ControleExibicaoProdutosLINQ.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\ControleExibicaoProdutosLINQ\ControleExibicaoProdutosLINQ\bin\Debug\net8.0\ControleExibicaoProdutosLINQ.pdb
+C:\Users\Lyncas\Desktop\estudos-csharp\ControleExibicaoProdutosLINQ\ControleExibicaoProdutosLINQ\obj\Debug\net8.0\ControleExibicaoProdutosLINQ.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lyncas\Desktop\estudos-csharp\ControleExibicaoProdutosLINQ\ControleExibicaoProdutosLINQ\obj\Debug\net8.0\ControleExibicaoProdutosLINQ.AssemblyInfoInputs.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\ControleExibicaoProdutosLINQ\ControleExibicaoProdutosLINQ\obj\Debug\net8.0\ControleExibicaoProdutosLINQ.AssemblyInfo.cs
+C:\Users\Lyncas\Desktop\estudos-csharp\ControleExibicaoProdutosLINQ\ControleExibicaoProdutosLINQ\obj\Debug\net8.0\ControleExibicaoProdutosLINQ.csproj.CoreCompileInputs.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\ControleExibicaoProdutosLINQ\ControleExibicaoProdutosLINQ\obj\Debug\net8.0\ControleExibicaoProdutosLINQ.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\ControleExibicaoProdutosLINQ\ControleExibicaoProdutosLINQ\obj\Debug\net8.0\refint\ControleExibicaoProdutosLINQ.dll
+C:\Users\Lyncas\Desktop\estudos-csharp\ControleExibicaoProdutosLINQ\ControleExibicaoProdutosLINQ\obj\Debug\net8.0\ControleExibicaoProdutosLINQ.pdb
+C:\Users\Lyncas\Desktop\estudos-csharp\ControleExibicaoProdutosLINQ\ControleExibicaoProdutosLINQ\obj\Debug\net8.0\ControleExibicaoProdutosLINQ.genruntimeconfig.cache
+C:\Users\Lyncas\Desktop\estudos-csharp\ControleExibicaoProdutosLINQ\ControleExibicaoProdutosLINQ\obj\Debug\net8.0\ref\ControleExibicaoProdutosLINQ.dll
