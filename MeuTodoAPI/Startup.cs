@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using MeuTodoAPI.Data;
+﻿using MeuTodoAPI.Data;
 
 namespace MeuTodo
 {
@@ -9,7 +6,10 @@ namespace MeuTodo
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers().AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
+            });
             services.AddDbContext<AppDbContext>();
         }
 
