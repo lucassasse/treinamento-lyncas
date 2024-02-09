@@ -4,7 +4,6 @@ namespace CustomerApiOnion.Domain.ViewModels
 {
     public class CustomerViewModel
     {
-        public int Id { get; set; }
         [Required]
         public string FullName { get; set; }
         [Required]

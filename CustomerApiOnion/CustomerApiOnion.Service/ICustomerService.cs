@@ -1,13 +1,14 @@
-﻿using CustomerApiOnion.Domain.ViewModels;
+﻿using CustomerApiOnion.Domain.Models;
+using CustomerApiOnion.Domain.ViewModels;
 
 namespace CustomerApiOnion.Service
 {
     public interface ICustomerService
     {
-        Task<List<CustomerViewModel>> GetAllAsync();
-        Task<CustomerViewModel> GetByIdAsync(int id);
-        Task<bool> PostAsync(CustomerViewModel customerViewModel);
-        Task<bool> UpdateAsync(CustomerViewModel customerViewModel);
-        Task<bool> DeleteAsync(int id);
+        Task<List<Customer>> GetAllAsync();
+        Task<Customer> GetByIdAsync(int id);
+        Task<Customer> PostAsync(CustomerViewModel customerViewModel);
+        Task<Customer> UpdateAsync(CustomerViewModel customerViewModel, int id);
+        Task<Customer> DeleteAsync(int id);
     }
 }

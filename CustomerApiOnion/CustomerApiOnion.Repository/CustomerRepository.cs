@@ -20,54 +20,28 @@ namespace CustomerApiOnion.Repository
 
         public async Task<Customer> GetById(int id)
         {
-            var result = await _context.Customer.Where(e => e.Id == id).FirstOrDefaultAsync();
-            return result;
+            return await _context.Customer.FirstOrDefaultAsync(e => e.Id == id);
         }
         
-        public async Task<bool> Post(Customer customer)
+        public async Task<Customer> Post(Customer customer)
         {
-            try
-            {
-                await _context.Customer.AddAsync(customer);
-                await _context.SaveChangesAsync();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
+            await _context.Customer.AddAsync(customer);
+            await _context.SaveChangesAsync();
+            return customer;
         }
-
-        public async Task<bool> Update(Customer customer)
+        
+        public async Task<Customer> Update(Customer customer)
         {
-            try
-            {
-                _context.Customer.Update(customer);
-                await _context.SaveChangesAsync();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
+            _context.Customer.Update(customer);
+            await _context.SaveChangesAsync();
+            return customer;
         }
-
-        public async Task<bool> Delete(int id)
+        
+        public async Task<Customer> Delete(Customer customer)
         {
-            try
-            {
-                var result = await _context.Customer.Where(e => e.Id == id).FirstOrDefaultAsync();
-                if (result != null)
-                {
-                    _context.Customer.Remove(result);
-                    await _context.SaveChangesAsync();
-                }
-                return true;
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
+            _context.Customer.Remove(customer);
+            await _context.SaveChangesAsync();
+            return customer;
         }
     }
 }

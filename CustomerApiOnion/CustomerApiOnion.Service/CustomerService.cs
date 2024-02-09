@@ -13,13 +13,13 @@ namespace CustomerApiOnion.Service
             _customerRepository = customerRepository;
         }
 
-        public async Task<List<CustomerViewModel>> GetAllAsync()
+        public async Task<List<Customer>> GetAllAsync()
         {
-            var customerList = new List<CustomerViewModel>();
+            var customerList = new List<Customer>();
             var result = await _customerRepository.GetAll();
             foreach (var item in result)
             {
-                customerList.Add(new CustomerViewModel
+                customerList.Add(new Customer
                 {
                     Id = item.Id,
                     FullName = item.FullName,
@@ -31,73 +31,40 @@ namespace CustomerApiOnion.Service
             return customerList;
         }
 
-        public async Task<CustomerViewModel> GetByIdAsync(int id)
+        public async Task<Customer> GetByIdAsync(int id)
         {
-            var result = await _customerRepository.GetById(id);
-            var customerVM = new CustomerViewModel();
-            
-            customerVM.Id = id;
-            customerVM.FullName = result.FullName;
-            customerVM.Email = result.Email;
-            customerVM.Telephone = result.Telephone;
-            customerVM.Cpf = result.Cpf;
-
-            return customerVM;
+            return await _customerRepository.GetById(id);
         }
         
-        public async Task<bool> PostAsync(
-            CustomerViewModel customerVM)
+        public async Task<Customer> PostAsync(CustomerViewModel customer)
         {
-            try
-            {
-                var obj = new Customer();
-                obj.Id = customerVM.Id;
-                obj.FullName = customerVM.FullName;
-                obj.Email = customerVM.Email;
-                obj.Telephone = customerVM.Telephone;
-                obj.Cpf = customerVM.Cpf;
+            var obj = new Customer();
 
-                var result = await _customerRepository.Post(obj);
-                return result;
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
+            obj.FullName = customer.FullName;
+            obj.Email = customer.Email;
+            obj.Telephone = customer.Telephone;
+            obj.Cpf = customer.Cpf;
+
+            return await _customerRepository.Post(obj);
         }
-
-        public async Task<bool> UpdateAsync(
-            CustomerViewModel customerVM)
+        
+        public async Task<Customer> UpdateAsync(CustomerViewModel customer, int id)
         {
-            try
-            {
-                var obj = new Customer();
-                obj.Id = customerVM.Id;
-                obj.FullName = customerVM.FullName;
-                obj.Email = customerVM.Email;
-                obj.Telephone = customerVM.Telephone;
-                obj.Cpf = customerVM.Cpf;
+            var obj = await _customerRepository.GetById(id);
 
-                var result = await _customerRepository.Update(obj);
-                return result;
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
+            obj.FullName = customer.FullName;
+            obj.Email = customer.Email;
+            obj.Telephone = customer.Telephone;
+            obj.Cpf = customer.Cpf;
+
+            return await _customerRepository.Update(obj);
         }
-
-        public async Task<bool> DeleteAsync(int id)
+        
+        public async Task<Customer> DeleteAsync(int id)
         {
-            try
-            {
-                var result = await _customerRepository.Delete(id);
-                return result;
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
+            var customer = await _customerRepository.GetById(id);
+            await _customerRepository.Delete(customer);
+            return customer;
         }
     }
 }

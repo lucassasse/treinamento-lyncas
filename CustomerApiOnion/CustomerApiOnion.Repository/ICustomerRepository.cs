@@ -6,8 +6,8 @@ namespace CustomerApiOnion.Repository
     {
         Task<List<Customer>> GetAll();
         Task<Customer> GetById(int id);
-        Task<bool> Post(Customer customer);
-        Task<bool> Update(Customer customer);
-        Task<bool> Delete(int id);
+        Task<Customer> Post(Customer customer);
+        Task<Customer> Update(Customer customer);
+        Task<Customer> Delete(Customer customer);
     }
 }

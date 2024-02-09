@@ -1,5 +1,4 @@
-﻿using CustomerApiOnion.Domain.Models;
-using CustomerApiOnion.Domain.ViewModels;
+﻿using CustomerApiOnion.Domain.ViewModels;
 using CustomerApiOnion.Service;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,77 +18,91 @@ namespace CustomerApiOnion.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return Ok(await _customerService.GetAllAsync());
+            try
+            {
+                var customers = await _customerService.GetAllAsync();
+                return Ok(customers);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> Details([FromRoute] int id)
         {
-            if (id == null)
-                return NotFound();
+            try
+            {
+                if (id == null)
+                    return BadRequest("Invalid ID");
 
-            var customer = await _customerService.GetByIdAsync(id);
-            if (customer == null)
-                return NotFound();
+                var customer = await _customerService.GetByIdAsync(id);
+                if (customer == null)
+                    return NotFound("Customer not found");
 
-            return Ok(customer);
-        }
-
-
-        public IActionResult Create()
-        {
-            return Ok();
+                return Ok(customer);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(
-            [Bind("FullName,Email,Telephone,Cpf")] 
-            CustomerViewModel customer)
+        public async Task<IActionResult> Create(CustomerViewModel customer)
         {
-            if (ModelState.IsValid)
+            try
             {
-                await _customerService.PostAsync(customer);
+                if (ModelState.IsValid)
+                {
+                    await _customerService.PostAsync(customer);
+                    return Ok(customer);
+                }
+                else
+                {
+                    return BadRequest("Invalid model state");
+                }
             }
-            return Ok(customer);
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(
-            [FromRoute] int id)
+        public async Task<IActionResult> Put(CustomerViewModel customerVM, [FromRoute] int id)
         {
-            if (id == null)
+            try
             {
-                return NotFound();
-            }
+                var existingCustomer = await _customerService.GetByIdAsync(id);
+                if (existingCustomer == null)
+                    return NotFound("Customer not found");
 
-            var customer = await _customerService.GetByIdAsync(id);
-            if (customer == null)
+                var updatedCustomer = await _customerService.UpdateAsync(customerVM, id);
+                return Ok(updatedCustomer);
+            }
+            catch (Exception ex)
             {
-                return NotFound();
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
             }
-
-            await _customerService.UpdateAsync(customer);
-            return Ok(customer);
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(
-            [FromRoute] int id)
+        public async Task<IActionResult> Delete([FromRoute] int id)
         {
-            if (id == null)
+            try
             {
-                return NotFound();
+                var deletedCustomer = await _customerService.DeleteAsync(id);
+                if (deletedCustomer == null)
+                    return NotFound("Customer not found");
+
+                return Ok(deletedCustomer);
             }
-
-            var customer = await _customerService.GetByIdAsync(id);
-
-            if (customer == null)
+            catch (Exception ex)
             {
-                return NotFound();
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
             }
-
-            await _customerService.DeleteAsync(id);
-            return Ok(customer);
         }
     }
 }
