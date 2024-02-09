@@ -1,0 +1,17 @@
+C:\Users\Lyncas\Desktop\CustomerApiOnion\CustomerApiOnion.Repository\bin\Debug\net8.0\CustomerApiOnion.Repository.deps.json
+C:\Users\Lyncas\Desktop\CustomerApiOnion\CustomerApiOnion.Repository\bin\Debug\net8.0\CustomerApiOnion.Repository.runtimeconfig.json
+C:\Users\Lyncas\Desktop\CustomerApiOnion\CustomerApiOnion.Repository\bin\Debug\net8.0\CustomerApiOnion.Repository.dll
+C:\Users\Lyncas\Desktop\CustomerApiOnion\CustomerApiOnion.Repository\bin\Debug\net8.0\CustomerApiOnion.Repository.pdb
+C:\Users\Lyncas\Desktop\CustomerApiOnion\CustomerApiOnion.Repository\bin\Debug\net8.0\CustomerApiOnion.Domain.dll
+C:\Users\Lyncas\Desktop\CustomerApiOnion\CustomerApiOnion.Repository\bin\Debug\net8.0\CustomerApiOnion.Domain.pdb
+C:\Users\Lyncas\Desktop\CustomerApiOnion\CustomerApiOnion.Repository\obj\Debug\net8.0\CustomerApiOnion.Repository.csproj.AssemblyReference.cache
+C:\Users\Lyncas\Desktop\CustomerApiOnion\CustomerApiOnion.Repository\obj\Debug\net8.0\CustomerApiOnion.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lyncas\Desktop\CustomerApiOnion\CustomerApiOnion.Repository\obj\Debug\net8.0\CustomerApiOnion.Repository.AssemblyInfoInputs.cache
+C:\Users\Lyncas\Desktop\CustomerApiOnion\CustomerApiOnion.Repository\obj\Debug\net8.0\CustomerApiOnion.Repository.AssemblyInfo.cs
+C:\Users\Lyncas\Desktop\CustomerApiOnion\CustomerApiOnion.Repository\obj\Debug\net8.0\CustomerApiOnion.Repository.csproj.CoreCompileInputs.cache
+C:\Users\Lyncas\Desktop\CustomerApiOnion\CustomerApiOnion.Repository\obj\Debug\net8.0\CustomerApiOnion.Repository.csproj.CopyComplete
+C:\Users\Lyncas\Desktop\CustomerApiOnion\CustomerApiOnion.Repository\obj\Debug\net8.0\CustomerApiOnion.Repository.dll
+C:\Users\Lyncas\Desktop\CustomerApiOnion\CustomerApiOnion.Repository\obj\Debug\net8.0\refint\CustomerApiOnion.Repository.dll
+C:\Users\Lyncas\Desktop\CustomerApiOnion\CustomerApiOnion.Repository\obj\Debug\net8.0\CustomerApiOnion.Repository.pdb
+C:\Users\Lyncas\Desktop\CustomerApiOnion\CustomerApiOnion.Repository\obj\Debug\net8.0\CustomerApiOnion.Repository.genruntimeconfig.cache
+C:\Users\Lyncas\Desktop\CustomerApiOnion\CustomerApiOnion.Repository\obj\Debug\net8.0\ref\CustomerApiOnion.Repository.dll

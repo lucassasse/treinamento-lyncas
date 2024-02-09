@@ -1,0 +1,6 @@
+@CustomerApiOnion_HostAddress = http://localhost:5287
+
+GET {{CustomerApiOnion_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

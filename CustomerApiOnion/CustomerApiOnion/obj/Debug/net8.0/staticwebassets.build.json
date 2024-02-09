@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "EkO8L3mtiG3CM+/F56z67yHq8OvpKWdEm7Gh0QLmVuo=",
+  "Source": "CustomerApiOnion",
+  "BasePath": "_content/CustomerApiOnion",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

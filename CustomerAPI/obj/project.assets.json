@@ -2853,11 +2853,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lyncas\\Desktop\\CustomerAPI\\CustomerAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\CustomerAPI\\CustomerAPI.csproj",
       "projectName": "CustomerAPI",
-      "projectPath": "C:\\Users\\Lyncas\\Desktop\\CustomerAPI\\CustomerAPI.csproj",
+      "projectPath": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\CustomerAPI\\CustomerAPI.csproj",
       "packagesPath": "C:\\Users\\Lyncas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lyncas\\Desktop\\CustomerAPI\\obj\\",
+      "outputPath": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\CustomerAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Lyncas\\AppData\\Roaming\\NuGet\\NuGet.Config",
