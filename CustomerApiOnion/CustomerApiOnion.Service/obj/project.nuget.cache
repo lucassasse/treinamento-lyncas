@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fLudhcuucdvLinlsj8HTBnb2hKn6QhuSYmzS/m4Ebg5TiWDdUR+5yzQ0Ztht+z1NDNPWlGsTc2vXCkbkWZpm0Q==",
+  "dgSpecHash": "+ysApI3c2HzMvcaQ4j7pFQKITmqGJmRcK8cASPq5BfNLkV4RsCYfdsw02QbGuNgw4g4CPYYB8dl1sFYKe9BJZg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lyncas\\Desktop\\CustomerApiOnion\\CustomerApiOnion.Service\\CustomerApiOnion.Service.csproj",
+  "projectFilePath": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\CustomerApiOnion\\CustomerApiOnion.Service\\CustomerApiOnion.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lyncas\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Lyncas\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

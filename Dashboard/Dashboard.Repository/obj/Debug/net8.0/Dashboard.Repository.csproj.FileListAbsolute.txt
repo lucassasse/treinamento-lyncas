@@ -1,0 +1,17 @@
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Repository\bin\Debug\net8.0\Dashboard.Repository.deps.json
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Repository\bin\Debug\net8.0\Dashboard.Repository.runtimeconfig.json
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Repository\bin\Debug\net8.0\Dashboard.Repository.dll
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Repository\bin\Debug\net8.0\Dashboard.Repository.pdb
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Repository\bin\Debug\net8.0\Dashboard.Domain.dll
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Repository\bin\Debug\net8.0\Dashboard.Domain.pdb
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Repository\obj\Debug\net8.0\Dashboard.Repository.csproj.AssemblyReference.cache
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Repository\obj\Debug\net8.0\Dashboard.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Repository\obj\Debug\net8.0\Dashboard.Repository.AssemblyInfoInputs.cache
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Repository\obj\Debug\net8.0\Dashboard.Repository.AssemblyInfo.cs
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Repository\obj\Debug\net8.0\Dashboard.Repository.csproj.CoreCompileInputs.cache
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Repository\obj\Debug\net8.0\Dashboard.Repository.csproj.CopyComplete
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Repository\obj\Debug\net8.0\Dashboard.Repository.dll
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Repository\obj\Debug\net8.0\refint\Dashboard.Repository.dll
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Repository\obj\Debug\net8.0\Dashboard.Repository.pdb
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Repository\obj\Debug\net8.0\Dashboard.Repository.genruntimeconfig.cache
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Repository\obj\Debug\net8.0\ref\Dashboard.Repository.dll

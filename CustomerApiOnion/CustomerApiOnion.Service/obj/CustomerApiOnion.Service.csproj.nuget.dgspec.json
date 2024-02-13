@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lyncas\\Desktop\\CustomerApiOnion\\CustomerApiOnion.Service\\CustomerApiOnion.Service.csproj": {}
+    "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\CustomerApiOnion\\CustomerApiOnion.Service\\CustomerApiOnion.Service.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lyncas\\Desktop\\CustomerApiOnion\\CustomerApiOnion.Domain\\CustomerApiOnion.Domain.csproj": {
+    "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\CustomerApiOnion\\CustomerApiOnion.Domain\\CustomerApiOnion.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lyncas\\Desktop\\CustomerApiOnion\\CustomerApiOnion.Domain\\CustomerApiOnion.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\CustomerApiOnion\\CustomerApiOnion.Domain\\CustomerApiOnion.Domain.csproj",
         "projectName": "CustomerApiOnion.Domain",
-        "projectPath": "C:\\Users\\Lyncas\\Desktop\\CustomerApiOnion\\CustomerApiOnion.Domain\\CustomerApiOnion.Domain.csproj",
+        "projectPath": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\CustomerApiOnion\\CustomerApiOnion.Domain\\CustomerApiOnion.Domain.csproj",
         "packagesPath": "C:\\Users\\Lyncas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lyncas\\Desktop\\CustomerApiOnion\\CustomerApiOnion.Domain\\obj\\",
+        "outputPath": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\CustomerApiOnion\\CustomerApiOnion.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lyncas\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -85,14 +85,14 @@
         }
       }
     },
-    "C:\\Users\\Lyncas\\Desktop\\CustomerApiOnion\\CustomerApiOnion.Repository\\CustomerApiOnion.Repository.csproj": {
+    "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\CustomerApiOnion\\CustomerApiOnion.Repository\\CustomerApiOnion.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lyncas\\Desktop\\CustomerApiOnion\\CustomerApiOnion.Repository\\CustomerApiOnion.Repository.csproj",
+        "projectUniqueName": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\CustomerApiOnion\\CustomerApiOnion.Repository\\CustomerApiOnion.Repository.csproj",
         "projectName": "CustomerApiOnion.Repository",
-        "projectPath": "C:\\Users\\Lyncas\\Desktop\\CustomerApiOnion\\CustomerApiOnion.Repository\\CustomerApiOnion.Repository.csproj",
+        "projectPath": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\CustomerApiOnion\\CustomerApiOnion.Repository\\CustomerApiOnion.Repository.csproj",
         "packagesPath": "C:\\Users\\Lyncas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lyncas\\Desktop\\CustomerApiOnion\\CustomerApiOnion.Repository\\obj\\",
+        "outputPath": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\CustomerApiOnion\\CustomerApiOnion.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lyncas\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -109,8 +109,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Lyncas\\Desktop\\CustomerApiOnion\\CustomerApiOnion.Domain\\CustomerApiOnion.Domain.csproj": {
-                "projectPath": "C:\\Users\\Lyncas\\Desktop\\CustomerApiOnion\\CustomerApiOnion.Domain\\CustomerApiOnion.Domain.csproj"
+              "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\CustomerApiOnion\\CustomerApiOnion.Domain\\CustomerApiOnion.Domain.csproj": {
+                "projectPath": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\CustomerApiOnion\\CustomerApiOnion.Domain\\CustomerApiOnion.Domain.csproj"
               }
             }
           }
@@ -170,14 +170,14 @@
         }
       }
     },
-    "C:\\Users\\Lyncas\\Desktop\\CustomerApiOnion\\CustomerApiOnion.Service\\CustomerApiOnion.Service.csproj": {
+    "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\CustomerApiOnion\\CustomerApiOnion.Service\\CustomerApiOnion.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lyncas\\Desktop\\CustomerApiOnion\\CustomerApiOnion.Service\\CustomerApiOnion.Service.csproj",
+        "projectUniqueName": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\CustomerApiOnion\\CustomerApiOnion.Service\\CustomerApiOnion.Service.csproj",
         "projectName": "CustomerApiOnion.Service",
-        "projectPath": "C:\\Users\\Lyncas\\Desktop\\CustomerApiOnion\\CustomerApiOnion.Service\\CustomerApiOnion.Service.csproj",
+        "projectPath": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\CustomerApiOnion\\CustomerApiOnion.Service\\CustomerApiOnion.Service.csproj",
         "packagesPath": "C:\\Users\\Lyncas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lyncas\\Desktop\\CustomerApiOnion\\CustomerApiOnion.Service\\obj\\",
+        "outputPath": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\CustomerApiOnion\\CustomerApiOnion.Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lyncas\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -194,11 +194,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Lyncas\\Desktop\\CustomerApiOnion\\CustomerApiOnion.Domain\\CustomerApiOnion.Domain.csproj": {
-                "projectPath": "C:\\Users\\Lyncas\\Desktop\\CustomerApiOnion\\CustomerApiOnion.Domain\\CustomerApiOnion.Domain.csproj"
+              "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\CustomerApiOnion\\CustomerApiOnion.Domain\\CustomerApiOnion.Domain.csproj": {
+                "projectPath": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\CustomerApiOnion\\CustomerApiOnion.Domain\\CustomerApiOnion.Domain.csproj"
               },
-              "C:\\Users\\Lyncas\\Desktop\\CustomerApiOnion\\CustomerApiOnion.Repository\\CustomerApiOnion.Repository.csproj": {
-                "projectPath": "C:\\Users\\Lyncas\\Desktop\\CustomerApiOnion\\CustomerApiOnion.Repository\\CustomerApiOnion.Repository.csproj"
+              "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\CustomerApiOnion\\CustomerApiOnion.Repository\\CustomerApiOnion.Repository.csproj": {
+                "projectPath": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\CustomerApiOnion\\CustomerApiOnion.Repository\\CustomerApiOnion.Repository.csproj"
               }
             }
           }

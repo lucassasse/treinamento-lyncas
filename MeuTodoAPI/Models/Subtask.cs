@@ -6,6 +6,7 @@
         public string Description { get; set; }
         public bool Done { get; set; }
 
+        public virtual Todo Todo { get; set; }
         public int TodoId { get; set; } // Foreign key linking to Todo
     }
 }
