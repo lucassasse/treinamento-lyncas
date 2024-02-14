@@ -1,4 +1,6 @@
-﻿namespace Domain.Models
+﻿using System.Text.Json.Serialization;
+
+namespace Domain.Models
 {
     public class Customer
     {
@@ -10,6 +12,7 @@
         public bool SoftDeleted { get; set; }
         public DateTime DeletedAt { get; set; }
 
+        [JsonIgnore]
         public virtual IList<Sale> Sales { get; set; }
     }
 }

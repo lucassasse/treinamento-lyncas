@@ -4,6 +4,8 @@ namespace Domain.Models.ViewModels
 {
     public class ItemSaleViewModel
     {
+        public int Id { get; set; }
+
         [Required]
         public string Description { get; set; }
         [Required]

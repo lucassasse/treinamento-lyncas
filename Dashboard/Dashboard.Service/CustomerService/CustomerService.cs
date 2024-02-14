@@ -65,9 +65,8 @@ namespace Dashboard.Service.CustomerService
             bool hasSales = await _customerRepository.HasSales(id);
 
             if (hasSales)
-            {
                    return await SoftDeleteAsync(customer);
-            }
+
             return await DeleteAsync(id);
         }
 

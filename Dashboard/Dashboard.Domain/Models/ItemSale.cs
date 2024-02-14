@@ -1,4 +1,6 @@
-﻿namespace Domain.Models
+﻿using System.Text.Json.Serialization;
+
+namespace Domain.Models
 {
     public class ItemSale
     {
@@ -9,6 +11,7 @@
         public double TotalValue { get; set; }
 
         public int SaleId { get; set; }
+        [JsonIgnore]
         public virtual Sale Sale { get; set; }
     }
 }
