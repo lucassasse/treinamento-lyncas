@@ -1,16 +1,19 @@
-﻿using Dashboard.Repository.CustomerRepository;
+﻿using AutoMapper;
+using Dashboard.Repository.CustomerRepository;
 using Domain.Models;
 using Domain.Models.ViewModels;
 
 namespace Dashboard.Service.CustomerService
 {
-    public class CustomerService : ICustomerService //+2 metodos (VerifyExistItem + SoftDelete)
+    public class CustomerService : ICustomerService
     {
         private readonly ICustomerRepository _customerRepository;
+        private readonly IMapper _mapper;
 
-        public CustomerService(ICustomerRepository customerRepository)
+        public CustomerService(ICustomerRepository customerRepository, IMapper mapper)
         {
             _customerRepository = customerRepository;
+            _mapper = mapper;
         }
 
         public async Task<List<Customer>> GetAsync()
@@ -28,27 +31,18 @@ namespace Dashboard.Service.CustomerService
             return await _customerRepository.GetById(id);
         }
 
-        public async Task<Customer> CreateAsync(CustomerViewModel customerVM)
+        public async Task<Customer> CreateAsync(CustomerViewModel model)
         {
-            var customer = new Customer();
+            var customer = _mapper.Map<Customer>(model);
 
-            customer.FullName = customerVM.FullName;
-            customer.Email = customerVM.Email;
-            customer.Telephone = customerVM.Telephone;
-            customer.Cpf = customerVM.Cpf;
-            customer.SoftDeleted = false;
-            
             return await _customerRepository.Create(customer);
         }
 
-        public async Task<Customer> UpdateAsync(CustomerViewModel customerVM, int id)
+        public async Task<Customer> UpdateAsync(CustomerViewModel model, int id)
         {
             var customer = await _customerRepository.GetById(id);
 
-            customer.FullName = customerVM.FullName;
-            customer.Email = customerVM.Email;
-            customer.Telephone = customerVM.Telephone;
-            customer.Cpf = customerVM.Cpf;
+            _mapper.Map(model, customer);
 
             return await _customerRepository.Update(customer);
         }

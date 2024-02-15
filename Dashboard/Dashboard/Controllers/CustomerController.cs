@@ -9,7 +9,6 @@ namespace Dashboard.Controllers
     public class CustomerController : Controller
     {
         private readonly ICustomerService _customerService;
-
         public CustomerController(ICustomerService customerService)
         {
             _customerService = customerService;

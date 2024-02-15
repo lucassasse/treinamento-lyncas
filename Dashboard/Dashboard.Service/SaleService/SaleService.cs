@@ -1,4 +1,5 @@
-﻿using Dashboard.Repository.SaleRepository;
+﻿using Dashboard.Domain.ViewModels;
+using Dashboard.Repository.SaleRepository;
 using Domain.Models;
 using Domain.Models.ViewModels;
 
@@ -13,7 +14,7 @@ namespace Dashboard.Service.SaleService
             _saleRepository = saleRepository;
         }
 
-        public async Task<List<Sale>> GetAllAsync()
+        public async Task<List<SaleWithCustomerViewModel>> GetAllAsync()
         {
             return await _saleRepository.GetAll();
         }
@@ -106,8 +107,6 @@ namespace Dashboard.Service.SaleService
             }
             catch (Exception ex)
             {
-                // Log a mensagem de erro ou trate de outra forma, se necessário
-                //throw new Exception($"Error deleting sale with ID {id}: {ex.Message}", ex);
                 throw new Exception("Error deleting sale with ID");
             }
         }

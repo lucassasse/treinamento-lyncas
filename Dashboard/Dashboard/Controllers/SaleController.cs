@@ -2,6 +2,7 @@
 using Domain.Models.ViewModels;
 using Dashboard.Service.SaleService;
 using Microsoft.AspNetCore.Mvc;
+using Dashboard.Domain.ViewModels;
 
 namespace Dashboard.Controllers
 {
@@ -16,7 +17,7 @@ namespace Dashboard.Controllers
         }
 
         [HttpGet]
-        public async Task<List<Sale>> GetSalesAsync()
+        public async Task<List<SaleWithCustomerViewModel>> GetSalesAsync()
         {
             var sale = await _saleService.GetAllAsync();
             return sale;

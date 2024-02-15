@@ -134,9 +134,11 @@ C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\staticwebassets\msb
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Dashboard.props
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\scopedcss\bundle\Dashboard.styles.css
-C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.csproj.CopyComplete
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.dll
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\refint\Dashboard.dll
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.pdb
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.genruntimeconfig.cache
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\ref\Dashboard.dll
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.csproj.Up2Date
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

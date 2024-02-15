@@ -6,10 +6,14 @@ using Dashboard.Service.SaleService;
 using Dashboard.Service.UserService;
 using Domain.Data;
 using Microsoft.EntityFrameworkCore;
+using Dashboard.Domain.Mappers;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
+builder.Services.AddSwaggerGen();
+
+builder.Services.AddAutoMapper(typeof(CustomerMapper),typeof(SaleMapper));
 
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
@@ -26,11 +30,13 @@ builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<ISaleRepository, SaleRepository>();
 builder.Services.AddScoped<ISaleService, SaleService>();
 
-//builder.Services.AddScoped<IItemSaleRepository, ItemSaleRepository>();
-//builder.Services.AddScoped<IItemSaleService, ItemSaleService>();
-
-
 var app = builder.Build();
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
 using (var scope = app.Services.CreateScope())
 {
