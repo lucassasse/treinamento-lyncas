@@ -9,6 +9,22 @@
     {
       "AbsoluteMoniker": "D:0:0:{67C8C74D-A8F7-4C13-9987-C7476977C658}|Dashboard.Service\\Dashboard.Service.csproj|c:\\users\\lyncas\\desktop\\dashboard\\dashboard.service\\saleservice\\saleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{67C8C74D-A8F7-4C13-9987-C7476977C658}|Dashboard.Service\\Dashboard.Service.csproj|solutionrelative:dashboard.service\\saleservice\\saleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5D067CB-AD41-4B87-BCB5-7E7A0391AB80}|Dashboard.Repository\\Dashboard.Repository.csproj|c:\\users\\lyncas\\desktop\\dashboard\\dashboard.repository\\salerepository\\salerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5D067CB-AD41-4B87-BCB5-7E7A0391AB80}|Dashboard.Repository\\Dashboard.Repository.csproj|solutionrelative:dashboard.repository\\salerepository\\salerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80814A76-B25B-49B0-A4B4-7137904C1DFA}|Dashboard.Domain\\Dashboard.Domain.csproj|c:\\users\\lyncas\\desktop\\dashboard\\dashboard.domain\\models\\sale.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80814A76-B25B-49B0-A4B4-7137904C1DFA}|Dashboard.Domain\\Dashboard.Domain.csproj|solutionrelative:dashboard.domain\\models\\sale.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0CF095E-49C1-4999-B355-FD828748614A}|Dashboard\\Dashboard.csproj|c:\\users\\lyncas\\desktop\\dashboard\\dashboard\\controllers\\salecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0CF095E-49C1-4999-B355-FD828748614A}|Dashboard\\Dashboard.csproj|solutionrelative:dashboard\\controllers\\salecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80814A76-B25B-49B0-A4B4-7137904C1DFA}|Dashboard.Domain\\Dashboard.Domain.csproj|c:\\users\\lyncas\\desktop\\dashboard\\dashboard.domain\\models\\itemsale.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80814A76-B25B-49B0-A4B4-7137904C1DFA}|Dashboard.Domain\\Dashboard.Domain.csproj|solutionrelative:dashboard.domain\\models\\itemsale.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +34,60 @@
       "DocumentGroups": [
         {
           "DockedWidth": 219,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SaleRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard.Repository\\SaleRepository\\SaleRepository.cs",
+              "RelativeDocumentMoniker": "Dashboard.Repository\\SaleRepository\\SaleRepository.cs",
+              "ToolTip": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard.Repository\\SaleRepository\\SaleRepository.cs",
+              "RelativeToolTip": "Dashboard.Repository\\SaleRepository\\SaleRepository.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAACQAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-16T13:29:55.262Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SaleController.cs",
+              "DocumentMoniker": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard\\Controllers\\SaleController.cs",
+              "RelativeDocumentMoniker": "Dashboard\\Controllers\\SaleController.cs",
+              "ToolTip": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard\\Controllers\\SaleController.cs",
+              "RelativeToolTip": "Dashboard\\Controllers\\SaleController.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAAC4AAABNAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-16T13:22:21.081Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ItemSale.cs",
+              "DocumentMoniker": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard.Domain\\Models\\ItemSale.cs",
+              "RelativeDocumentMoniker": "Dashboard.Domain\\Models\\ItemSale.cs",
+              "ToolTip": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard.Domain\\Models\\ItemSale.cs",
+              "RelativeToolTip": "Dashboard.Domain\\Models\\ItemSale.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-16T13:04:25.312Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Sale.cs",
+              "DocumentMoniker": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard.Domain\\Models\\Sale.cs",
+              "RelativeDocumentMoniker": "Dashboard.Domain\\Models\\Sale.cs",
+              "ToolTip": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard.Domain\\Models\\Sale.cs",
+              "RelativeToolTip": "Dashboard.Domain\\Models\\Sale.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-16T13:04:24.472Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -28,7 +96,7 @@
               "RelativeDocumentMoniker": "Dashboard.Service\\SaleService\\SaleService.cs",
               "ToolTip": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard.Service\\SaleService\\SaleService.cs",
               "RelativeToolTip": "Dashboard.Service\\SaleService\\SaleService.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAGwAAAANAAAA",
+              "ViewState": "AQIAABYAAAAAAAAAAAAmwDIAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-15T19:25:29.589Z",
               "EditorCaption": ""
@@ -41,7 +109,7 @@
               "RelativeDocumentMoniker": "Dashboard.Domain\\Mappers\\SaleMapper.cs",
               "ToolTip": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard.Domain\\Mappers\\SaleMapper.cs",
               "RelativeToolTip": "Dashboard.Domain\\Mappers\\SaleMapper.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAACAAAA",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAAwCAAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-15T19:23:14.415Z",
               "EditorCaption": ""

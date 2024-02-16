@@ -1,4 +1,5 @@
-﻿using Dashboard.Domain.ViewModels;
+﻿using AutoMapper;
+using Dashboard.Domain.ViewModels;
 using Dashboard.Repository.SaleRepository;
 using Domain.Models;
 using Domain.Models.ViewModels;
@@ -8,10 +9,12 @@ namespace Dashboard.Service.SaleService
     public class SaleService : ISaleService
     {
         private readonly ISaleRepository _saleRepository;
+        private readonly IMapper _mapper;
 
-        public SaleService(ISaleRepository saleRepository)
+        public SaleService(ISaleRepository saleRepository, IMapper mapper)
         {
             _saleRepository = saleRepository;
+            _mapper = mapper;
         }
 
         public async Task<List<SaleWithCustomerViewModel>> GetAllAsync()
@@ -26,27 +29,16 @@ namespace Dashboard.Service.SaleService
 
         public async Task<Sale> CreateAsync(SaleViewModel saleVM)
         {
-            var sale = new Sale();
-
-            sale.SaleDate = saleVM.SaleDate;
-            sale.BillingDate = saleVM.BillingDate;
-            sale.SaleTotalValue = saleVM.SaleTotalValue;
-            sale.SaleTotalItems = saleVM.SaleTotalItems;
-            sale.CustomerId = saleVM.CustomerId;
-
-            var saleItemsNew = new List<ItemSale>();
-
-            saleItemsNew = saleVM.SaleItems.Select(itemVM => new ItemSale
+            try
             {
-                Description = itemVM.Description,
-                Quantity = itemVM.Quantity,
-                UnityValue = itemVM.UnityValue,
-                TotalValue = itemVM.TotalValue
-            }).ToList();
+                var sale = _mapper.Map<Sale>(saleVM);
 
-            sale.SaleItems = saleItemsNew;
-
-            return await _saleRepository.Create(sale);
+                return await _saleRepository.Create(sale);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
         public async Task<Sale> UpdateAsync(SaleViewModel saleVM, int id)
@@ -56,41 +48,8 @@ namespace Dashboard.Service.SaleService
             if (sale == null)
                 return null;
 
-            sale.SaleDate = saleVM.SaleDate;
-            sale.BillingDate = saleVM.BillingDate;
-            sale.SaleTotalValue = saleVM.SaleTotalValue;
-            sale.SaleTotalItems = saleVM.SaleTotalItems;
-            sale.CustomerId = saleVM.CustomerId;
+            _mapper.Map(saleVM, sale);
 
-            var itemsToRemove = sale.SaleItems.Where(item => !saleVM.SaleItems.Any(x => x.Id == item.Id)).ToList();
-            foreach (var itemToRemove in itemsToRemove)
-            {
-                sale.SaleItems.Remove(itemToRemove);
-            }
-
-            foreach (var itemVM in saleVM.SaleItems)
-            {
-                var item = sale.SaleItems.FirstOrDefault(i => i.Id == itemVM.Id);
-
-                if (item != null)
-                {
-                    item.Description = itemVM.Description;
-                    item.Quantity = itemVM.Quantity;
-                    item.UnityValue = itemVM.UnityValue;
-                    item.TotalValue = itemVM.TotalValue;
-                }
-                else
-                {
-                    var newItem = new ItemSale
-                    {
-                        Description = itemVM.Description,
-                        Quantity = itemVM.Quantity,
-                        UnityValue = itemVM.UnityValue,
-                        TotalValue = itemVM.TotalValue
-                    };
-                    sale.SaleItems.Add(newItem);
-                }
-            }
             return await _saleRepository.Update(sale);
         }
 
