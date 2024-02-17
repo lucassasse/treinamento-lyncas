@@ -24,14 +24,14 @@
                     </tr>
                 </thead>
                 <tbody v-if="customers.length">
-                    <tr v-for="(customer, index) in customers" :key="index" class="list-table">
+                    <tr v-for="(customer) in customers" :key="customer.id" class="list-table">
                         <td class="tg-0lax column-list-table first-td">{{ customer.name }}</td>
                         <td class="tg-0lax column-list-table">{{ customer.email }}</td>
                         <td class="tg-0lax column-list-table">{{ customer.tel }}</td>
                         <td class="tg-0lax column-list-table">{{ customer.cpf }}</td>
                         <td class="tg-0lax column-list-table last-td">
                             <ButtonTable classBtn="delete" textButton="Deletar" @click="togglePopUpDelete()"/>
-                            <ButtonTable classBtn="edit" textButton="Editar"/>
+                            <ButtonTable classBtn="edit" textButton="Editar" @click="redirectToUpdate(customer.id)"/>
                         </td>
                     </tr>
                 </tbody>
@@ -80,16 +80,21 @@ import PopUpDelete from '@/components/PopUpDelete.vue'
             },
             getCustomers(){
                 this.customers = [{
+                    id: 7,
                     name: 'Genara Souza',
                     email: 'genara7souza@gmail.com',
                     tel: '(91) 99844-3343',
                     cpf: '000.000.000-00'
                 },{
+                    id: 9,
                     name: 'Genara Souza 2',
                     email: 'genara7souza@gmail.com',
                     tel: '(91) 99844-3343',
                     cpf: '000.000.000-00'
                 }]
+            },
+            redirectToUpdate(customerId){
+                this.$router.push({path: '/customers-form', query: {key: customerId}})
             }
         },
         created(){
