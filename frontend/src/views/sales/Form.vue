@@ -136,6 +136,7 @@ import PopUpDelete from '@/components/PopUpDelete.vue'
                 messagePopUp: '',
                 popUpRedirect: false,
                 showPopUpDelete: false,
+                inEddit: false
             }
         },
         computed:{
@@ -156,6 +157,7 @@ import PopUpDelete from '@/components/PopUpDelete.vue'
                     this.itemsList.push(item)
                     this.sumListTotalValue()
                     this.clearInputs()
+                    this.inEddit = false
                 }else{
                     return
                 }
@@ -180,7 +182,7 @@ import PopUpDelete from '@/components/PopUpDelete.vue'
                 if(this.$refs.saleCustomer.valid() && this.$refs.saleBillingDate.valid()){
                     this.popUpSucessOrError = 'sucess'
                     this.togglePopUpSucess("Formulário enviado com sucesso!")
-                    this.popUpRedirect = true
+                    this.popUpRedirect = false
                     this.clearAll()
                 }else{
                     return
@@ -239,12 +241,17 @@ import PopUpDelete from '@/components/PopUpDelete.vue'
                 }]
             },
             toEditItem(item){
-                this.item.description = item.description
-                this.item.quantity = item.quantity
-                this.item.unityValue = item.unityValue
-                this.item.totalValueItem = item.totalValueItem
-                this.itemsList.splice(this.id, 1)
-                //criar variavel inEddit que inicia como true, e que muda para true quando clica em editar e, quando adiciona, muda pra false
+                if(!this.inEddit){
+                    this.item.description = item.description
+                    this.item.quantity = item.quantity
+                    this.item.unityValue = item.unityValue
+                    this.item.totalValueItem = item.totalValueItem
+                    this.itemsList.splice(this.id, 1)
+                    this.inEddit = true
+                }
+                else{
+                    alert("Já há um item em edição")
+                }
             },
             fetchSaleData() {
                 if (!this.$route.query.key){
