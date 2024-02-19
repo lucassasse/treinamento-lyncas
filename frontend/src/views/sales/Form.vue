@@ -49,13 +49,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="(item, index) in itemsList" :key="index" class="list-table">
+                    <tr v-for="(item) in itemsList" :key="item.id" class="list-table">
                         <td class="tg-0lax column-list-table first-td">{{item.description}}</td>
                         <td class="tg-0lax column-list-table">{{item.unityValue}}</td>
                         <td class="tg-0lax column-list-table">{{item.quantity}}</td>
                         <td class="tg-0lax column-list-table last-td">{{item.totalValueItem}}</td>
                         <td class="tg-0lax column-list-form last-td">
                             <ButtonTable classBtn="delete" textButton="Deletar" @click="togglePopUpDelete(item)"/>
+                            <ButtonTable classBtn="edit" textButton="Editar" @click="toEditItem(item)"/>
                         </td>
                     </tr>
                 </tbody>
@@ -104,23 +105,38 @@ import PopUpDelete from '@/components/PopUpDelete.vue'
             return{
                 customers: [],
                 sale:{
+                    id: null,
                     customer: '',
                     billingDate: '',
                 },
                 item: {
+                    id: null,
                     description: '',
                     quantity: '',
                     unityValue: '',
                     totalValueItem: ''
                 },
                 finalValue: '',
-                itemsList: [],
+                itemsList: [{
+                    id: 8,
+                    description: 'retfhreh rewg wergrwegewg',
+                    quantity: '534,00',
+                    unityValue: '534,00',
+                    totalValueItem: '5435,00'
+                },{
+                    id: 9,
+                    description: 'ewrg rwegerwg rwet',
+                    quantity: '534,00',
+                    unityValue: '54353,00',
+                    totalValueItem: '534534,00'
+                },],
                 index: '',
                 popUp: false,
                 popUpSucessOrError: 'sucess',
                 messagePopUp: '',
                 popUpRedirect: false,
                 showPopUpDelete: false,
+                inEddit: false
             }
         },
         computed:{
@@ -141,6 +157,7 @@ import PopUpDelete from '@/components/PopUpDelete.vue'
                     this.itemsList.push(item)
                     this.sumListTotalValue()
                     this.clearInputs()
+                    this.inEddit = false
                 }else{
                     return
                 }
@@ -165,7 +182,7 @@ import PopUpDelete from '@/components/PopUpDelete.vue'
                 if(this.$refs.saleCustomer.valid() && this.$refs.saleBillingDate.valid()){
                     this.popUpSucessOrError = 'sucess'
                     this.togglePopUpSucess("Formulário enviado com sucesso!")
-                    this.popUpRedirect = true
+                    this.popUpRedirect = false
                     this.clearAll()
                 }else{
                     return
@@ -203,12 +220,12 @@ import PopUpDelete from '@/components/PopUpDelete.vue'
                 this.popUp = !this.popUp
             },
             deleteConfirm(){
-                this.itemsList.splice(this.index, 1)
+                this.itemsList.splice(this.id, 1)
                 this.togglePopUpDelete()
             },
             togglePopUpDelete(item){
                 if (item)
-                    this.index = this.itemsList.indexOf(item)
+                    this.id = this.itemsList.indexOf(item)
                 this.showPopUpDelete = !this.showPopUpDelete
             },
             getCustomers(){
@@ -222,10 +239,40 @@ import PopUpDelete from '@/components/PopUpDelete.vue'
                     id: 3,
                     full_name: 'Terceiro Cliente'
                 }]
+            },
+            toEditItem(item){
+                if(!this.inEddit){
+                    this.item.description = item.description
+                    this.item.quantity = item.quantity
+                    this.item.unityValue = item.unityValue
+                    this.item.totalValueItem = item.totalValueItem
+                    this.itemsList.splice(this.id, 1)
+                    this.inEddit = true
+                }
+                else{
+                    alert("Já há um item em edição")
+                }
+            },
+            fetchSaleData() {
+                if (!this.$route.query.key){
+                    return
+                } else {
+                    // axios.get(`url_da_api/${SaleId}`)
+                    //     .then(response => {
+                    //         this.sale.name = response.data.name
+                    //         this.sale.email = response.data.email
+                    //         this.sale.tel = response.data.tel
+                    //         this.sale.cpf = response.data.cpf
+                    //     })
+                    //     .catch(error => {
+                    //         console.error('Erro ao buscar dados da venda:', error)
+                    //     })
+                }
             }
         },
         created(){
             this.getCustomers()
+            this.fetchSaleData()
         }
     }
 </script>

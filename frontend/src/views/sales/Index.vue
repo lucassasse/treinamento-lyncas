@@ -25,7 +25,7 @@
                     </tr>
                 </thead>
                 <tbody v-if="sales.length">
-                    <tr v-for="(sale, index) in sales" :key="index"  class="list-table">
+                    <tr v-for="(sale) in sales" :key="sale.id"  class="list-table">
                         <td class="tg-0lax column-list-table first-td">{{ sale.name }}</td>
                         <td class="tg-0lax column-list-table">{{ sale.quantity }}</td>
                         <td class="tg-0lax column-list-table">{{ sale.saleDate }}</td>
@@ -33,7 +33,7 @@
                         <td class="tg-0lax column-list-table">{{ sale.totalValueItem }}</td>
                         <td class="tg-0lax column-list-table last-td">
                             <ButtonTable classBtn="delete" textButton="Deletar" @click="togglePopUp()"/>
-                            <ButtonTable classBtn="edit" textButton="Editar"/>
+                            <ButtonTable classBtn="edit" textButton="Editar" @click="redirectToUpdate(sale.id)"/>
                         </td>
                     </tr>
                 </tbody>
@@ -81,18 +81,23 @@ import PopUpDelete from '@/components/PopUpDelete.vue'
             },
             getSales(){
                 this.sales =[{
+                    id: 9,
                     name: 'Genara Souza',
                     quantity: '5',
                     saleDate: '18/09/2023',
                     billingDate: '19/09/2023',
                     totalValueItem: 'R$ 450,00'
                 },{
+                    id: 19,
                     name: 'Pedro Pedrinho',
                     quantity: '7',
                     saleDate: '27/10/2023',
                     billingDate: '28/10/2023',
                     totalValueItem: 'R$ 39,50'
                 }]
+            },
+            redirectToUpdate(SaleId){
+                this.$router.push({path: '/sales-form', query: {key: SaleId}})
             }
         },
         created(){
