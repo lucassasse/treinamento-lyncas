@@ -1,5 +1,4 @@
-﻿using Domain.Models;
-using Domain.Models.ViewModels;
+﻿using Domain.Models.ViewModels;
 using Dashboard.Service.SaleService;
 using Microsoft.AspNetCore.Mvc;
 using Dashboard.Domain.ViewModels;
@@ -17,7 +16,7 @@ namespace Dashboard.Controllers
         }
 
         [HttpGet]
-        public async Task<List<SaleWithCustomerViewModel>> GetSalesAsync()
+        public async Task<List<SaleWithCustomerDto>> GetSalesAsync()
         {
             var sale = await _saleService.GetAllAsync();
             return sale;
@@ -44,7 +43,7 @@ namespace Dashboard.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] SaleViewModel sale)
+        public async Task<IActionResult> Create([FromBody] SaleDto sale)
         {
             try
             {
@@ -65,7 +64,7 @@ namespace Dashboard.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put([FromBody] SaleViewModel SaleVM, [FromRoute] int id)
+        public async Task<IActionResult> Put([FromBody] SaleDto SaleVM, [FromRoute] int id)
         {
             try
             {

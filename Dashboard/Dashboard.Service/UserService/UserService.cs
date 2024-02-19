@@ -1,5 +1,5 @@
 ﻿using Dashboard.Repository.UserRepository;
-using Domain.Models;
+using Dashboard.Domain.Models;
 using Domain.Models.ViewModels;
 
 namespace Dashboard.Service.UserService
@@ -24,7 +24,7 @@ namespace Dashboard.Service.UserService
             return await _userRepository.GetById(id);
         }
 
-        public async Task<User> CreateAsync(UserViewModel user)
+        public async Task<User> CreateAsync(UserDto user)
         {
             var obj = new User();
 
@@ -35,7 +35,7 @@ namespace Dashboard.Service.UserService
             return await _userRepository.Create(obj);
         }
 
-        public async Task<User> UpdateAsync(UserViewModel user, int id)
+        public async Task<User> UpdateAsync(UserDto user, int id)
         {
             var obj = await _userRepository.GetById(id);
 

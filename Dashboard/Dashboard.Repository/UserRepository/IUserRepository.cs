@@ -1,4 +1,4 @@
-﻿using Domain.Models;
+﻿using Dashboard.Domain.Models;
 
 namespace Dashboard.Repository.UserRepository
 {

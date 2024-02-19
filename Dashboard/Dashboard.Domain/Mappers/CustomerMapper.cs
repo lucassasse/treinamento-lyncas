@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Domain.Models;
+using Dashboard.Domain.Models;
 using Domain.Models.ViewModels;
 
 namespace Dashboard.Domain.Mappers
@@ -8,7 +8,7 @@ namespace Dashboard.Domain.Mappers
     {
         public CustomerMapper()
         {
-            CreateMap<CustomerViewModel, Customer>();
+            CreateMap<CustomerDto, Customer>();
         }
     }
 }

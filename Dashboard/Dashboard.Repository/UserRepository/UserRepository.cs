@@ -1,6 +1,6 @@
 ﻿using Dashboard.Domain.Data;
 using Domain.Data;
-using Domain.Models;
+using Dashboard.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Dashboard.Repository.UserRepository

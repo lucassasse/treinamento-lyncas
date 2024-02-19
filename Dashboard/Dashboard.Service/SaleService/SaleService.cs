@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Dashboard.Domain.ViewModels;
 using Dashboard.Repository.SaleRepository;
-using Domain.Models;
+using Dashboard.Domain.Models;
 using Domain.Models.ViewModels;
 
 namespace Dashboard.Service.SaleService
@@ -17,7 +17,7 @@ namespace Dashboard.Service.SaleService
             _mapper = mapper;
         }
 
-        public async Task<List<SaleWithCustomerViewModel>> GetAllAsync()
+        public async Task<List<SaleWithCustomerDto>> GetAllAsync()
         {
             return await _saleRepository.GetAll();
         }
@@ -27,11 +27,11 @@ namespace Dashboard.Service.SaleService
             return await _saleRepository.GetById(id);
         }
 
-        public async Task<Sale> CreateAsync(SaleViewModel saleVM)
+        public async Task<Sale> CreateAsync(SaleDto model)
         {
             try
             {
-                var sale = _mapper.Map<Sale>(saleVM);
+                var sale = _mapper.Map<Sale>(model);
 
                 return await _saleRepository.Create(sale);
             }
@@ -41,14 +41,14 @@ namespace Dashboard.Service.SaleService
             }
         }
 
-        public async Task<Sale> UpdateAsync(SaleViewModel saleVM, int id)
+        public async Task<Sale> UpdateAsync(SaleDto model, int id)
         {
             var sale = await _saleRepository.GetById(id);
 
             if (sale == null)
                 return null;
 
-            _mapper.Map(saleVM, sale);
+            _mapper.Map(model, sale);
 
             return await _saleRepository.Update(sale);
         }

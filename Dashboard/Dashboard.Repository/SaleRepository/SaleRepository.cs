@@ -1,7 +1,7 @@
 ﻿using Dashboard.Domain.Data;
 using Dashboard.Domain.ViewModels;
 using Domain.Data;
-using Domain.Models;
+using Dashboard.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Dashboard.Repository.SaleRepository
@@ -12,12 +12,12 @@ namespace Dashboard.Repository.SaleRepository
         {
         }
 
-        public async Task<List<SaleWithCustomerViewModel>> GetAll()
+        public async Task<List<SaleWithCustomerDto>> GetAll()
         {
             return await _context.Sale
                 .Where(x => x.Customer != null)
                 .Select(
-                x => new SaleWithCustomerViewModel
+                x => new SaleWithCustomerDto
                 {
                     CustomerId = x.Customer.Id,
                     CustomerName = x.Customer.FullName,

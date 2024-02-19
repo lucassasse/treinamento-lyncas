@@ -1,5 +1,5 @@
 ﻿using Dashboard.Service.CustomerService;
-using Domain.Models;
+using Dashboard.Domain.Models;
 using Domain.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -49,7 +49,7 @@ namespace Dashboard.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] CustomerViewModel customer)
+        public async Task<IActionResult> Create([FromBody] CustomerDto customer)
         {
             try
             {
@@ -70,7 +70,7 @@ namespace Dashboard.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put([FromBody] CustomerViewModel customer, [FromRoute] int id)
+        public async Task<IActionResult> Put([FromBody] CustomerDto customer, [FromRoute] int id)
         {
             try
             {

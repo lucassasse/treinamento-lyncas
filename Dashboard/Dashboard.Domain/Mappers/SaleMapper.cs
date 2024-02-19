@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Domain.Models.ViewModels;
-using Domain.Models;
+using Dashboard.Domain.Models;
 
 namespace Dashboard.Domain.Mappers
 {
@@ -8,7 +8,7 @@ namespace Dashboard.Domain.Mappers
     {
         public SaleMapper()
         {
-            CreateMap<SaleViewModel, Sale>()
+            CreateMap<SaleDto, Sale>()
                 .ForMember(dest => dest.SaleItems, opt => opt.MapFrom(src =>
                     src.SaleItems.Select(x => new ItemSale
                     {
@@ -19,9 +19,9 @@ namespace Dashboard.Domain.Mappers
                     })
                 ));
 
-            CreateMap<Sale, SaleViewModel>()
+            CreateMap<Sale, SaleDto>()
                 .ForMember(dest => dest.SaleItems, opt => opt.MapFrom(src =>
-                    src.SaleItems.Select(x => new ItemSaleViewModel
+                    src.SaleItems.Select(x => new ItemSaleDto
                     {
                         Id = x.Id,
                         Description = x.Description,

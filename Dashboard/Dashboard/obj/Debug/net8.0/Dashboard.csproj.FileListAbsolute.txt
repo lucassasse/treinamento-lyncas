@@ -1,10 +1,3 @@
-C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.csproj.AssemblyReference.cache
-C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.AssemblyInfoInputs.cache
-C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.AssemblyInfo.cs
-C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.csproj.CoreCompileInputs.cache
-C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\appsettings.json
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\Dashboard.exe
@@ -12,6 +5,8 @@ C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\Dashboard.deps.json
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\Dashboard.runtimeconfig.json
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\Dashboard.dll
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\Dashboard.pdb
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\Azure.Identity.dll
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\Humanizer.dll
@@ -126,6 +121,13 @@ C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\Dashboard.Service.d
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\Dashboard.Repository.pdb
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\Dashboard.Service.pdb
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\Dashboard.Domain.pdb
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.csproj.AssemblyReference.cache
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.AssemblyInfoInputs.cache
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.AssemblyInfo.cs
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.csproj.CoreCompileInputs.cache
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\staticwebassets\msbuild.Dashboard.Microsoft.AspNetCore.StaticWebAssets.props
@@ -134,11 +136,9 @@ C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\staticwebassets\msb
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Dashboard.props
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\scopedcss\bundle\Dashboard.styles.css
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.csproj.Up2Date
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.dll
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\refint\Dashboard.dll
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.pdb
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.genruntimeconfig.cache
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\ref\Dashboard.dll
-C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.csproj.Up2Date
-C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\AutoMapper.dll
-C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

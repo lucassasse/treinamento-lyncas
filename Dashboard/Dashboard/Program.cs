@@ -7,6 +7,7 @@ using Dashboard.Service.UserService;
 using Domain.Data;
 using Microsoft.EntityFrameworkCore;
 using Dashboard.Domain.Mappers;
+using Dashboard.Repository.RepositoryPattern;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,6 +30,8 @@ builder.Services.AddScoped<ICustomerService, CustomerService>();
 
 builder.Services.AddScoped<ISaleRepository, SaleRepository>();
 builder.Services.AddScoped<ISaleService, SaleService>();
+
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
 var app = builder.Build();
 

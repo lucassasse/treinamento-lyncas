@@ -22,7 +22,7 @@ namespace Dashboard.Domain.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Domain.Models.Customer", b =>
+            modelBuilder.Entity("Dashboard.Domain.Models.Customer", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -57,7 +57,7 @@ namespace Dashboard.Domain.Migrations
                     b.ToTable("Customer");
                 });
 
-            modelBuilder.Entity("Domain.Models.ItemSale", b =>
+            modelBuilder.Entity("Dashboard.Domain.Models.ItemSale", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -88,7 +88,7 @@ namespace Dashboard.Domain.Migrations
                     b.ToTable("ItemSale");
                 });
 
-            modelBuilder.Entity("Domain.Models.Sale", b =>
+            modelBuilder.Entity("Dashboard.Domain.Models.Sale", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -118,7 +118,7 @@ namespace Dashboard.Domain.Migrations
                     b.ToTable("Sale");
                 });
 
-            modelBuilder.Entity("Domain.Models.User", b =>
+            modelBuilder.Entity("Dashboard.Domain.Models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -143,9 +143,9 @@ namespace Dashboard.Domain.Migrations
                     b.ToTable("User");
                 });
 
-            modelBuilder.Entity("Domain.Models.ItemSale", b =>
+            modelBuilder.Entity("Dashboard.Domain.Models.ItemSale", b =>
                 {
-                    b.HasOne("Domain.Models.Sale", "Sale")
+                    b.HasOne("Dashboard.Domain.Models.Sale", "Sale")
                         .WithMany("SaleItems")
                         .HasForeignKey("SaleId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -154,9 +154,9 @@ namespace Dashboard.Domain.Migrations
                     b.Navigation("Sale");
                 });
 
-            modelBuilder.Entity("Domain.Models.Sale", b =>
+            modelBuilder.Entity("Dashboard.Domain.Models.Sale", b =>
                 {
-                    b.HasOne("Domain.Models.Customer", "Customer")
+                    b.HasOne("Dashboard.Domain.Models.Customer", "Customer")
                         .WithMany("Sales")
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -165,12 +165,12 @@ namespace Dashboard.Domain.Migrations
                     b.Navigation("Customer");
                 });
 
-            modelBuilder.Entity("Domain.Models.Customer", b =>
+            modelBuilder.Entity("Dashboard.Domain.Models.Customer", b =>
                 {
                     b.Navigation("Sales");
                 });
 
-            modelBuilder.Entity("Domain.Models.Sale", b =>
+            modelBuilder.Entity("Dashboard.Domain.Models.Sale", b =>
                 {
                     b.Navigation("SaleItems");
                 });

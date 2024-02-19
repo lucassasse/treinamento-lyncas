@@ -9,7 +9,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[Domain.Models.Customer, Dashboard.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[Dashboard.Domain.Models.Customer, Dashboard.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -29,7 +29,7 @@
     "Parameters": [
       {
         "Name": "customer",
-        "Type": "Domain.Models.ViewModels.CustomerViewModel",
+        "Type": "Domain.Models.ViewModels.CustomerDto",
         "IsRequired": true
       }
     ],
@@ -61,7 +61,7 @@
     "Parameters": [
       {
         "Name": "customer",
-        "Type": "Domain.Models.ViewModels.CustomerViewModel",
+        "Type": "Domain.Models.ViewModels.CustomerDto",
         "IsRequired": true
       },
       {
@@ -98,7 +98,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[Domain.Models.Customer, Dashboard.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[Dashboard.Domain.Models.Customer, Dashboard.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -118,7 +118,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[Dashboard.Domain.ViewModels.SaleWithCustomerViewModel, Dashboard.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[Dashboard.Domain.ViewModels.SaleWithCustomerDto, Dashboard.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -138,7 +138,7 @@
     "Parameters": [
       {
         "Name": "sale",
-        "Type": "Domain.Models.ViewModels.SaleViewModel",
+        "Type": "Domain.Models.ViewModels.SaleDto",
         "IsRequired": true
       }
     ],
@@ -170,7 +170,7 @@
     "Parameters": [
       {
         "Name": "SaleVM",
-        "Type": "Domain.Models.ViewModels.SaleViewModel",
+        "Type": "Domain.Models.ViewModels.SaleDto",
         "IsRequired": true
       },
       {
@@ -207,7 +207,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[Domain.Models.User, Dashboard.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[Dashboard.Domain.Models.User, Dashboard.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -227,7 +227,7 @@
     "Parameters": [
       {
         "Name": "user",
-        "Type": "Domain.Models.ViewModels.UserViewModel",
+        "Type": "Domain.Models.ViewModels.UserDto",
         "IsRequired": true
       }
     ],
@@ -259,7 +259,7 @@
     "Parameters": [
       {
         "Name": "UserVM",
-        "Type": "Domain.Models.ViewModels.UserViewModel",
+        "Type": "Domain.Models.ViewModels.UserDto",
         "IsRequired": true
       },
       {

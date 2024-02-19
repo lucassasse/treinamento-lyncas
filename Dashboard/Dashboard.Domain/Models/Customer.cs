@@ -1,10 +1,9 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Domain.Models
+namespace Dashboard.Domain.Models
 {
-    public class Customer
+    public class Customer : BaseEntity
     {
-        public int Id { get; set; }
         public string FullName { get; set; }
         public string Email { get; set; }
         public string Telephone { get; set; }
@@ -13,6 +12,6 @@ namespace Domain.Models
         public DateTime DeletedAt { get; set; }
 
         [JsonIgnore]
-        public virtual IList<Sale> Sales { get; set; }
+        public virtual List<Sale> Sales { get; set; }
     }
 }

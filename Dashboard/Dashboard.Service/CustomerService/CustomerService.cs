@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Dashboard.Repository.CustomerRepository;
-using Domain.Models;
+using Dashboard.Repository.RepositoryPattern;
+using Dashboard.Domain.Models;
 using Domain.Models.ViewModels;
 
 namespace Dashboard.Service.CustomerService
@@ -9,47 +10,58 @@ namespace Dashboard.Service.CustomerService
     {
         private readonly ICustomerRepository _customerRepository;
         private readonly IMapper _mapper;
+        private readonly IRepository<Customer> _repository;
 
-        public CustomerService(ICustomerRepository customerRepository, IMapper mapper)
+        public CustomerService(ICustomerRepository customerRepository, IMapper mapper, IRepository<Customer> repository)// :base(customerRepository)
         {
             _customerRepository = customerRepository;
             _mapper = mapper;
+            _repository = repository;
         }
 
         public async Task<List<Customer>> GetAsync()
         {
-            return await _customerRepository.GetAsync();
+            return await Task.FromResult(_repository.GetAll().ToList());
         }
+
+        public async Task<Customer> GetByIdAsync(int id)
+        {
+            return await Task.FromResult(_repository.Get(id));
+        }
+
+        public async Task<Customer> CreateAsync(CustomerDto model)
+        {
+            var customer = _mapper.Map<Customer>(model);
+
+            return await Task.FromResult(_repository.Create(customer));
+        }
+
+        public async Task<Customer> UpdateAsync(CustomerDto model, int id)
+        {
+            var customer = await Task.FromResult(_repository.Get(id));
+
+            _mapper.Map(model, customer);
+
+            return await Task.FromResult(_repository.Update(customer));
+        }
+
+        public async Task<Customer> DeleteAsync(int id)
+        {
+            var customer = await Task.FromResult(_repository.Get(id));
+            _repository.Delete(customer);
+            return customer;
+        }
+
+
 
         public async Task<List<Customer>> GetAllAsync()
         {
             return await _customerRepository.GetAllAsync();
         }
 
-        public async Task<Customer> GetByIdAsync(int id)
-        {
-            return await _customerRepository.GetById(id);
-        }
-
-        public async Task<Customer> CreateAsync(CustomerViewModel model)
-        {
-            var customer = _mapper.Map<Customer>(model);
-
-            return await _customerRepository.Create(customer);
-        }
-
-        public async Task<Customer> UpdateAsync(CustomerViewModel model, int id)
-        {
-            var customer = await _customerRepository.GetById(id);
-
-            _mapper.Map(model, customer);
-
-            return await _customerRepository.Update(customer);
-        }
-
         public async Task<Customer> VerifyDeleteOrSoftDeleteAsync(int id)
         {
-            var customer = await _customerRepository.GetById(id);
+            var customer = await Task.FromResult(_repository.Get(id));
 
             if (customer == null)
             {
@@ -59,16 +71,9 @@ namespace Dashboard.Service.CustomerService
             bool hasSales = await _customerRepository.HasSales(id);
 
             if (hasSales)
-                   return await SoftDeleteAsync(customer);
+                return await SoftDeleteAsync(customer);
 
-            return await DeleteAsync(id);
-        }
-
-        public async Task<Customer> DeleteAsync(int id)
-        {
-            var customer = await _customerRepository.GetById(id);
-            await _customerRepository.Delete(customer);
-            return customer;
+            return _repository.Delete(customer);
         }
 
         public async Task<Customer> SoftDeleteAsync(Customer obj)
@@ -76,7 +81,7 @@ namespace Dashboard.Service.CustomerService
             obj.SoftDeleted = true;
             obj.DeletedAt = DateTime.Now;
 
-            return await _customerRepository.Update(obj);
+            return await Task.FromResult(_repository.Update(obj));
         }
     }
 }
