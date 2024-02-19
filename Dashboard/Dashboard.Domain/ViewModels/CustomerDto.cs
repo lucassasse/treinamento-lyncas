@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Domain.Models.ViewModels
+namespace Domain.ViewModels
 {
     public class CustomerDto
     {

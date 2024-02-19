@@ -10,7 +10,9 @@ namespace Domain.Data
         public DbSet<Sale> Sale { get; set; }
         public DbSet<ItemSale> ItemSale { get; set; }
 
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) {
+            this.ChangeTracker.LazyLoadingEnabled = false;
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

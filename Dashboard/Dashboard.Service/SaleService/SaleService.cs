@@ -2,7 +2,8 @@
 using Dashboard.Domain.ViewModels;
 using Dashboard.Repository.SaleRepository;
 using Dashboard.Domain.Models;
-using Domain.Models.ViewModels;
+using Dashboard.Repository.RepositoryPattern;
+using Dashboard.Dashboard.Service.SaleService;
 
 namespace Dashboard.Service.SaleService
 {
@@ -10,14 +11,16 @@ namespace Dashboard.Service.SaleService
     {
         private readonly ISaleRepository _saleRepository;
         private readonly IMapper _mapper;
+        private readonly IRepository<Sale> _repository;
 
-        public SaleService(ISaleRepository saleRepository, IMapper mapper)
+        public SaleService(ISaleRepository saleRepository, IMapper mapper, IRepository<Sale> repository)
         {
             _saleRepository = saleRepository;
             _mapper = mapper;
+            _repository = repository;
         }
 
-        public async Task<List<SaleWithCustomerDto>> GetAllAsync()
+        public async Task<List<SaleViewModel>> GetAllAsync()
         {
             return await _saleRepository.GetAll();
         }
@@ -27,13 +30,13 @@ namespace Dashboard.Service.SaleService
             return await _saleRepository.GetById(id);
         }
 
-        public async Task<Sale> CreateAsync(SaleDto model)
+        public async Task<Sale> CreateAsync(SaleViewModel model)
         {
             try
             {
                 var sale = _mapper.Map<Sale>(model);
 
-                return await _saleRepository.Create(sale);
+                return await Task.FromResult(_repository.Create(sale));
             }
             catch (Exception ex)
             {
@@ -43,25 +46,25 @@ namespace Dashboard.Service.SaleService
 
         public async Task<Sale> UpdateAsync(SaleDto model, int id)
         {
-            var sale = await _saleRepository.GetById(id);
+            var sale = await Task.FromResult(_repository.GetById(id));
 
             if (sale == null)
                 return null;
 
             _mapper.Map(model, sale);
 
-            return await _saleRepository.Update(sale);
+            return await Task.FromResult(_repository.Update(sale));
         }
 
         public async Task<Sale> DeleteAsync(int id)
         {
             try
             {
-                var sale = await _saleRepository.GetById(id);
+                var sale = await Task.FromResult(_repository.GetById(id));
                 if (sale == null)
                     return null;
 
-                await _saleRepository.Delete(sale);
+                await Task.FromResult(_repository.Delete(sale));
                 return sale;
             }
             catch (Exception ex)

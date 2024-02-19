@@ -17,7 +17,7 @@ namespace Dashboard.Repository.RepositoryPattern
             return _context.Set<T>();
         }
 
-        public virtual T Get(int id)
+        public virtual T GetById(int id)
         {
             return _context.Set<T>().FirstOrDefault(e => e.Id == id);
         }

@@ -5,10 +5,10 @@ namespace Dashboard.Repository.SaleRepository
 {
     public interface ISaleRepository
     {
-        Task<List<SaleWithCustomerDto>> GetAll();
+        Task<List<SaleViewModel>> GetAll();
         Task<Sale> GetById(int id);
-        Task<Sale> Create(Sale sale);
-        Task<Sale> Update(Sale sale);
-        Task<Sale> Delete(Sale sale);
+        //Task<Sale> Create(Sale sale);
+        //Task<Sale> Update(Sale sale);
+        //Task<Sale> Delete(Sale sale);
     }
 }

@@ -1,6 +1,4 @@
-﻿using Dashboard.Domain.Models;
-
-namespace Dashboard.Domain.Models
+﻿namespace Dashboard.Domain.Models
 {
     public class User : BaseEntity
     {

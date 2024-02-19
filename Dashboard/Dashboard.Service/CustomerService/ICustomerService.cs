@@ -1,5 +1,5 @@
 ﻿using Dashboard.Domain.Models;
-using Domain.Models.ViewModels;
+using Domain.ViewModels;
 
 namespace Dashboard.Service.CustomerService
 {

@@ -1,6 +1,6 @@
 ﻿using Dashboard.Service.CustomerService;
 using Dashboard.Domain.Models;
-using Domain.Models.ViewModels;
+using Domain.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dashboard.Controllers

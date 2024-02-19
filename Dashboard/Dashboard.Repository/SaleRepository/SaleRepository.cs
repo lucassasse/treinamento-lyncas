@@ -1,33 +1,28 @@
 ﻿using Dashboard.Domain.Data;
 using Dashboard.Domain.ViewModels;
 using Domain.Data;
-using Dashboard.Domain.Models;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
+using Dashboard.Domain.Models;
 
 namespace Dashboard.Repository.SaleRepository
 {
     public class SaleRepository : BaseRepository, ISaleRepository
     {
-        public SaleRepository(AppDbContext context) : base(context)
+        private readonly IMapper _mapper;
+        public SaleRepository(AppDbContext context, IMapper mapper) : base(context)
         {
+            _mapper = mapper;
         }
 
-        public async Task<List<SaleWithCustomerDto>> GetAll()
+        public async Task<List<SaleViewModel>> GetAll()
         {
-            return await _context.Sale
-                .Where(x => x.Customer != null)
-                .Select(
-                x => new SaleWithCustomerDto
-                {
-                    CustomerId = x.Customer.Id,
-                    CustomerName = x.Customer.FullName,
-
-                    SaleDate = DateTime.Now,
-                    BillingDate = DateTime.Now,
-                    SaleTotalItems = x.SaleTotalItems,
-                    SaleTotalValue = x.SaleTotalValue,
-                })
+            var sales = await _context.Sale
                 .ToListAsync();
+
+            var saleViewModels = _mapper.Map<List<SaleViewModel>>(sales);
+
+            return saleViewModels;
         }
 
         public async Task<Sale> GetById(int id)
@@ -35,37 +30,6 @@ namespace Dashboard.Repository.SaleRepository
             return await _context.Sale
                 .Include(x => x.SaleItems)
                 .FirstOrDefaultAsync(e => e.Id == id);
-        }
-
-        public async Task<Sale> Create(Sale sale)
-        {
-            await _context.Sale.AddAsync(sale);
-            await _context.SaveChangesAsync();
-            return sale;
-        }
-
-        public async Task<Sale> Update(Sale sale)
-        {
-            _context.Sale.Update(sale);
-            await _context.SaveChangesAsync();
-            return sale;
-        }
-
-        public async Task<Sale> Delete(Sale sale)
-        {
-            try
-            {
-                _context.ItemSale.RemoveRange(sale.SaleItems); // Remover itens associados à venda
-                _context.Sale.Remove(sale);
-                await _context.SaveChangesAsync();
-                return sale;
-            }
-            catch (Exception ex)
-            {
-                // Log a mensagem de erro ou trate de outra forma, se necessário
-                //throw new Exception($"Error deleting sale with ID {sale.Id}: {ex.Message}", ex);
-                throw new Exception($"Error deleting sale with ID");
-            }
         }
     }
 }

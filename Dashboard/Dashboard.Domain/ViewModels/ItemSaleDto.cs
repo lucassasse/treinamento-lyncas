@@ -1,11 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Domain.Models.ViewModels
+namespace Dashboard.Domain.ViewModels
 {
     public class ItemSaleDto
     {
         public int Id { get; set; }
-
+        public int SaleId { get; set; }
         [Required]
         public string Description { get; set; }
         [Required]
@@ -14,7 +14,5 @@ namespace Domain.Models.ViewModels
         public double UnityValue { get; set; }
         [Required]
         public double TotalValue { get; set; }
-
-        public int SaleId { get; set; }
     }
 }

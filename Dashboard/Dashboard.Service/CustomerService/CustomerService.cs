@@ -2,7 +2,7 @@
 using Dashboard.Repository.CustomerRepository;
 using Dashboard.Repository.RepositoryPattern;
 using Dashboard.Domain.Models;
-using Domain.Models.ViewModels;
+using Domain.ViewModels;
 
 namespace Dashboard.Service.CustomerService
 {
@@ -12,7 +12,7 @@ namespace Dashboard.Service.CustomerService
         private readonly IMapper _mapper;
         private readonly IRepository<Customer> _repository;
 
-        public CustomerService(ICustomerRepository customerRepository, IMapper mapper, IRepository<Customer> repository)// :base(customerRepository)
+        public CustomerService(ICustomerRepository customerRepository, IMapper mapper, IRepository<Customer> repository)
         {
             _customerRepository = customerRepository;
             _mapper = mapper;
@@ -26,7 +26,7 @@ namespace Dashboard.Service.CustomerService
 
         public async Task<Customer> GetByIdAsync(int id)
         {
-            return await Task.FromResult(_repository.Get(id));
+            return await Task.FromResult(_repository.GetById(id));
         }
 
         public async Task<Customer> CreateAsync(CustomerDto model)
@@ -38,7 +38,7 @@ namespace Dashboard.Service.CustomerService
 
         public async Task<Customer> UpdateAsync(CustomerDto model, int id)
         {
-            var customer = await Task.FromResult(_repository.Get(id));
+            var customer = await Task.FromResult(_repository.GetById(id));
 
             _mapper.Map(model, customer);
 
@@ -47,7 +47,7 @@ namespace Dashboard.Service.CustomerService
 
         public async Task<Customer> DeleteAsync(int id)
         {
-            var customer = await Task.FromResult(_repository.Get(id));
+            var customer = await Task.FromResult(_repository.GetById(id));
             _repository.Delete(customer);
             return customer;
         }
@@ -61,7 +61,7 @@ namespace Dashboard.Service.CustomerService
 
         public async Task<Customer> VerifyDeleteOrSoftDeleteAsync(int id)
         {
-            var customer = await Task.FromResult(_repository.Get(id));
+            var customer = await Task.FromResult(_repository.GetById(id));
 
             if (customer == null)
             {

@@ -1,7 +1,6 @@
-﻿using Domain.Models.ViewModels;
-using Dashboard.Service.SaleService;
+﻿using Dashboard.Domain.ViewModels;
+using Dashboard.Dashboard.Service.SaleService;
 using Microsoft.AspNetCore.Mvc;
-using Dashboard.Domain.ViewModels;
 
 namespace Dashboard.Controllers
 {
@@ -16,7 +15,7 @@ namespace Dashboard.Controllers
         }
 
         [HttpGet]
-        public async Task<List<SaleWithCustomerDto>> GetSalesAsync()
+        public async Task<List<SaleViewModel>> GetSalesAsync()
         {
             var sale = await _saleService.GetAllAsync();
             return sale;
@@ -43,7 +42,7 @@ namespace Dashboard.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] SaleDto sale)
+        public async Task<IActionResult> Create([FromBody] SaleViewModel sale)
         {
             try
             {
@@ -64,7 +63,7 @@ namespace Dashboard.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put([FromBody] SaleDto SaleVM, [FromRoute] int id)
+        public async Task<IActionResult> Put([FromBody] SaleDto model, [FromRoute] int id)
         {
             try
             {
@@ -72,7 +71,7 @@ namespace Dashboard.Controllers
                 if (existingSale == null)
                     return NotFound("Sale not found");
 
-                var updatedSale = await _saleService.UpdateAsync(SaleVM, id);
+                var updatedSale = await _saleService.UpdateAsync(model, id);
                 return Ok(updatedSale);
             }
             catch (Exception ex)

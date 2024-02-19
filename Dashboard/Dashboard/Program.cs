@@ -8,6 +8,7 @@ using Domain.Data;
 using Microsoft.EntityFrameworkCore;
 using Dashboard.Domain.Mappers;
 using Dashboard.Repository.RepositoryPattern;
+using Dashboard.Dashboard.Service.SaleService;
 
 var builder = WebApplication.CreateBuilder(args);
 
