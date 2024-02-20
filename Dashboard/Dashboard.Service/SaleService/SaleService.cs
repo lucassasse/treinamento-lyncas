@@ -4,6 +4,7 @@ using Dashboard.Repository.SaleRepository;
 using Dashboard.Domain.Models;
 using Dashboard.Repository.RepositoryPattern;
 using Dashboard.Dashboard.Service.SaleService;
+using Dashboard.Domain.Dtos;
 
 namespace Dashboard.Service.SaleService
 {
@@ -22,12 +23,16 @@ namespace Dashboard.Service.SaleService
 
         public async Task<List<SaleViewModel>> GetAllAsync()
         {
-            return await _saleRepository.GetAll();
+            var sales = await _saleRepository.GetAll();
+            var saleViewModels = _mapper.Map<List<SaleViewModel>>(sales);
+            return saleViewModels;
         }
 
-        public async Task<Sale> GetByIdAsync(int id)
+        public async Task<SaleWithItemsViewModel> GetByIdAsync(int id)
         {
-            return await _saleRepository.GetById(id);
+            var sales = await _saleRepository.GetById(id);
+            var saleViewModels = _mapper.Map<SaleWithItemsViewModel>(sales);
+            return saleViewModels;
         }
 
         public async Task<Sale> CreateAsync(SaleViewModel model)

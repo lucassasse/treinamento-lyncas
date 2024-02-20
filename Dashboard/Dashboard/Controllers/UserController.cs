@@ -1,7 +1,7 @@
 ﻿using Dashboard.Service.UserService;
 using Dashboard.Domain.Models;
-using Domain.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Dashboard.Domain.Dtos;
 
 namespace Dashboard.Controllers
 {
@@ -16,7 +16,7 @@ namespace Dashboard.Controllers
         }
 
         [HttpGet]
-        public async Task<List<User>> GetUserAsync()
+        public async Task<List<User>> GetAsync()
         {
             var user = await _userService.GetAllAsync();
             return user;

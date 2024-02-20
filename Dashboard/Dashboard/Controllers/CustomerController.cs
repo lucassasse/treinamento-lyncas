@@ -1,7 +1,8 @@
 ﻿using Dashboard.Service.CustomerService;
 using Dashboard.Domain.Models;
-using Domain.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Dashboard.Domain.Dtos;
+using Dashboard.Domain.ViewModels;
 
 namespace Dashboard.Controllers
 {
@@ -15,21 +16,21 @@ namespace Dashboard.Controllers
         }
 
         [HttpGet]
-        public async Task<List<Customer>> GetCustomersAsync()
+        public async Task<List<CustomerViewModel>> GetAsync()
         {
             var customer = await _customerService.GetAsync();
             return customer;
         }
 
         [HttpGet("all")]
-        public async Task<List<Customer>> GetAllCustomersAsync()
+        public async Task<List<CustomerViewModel>> GetAllAsync()
         {
             var customer = await _customerService.GetAllAsync();
             return customer;
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> Details([FromRoute] int id)
+        public async Task<IActionResult> GatByIdAsync([FromRoute] int id)
         {
             try
             {
@@ -55,8 +56,9 @@ namespace Dashboard.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    await _customerService.CreateAsync(customer);
-                    return Ok(customer);
+                    var createdCustomer = await _customerService.CreateAsync(customer);
+                    var resourceUri = Url.Action("Get", new { id = createdCustomer.Id });
+                    return Created(resourceUri, createdCustomer);
                 }
                 else
                 {
@@ -78,8 +80,8 @@ namespace Dashboard.Controllers
                 if (existingCustomer == null)
                     return NotFound("Customer not found");
 
-                var updatedCustomer = await _customerService.UpdateAsync(customer, id);
-                return Ok(updatedCustomer);
+                await _customerService.UpdateAsync(customer, id);
+                return Ok();
             }
             catch (Exception ex)
             {
@@ -97,7 +99,7 @@ namespace Dashboard.Controllers
                 if (deletedCustomer == null)
                     return NotFound("Customer not found");
 
-                return Ok(deletedCustomer);
+                return NoContent();
             }
             catch (Exception ex)
             {

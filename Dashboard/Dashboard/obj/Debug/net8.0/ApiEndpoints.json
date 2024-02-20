@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "Dashboard.Controllers.CustomerController",
-    "Method": "GetCustomersAsync",
+    "Method": "GetAsync",
     "RelativePath": "api/Customer",
     "HttpMethod": "GET",
     "IsController": true,
@@ -9,7 +9,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[Dashboard.Domain.Models.Customer, Dashboard.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[Dashboard.Domain.ViewModels.CustomerViewModel, Dashboard.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -29,7 +29,7 @@
     "Parameters": [
       {
         "Name": "customer",
-        "Type": "Domain.ViewModels.CustomerDto",
+        "Type": "Dashboard.Domain.Dtos.CustomerDto",
         "IsRequired": true
       }
     ],
@@ -37,7 +37,7 @@
   },
   {
     "ContainingType": "Dashboard.Controllers.CustomerController",
-    "Method": "Details",
+    "Method": "GatByIdAsync",
     "RelativePath": "api/Customer/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -61,7 +61,7 @@
     "Parameters": [
       {
         "Name": "customer",
-        "Type": "Domain.ViewModels.CustomerDto",
+        "Type": "Dashboard.Domain.Dtos.CustomerDto",
         "IsRequired": true
       },
       {
@@ -90,7 +90,7 @@
   },
   {
     "ContainingType": "Dashboard.Controllers.CustomerController",
-    "Method": "GetAllCustomersAsync",
+    "Method": "GetAllAsync",
     "RelativePath": "api/Customer/all",
     "HttpMethod": "GET",
     "IsController": true,
@@ -98,7 +98,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[Dashboard.Domain.Models.Customer, Dashboard.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[Dashboard.Domain.ViewModels.CustomerViewModel, Dashboard.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -170,7 +170,7 @@
     "Parameters": [
       {
         "Name": "model",
-        "Type": "Dashboard.Domain.ViewModels.SaleDto",
+        "Type": "Dashboard.Domain.Dtos.SaleDto",
         "IsRequired": true
       },
       {
@@ -199,7 +199,7 @@
   },
   {
     "ContainingType": "Dashboard.Controllers.UserController",
-    "Method": "GetUserAsync",
+    "Method": "GetAsync",
     "RelativePath": "api/User",
     "HttpMethod": "GET",
     "IsController": true,
@@ -227,7 +227,7 @@
     "Parameters": [
       {
         "Name": "user",
-        "Type": "Domain.Models.ViewModels.UserDto",
+        "Type": "Dashboard.Domain.Dtos.UserDto",
         "IsRequired": true
       }
     ],
@@ -259,7 +259,7 @@
     "Parameters": [
       {
         "Name": "UserVM",
-        "Type": "Domain.Models.ViewModels.UserDto",
+        "Type": "Dashboard.Domain.Dtos.UserDto",
         "IsRequired": true
       },
       {

@@ -2,7 +2,8 @@
 using Dashboard.Repository.CustomerRepository;
 using Dashboard.Repository.RepositoryPattern;
 using Dashboard.Domain.Models;
-using Domain.ViewModels;
+using Dashboard.Domain.Dtos;
+using Dashboard.Domain.ViewModels;
 
 namespace Dashboard.Service.CustomerService
 {
@@ -19,14 +20,18 @@ namespace Dashboard.Service.CustomerService
             _repository = repository;
         }
 
-        public async Task<List<Customer>> GetAsync()
+        public async Task<List<CustomerViewModel>> GetAsync()
         {
-            return await Task.FromResult(_repository.GetAll().ToList());
+            var customer = await Task.FromResult(_repository.GetAll().ToList());
+            var customerViewModel = _mapper.Map<List<CustomerViewModel>>(customer);
+            return customerViewModel;
         }
 
-        public async Task<Customer> GetByIdAsync(int id)
+        public async Task<CustomerViewModel> GetByIdAsync(int id)
         {
-            return await Task.FromResult(_repository.GetById(id));
+            var customer = await Task.FromResult(_repository.GetById(id));
+            var customerViewModel = _mapper.Map<CustomerViewModel>(customer);
+            return customerViewModel;
         }
 
         public async Task<Customer> CreateAsync(CustomerDto model)
@@ -54,9 +59,11 @@ namespace Dashboard.Service.CustomerService
 
 
 
-        public async Task<List<Customer>> GetAllAsync()
+        public async Task<List<CustomerViewModel>> GetAllAsync()
         {
-            return await _customerRepository.GetAllAsync();
+            var customer = await _customerRepository.GetAllAsync();
+            var CustomerViewModel = _mapper.Map<List<CustomerViewModel>>(customer);
+            return new List<CustomerViewModel>();
         }
 
         public async Task<Customer> VerifyDeleteOrSoftDeleteAsync(int id)

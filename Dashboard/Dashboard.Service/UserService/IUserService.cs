@@ -1,5 +1,5 @@
-﻿using Dashboard.Domain.Models;
-using Domain.Models.ViewModels;
+﻿using Dashboard.Domain.Dtos;
+using Dashboard.Domain.Models;
 
 namespace Dashboard.Service.UserService
 {

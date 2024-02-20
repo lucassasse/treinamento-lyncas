@@ -1,6 +1,6 @@
 ﻿using Dashboard.Repository.UserRepository;
 using Dashboard.Domain.Models;
-using Domain.Models.ViewModels;
+using Dashboard.Domain.Dtos;
 
 namespace Dashboard.Service.UserService
 {

@@ -1,4 +1,5 @@
 ﻿using Dashboard.Domain.Models;
+using Dashboard.Domain.ViewModels;
 
 namespace Dashboard.Repository.CustomerRepository
 {

@@ -4,6 +4,7 @@ namespace Dashboard.Domain.ViewModels
 {
     public class SaleViewModel
     {
+        [Required]
         public int Id { get; set; }
         [Required]
         public int CustomerId { get; set; }
@@ -15,7 +16,5 @@ namespace Dashboard.Domain.ViewModels
         public DateTime BillingDate { get; set; }
         [Required]
         public double SaleTotalValue { get; set; }
-        [Required]
-        public IList<ItemSaleDto> SaleItems { get; set; }
     }
 }

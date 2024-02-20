@@ -1,28 +1,19 @@
 ﻿using Dashboard.Domain.Data;
-using Dashboard.Domain.ViewModels;
 using Domain.Data;
 using Microsoft.EntityFrameworkCore;
-using AutoMapper;
 using Dashboard.Domain.Models;
 
 namespace Dashboard.Repository.SaleRepository
 {
     public class SaleRepository : BaseRepository, ISaleRepository
     {
-        private readonly IMapper _mapper;
-        public SaleRepository(AppDbContext context, IMapper mapper) : base(context)
+        public SaleRepository(AppDbContext context) : base(context)
         {
-            _mapper = mapper;
         }
 
-        public async Task<List<SaleViewModel>> GetAll()
+        public async Task<List<Sale>> GetAll()
         {
-            var sales = await _context.Sale
-                .ToListAsync();
-
-            var saleViewModels = _mapper.Map<List<SaleViewModel>>(sales);
-
-            return saleViewModels;
+            return await _context.Sale.ToListAsync();
         }
 
         public async Task<Sale> GetById(int id)

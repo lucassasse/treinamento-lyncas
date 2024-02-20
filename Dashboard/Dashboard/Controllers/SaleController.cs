@@ -1,6 +1,7 @@
 ﻿using Dashboard.Domain.ViewModels;
 using Dashboard.Dashboard.Service.SaleService;
 using Microsoft.AspNetCore.Mvc;
+using Dashboard.Domain.Dtos;
 
 namespace Dashboard.Controllers
 {
@@ -48,8 +49,9 @@ namespace Dashboard.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    await _saleService.CreateAsync(sale);
-                    return Ok(sale);
+                    var createdSale = await _saleService.CreateAsync(sale);
+                    var resourceUri = Url.Action("Get", new { id = createdSale.Id });
+                    return Created(resourceUri, createdSale);
                 }
                 else
                 {
@@ -71,8 +73,8 @@ namespace Dashboard.Controllers
                 if (existingSale == null)
                     return NotFound("Sale not found");
 
-                var updatedSale = await _saleService.UpdateAsync(model, id);
-                return Ok(updatedSale);
+                await _saleService.UpdateAsync(model, id);
+                return Ok();
             }
             catch (Exception ex)
             {
@@ -89,7 +91,7 @@ namespace Dashboard.Controllers
                 if (deletedSale == null)
                     return NotFound("Sale not found");
 
-                return Ok(deletedSale);
+                return NoContent();
             }
             catch (Exception ex)
             {
