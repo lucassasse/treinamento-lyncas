@@ -137,8 +137,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "sale",
-        "Type": "Dashboard.Domain.ViewModels.SaleViewModel",
+        "Name": "model",
+        "Type": "Dashboard.Domain.Dtos.SaleDto",
         "IsRequired": true
       }
     ],

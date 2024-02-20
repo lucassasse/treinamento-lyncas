@@ -23,7 +23,7 @@ namespace Dashboard.Service.SaleService
 
         public async Task<List<SaleViewModel>> GetAllAsync()
         {
-            var sales = await _saleRepository.GetAll();
+            var sales = await _saleRepository.GetAllIncluding();
             var saleViewModels = _mapper.Map<List<SaleViewModel>>(sales);
             return saleViewModels;
         }
@@ -35,7 +35,7 @@ namespace Dashboard.Service.SaleService
             return saleViewModels;
         }
 
-        public async Task<Sale> CreateAsync(SaleViewModel model)
+        public async Task<Sale> CreateAsync(SaleDto model)
         {
             try
             {

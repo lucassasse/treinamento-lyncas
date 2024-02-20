@@ -5,7 +5,7 @@ namespace Dashboard.Repository.SaleRepository
 {
     public interface ISaleRepository
     {
-        Task<List<Sale>> GetAll();
+        Task<List<Sale>> GetAllIncluding();
         Task<Sale> GetById(int id);
     }
 }

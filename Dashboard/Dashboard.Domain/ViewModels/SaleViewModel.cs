@@ -7,7 +7,7 @@ namespace Dashboard.Domain.ViewModels
         [Required]
         public int Id { get; set; }
         [Required]
-        public int CustomerId { get; set; }
+        public string FullName { get; set; }
         [Required]
         public DateTime SaleDate { get; set; }
         [Required]

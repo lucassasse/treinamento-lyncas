@@ -8,7 +8,7 @@ namespace Dashboard.Dashboard.Service.SaleService
     {
         Task<List<SaleViewModel>> GetAllAsync();
         Task<SaleWithItemsViewModel> GetByIdAsync(int id);
-        Task<Sale> CreateAsync(SaleViewModel saleViewModel);
+        Task<Sale> CreateAsync(SaleDto saleDto);
         Task<Sale> UpdateAsync(SaleDto saleDto, int id);
         Task<Sale> DeleteAsync(int id);
     }

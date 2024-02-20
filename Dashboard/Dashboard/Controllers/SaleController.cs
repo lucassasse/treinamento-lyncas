@@ -43,13 +43,13 @@ namespace Dashboard.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] SaleViewModel sale)
+        public async Task<IActionResult> Create([FromBody] SaleDto model)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    var createdSale = await _saleService.CreateAsync(sale);
+                    var createdSale = await _saleService.CreateAsync(model);
                     var resourceUri = Url.Action("Get", new { id = createdSale.Id });
                     return Created(resourceUri, createdSale);
                 }

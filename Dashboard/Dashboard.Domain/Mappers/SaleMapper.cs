@@ -9,31 +9,19 @@ namespace Dashboard.Domain.Mappers
     {
         public SaleMapper()
         {
-            CreateMap<Sale, SaleViewModel>();
+            CreateMap<Sale, SaleViewModel>()
+                .ForMember(dest => dest.FullName, opt => opt.MapFrom(src => src.Customer.FullName))
+                .ReverseMap();
 
             CreateMap<Sale, SaleWithItemsViewModel>()
-                .ForMember(dest => dest.SaleItems, opt => opt.MapFrom(src =>
-                    src.SaleItems.Select(x => new ItemSaleViewModel
-                    {
-                        Id = x.Id,
-                        Description = x.Description,
-                        Quantity = x.Quantity,
-                        UnityValue = x.UnityValue,
-                        TotalValue = x.TotalValue
-                    })
-                ));
+                .ForMember(dest => dest.SaleItems, opt => opt.MapFrom(src => src.SaleItems))
+                .ReverseMap();
 
-            CreateMap<SaleDto, Sale>()
-                .ForMember(dest => dest.SaleItems, opt => opt.MapFrom(src =>
-                    src.SaleItems.Select(x => new ItemSale
-                    {
-                        Id = x.Id,
-                        Description = x.Description,
-                        Quantity = x.Quantity,
-                        UnityValue = x.UnityValue,
-                        TotalValue = x.TotalValue
-                    })
-                ));
+            CreateMap<ItemSale, ItemSaleViewModel>().ReverseMap();
+
+            CreateMap<ItemSaleDto, ItemSale>();
+
+            CreateMap<SaleDto, Sale>();
         }
     }
 }
