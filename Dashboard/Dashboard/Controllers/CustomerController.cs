@@ -1,5 +1,4 @@
 ﻿using Dashboard.Service.CustomerService;
-using Dashboard.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using Dashboard.Domain.Dtos;
 using Dashboard.Domain.ViewModels;
@@ -16,17 +15,31 @@ namespace Dashboard.Controllers
         }
 
         [HttpGet]
-        public async Task<List<CustomerViewModel>> GetAsync()
+        public async Task<ActionResult<List<CustomerViewModel>>> GetAsync()
         {
-            var customer = await _customerService.GetAsync();
-            return customer;
+            try
+            {
+                var customer = await _customerService.GetAsync();
+                return Ok(customer);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Erro interno do servidor: {ex.Message}");
+            }
         }
 
         [HttpGet("all")]
-        public async Task<List<CustomerViewModel>> GetAllAsync()
+        public async Task<ActionResult<List<CustomerViewModel>>> GetAllAsync()
         {
-            var customer = await _customerService.GetAllAsync();
-            return customer;
+            try
+            {
+                var customer = await _customerService.GetAllAsync();
+                return Ok(customer);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Erro interno do servidor: {ex.Message}");
+            }
         }
 
         [HttpGet("{id}")]

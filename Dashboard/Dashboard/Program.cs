@@ -48,6 +48,24 @@ using (var scope = app.Services.CreateScope())
     db.Database.Migrate();
 }
 
+app.UseExceptionHandler(errorApp =>
+{
+    errorApp.Run(async context =>
+    {
+        context.Response.StatusCode = 500;
+        context.Response.ContentType = "application/json";
+
+        var exceptionHandlerPathFeature =
+            context.Features.Get<Microsoft.AspNetCore.Diagnostics.IExceptionHandlerPathFeature>();
+
+        await context.Response.WriteAsJsonAsync(new
+        {
+            error = "Internal Server Error",
+            details = exceptionHandlerPathFeature?.Error.Message
+        });
+    });
+});
+
 app.MapControllers();
 
 app.Run();

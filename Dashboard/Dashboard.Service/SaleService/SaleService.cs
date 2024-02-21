@@ -23,16 +23,30 @@ namespace Dashboard.Service.SaleService
 
         public async Task<List<SaleViewModel>> GetAllAsync()
         {
-            var sales = await _saleRepository.GetAllIncluding();
-            var saleViewModels = _mapper.Map<List<SaleViewModel>>(sales);
-            return saleViewModels;
+            try
+            {
+                var sales = await _saleRepository.GetAllIncluding();
+                var saleViewModels = _mapper.Map<List<SaleViewModel>>(sales);
+                return saleViewModels;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error gatting list sales");
+            }
         }
 
         public async Task<SaleWithItemsViewModel> GetByIdAsync(int id)
         {
-            var sales = await _saleRepository.GetById(id);
-            var saleViewModels = _mapper.Map<SaleWithItemsViewModel>(sales);
-            return saleViewModels;
+            try
+            {
+                var sales = await _saleRepository.GetById(id);
+                var saleViewModels = _mapper.Map<SaleWithItemsViewModel>(sales);
+                return saleViewModels;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error gatting sale with ID");
+            }
         }
 
         public async Task<Sale> CreateAsync(SaleDto model)
@@ -40,25 +54,32 @@ namespace Dashboard.Service.SaleService
             try
             {
                 var sale = _mapper.Map<Sale>(model);
-
                 return await Task.FromResult(_repository.Create(sale));
             }
             catch (Exception ex)
             {
-                throw;
+                throw new Exception("Error creating sale");
             }
         }
 
         public async Task<Sale> UpdateAsync(SaleDto model, int id)
         {
-            var sale = await Task.FromResult(_repository.GetById(id));
+            try
+            {
+                var sale = await Task.FromResult(_repository.GetById(id));
 
-            if (sale == null)
-                return null;
+                if (sale == null)
+                    return null;
 
-            _mapper.Map(model, sale);
+                _mapper.Map(model, sale);
 
-            return await Task.FromResult(_repository.Update(sale));
+                return await Task.FromResult(_repository.Update(sale));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error updating sale with ID");
+            }
+            
         }
 
         public async Task<Sale> DeleteAsync(int id)

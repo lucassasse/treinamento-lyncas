@@ -16,11 +16,19 @@ namespace Dashboard.Controllers
         }
 
         [HttpGet]
-        public async Task<List<SaleViewModel>> GetSalesAsync()
+        public async Task<ActionResult<List<SaleViewModel>>> GetSalesAsync()
         {
-            var sale = await _saleService.GetAllAsync();
-            return sale;
+            try
+            {
+                var sale = await _saleService.GetAllAsync();
+                return Ok(sale);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Erro interno do servidor: {ex.Message}");
+            }
         }
+
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetByIdAsync([FromRoute] int id)
