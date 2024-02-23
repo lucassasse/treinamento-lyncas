@@ -1,6 +1,6 @@
-﻿using Dashboard.Domain.ViewModels;
+﻿using Dashboard.Domain.Dtos;
 using Dashboard.Domain.Models;
-using Dashboard.Domain.Dtos;
+using Dashboard.Domain.ViewModels;
 
 namespace Dashboard.Dashboard.Service.SaleService
 {
@@ -8,8 +8,6 @@ namespace Dashboard.Dashboard.Service.SaleService
     {
         Task<List<SaleViewModel>> GetAllAsync();
         Task<SaleWithItemsViewModel> GetByIdAsync(int id);
-        Task<Sale> CreateAsync(SaleDto saleDto);
-        Task<Sale> UpdateAsync(SaleDto saleDto, int id);
-        Task<Sale> DeleteAsync(int id);
+        Task<Sale> UpdateAsync(SaleDto model, int id);
     }
 }

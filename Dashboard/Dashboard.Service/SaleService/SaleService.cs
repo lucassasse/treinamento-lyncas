@@ -2,7 +2,7 @@
 using Dashboard.Domain.ViewModels;
 using Dashboard.Repository.SaleRepository;
 using Dashboard.Domain.Models;
-using Dashboard.Repository.RepositoryPattern;
+using Dashboard.Repository.Repository;
 using Dashboard.Dashboard.Service.SaleService;
 using Dashboard.Domain.Dtos;
 
@@ -31,7 +31,7 @@ namespace Dashboard.Service.SaleService
             }
             catch (Exception ex)
             {
-                throw new Exception("Error gatting list sales");
+                throw new Exception("Error getting list sales");
             }
         }
 
@@ -45,20 +45,7 @@ namespace Dashboard.Service.SaleService
             }
             catch (Exception ex)
             {
-                throw new Exception("Error gatting sale with ID");
-            }
-        }
-
-        public async Task<Sale> CreateAsync(SaleDto model)
-        {
-            try
-            {
-                var sale = _mapper.Map<Sale>(model);
-                return await Task.FromResult(_repository.Create(sale));
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error creating sale");
+                throw new Exception("Error getting sale with ID");
             }
         }
 
@@ -78,24 +65,6 @@ namespace Dashboard.Service.SaleService
             catch (Exception ex)
             {
                 throw new Exception("Error updating sale with ID");
-            }
-            
-        }
-
-        public async Task<Sale> DeleteAsync(int id)
-        {
-            try
-            {
-                var sale = await Task.FromResult(_repository.GetById(id));
-                if (sale == null)
-                    return null;
-
-                await Task.FromResult(_repository.Delete(sale));
-                return sale;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error deleting sale with ID");
             }
         }
     }

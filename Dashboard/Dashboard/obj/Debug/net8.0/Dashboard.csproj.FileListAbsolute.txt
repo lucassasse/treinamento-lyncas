@@ -1,3 +1,9 @@
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.csproj.AssemblyReference.cache
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.AssemblyInfoInputs.cache
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.AssemblyInfo.cs
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.csproj.CoreCompileInputs.cache
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\appsettings.json
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\Dashboard.exe
@@ -121,13 +127,6 @@ C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\Dashboard.Service.d
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\Dashboard.Repository.pdb
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\Dashboard.Service.pdb
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\Dashboard.Domain.pdb
-C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.csproj.AssemblyReference.cache
-C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.AssemblyInfoInputs.cache
-C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.AssemblyInfo.cs
-C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.csproj.CoreCompileInputs.cache
-C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\staticwebassets\msbuild.Dashboard.Microsoft.AspNetCore.StaticWebAssets.props

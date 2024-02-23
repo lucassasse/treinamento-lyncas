@@ -4,6 +4,7 @@ namespace Dashboard.Domain.Dtos
 {
     public class CustomerDto
     {
+        public int Id { get; set; }
         [Required]
         public string FullName { get; set; }
         [Required]

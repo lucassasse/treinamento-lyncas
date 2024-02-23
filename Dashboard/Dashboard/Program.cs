@@ -1,4 +1,3 @@
-using Dashboard.Repository.UserRepository;
 using Dashboard.Repository.CustomerRepository;
 using Dashboard.Repository.SaleRepository;
 using Dashboard.Service.CustomerService;
@@ -7,8 +6,9 @@ using Dashboard.Service.UserService;
 using Domain.Data;
 using Microsoft.EntityFrameworkCore;
 using Dashboard.Domain.Mappers;
-using Dashboard.Repository.RepositoryPattern;
+using Dashboard.Repository.Repository;
 using Dashboard.Dashboard.Service.SaleService;
+using Dashboard.Service.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,7 +23,6 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString);
 });
 
-builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
@@ -33,6 +32,7 @@ builder.Services.AddScoped<ISaleRepository, SaleRepository>();
 builder.Services.AddScoped<ISaleService, SaleService>();
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped(typeof(IService<,,>), typeof(Service<,,>));
 
 var app = builder.Build();
 

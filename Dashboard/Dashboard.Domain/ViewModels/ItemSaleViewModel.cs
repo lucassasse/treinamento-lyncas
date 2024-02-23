@@ -4,7 +4,6 @@ namespace Dashboard.Domain.ViewModels
 {
     public class ItemSaleViewModel
     {
-        [Required]
         public int Id { get; set; }
         [Required]
         public string Description { get; set; }

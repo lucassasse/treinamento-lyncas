@@ -2,6 +2,8 @@
 using Dashboard.Dashboard.Service.SaleService;
 using Microsoft.AspNetCore.Mvc;
 using Dashboard.Domain.Dtos;
+using Dashboard.Domain.Models;
+using Dashboard.Service.Service;
 
 namespace Dashboard.Controllers
 {
@@ -9,10 +11,12 @@ namespace Dashboard.Controllers
     public class SaleController : Controller
     {
         private readonly ISaleService _saleService;
+        private readonly IService<Sale, SaleDto, SaleViewModel> _service;
 
-        public SaleController(ISaleService saleService)
+        public SaleController(ISaleService saleService, IService<Sale, SaleDto, SaleViewModel> service)
         {
             _saleService = saleService;
+            _service = service;
         }
 
         [HttpGet]
@@ -57,7 +61,7 @@ namespace Dashboard.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var createdSale = await _saleService.CreateAsync(model);
+                    var createdSale = _service.Create(model);
                     var resourceUri = Url.Action("Get", new { id = createdSale.Id });
                     return Created(resourceUri, createdSale);
                 }
@@ -78,10 +82,14 @@ namespace Dashboard.Controllers
             try
             {
                 var existingSale = await _saleService.GetByIdAsync(id);
+
                 if (existingSale == null)
                     return NotFound("Sale not found");
 
-                await _saleService.UpdateAsync(model, id);
+                if (!model.SaleItems.Any())
+                    return NotFound("Your sale must have at least one item");
+
+                _service.Update(model, id);
                 return Ok();
             }
             catch (Exception ex)
@@ -95,7 +103,7 @@ namespace Dashboard.Controllers
         {
             try
             {
-                var deletedSale = await _saleService.DeleteAsync(id);
+                var deletedSale = _service.Delete(id);
                 if (deletedSale == null)
                     return NotFound("Sale not found");
 

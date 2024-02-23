@@ -3,36 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{67C8C74D-A8F7-4C13-9987-C7476977C658}|Dashboard.Service\\Dashboard.Service.csproj|c:\\users\\lyncas\\desktop\\dashboard\\dashboard.service\\customerservice\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67C8C74D-A8F7-4C13-9987-C7476977C658}|Dashboard.Service\\Dashboard.Service.csproj|solutionrelative:dashboard.service\\customerservice\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67C8C74D-A8F7-4C13-9987-C7476977C658}|Dashboard.Service\\Dashboard.Service.csproj|c:\\users\\lyncas\\desktop\\dashboard\\dashboard.service\\saleservice\\saleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67C8C74D-A8F7-4C13-9987-C7476977C658}|Dashboard.Service\\Dashboard.Service.csproj|solutionrelative:dashboard.service\\saleservice\\saleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B0CF095E-49C1-4999-B355-FD828748614A}|Dashboard\\Dashboard.csproj|c:\\users\\lyncas\\desktop\\dashboard\\dashboard\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B0CF095E-49C1-4999-B355-FD828748614A}|Dashboard\\Dashboard.csproj|solutionrelative:dashboard\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B0CF095E-49C1-4999-B355-FD828748614A}|Dashboard\\Dashboard.csproj|c:\\users\\lyncas\\desktop\\dashboard\\dashboard\\controllers\\salecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B0CF095E-49C1-4999-B355-FD828748614A}|Dashboard\\Dashboard.csproj|solutionrelative:dashboard\\controllers\\salecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B0CF095E-49C1-4999-B355-FD828748614A}|Dashboard\\Dashboard.csproj|c:\\users\\lyncas\\desktop\\dashboard\\dashboard\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B0CF095E-49C1-4999-B355-FD828748614A}|Dashboard\\Dashboard.csproj|solutionrelative:dashboard\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F5D067CB-AD41-4B87-BCB5-7E7A0391AB80}|Dashboard.Repository\\Dashboard.Repository.csproj|c:\\users\\lyncas\\desktop\\dashboard\\dashboard.repository\\repositorypattern\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F5D067CB-AD41-4B87-BCB5-7E7A0391AB80}|Dashboard.Repository\\Dashboard.Repository.csproj|solutionrelative:dashboard.repository\\repositorypattern\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B0CF095E-49C1-4999-B355-FD828748614A}|Dashboard\\Dashboard.csproj|c:\\users\\lyncas\\desktop\\dashboard\\dashboard\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B0CF095E-49C1-4999-B355-FD828748614A}|Dashboard\\Dashboard.csproj|solutionrelative:dashboard\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F5D067CB-AD41-4B87-BCB5-7E7A0391AB80}|Dashboard.Repository\\Dashboard.Repository.csproj|c:\\users\\lyncas\\desktop\\dashboard\\dashboard.repository\\customerrepository\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F5D067CB-AD41-4B87-BCB5-7E7A0391AB80}|Dashboard.Repository\\Dashboard.Repository.csproj|solutionrelative:dashboard.repository\\customerrepository\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -41,111 +13,20 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 219,
-          "SelectedChildIndex": 6,
+          "DockedWidth": 238,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SaleController.cs",
-              "DocumentMoniker": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard\\Controllers\\SaleController.cs",
-              "RelativeDocumentMoniker": "Dashboard\\Controllers\\SaleController.cs",
-              "ToolTip": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard\\Controllers\\SaleController.cs",
-              "RelativeToolTip": "Dashboard\\Controllers\\SaleController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-21T16:39:00.869Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "Dashboard\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Dashboard\\Controllers\\UserController.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAADQAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-21T14:54:31.375Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Repository.cs",
-              "DocumentMoniker": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard.Repository\\RepositoryPattern\\Repository.cs",
-              "RelativeDocumentMoniker": "Dashboard.Repository\\RepositoryPattern\\Repository.cs",
-              "ToolTip": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard.Repository\\RepositoryPattern\\Repository.cs",
-              "RelativeToolTip": "Dashboard.Repository\\RepositoryPattern\\Repository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-21T14:43:51.034Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard\\Program.cs",
               "RelativeDocumentMoniker": "Dashboard\\Program.cs",
               "ToolTip": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard\\Program.cs",
               "RelativeToolTip": "Dashboard\\Program.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAswD0AAAAJAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-21T13:46:20.822Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CustomerRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard.Repository\\CustomerRepository\\CustomerRepository.cs",
-              "RelativeDocumentMoniker": "Dashboard.Repository\\CustomerRepository\\CustomerRepository.cs",
-              "ToolTip": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard.Repository\\CustomerRepository\\CustomerRepository.cs",
-              "RelativeToolTip": "Dashboard.Repository\\CustomerRepository\\CustomerRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBIAAAA4AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-21T13:22:14.171Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SaleService.cs",
-              "DocumentMoniker": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard.Service\\SaleService\\SaleService.cs",
-              "RelativeDocumentMoniker": "Dashboard.Service\\SaleService\\SaleService.cs",
-              "ToolTip": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard.Service\\SaleService\\SaleService.cs",
-              "RelativeToolTip": "Dashboard.Service\\SaleService\\SaleService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAA4AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-21T16:38:29.505Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CustomerService.cs",
-              "DocumentMoniker": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard.Service\\CustomerService\\CustomerService.cs",
-              "RelativeDocumentMoniker": "Dashboard.Service\\CustomerService\\CustomerService.cs",
-              "ToolTip": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard.Service\\CustomerService\\CustomerService.cs",
-              "RelativeToolTip": "Dashboard.Service\\CustomerService\\CustomerService.cs",
-              "ViewState": "AQIAAEkAAAAAAAAAAAAcwHUAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-21T13:22:12.825Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CustomerController.cs",
-              "DocumentMoniker": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard\\Controllers\\CustomerController.cs",
-              "RelativeDocumentMoniker": "Dashboard\\Controllers\\CustomerController.cs",
-              "ToolTip": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard\\Controllers\\CustomerController.cs",
-              "RelativeToolTip": "Dashboard\\Controllers\\CustomerController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAHgAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-21T13:14:35.023Z",
+              "WhenOpened": "2024-02-23T17:54:24.419Z",
               "EditorCaption": ""
             }
           ]

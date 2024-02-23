@@ -2,6 +2,8 @@
 using Dashboard.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using Dashboard.Domain.Dtos;
+using Dashboard.Domain.ViewModels;
+using Dashboard.Service.Service;
 
 namespace Dashboard.Controllers
 {
@@ -9,17 +11,26 @@ namespace Dashboard.Controllers
     public class UserController : Controller
     {
         private readonly IUserService _userService;
+        private readonly IService<User, UserDto, UserViewModel> _service;
 
-        public UserController(IUserService userService)
+        public UserController(IUserService userService, IService<User, UserDto, UserViewModel> service)
         {
             _userService = userService;
+            _service = service;
         }
 
         [HttpGet]
-        public async Task<List<User>> GetAsync()
+        public async Task<ActionResult<List<UserViewModel>>> GetAsync()
         {
-            var user = await _userService.GetAllAsync();
-            return user;
+            try
+            {
+                var user = await _userService.GetAsync();
+                return Ok(user);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error in get users. Erro interno do servidor: {ex.Message}");
+            }
         }
 
         [HttpGet("{id}")]
@@ -30,7 +41,7 @@ namespace Dashboard.Controllers
                 if (id == null)
                     return BadRequest("Invalid ID");
 
-                var user = await _userService.GetByIdAsync(id);
+                var user = _service.GetById(id);
                 if (user == null)
                     return NotFound("User not found");
 
@@ -38,7 +49,7 @@ namespace Dashboard.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+                return StatusCode(500, $"Error in get user. Internal Server Error: {ex.Message}");
             }
         }
 
@@ -49,7 +60,7 @@ namespace Dashboard.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    await _userService.CreateAsync(user);
+                    _service.Create(user);
                     return Ok(user);
                 }
                 else
@@ -59,25 +70,25 @@ namespace Dashboard.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+                return StatusCode(500, $"Error in user create. Internal Server Error: {ex.Message}");
             }
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put([FromBody] UserDto UserVM, [FromRoute] int id)
+        public async Task<IActionResult> Put([FromBody] UserDto User, [FromRoute] int id)
         {
             try
             {
-                var existingUser = await _userService.GetByIdAsync(id);
+                var existingUser = _service.GetById(id);
                 if (existingUser == null)
                     return NotFound("User not found");
 
-                var updatedUser = await _userService.UpdateAsync(UserVM, id);
+                var updatedUser = _service.Update(User, id);
                 return Ok(updatedUser);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+                return StatusCode(500, $"Error in user update. Internal Server Error: {ex.Message}");
             }
         }
 
@@ -86,7 +97,7 @@ namespace Dashboard.Controllers
         {
             try
             {
-                var deletedUser = await _userService.DeleteAsync(id);
+                var deletedUser = _service.Delete(id);
                 if (deletedUser == null)
                     return NotFound("User not found");
 
@@ -94,7 +105,7 @@ namespace Dashboard.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+                return StatusCode(500, $"Error in user delete. Internal Server Error: {ex.Message}");
             }
         }
     }

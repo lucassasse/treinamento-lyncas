@@ -1,56 +1,34 @@
-﻿using Dashboard.Repository.UserRepository;
-using Dashboard.Domain.Models;
+﻿using Dashboard.Domain.Models;
 using Dashboard.Domain.Dtos;
+using Dashboard.Repository.Repository;
+using AutoMapper;
+using Dashboard.Domain.ViewModels;
 
 namespace Dashboard.Service.UserService
 {
     public class UserService : IUserService
     {
-        private readonly IUserRepository _userRepository;
+        private readonly IMapper _mapper;
+        private readonly IRepository<User> _repository;
 
-        public UserService(IUserRepository userRepository)
+        public UserService(IMapper mapper, IRepository<User> repository)
         {
-            _userRepository = userRepository;
+            _mapper = mapper;
+            _repository = repository;
         }
 
-        public async Task<List<User>> GetAllAsync()
+        public async Task<List<UserViewModel>> GetAsync()
         {
-            return await _userRepository.GetAll();
-        }
-
-
-        public async Task<User> GetByIdAsync(int id)
-        {
-            return await _userRepository.GetById(id);
-        }
-
-        public async Task<User> CreateAsync(UserDto user)
-        {
-            var obj = new User();
-
-            obj.FullName = user.FullName;
-            obj.Email = user.Email;
-            obj.Password = user.Password;
-
-            return await _userRepository.Create(obj);
-        }
-
-        public async Task<User> UpdateAsync(UserDto user, int id)
-        {
-            var obj = await _userRepository.GetById(id);
-
-            obj.FullName = user.FullName;
-            obj.Email = user.Email;
-            obj.Password = user.Password;
-
-            return await _userRepository.Update(obj);
-        }
-
-        public async Task<User> DeleteAsync(int id)
-        {
-            var user = await _userRepository.GetById(id);
-            await _userRepository.Delete(user);
-            return user;
+            try
+            {
+                var user = await Task.FromResult(_repository.GetAll().ToList());
+                var userViewModel = _mapper.Map<List<UserViewModel>>(user);
+                return userViewModel;
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error occurred while getting users.", ex);
+            }
         }
     }
 }

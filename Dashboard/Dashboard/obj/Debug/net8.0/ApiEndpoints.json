@@ -207,7 +207,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[Dashboard.Domain.Models.User, Dashboard.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[Dashboard.Domain.ViewModels.UserViewModel, Dashboard.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -258,7 +258,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "UserVM",
+        "Name": "User",
         "Type": "Dashboard.Domain.Dtos.UserDto",
         "IsRequired": true
       },
