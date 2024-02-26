@@ -1,11 +1,11 @@
-﻿using Dashboard.Domain.Data;
-using Domain.Data;
+﻿using Domain.Data;
 using Microsoft.EntityFrameworkCore;
 using Dashboard.Domain.Models;
+using Dashboard.Repository.Repository;
 
 namespace Dashboard.Repository.SaleRepository
 {
-    public class SaleRepository : BaseRepository, ISaleRepository
+    public class SaleRepository : Repository<Sale>, ISaleRepository
     {
         public SaleRepository(AppDbContext context) : base(context)
         {
@@ -18,11 +18,11 @@ namespace Dashboard.Repository.SaleRepository
                 .ToListAsync();
         }
 
-        public async Task<Sale> GetById(int id)
+        public override Sale GetById(int id)
         {
-            return await _context.Sale
+            return _context.Sale
                 .Include(x => x.SaleItems)
-                .FirstOrDefaultAsync(e => e.Id == id);
+                .FirstOrDefault(e => e.Id == id);
         }
     }
 }

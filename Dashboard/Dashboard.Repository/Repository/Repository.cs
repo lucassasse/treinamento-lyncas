@@ -5,7 +5,7 @@ namespace Dashboard.Repository.Repository
 {
     public class Repository<T> : IRepository<T> where T : BaseEntity
     {
-        private readonly AppDbContext _context;
+        public readonly AppDbContext _context;
 
         public Repository(AppDbContext context)
         {
@@ -39,7 +39,7 @@ namespace Dashboard.Repository.Repository
         public virtual T Delete(T entity)
         {
             _context.Set<T>().Remove(entity);
-            _context.SaveChangesAsync();
+            _context.SaveChanges();
             return entity;
         }
     }

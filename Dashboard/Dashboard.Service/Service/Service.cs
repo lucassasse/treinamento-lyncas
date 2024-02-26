@@ -4,16 +4,17 @@ using Dashboard.Repository.Repository;
 
 namespace Dashboard.Service.Service
 {
-    public class Service<T, TDto, TViewModel> : IService<T, TDto, TViewModel>
-        where T : class
+    public class Service<T, TDto, TViewModel, TRepository> : IService<T, TDto, TViewModel>
+        where T : BaseEntity
         where TDto : class
         where TViewModel : class
+        where TRepository : IRepository<T>
 
     {
-        private readonly IRepository<T> _repository;
-        private readonly IMapper _mapper;
+        public readonly TRepository _repository;
+        public readonly IMapper _mapper;
 
-        public Service(IRepository<T> repository, IMapper mapper)
+        public Service(TRepository repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;

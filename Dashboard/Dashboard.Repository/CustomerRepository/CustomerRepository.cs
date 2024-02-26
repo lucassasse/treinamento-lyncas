@@ -1,11 +1,11 @@
-﻿using Dashboard.Domain.Data;
-using Dashboard.Domain.Models;
+﻿using Dashboard.Domain.Models;
+using Dashboard.Repository.Repository;
 using Domain.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace Dashboard.Repository.CustomerRepository
 {
-    public class CustomerRepository : BaseRepository, ICustomerRepository
+    public class CustomerRepository : Repository<Customer>, ICustomerRepository
     {
         public CustomerRepository(AppDbContext context) : base(context)
         {
@@ -13,13 +13,28 @@ namespace Dashboard.Repository.CustomerRepository
 
         public async Task<List<Customer>> GetAllAsync()
         {
-            return await _context.Customer.IgnoreQueryFilters().ToListAsync(); //Ignora o filtro SoftDelete
+            try
+            {
+                return await _context.Customer.IgnoreQueryFilters().ToListAsync(); // Ignora o filtro SoftDelete
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error getting all customers.", ex);
+            }
         }
 
         public async Task<bool> HasSales(int customerId)
         {
-            return await _context.Customer
-                .AnyAsync(c => c.Id == customerId && c.Sales.Count > 0);
+            try
+            {
+                return await _context.Customer
+                    .AnyAsync(c => c.Id == customerId && c.Sales.Count > 0);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error when checking whether the customer has sales. {ex.Message}");
+                throw;
+            }
         }
     }
 }

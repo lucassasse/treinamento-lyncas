@@ -1,22 +1,17 @@
 ﻿using AutoMapper;
 using Dashboard.Repository.CustomerRepository;
-using Dashboard.Repository.Repository;
 using Dashboard.Domain.Models;
 using Dashboard.Domain.ViewModels;
+using Dashboard.Domain.Dtos;
+using Dashboard.Service.Service;
 
 namespace Dashboard.Service.CustomerService
 {
-    public class CustomerService : ICustomerService
+    public class CustomerService : Service<Customer, CustomerDto, CustomerViewModel, ICustomerRepository>, ICustomerService
     {
-        private readonly ICustomerRepository _customerRepository;
-        private readonly IMapper _mapper;
-        private readonly IRepository<Customer> _repository;
 
-        public CustomerService(ICustomerRepository customerRepository, IMapper mapper, IRepository<Customer> repository)
+        public CustomerService(ICustomerRepository repository, IMapper mapper) : base(repository, mapper)
         {
-            _customerRepository = customerRepository;
-            _mapper = mapper;
-            _repository = repository;
         }
 
         public async Task<List<CustomerViewModel>> GetAsync()
@@ -37,7 +32,7 @@ namespace Dashboard.Service.CustomerService
         {
             try
             {
-                var customer = await _customerRepository.GetAllAsync();
+                var customer = await _repository.GetAllAsync();
                 var CustomerViewModel = _mapper.Map<List<CustomerViewModel>>(customer);
                 return CustomerViewModel;
             }
@@ -55,7 +50,7 @@ namespace Dashboard.Service.CustomerService
                 if (customer == null)
                     return null;
 
-                bool hasSales = await _customerRepository.HasSales(id);
+                bool hasSales = await _repository.HasSales(id);
                 
                 if (hasSales)
                     return await SoftDeleteAsync(customer);

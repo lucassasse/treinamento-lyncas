@@ -2,30 +2,23 @@
 using Dashboard.Domain.ViewModels;
 using Dashboard.Repository.SaleRepository;
 using Dashboard.Domain.Models;
-using Dashboard.Repository.Repository;
-using Dashboard.Dashboard.Service.SaleService;
 using Dashboard.Domain.Dtos;
+using Dashboard.Service.Service;
 
 namespace Dashboard.Service.SaleService
 {
-    public class SaleService : ISaleService
+    public class SaleService : Service<Sale, SaleDto, SaleViewModel, ISaleRepository>, ISaleService
     {
-        private readonly ISaleRepository _saleRepository;
-        private readonly IMapper _mapper;
-        private readonly IRepository<Sale> _repository;
 
-        public SaleService(ISaleRepository saleRepository, IMapper mapper, IRepository<Sale> repository)
+        public SaleService(ISaleRepository repository, IMapper mapper) : base(repository, mapper)
         {
-            _saleRepository = saleRepository;
-            _mapper = mapper;
-            _repository = repository;
         }
 
         public async Task<List<SaleViewModel>> GetAllAsync()
         {
             try
             {
-                var sales = await _saleRepository.GetAllIncluding();
+                var sales = await _repository.GetAllIncluding();
                 var saleViewModels = _mapper.Map<List<SaleViewModel>>(sales);
                 return saleViewModels;
             }
@@ -39,7 +32,7 @@ namespace Dashboard.Service.SaleService
         {
             try
             {
-                var sales = await _saleRepository.GetById(id);
+                var sales = _repository.GetById(id);
                 var saleViewModels = _mapper.Map<SaleWithItemsViewModel>(sales);
                 return saleViewModels;
             }
@@ -49,18 +42,18 @@ namespace Dashboard.Service.SaleService
             }
         }
 
-        public async Task<Sale> UpdateAsync(SaleDto model, int id)
+        public override Sale Update(SaleDto model, int id)
         {
             try
             {
-                var sale = await Task.FromResult(_repository.GetById(id));
+                var sale = _repository.GetById(id);
 
                 if (sale == null)
                     return null;
 
                 _mapper.Map(model, sale);
 
-                return await Task.FromResult(_repository.Update(sale));
+                return _repository.Update(sale);
             }
             catch (Exception ex)
             {

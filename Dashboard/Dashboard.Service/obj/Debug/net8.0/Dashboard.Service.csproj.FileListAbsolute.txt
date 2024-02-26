@@ -1,8 +1,3 @@
-C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Service\obj\Debug\net8.0\Dashboard.Service.csproj.AssemblyReference.cache
-C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Service\obj\Debug\net8.0\Dashboard.Service.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Service\obj\Debug\net8.0\Dashboard.Service.AssemblyInfoInputs.cache
-C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Service\obj\Debug\net8.0\Dashboard.Service.AssemblyInfo.cs
-C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Service\obj\Debug\net8.0\Dashboard.Service.csproj.CoreCompileInputs.cache
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Service\bin\Debug\net8.0\Dashboard.Service.deps.json
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Service\bin\Debug\net8.0\Dashboard.Service.runtimeconfig.json
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Service\bin\Debug\net8.0\Dashboard.Service.dll
@@ -11,6 +6,11 @@ C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Service\bin\Debug\net8.0\Dashboard.D
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Service\bin\Debug\net8.0\Dashboard.Repository.dll
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Service\bin\Debug\net8.0\Dashboard.Domain.pdb
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Service\bin\Debug\net8.0\Dashboard.Repository.pdb
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Service\obj\Debug\net8.0\Dashboard.Service.csproj.AssemblyReference.cache
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Service\obj\Debug\net8.0\Dashboard.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Service\obj\Debug\net8.0\Dashboard.Service.AssemblyInfoInputs.cache
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Service\obj\Debug\net8.0\Dashboard.Service.AssemblyInfo.cs
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Service\obj\Debug\net8.0\Dashboard.Service.csproj.CoreCompileInputs.cache
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Service\obj\Debug\net8.0\Dashboar.0CEA2C2B.Up2Date
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Service\obj\Debug\net8.0\Dashboard.Service.dll
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard.Service\obj\Debug\net8.0\refint\Dashboard.Service.dll

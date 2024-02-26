@@ -1,20 +1,17 @@
 ﻿using Dashboard.Domain.Models;
-using Dashboard.Domain.Dtos;
-using Dashboard.Repository.Repository;
 using AutoMapper;
 using Dashboard.Domain.ViewModels;
+using Dashboard.Service.Service;
+using Dashboard.Domain.Dtos;
+using Dashboard.Repository.UserRepository;
 
 namespace Dashboard.Service.UserService
 {
-    public class UserService : IUserService
+    public class UserService : Service<User, UserDto, UserViewModel, IUserRepository>, IUserService
     {
-        private readonly IMapper _mapper;
-        private readonly IRepository<User> _repository;
 
-        public UserService(IMapper mapper, IRepository<User> repository)
+        public UserService(IUserRepository repository, IMapper mapper) : base(repository, mapper)
         {
-            _mapper = mapper;
-            _repository = repository;
         }
 
         public async Task<List<UserViewModel>> GetAsync()

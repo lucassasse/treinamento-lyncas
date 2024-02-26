@@ -2,8 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Dashboard.Domain.Dtos;
 using Dashboard.Domain.ViewModels;
-using Dashboard.Domain.Models;
-using Dashboard.Service.Service;
 
 namespace Dashboard.Controllers
 {
@@ -11,12 +9,10 @@ namespace Dashboard.Controllers
     public class CustomerController : Controller
     {
         private readonly ICustomerService _customerService;
-        private readonly IService<Customer, CustomerDto, CustomerViewModel> _service;
 
-        public CustomerController(ICustomerService customerService, IService<Customer, CustomerDto, CustomerViewModel> service)
+        public CustomerController(ICustomerService customerService)
         {
             _customerService = customerService;
-            _service = service;
         }
 
         [HttpGet]
@@ -29,7 +25,7 @@ namespace Dashboard.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Erro interno do servidor: {ex.Message}");
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
             }
         }
 
@@ -43,7 +39,7 @@ namespace Dashboard.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Erro interno do servidor: {ex.Message}");
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
             }
         }
 
@@ -55,7 +51,7 @@ namespace Dashboard.Controllers
                 if (id == null)
                     return BadRequest("Invalid ID");
 
-                var customer = _service.GetById(id);
+                var customer = _customerService.GetById(id);
                 if (customer == null)
                     return NotFound("Customer not found");
 
@@ -74,7 +70,7 @@ namespace Dashboard.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var createdCustomer = _service.Create(customer);
+                    var createdCustomer = _customerService.Create(customer);
                     var resourceUri = Url.Action("Get", new { id = createdCustomer.Id });
                     return Created(resourceUri, createdCustomer);
                 }
@@ -94,11 +90,11 @@ namespace Dashboard.Controllers
         {
             try
             {
-                var existingCustomer = _service.GetById(id);
+                var existingCustomer = _customerService.GetById(id);
                 if (existingCustomer == null)
                     return NotFound("Customer not found");
 
-                _service.Update(customer, id);
+                _customerService.Update(customer, id);
                 return Ok();
             }
             catch (Exception ex)
@@ -112,7 +108,7 @@ namespace Dashboard.Controllers
         {
             try
             {
-                //Chama o método que verifica a existência de 'Sales' --- Este método chama 'Delete' ou 'SoftDelete'
+                //Chama o método que verifica a existência de 'Sales' --- E aquele método chama 'Delete' ou 'SoftDelete'
                 var deletedCustomer = await _customerService.VerifyDeleteOrSoftDeleteAsync(id);
                 if (deletedCustomer == null)
                     return NotFound("Customer not found");

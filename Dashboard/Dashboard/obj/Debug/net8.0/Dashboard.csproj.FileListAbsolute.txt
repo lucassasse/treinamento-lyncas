@@ -3,6 +3,7 @@ C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.Generated
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.AssemblyInfoInputs.cache
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.AssemblyInfo.cs
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.csproj.CoreCompileInputs.cache
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\appsettings.json

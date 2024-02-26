@@ -1,9 +1,11 @@
-﻿using Dashboard.Domain.Models;
+﻿using Dashboard.Domain.Dtos;
+using Dashboard.Domain.Models;
 using Dashboard.Domain.ViewModels;
+using Dashboard.Service.Service;
 
 namespace Dashboard.Service.CustomerService
 {
-    public interface ICustomerService
+    public interface ICustomerService : IService<Customer, CustomerDto, CustomerViewModel>
     {
         Task<List<CustomerViewModel>> GetAsync();
         Task<List<CustomerViewModel>> GetAllAsync();

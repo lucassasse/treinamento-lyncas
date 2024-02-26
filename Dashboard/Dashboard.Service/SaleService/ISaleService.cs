@@ -1,13 +1,13 @@
 ﻿using Dashboard.Domain.Dtos;
 using Dashboard.Domain.Models;
 using Dashboard.Domain.ViewModels;
+using Dashboard.Service.Service;
 
-namespace Dashboard.Dashboard.Service.SaleService
+namespace Dashboard.Service.SaleService
 {
-    public interface ISaleService
+    public interface ISaleService : IService<Sale, SaleDto, SaleViewModel>
     {
         Task<List<SaleViewModel>> GetAllAsync();
         Task<SaleWithItemsViewModel> GetByIdAsync(int id);
-        Task<Sale> UpdateAsync(SaleDto model, int id);
     }
 }

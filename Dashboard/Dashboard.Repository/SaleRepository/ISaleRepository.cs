@@ -1,11 +1,10 @@
-﻿using Dashboard.Domain.ViewModels;
-using Dashboard.Domain.Models;
+﻿using Dashboard.Domain.Models;
+using Dashboard.Repository.Repository;
 
 namespace Dashboard.Repository.SaleRepository
 {
-    public interface ISaleRepository
+    public interface ISaleRepository : IRepository<Sale>
     {
         Task<List<Sale>> GetAllIncluding();
-        Task<Sale> GetById(int id);
     }
 }

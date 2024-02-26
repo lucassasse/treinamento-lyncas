@@ -1,9 +1,7 @@
 ﻿using Dashboard.Service.UserService;
-using Dashboard.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using Dashboard.Domain.Dtos;
 using Dashboard.Domain.ViewModels;
-using Dashboard.Service.Service;
 
 namespace Dashboard.Controllers
 {
@@ -11,12 +9,11 @@ namespace Dashboard.Controllers
     public class UserController : Controller
     {
         private readonly IUserService _userService;
-        private readonly IService<User, UserDto, UserViewModel> _service;
+       
 
-        public UserController(IUserService userService, IService<User, UserDto, UserViewModel> service)
+        public UserController(IUserService userService)
         {
             _userService = userService;
-            _service = service;
         }
 
         [HttpGet]
@@ -29,7 +26,7 @@ namespace Dashboard.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Error in get users. Erro interno do servidor: {ex.Message}");
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
             }
         }
 
@@ -41,7 +38,7 @@ namespace Dashboard.Controllers
                 if (id == null)
                     return BadRequest("Invalid ID");
 
-                var user = _service.GetById(id);
+                var user = _userService.GetById(id);
                 if (user == null)
                     return NotFound("User not found");
 
@@ -49,7 +46,7 @@ namespace Dashboard.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Error in get user. Internal Server Error: {ex.Message}");
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
             }
         }
 
@@ -60,8 +57,9 @@ namespace Dashboard.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    _service.Create(user);
-                    return Ok(user);
+                    var createdUser = _userService.Create(user);
+                    var resourceUri = Url.Action("Get", new { id = createdUser.Id });
+                    return Created(resourceUri, createdUser);
                 }
                 else
                 {
@@ -70,7 +68,7 @@ namespace Dashboard.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Error in user create. Internal Server Error: {ex.Message}");
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
             }
         }
 
@@ -79,16 +77,16 @@ namespace Dashboard.Controllers
         {
             try
             {
-                var existingUser = _service.GetById(id);
+                var existingUser = _userService.GetById(id);
                 if (existingUser == null)
                     return NotFound("User not found");
 
-                var updatedUser = _service.Update(User, id);
-                return Ok(updatedUser);
+                _userService.Update(User, id);
+                return Ok();
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Error in user update. Internal Server Error: {ex.Message}");
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
             }
         }
 
@@ -97,7 +95,7 @@ namespace Dashboard.Controllers
         {
             try
             {
-                var deletedUser = _service.Delete(id);
+                var deletedUser = _userService.Delete(id);
                 if (deletedUser == null)
                     return NotFound("User not found");
 
@@ -105,7 +103,7 @@ namespace Dashboard.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Error in user delete. Internal Server Error: {ex.Message}");
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
             }
         }
     }
