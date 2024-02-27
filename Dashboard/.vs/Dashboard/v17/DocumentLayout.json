@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B0CF095E-49C1-4999-B355-FD828748614A}|Dashboard\\Dashboard.csproj|c:\\users\\lyncas\\desktop\\dashboard\\dashboard\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0CF095E-49C1-4999-B355-FD828748614A}|Dashboard\\Dashboard.csproj|solutionrelative:dashboard\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67C8C74D-A8F7-4C13-9987-C7476977C658}|Dashboard.Service\\Dashboard.Service.csproj|c:\\users\\lyncas\\desktop\\dashboard\\dashboard.service\\service\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67C8C74D-A8F7-4C13-9987-C7476977C658}|Dashboard.Service\\Dashboard.Service.csproj|solutionrelative:dashboard.service\\service\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F5D067CB-AD41-4B87-BCB5-7E7A0391AB80}|Dashboard.Repository\\Dashboard.Repository.csproj|c:\\users\\lyncas\\desktop\\dashboard\\dashboard.repository\\repository\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F5D067CB-AD41-4B87-BCB5-7E7A0391AB80}|Dashboard.Repository\\Dashboard.Repository.csproj|solutionrelative:dashboard.repository\\repository\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F5D067CB-AD41-4B87-BCB5-7E7A0391AB80}|Dashboard.Repository\\Dashboard.Repository.csproj|c:\\users\\lyncas\\desktop\\dashboard\\dashboard.repository\\repository\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F5D067CB-AD41-4B87-BCB5-7E7A0391AB80}|Dashboard.Repository\\Dashboard.Repository.csproj|solutionrelative:dashboard.repository\\repository\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67C8C74D-A8F7-4C13-9987-C7476977C658}|Dashboard.Service\\Dashboard.Service.csproj|c:\\users\\lyncas\\desktop\\dashboard\\dashboard.service\\service\\iservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67C8C74D-A8F7-4C13-9987-C7476977C658}|Dashboard.Service\\Dashboard.Service.csproj|solutionrelative:dashboard.service\\service\\iservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +30,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 263,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard.Repository\\Repository\\IRepository.cs",
-              "RelativeDocumentMoniker": "Dashboard.Repository\\Repository\\IRepository.cs",
-              "ToolTip": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard.Repository\\Repository\\IRepository.cs",
-              "RelativeToolTip": "Dashboard.Repository\\Repository\\IRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard\\Program.cs",
+              "RelativeDocumentMoniker": "Dashboard\\Program.cs",
+              "ToolTip": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard\\Program.cs",
+              "RelativeToolTip": "Dashboard\\Program.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAADwAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-26T19:08:07.91Z",
+              "WhenOpened": "2024-02-27T14:29:15.438Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "Service.cs",
+              "DocumentMoniker": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard.Service\\Service\\Service.cs",
+              "RelativeDocumentMoniker": "Dashboard.Service\\Service\\Service.cs",
+              "ToolTip": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard.Service\\Service\\Service.cs",
+              "RelativeToolTip": "Dashboard.Service\\Service\\Service.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAwwCgAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-26T19:21:26.505Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IService.cs",
+              "DocumentMoniker": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard.Service\\Service\\IService.cs",
+              "RelativeDocumentMoniker": "Dashboard.Service\\Service\\IService.cs",
+              "ToolTip": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard.Service\\Service\\IService.cs",
+              "RelativeToolTip": "Dashboard.Service\\Service\\IService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-26T19:21:27.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Repository.cs",
               "DocumentMoniker": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard.Repository\\Repository\\Repository.cs",
               "RelativeDocumentMoniker": "Dashboard.Repository\\Repository\\Repository.cs",
               "ToolTip": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard.Repository\\Repository\\Repository.cs",
               "RelativeToolTip": "Dashboard.Repository\\Repository\\Repository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAlAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-26T19:08:06.622Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard.Repository\\Repository\\IRepository.cs",
+              "RelativeDocumentMoniker": "Dashboard.Repository\\Repository\\IRepository.cs",
+              "ToolTip": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard.Repository\\Repository\\IRepository.cs",
+              "RelativeToolTip": "Dashboard.Repository\\Repository\\IRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-26T19:08:07.91Z",
               "EditorCaption": ""
             }
           ]
