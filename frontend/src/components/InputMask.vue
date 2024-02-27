@@ -17,7 +17,7 @@
 
 <script>
 import { vMaska } from "maska"
-import helpers from '@/cummon/helpers'
+import helpers from '@/common/helpers'
 export default {
     props: {
         labelFor: String,

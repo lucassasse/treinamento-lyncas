@@ -24,7 +24,7 @@
                     </tr>
                 </thead>
                 <tbody v-if="customers.length">
-                    <tr v-for="(customer) in customers" :key="customer.id" class="list-table">
+                    <tr v-for="customer in customers" :key="customer.id" class="list-table">
                         <td class="tg-0lax column-list-table first-td">{{ customer.name }}</td>
                         <td class="tg-0lax column-list-table">{{ customer.email }}</td>
                         <td class="tg-0lax column-list-table">{{ customer.tel }}</td>
@@ -54,22 +54,28 @@ import InputSearch from '@/components/InputSearch.vue'
 import ButtonTable from '@/components/ButtonTable.vue'
 import Header from '@/layouts/Header.vue'
 import PopUpDelete from '@/components/PopUpDelete.vue'
+import ApiService from "@/common/apiService";
+import { Customer } from '@/models/Customer';
+
     export default{
         props: {
             text: String
         },
+
         components:{
             InputSearch,
             ButtonTable,
             Header,
             PopUpDelete
         },
+
         data(){
             return{
                 showPopUpDelete: false,
-                customers:[]
+                customers: []
             }
         },
+
         methods:{
             deleteConfirm(){
                 console.log("Item excluído com sucesso!")
@@ -78,26 +84,27 @@ import PopUpDelete from '@/components/PopUpDelete.vue'
             togglePopUpDelete(){
                 this.showPopUpDelete = !this.showPopUpDelete
             },
-            getCustomers(){
-                this.customers = [{
-                    id: 7,
-                    name: 'Genara Souza',
-                    email: 'genara7souza@gmail.com',
-                    tel: '(91) 99844-3343',
-                    cpf: '000.000.000-00'
-                },{
-                    id: 9,
-                    name: 'Genara Souza 2',
-                    email: 'genara7souza@gmail.com',
-                    tel: '(91) 99844-3343',
-                    cpf: '000.000.000-00'
-                }]
+            
+            async getCustomers() {
+                await ApiService.get('/api/customer')
+                .then(response => {
+                    this.customers = response.data.map(customerData => new Customer(
+                        customerData.id, 
+                        customerData.fullName, 
+                        customerData.email, 
+                        customerData.telephone, 
+                        customerData.cpf));
+                })
+                .catch(error => {
+                    console.error('Error when searching customer list.', error);
+                });
             },
             redirectToUpdate(customerId){
                 this.$router.push({path: '/customers-form', query: {key: customerId}})
             }
         },
-        created(){
+
+        mounted(){ //created
             this.getCustomers()
         }
     }

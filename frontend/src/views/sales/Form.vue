@@ -87,6 +87,9 @@ import ButtonSave from '@/components/ButtonSave.vue'
 import ButtonTable from '@/components/ButtonTable.vue'
 import PopUp from '@/components/PopUp.vue'
 import PopUpDelete from '@/components/PopUpDelete.vue'
+import { Sale } from '@/models/Sale'
+import { Item } from '@/models/Item'
+
     export default{
         emits: ['input-change'],
         components:{
@@ -104,11 +107,7 @@ import PopUpDelete from '@/components/PopUpDelete.vue'
         data(){
             return{
                 customers: [],
-                sale:{
-                    id: null,
-                    customer: '',
-                    billingDate: '',
-                },
+                sale: new Sale({ item: []}),
                 item: {
                     id: null,
                     description: '',

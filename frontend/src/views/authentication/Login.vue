@@ -22,16 +22,15 @@
 
 <script>
 import InputText from '@/components/InputText.vue'
+import { User } from '@/models/User'
+
     export default{
         components:{
             InputText,
         },
         data(){
             return{
-                user:{
-                    email: '',
-                    password: ''
-                }
+                user: new User({})
             }
         },
         methods:{
@@ -53,7 +52,7 @@ import InputText from '@/components/InputText.vue'
 
 <style scoped>
 #main{
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display: flex;
 }

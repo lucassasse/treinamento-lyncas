@@ -5,7 +5,7 @@
             <div id="div-user">
                 <div id="div-wellcome">
                     <p class="text-user">Olá,</p>
-                    <p class="text-user txt-name-user">{{ userName }}</p>
+                    <p class="text-user txt-name-user">{{ user.fullName }}</p>
                 </div>
                 <router-link to="/login" class="text-user link-logout">Sair</router-link>
             </div>
@@ -18,13 +18,22 @@
 </template>
 
 <script>
+import { User } from '@/models/User'
+
     export default {
         name: 'btnAdd',
         data(){
             return{
-                userName: 'Genara Souza',
-                userImage: ''
+                user: new User({})
             }
+        },
+        methods:{
+            fetchUserData(){
+                this.user.fullName = "Genara Souza"
+            }
+        },
+        created(){
+            this.fetchUserData()
         }
     }
 </script>

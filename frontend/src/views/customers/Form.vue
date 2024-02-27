@@ -39,6 +39,9 @@ import InputText from '@/components/InputText.vue'
 import ButtonSave from '@/components/ButtonSave.vue'
 import Header from '@/layouts/Header.vue'
 import PopUp from '@/components/PopUp.vue'
+//import ApiService from "@/common/apiService";
+//import { Customer } from '@/models/Customer'
+
     export default{
         components:{
             InputMask,
@@ -49,14 +52,7 @@ import PopUp from '@/components/PopUp.vue'
         },
         data(){
             return{
-                customerId: null,
-                customers:{
-                    id: null,
-                    name: '',
-                    email: '',
-                    tel: '',
-                    cpf: ''
-                },
+                customers: [],
                 popUp: false,
                 messagePopUp: '',
                 popUpRedirect: false
@@ -90,29 +86,20 @@ import PopUp from '@/components/PopUp.vue'
                 this.messagePopUp = message
                 this.popUp = !this.popUp
             },
-            fetchCustomerData() {
-                if (!this.$route.query.key){
-                    return
-                } else {
-                    //console.log(customerId)
-                    // axios.get(`url_da_api/${customerId}`)
-                    //     .then(response => {
-                    //         this.customers.id = response.data.id
-                    //         this.customers.name = response.data.name
-                    //         this.customers.email = response.data.email
-                    //         this.customers.tel = response.data.tel
-                    //         this.customers.cpf = response.data.cpf
-                    //     })
-                    //     .catch(error => {
-                    //         console.error('Erro ao buscar dados do cliente:', error)
-                    //     })
-                }
-            }
-        },
+            async fetchCustomerData(){
+                // if (!this.$route.query.key)
+                //     return
+
+                // await ApiService.get().then((result) =>{
+                //     console.log(result)
+                // })
+            },
+        
         created(){
             this.fetchCustomerData()
         }
     }
+}
 </script>
 
 <style scoped>

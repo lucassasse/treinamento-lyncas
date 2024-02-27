@@ -40,7 +40,7 @@
               "RelativeDocumentMoniker": "Dashboard\\Program.cs",
               "ToolTip": "C:\\Users\\Lyncas\\Desktop\\Dashboard\\Dashboard\\Program.cs",
               "RelativeToolTip": "Dashboard\\Program.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAADwAAAAOAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-27T14:29:15.438Z",
               "EditorCaption": ""
@@ -55,8 +55,7 @@
               "RelativeToolTip": "Dashboard.Service\\Service\\Service.cs",
               "ViewState": "AQIAACkAAAAAAAAAAAAwwCgAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-26T19:21:26.505Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-26T19:21:26.505Z"
             },
             {
               "$type": "Document",
@@ -68,8 +67,7 @@
               "RelativeToolTip": "Dashboard.Service\\Service\\IService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-26T19:21:27.07Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-26T19:21:27.07Z"
             },
             {
               "$type": "Document",
@@ -81,8 +79,7 @@
               "RelativeToolTip": "Dashboard.Repository\\Repository\\Repository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-26T19:08:06.622Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-26T19:08:06.622Z"
             },
             {
               "$type": "Document",
@@ -94,8 +91,7 @@
               "RelativeToolTip": "Dashboard.Repository\\Repository\\IRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-26T19:08:07.91Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-26T19:08:07.91Z"
             }
           ]
         }
