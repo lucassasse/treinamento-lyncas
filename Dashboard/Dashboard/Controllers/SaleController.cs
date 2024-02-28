@@ -16,11 +16,11 @@ namespace Dashboard.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<SaleViewModel>>> GetSalesAsync()
+        public ActionResult<List<SaleViewModel>> GetSalesAsync()
         {
             try
             {
-                var sale = await _saleService.GetAllAsync();
+                var sale = _saleService.GetAllAsync();
                 return Ok(sale);
             }
             catch (Exception ex)

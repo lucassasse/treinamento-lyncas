@@ -18,27 +18,16 @@ namespace Dashboard.Service.CustomerService
         {
             try
             {
-                var customer = await Task.FromResult(_repository.GetAll().ToList());
+                var x = _repository.GetAll()
+                    .Where(x => x.SoftDeleted != true)
+                    .ToList();
+                var customer = await Task.FromResult(x);
                 var customerViewModel = _mapper.Map<List<CustomerViewModel>>(customer);
                 return customerViewModel;
             }
             catch (Exception ex)
             {
                 throw new ApplicationException("Error occurred while getting customers.", ex);
-            }
-        }
-
-        public async Task<List<CustomerViewModel>> GetAllAsync() 
-        {
-            try
-            {
-                var customer = await _repository.GetAllAsync();
-                var CustomerViewModel = _mapper.Map<List<CustomerViewModel>>(customer);
-                return CustomerViewModel;
-            }
-            catch (Exception ex)
-            {
-                throw new ApplicationException("Error occurred while getting all customers.", ex);
             }
         }
 

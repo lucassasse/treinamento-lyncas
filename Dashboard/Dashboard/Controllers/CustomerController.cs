@@ -29,22 +29,8 @@ namespace Dashboard.Controllers
             }
         }
 
-        [HttpGet("all")]
-        public async Task<ActionResult<List<CustomerViewModel>>> GetAllAsync()
-        {
-            try
-            {
-                var customer = await _customerService.GetAllAsync();
-                return Ok(customer);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Internal Server Error: {ex.Message}");
-            }
-        }
-
         [HttpGet("{id}")]
-        public async Task<IActionResult> GatByIdAsync([FromRoute] int id)
+        public async Task<IActionResult> GetByIdAsync([FromRoute] int id)
         {
             try
             {

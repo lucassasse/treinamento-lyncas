@@ -5,6 +5,6 @@ namespace Dashboard.Repository.SaleRepository
 {
     public interface ISaleRepository : IRepository<Sale>
     {
-        Task<List<Sale>> GetAllIncluding();
+        IQueryable<Sale> GetAllIncluding();
     }
 }

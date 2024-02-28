@@ -11,18 +11,6 @@ namespace Dashboard.Repository.CustomerRepository
         {
         }
 
-        public async Task<List<Customer>> GetAllAsync()
-        {
-            try
-            {
-                return await _context.Customer.IgnoreQueryFilters().ToListAsync(); // Ignora o filtro SoftDelete
-            }
-            catch (Exception ex)
-            {
-                throw new ApplicationException("Error getting all customers.", ex);
-            }
-        }
-
         public async Task<bool> HasSales(int customerId)
         {
             try

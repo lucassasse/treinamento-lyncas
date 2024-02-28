@@ -8,7 +8,6 @@ namespace Dashboard.Service.CustomerService
     public interface ICustomerService : IService<Customer, CustomerDto, CustomerViewModel>
     {
         Task<List<CustomerViewModel>> GetAsync();
-        Task<List<CustomerViewModel>> GetAllAsync();
         Task<Customer> VerifyDeleteOrSoftDeleteAsync(int id);
         Task<Customer> SoftDeleteAsync(Customer obj);
     }

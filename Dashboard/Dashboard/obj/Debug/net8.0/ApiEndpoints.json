@@ -37,7 +37,7 @@
   },
   {
     "ContainingType": "Dashboard.Controllers.CustomerController",
-    "Method": "GatByIdAsync",
+    "Method": "GetByIdAsync",
     "RelativePath": "api/Customer/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -87,26 +87,6 @@
       }
     ],
     "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Dashboard.Controllers.CustomerController",
-    "Method": "GetAllAsync",
-    "RelativePath": "api/Customer/all",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[Dashboard.Domain.ViewModels.CustomerViewModel, Dashboard.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
   },
   {
     "ContainingType": "Dashboard.Controllers.SaleController",

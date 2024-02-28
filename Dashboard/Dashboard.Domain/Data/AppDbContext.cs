@@ -13,10 +13,5 @@ namespace Domain.Data
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) {
             this.ChangeTracker.LazyLoadingEnabled = false;
         }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Customer>().HasQueryFilter(c => !c.SoftDeleted);
-        }
     }
 }

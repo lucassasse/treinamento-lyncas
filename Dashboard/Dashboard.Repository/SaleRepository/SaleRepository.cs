@@ -11,11 +11,10 @@ namespace Dashboard.Repository.SaleRepository
         {
         }
 
-        public async Task<List<Sale>> GetAllIncluding()
+        public IQueryable<Sale> GetAllIncluding()
         {
-            return await _context.Sale
-                .Include(x => x.Customer)
-                .ToListAsync();
+            return _context.Sale
+                .Include(x => x.Customer);
         }
 
         public override Sale GetById(int id)

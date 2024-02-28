@@ -7,7 +7,7 @@ namespace Dashboard.Service.SaleService
 {
     public interface ISaleService : IService<Sale, SaleDto, SaleViewModel>
     {
-        Task<List<SaleViewModel>> GetAllAsync();
+        List<SaleViewModel> GetAllAsync();
         Task<SaleWithItemsViewModel> GetByIdAsync(int id);
     }
 }

@@ -14,13 +14,16 @@ namespace Dashboard.Service.SaleService
         {
         }
 
-        public async Task<List<SaleViewModel>> GetAllAsync()
+        public List<SaleViewModel> GetAllAsync()
         {
             try
             {
-                var sales = await _repository.GetAllIncluding();
-                var saleViewModels = _mapper.Map<List<SaleViewModel>>(sales);
-                return saleViewModels;
+                var sales = _repository.GetAllIncluding();
+
+                return sales
+                    .Where(x => x.Customer != null)
+                    .Select(x => _mapper.Map<SaleViewModel>(x))
+                    .ToList();
             }
             catch (Exception ex)
             {
