@@ -105,7 +105,7 @@ import { Customer } from '@/models/Customer';
                 })
             },
             redirectToUpdate(customerId){
-                this.$router.push({path: '/customers-form', query: {key: customerId}})
+                this.$router.push({name: 'customers-form', params: { id: customerId }})
             }
         },
 

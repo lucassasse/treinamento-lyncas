@@ -108,7 +108,7 @@ import { Sale } from '@/models/Sale';
                 })
             },
             redirectToUpdate(SaleId){
-                this.$router.push({path: '/sales-form', query: {key: SaleId}})
+                this.$router.push({name: 'sales-form', params: {id: SaleId}})
             }
         },
 

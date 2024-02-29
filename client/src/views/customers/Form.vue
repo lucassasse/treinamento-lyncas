@@ -8,7 +8,7 @@
 
     <div id="div-form">
         <div>
-            <h1 id="title">Adicionar cliente</h1>
+            <h1 id="title">{{CreateOrEdit}}</h1>
         </div>
         <form action="send" id="customers-form">
             <div id="div-top">
@@ -56,15 +56,20 @@ import { Customer } from '@/models/Customer'
                 customer: new Customer({}),
                 popUp: false,
                 messagePopUp: '',
-                popUpRedirect: false
+                popUpRedirect: false,
+                isEdit: false
             }
+        },
+
+        computed:{
+            CreateOrEdit(){ return !this.isEdit ? 'Adicionar cliente' : 'Editar cliente' }
         },
 
         methods:{
             sendForm(){
                 this.validate()
                 if(this.$refs.customerFullName.valid() && this.$refs.customerEmail.valid() && this.$refs.customerTelephone.valid() && this.$refs.customerCpf.valid()){
-                    this.createCustomer()
+                    this.isEdit ? this.updateCustomer() : this.createCustomer()
                 } else{
                     return alert("Ops, algo errado aconteceu.")
                 }
@@ -77,6 +82,16 @@ import { Customer } from '@/models/Customer'
                     this.clearInputs()
                 } catch (error) {
                     console.error('Error adding customer:', error.message);
+                }
+            },
+            async updateCustomer(){
+                try {
+                    await ApiService.put(`customer/${this.customer.id}`, this.customer);
+                    this.togglePopUp("Cliente atualizado com sucesso!")
+                    this.popUpRedirect = true
+                    this.clearInputs()
+                } catch (error) {
+                    console.error('Error editting customer:', error.message);
                 }
             },
             clearInputs(){
@@ -93,29 +108,30 @@ import { Customer } from '@/models/Customer'
                 this.messagePopUp = message
                 this.popUp = !this.popUp
             },
-            async getCustomers() {
-                console.log('customerId:', this.$route.query.key)
+            verifyCreateOrEditCustomer() {
+                const currentId = this.$route.params.id
 
-                if (!this.$route.query.key) {
-                    console.log('Key not found in the query parameter');
+                if (!currentId)
                     return;
-                }
-
-                await ApiService.query('customer')
-                .then(response => {
-                    this.customers = response.data.map(customerData => new Customer({
-                        id: customerData.id, 
-                        fullName: customerData.fullName, 
-                        email: customerData.email, 
-                        telephone: customerData.telephone, 
-                        cpf: customerData.cpf}));
-                })
+                
+                this.isEdit = true
+                this.getCustomer(currentId)
             },
-        
-        mounted(){
-            this.getCustomers()
-        }
-    }
+            async getCustomer(id){
+                await ApiService.query(`customer/${id}`)
+                .then(response => {
+                    this.customer = new Customer({
+                        id: response.data.id, 
+                        fullName: response.data.fullName, 
+                        email: response.data.email, 
+                        telephone: response.data.telephone, 
+                        cpf: response.data.cpf});
+                    })
+            }
+        },
+        mounted() {
+            this.verifyCreateOrEditCustomer()
+        },
 }
 </script>
 

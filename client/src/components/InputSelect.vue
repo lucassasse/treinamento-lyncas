@@ -11,7 +11,7 @@
         :required="required"
     >
         <option class="options" value="0" selected disabled></option>
-        <option v-for="customer in customers" :value="customer.id" :key="customer.id">{{ customer.full_name }}</option>
+        <option v-for="customer in customers" :value="customer.id" :key="customer.id">{{ customer.fullName }}</option>
     </select>
     <div class="errorText" v-if="!isValid">{{ textError }}</div>
 </template>

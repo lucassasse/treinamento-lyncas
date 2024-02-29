@@ -22,11 +22,11 @@
             <div id="form-bottom">
                 <div action="send" class="form">
                     <div class="div-left">
-                        <InputText id="description" label-for="description" text-label="Descrição do item" v-model="item.description" ref="itemDescription" required/>
-                        <InputMask id="quantity" label-for="quantity" text-label="Quantidade" v-model="item.quantity" ref="itemQuantity" mask="#############" required/>
+                        <InputText id="description" label-for="description" text-label="Descrição do item" v-model="itemsList.description" ref="itemDescription" required/>
+                        <InputMask id="quantity" label-for="quantity" text-label="Quantidade" v-model="itemsList.quantity" ref="itemQuantity" mask="#############" required/>
                     </div>
                     <div class="div-right">
-                        <InputMoney id="unityValue" label-for="unityValue" text-label="Valor unitário" v-model="item.unityValue" ref="itemUnityValue" required/>
+                        <InputMoney id="unityValue" label-for="unityValue" text-label="Valor unitário" v-model="itemsList.unityValue" ref="itemUnityValue" required/>
                         <label id="label-form" for="totalValue">Valor total</label>
                         <input id="totalValue" type="text" class="input-form" :value="totalValueLocal" disabled>
                     </div>
@@ -56,7 +56,7 @@
                         <td class="tg-0lax column-list-table last-td">{{item.totalValueItem}}</td>
                         <td class="tg-0lax column-list-form last-td">
                             <ButtonTable classBtn="delete" textButton="Deletar" @click="togglePopUpDelete(item)"/>
-                            <ButtonTable classBtn="edit" textButton="Editar" @click="toEditItem(item)"/>
+                            <ButtonTable classBtn="edit" textButton="Editar" />
                         </td>
                     </tr>
                 </tbody>
@@ -71,7 +71,7 @@
             <pop-up v-if="popUp" @close="togglePopUpSucess()" :message="messagePopUp" :popUpClass="popUpSucessOrError"/>
         </Transition>
         <Transition>
-            <PopUpDelete v-if="showPopUpDelete" @close="togglePopUpDelete()" @deleteItem="deleteConfirm()"/>
+            <PopUpDelete v-if="showPopUpDelete" @close="togglePopUpDelete()" @deleteItem="deleteConfirm()" :itemId="null"/>
         </Transition>
     </div>
 </template>
@@ -87,12 +87,14 @@ import ButtonSave from '@/components/ButtonSave.vue'
 import ButtonTable from '@/components/ButtonTable.vue'
 import PopUp from '@/components/PopUp.vue'
 import PopUpDelete from '@/components/PopUpDelete.vue'
+import ApiService from '@/common/apiService'
 import { Sale } from '@/models/Sale'
 import { Item } from '@/models/Item'
 import { Customer } from '@/models/Customer'
 
     export default{
         emits: ['input-change'],
+
         components:{
             InputText,
             InputMask,
@@ -105,25 +107,15 @@ import { Customer } from '@/models/Customer'
             PopUp,
             PopUpDelete
         },
+
         data(){
             return{
-                customers: new Customer({}),
-                sale: new Sale({item: []}),
-                item: new Item({}),
+                customers: [],
+                sale: new Sale({customerName: null, item: []}),
+                itemsList: new Item({}),
+                //sale: [],
+                // item: [],
                 finalValue: '',
-                itemsList: [{
-                    id: 8,
-                    description: 'retfhreh rewg wergrwegewg',
-                    quantity: '534,00',
-                    unityValue: '534,00',
-                    totalValueItem: '5435,00'
-                },{
-                    id: 9,
-                    description: 'ewrg rwegerwg rwet',
-                    quantity: '534,00',
-                    unityValue: '54353,00',
-                    totalValueItem: '534534,00'
-                },],
                 index: '',
                 popUp: false,
                 popUpSucessOrError: 'sucess',
@@ -136,9 +128,13 @@ import { Customer } from '@/models/Customer'
 
         computed:{
             totalValueLocal: function(){
-                this.item.totalValueItem = (this.item.quantity * this.item.unityValue.replace(/[\"R$"\","\"."]/g, '') / 100)
-                    .toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
-                return this.item.totalValueItem
+                if (this.itemsList.quantity && this.itemsList.unityValue) {
+                    this.itemsList.totalValueItem = (this.itemsList.quantity * this.itemsList.unityValue.replace(/[\"R$"\","\"."]/g, '') / 100)
+                        .toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+                    return this.itemsList.totalValueItem
+                } else {
+                    return '';
+                }
             }
         },
 
@@ -148,14 +144,28 @@ import { Customer } from '@/models/Customer'
                 if(this.$refs.itemDescription.valid() && this.$refs.itemQuantity.valid() && this.$refs.itemUnityValue.valid()){
                     this.popUpSucessOrError = 'sucess'
                     this.togglePopUpSucess("Item adicionado com sucesso!")
-                    this.item.unityValue = Number(this.item.unityValue).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
-                    let item = Object.assign({}, this.item)
-                    this.itemsList.push(item)
+                    this.itemsList.unityValue = Number(this.itemsList.unityValue).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+                    let item = Object.assign({}, this.itemsList)
+                    console.log(sale.item)
+                    this.sale.item.push(item)
                     this.sumListTotalValue()
                     this.clearInputs()
                     this.inEddit = false
                 }else{
                     return
+                }
+            },
+            async createCustomer(){
+                try {
+                    console.log(this.sale)
+
+                    await ApiService.post('sale', this.sale)
+                    this.popUpSucessOrError = 'sucess'
+                    this.togglePopUpSucess("Formulário enviado com sucesso!")
+                    this.popUpRedirect = false
+                    this.clearAll()
+                } catch (error) {
+                    console.error('Error adding customer:', error.message)
                 }
             },
             validateItems() {
@@ -176,21 +186,13 @@ import { Customer } from '@/models/Customer'
 
                 this.validadeSale()
                 if(this.$refs.saleCustomer.valid() && this.$refs.saleBillingDate.valid()){
-                    this.popUpSucessOrError = 'sucess'
-                    this.togglePopUpSucess("Formulário enviado com sucesso!")
-                    this.popUpRedirect = false
-                    this.clearAll()
+                    this.createCustomer()
                 }else{
                     return
                 }
             },
             clearInputs(){
-                this.item = {
-                    description: '',
-                    quantity: '',
-                    unityValue: '',
-                    totalValueItem: '' ,
-                }
+                this.item = new itemsList({})
             },
             clearAll(){
                 this.clearInputs()
@@ -204,7 +206,7 @@ import { Customer } from '@/models/Customer'
             sumListTotalValue(){
                 this.finalValue = 0
                 this.itemsList.map((item) =>{
-                    let itemTemp = item.totalValueItem.replace(/[\"R$"\"."]/g, '')
+                    let itemTemp = itemsList.totalValueItem.replace(/[\"R$"\"."]/g, '')
                     itemTemp = itemTemp.replace(/[\","]/g, '.')
                     this.finalValue += Number(itemTemp)
                 })
@@ -224,52 +226,56 @@ import { Customer } from '@/models/Customer'
                     this.id = this.itemsList.indexOf(item)
                 this.showPopUpDelete = !this.showPopUpDelete
             },
-            getCustomers(){
-                this.customers = [{
-                    id: 1,
-                    full_name: 'Cliente n. 1'
-                },{
-                    id: 2,
-                    full_name: 'Nome do 2º Cliente'
-                },{
-                    id: 3,
-                    full_name: 'Terceiro Cliente'
-                }]
+            async getCustomers(){
+                await ApiService.query('customer')
+                .then(response => {
+                    this.customers = response.data.map(customerData => new Customer({
+                        id: customerData.id, 
+                        fullName: customerData.fullName}));
+                })
             },
-            toEditItem(item){
-                if(!this.inEddit){
-                    this.item.description = item.description
-                    this.item.quantity = item.quantity
-                    this.item.unityValue = item.unityValue
-                    this.item.totalValueItem = item.totalValueItem
-                    this.itemsList.splice(this.id, 1)
-                    this.inEddit = true
+            // toEditItem(item){
+            //     if(!this.inEddit){
+            //         this.item.description = item.description
+            //         this.item.quantity = item.quantity
+            //         this.item.unityValue = item.unityValue
+            //         this.item.totalValueItem = item.totalValueItem
+            //         this.itemsList.splice(this.id, 1)
+            //         this.inEddit = true
+            //     }
+            //     else{
+            //         alert("Já há um item em edição")
+            //     }
+            // },
+            async getSale() {
+                //console.log('customerId:', this.$route.query.key)
+
+                if (!this.$route.query.key) {
+                    return;
                 }
-                else{
-                    alert("Já há um item em edição")
-                }
+
+                // await ApiService.query('sale')
+                // .then(response => {
+                //     this.customers = response.data.map(customerData => new Sale({
+                //         id: customerData.id, 
+                //         fullName: customerData.fullName}));
+                // })
             },
-            getItems() {
-                if (!this.$route.query.key){
-                    return
-                } else {
-                    // axios.get(`url_da_api/${SaleId}`)
-                    //     .then(response => {
-                    //         this.sale.name = response.data.name
-                    //         this.sale.email = response.data.email
-                    //         this.sale.tel = response.data.tel
-                    //         this.sale.cpf = response.data.cpf
-                    //     })
-                    //     .catch(error => {
-                    //         console.error('Erro ao buscar dados da venda:', error)
-                    //     })
-                }
+            verifyCreateOrEditCustomer() {
+                const currentId = this.$route.params.id
+
+                if (!currentId)
+                    return;
+
+                this.isEdit = true
+                this.getSale(currentId)
             }
         },
 
         mounted(){
+            this.verifyCreateOrEditCustomer()
             this.getCustomers()
-            this.getItems()
+            this.getSale()
         }
     }
 </script>

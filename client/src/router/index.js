@@ -23,12 +23,12 @@ const routes = [
         component: () => import('@/views/sales/Index.vue'),
       },
       {
-        path: '/customers-form',
+        path: '/customers-form/:id?',
         name: 'customers-form',
         component: () => import('@/views/customers/Form.vue'),
       },
       {
-        path: '/sales-form',
+        path: '/sales-form/:id?',
         name: 'sales-form',
         component: () => import('@/views/sales/Form.vue'),
       }
