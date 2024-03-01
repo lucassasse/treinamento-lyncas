@@ -1,8 +1,7 @@
 <template>
     <Header>
         <template #btnAdd>
-            <router-link to="/customers" tag="button" class="btn-back btn-return-web">Voltar</router-link>
-            <router-link to="/customers" tag="button" class="btn-back btn-return-mobile">&lsaquo;</router-link>
+            <router-link to="/customers" tag="button" class="btn-back">{{ txtButtonAdd }}</router-link>
         </template>
     </Header>
 
@@ -10,23 +9,27 @@
         <div>
             <h1 id="title">{{CreateOrEdit}}</h1>
         </div>
+
         <form action="send" id="customers-form">
             <div id="div-top">
                 <div id="div-left">
                     <InputText type="text" textLabel="Nome" id="fullName" labelFor="fullName" v-model="customer.fullName" ref="customerFullName" autocomplete required/> 
                     <InputMask type="tel" textLabel="Telefone" id="telephone" labelFor="telephone" v-model="customer.telephone" ref="customerTelephone" mask="['(##)####-####', '(##)#####-####']" required/>
                 </div>
+
                 <div id="div-right">
                     <InputText type="email" textLabel="E-mail" id="email" labelFor="email" v-model="customer.email" ref="customerEmail" required/>
                     <InputMask type="text" textLabel="CPF" id="cpf" labelFor="cpf" v-model="customer.cpf" ref="customerCpf" mask="###.###.###-##" required/>
                 </div>
             </div>
+
             <div id="div-bottom">
                 <div id="div-btn">
                     <ButtonSave @click.prevent="sendForm()"/>
                 </div>
             </div>
         </form>
+
         <Transition>
             <pop-up v-if="popUp" @close="togglePopUp()" :message="messagePopUp" popUpClass="sucess"/>
         </Transition>
@@ -39,7 +42,8 @@ import InputText from '@/components/InputText.vue'
 import ButtonSave from '@/components/ButtonSave.vue'
 import Header from '@/layouts/Header.vue'
 import PopUp from '@/components/PopUp.vue'
-import ApiService from "@/common/apiService";
+import ApiService from "@/common/apiService"
+import CustomerService from "@/common/service/customer.service"
 import { Customer } from '@/models/Customer'
 
     export default{
@@ -62,10 +66,29 @@ import { Customer } from '@/models/Customer'
         },
 
         computed:{
+            txtButtonAdd(){ return window.innerWidth < 500 ? '<<' : 'Voltar' },
             CreateOrEdit(){ return !this.isEdit ? 'Adicionar cliente' : 'Editar cliente' }
         },
 
         methods:{
+            verifyCreateOrEditCustomer() {
+                const currentId = this.$route.params.id
+
+                if (currentId) {
+                    this.isEdit = true
+                    this.fetchCustomer(currentId)
+                }
+            },
+
+            async fetchCustomer(id){
+                await CustomerService.searchById(id)
+                .then(response => {
+                    this.customer = response
+                }).catch((error) => {
+                    console.log(error)
+                })
+            },
+
             sendForm(){
                 this.validate()
                 if(this.$refs.customerFullName.valid() && this.$refs.customerEmail.valid() && this.$refs.customerTelephone.valid() && this.$refs.customerCpf.valid()){
@@ -74,61 +97,52 @@ import { Customer } from '@/models/Customer'
                     return alert("Ops, algo errado aconteceu.")
                 }
             },
+
             async createCustomer(){
                 try {
-                    await ApiService.post('customer', this.customer);
+                    await ApiService.post('customer', this.customer)
                     this.togglePopUp("Cliente adicionado com sucesso!")
                     this.popUpRedirect = true
                     this.clearInputs()
                 } catch (error) {
-                    console.error('Error adding customer:', error.message);
+                    console.error('Error adding customer:', error.message)
                 }
             },
+
             async updateCustomer(){
                 try {
-                    await ApiService.put(`customer/${this.customer.id}`, this.customer);
+                    await ApiService.put(`customer/${this.customer.id}`, this.customer)
                     this.togglePopUp("Cliente atualizado com sucesso!")
                     this.popUpRedirect = true
                     this.clearInputs()
                 } catch (error) {
-                    console.error('Error editting customer:', error.message);
+                    console.error('Error editting customer:', error.message)
                 }
             },
+
+            
+
+            
+
             clearInputs(){
                 this.customer = new Customer({})
             },
+
             validate() {
                 this.$refs.customerFullName.valid()
                 this.$refs.customerEmail.valid()
                 this.$refs.customerTelephone.valid()
                 this.$refs.customerCpf.valid()
             },
+
             togglePopUp(message) {
                 if(this.popUpRedirect) this.$router.push('/customers')
                 this.messagePopUp = message
                 this.popUp = !this.popUp
             },
-            verifyCreateOrEditCustomer() {
-                const currentId = this.$route.params.id
-
-                if (!currentId)
-                    return;
-                
-                this.isEdit = true
-                this.getCustomer(currentId)
-            },
-            async getCustomer(id){
-                await ApiService.query(`customer/${id}`)
-                .then(response => {
-                    this.customer = new Customer({
-                        id: response.data.id, 
-                        fullName: response.data.fullName, 
-                        email: response.data.email, 
-                        telephone: response.data.telephone, 
-                        cpf: response.data.cpf});
-                    })
-            }
+            
         },
+        
         mounted() {
             this.verifyCreateOrEditCustomer()
         },

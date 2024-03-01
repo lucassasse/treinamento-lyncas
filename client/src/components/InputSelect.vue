@@ -11,7 +11,7 @@
         :required="required"
     >
         <option class="options" value="0" selected disabled></option>
-        <option v-for="customer in customers" :value="customer.id" :key="customer.id">{{ customer.fullName }}</option>
+        <option v-for="customer in customers" :value="customer.id" :key="customer.id">{{ customer.fullName }} - {{ customer.id }}</option>
     </select>
     <div class="errorText" v-if="!isValid">{{ textError }}</div>
 </template>
@@ -20,7 +20,6 @@
 export default {
     props: {
         labelFor: String,
-        id: String,
         textLabel: String,
         modelValue: String,
         isDisabled: {type: Boolean, default: false},

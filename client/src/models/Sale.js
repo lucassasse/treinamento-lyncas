@@ -1,5 +1,5 @@
 export class Sale {
-    constructor({id, fullName, customerId, saleTotalItems, saleDate, billingDate, saleTotalValue, saleItems}) {
+    constructor({id, fullName, customerId, saleTotalItems, saleDate, billingDate, saleTotalValue, item}) {
         this.id = id;
         this.fullName = fullName;
         this.customerId = customerId;
@@ -7,6 +7,6 @@ export class Sale {
         this.saleDate = saleDate;
         this.billingDate = billingDate;
         this.saleTotalValue = saleTotalValue;
-        this.saleItems = saleItems;
+        this.item = item;
     }
 }

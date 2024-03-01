@@ -1,8 +1,7 @@
 <template>
     <Header>
         <template #btnAdd>
-            <router-link to="/sales-form" tag="button" class="btn-add btn-add-web">Adicionar</router-link>
-            <router-link to="/sales-form" tag="button" class="btn-add btn-add-mobile">+</router-link>
+            <router-link to="/sales-form" tag="button" class="btn-add">{{ txtButtonAdd }}</router-link>
         </template>
     </Header>
 
@@ -24,6 +23,7 @@
                         <th class="tg-0lax column-header-table">Ações</th>
                     </tr>
                 </thead>
+                
                 <tbody v-if="sales.length">
                     <tr v-for="sale in sales" :key="sale.id"  class="list-table">
                         <td class="tg-0lax column-list-table first-td">{{ sale.fullName }}</td>
@@ -44,6 +44,7 @@
                 </tbody>
             </table>
         </div>
+
         <Transition>
             <PopUpDelete v-if="showPopUpDelete" @close="togglePopUpDelete()" @deleteItem="deleteConfirm()" :itemId="SaleToDeleteId"/>
         </Transition>
@@ -55,8 +56,8 @@ import InputSearch from '@/components/InputSearch.vue'
 import ButtonTable from '@/components/ButtonTable.vue'
 import Header from '@/layouts/Header.vue'
 import PopUpDelete from '@/components/PopUpDelete.vue'
-import ApiService from "@/common/apiService";
-import { Sale } from '@/models/Sale';
+import SaleService from "@/common/service/sale.service"
+import { Sale } from '@/models/Sale'
 
     export default{
         props: {
@@ -78,42 +79,43 @@ import { Sale } from '@/models/Sale';
             }
         },
 
+        computed:{
+            txtButtonAdd(){ return window.innerWidth < 500 ? '+' : 'Adicionar'; }
+        },
+
         methods:{
-            async deleteConfirm(){
-                try {
-                    await ApiService.delete(`sale/${this.saleToDeleteId}`);
-                    this.saleToDeleteId = null;
-                    this.togglePopUpDelete()
-                    this.getSales();
-                } catch (error) {
-                    console.error('Error deleting item:', error.message);
-                }
-                
-            },
             togglePopUpDelete(saleId){
-                this.saleToDeleteId = saleId;
+                this.saleToDeleteId = saleId
                 this.showPopUpDelete = !this.showPopUpDelete
             },
-            async getSales(){
-                await ApiService.query('sale')
+
+            async fetchSales(){
+                await SaleService.search()
                 .then(response => {
-                    this.sales = response.data.map(saleData => new Sale({
-                        id: saleData.id, 
-                        fullName: saleData.fullName,
-                        saleTotalItems: saleData.saleTotalItems,
-                        saleDate: saleData.saleDate,
-                        billingDate: saleData.billingDate,
-                        saleTotalValue: saleData.saleTotalValue
-                    }));
+                   this.sales = response
+                }).catch((error) => {
+                    console.log(error)
                 })
             },
+
+            async deleteConfirm(){
+                await SaleService.delete(this.saleToDeleteId)
+                .then(() => {
+                    this.saleToDeleteId = null
+                    this.togglePopUpDelete()
+                    this.fetchSales()
+                }).catch((error) => {
+                    console.log("Erro ao deleter cliente: ", error)
+                })
+            },
+
             redirectToUpdate(SaleId){
                 this.$router.push({name: 'sales-form', params: {id: SaleId}})
             }
         },
 
         mounted(){
-            this.getSales()
+            this.fetchSales()
         }
     }
 </script>

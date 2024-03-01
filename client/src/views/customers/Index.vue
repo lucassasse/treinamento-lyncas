@@ -1,8 +1,7 @@
 <template>
     <Header id="header-top">
         <template #btnAdd>
-            <router-link to="/customers-form" tag="button" class="btn-add btn-add-web">Adicionar</router-link>
-            <router-link to="/customers-form" tag="button" class="btn-add btn-add-mobile">+</router-link>
+            <router-link to="/customers-form" tag="button" class="btn-add">{{ txtButtonAdd }}</router-link>
         </template>
     </Header>
 
@@ -23,6 +22,7 @@
                         <th class="tg-0lax column-header-table">Ações</th>
                     </tr>
                 </thead>
+
                 <tbody v-if="customers.length">
                     <tr v-for="customer in customers" :key="customer.id" class="list-table">
                         <td class="tg-0lax column-list-table first-td">{{ customer.fullName }}</td>
@@ -43,8 +43,9 @@
                 </tbody>
             </table>
         </div>
+        
         <Transition>
-            <PopUpDelete v-if="showPopUpDelete" @close="togglePopUpDelete()" @deleteItem="deleteConfirm()" :itemId="customerToDeleteId"/>
+            <PopUpDelete v-if="showPopUpDelete" @close="togglePopUpDelete()" @deleteItem="deleteCustomer()" :itemId="customerToDeleteId"/>
         </Transition>
     </div>
 </template>
@@ -54,8 +55,8 @@ import InputSearch from '@/components/InputSearch.vue'
 import ButtonTable from '@/components/ButtonTable.vue'
 import Header from '@/layouts/Header.vue'
 import PopUpDelete from '@/components/PopUpDelete.vue'
-import ApiService from "@/common/apiService";
-import { Customer } from '@/models/Customer';
+import CustomerService from "@/common/service/customer.service"
+import { Customer } from '@/models/Customer'
 
     export default{
         props: {
@@ -77,40 +78,43 @@ import { Customer } from '@/models/Customer';
             }
         },
 
+        computed:{
+            txtButtonAdd(){ return window.innerWidth < 500 ? '+' : 'Adicionar'; }
+        },
+
         methods:{
-            async deleteConfirm(){
-                try {
-                    await ApiService.delete(`customer/${this.customerToDeleteId}`);
-                    this.customerToDeleteId = null;
-                    this.togglePopUpDelete();
-                    this.getCustomers();
-                } catch (error) {
-                    console.error('Error deleting item:', error.message);
-                }
-            },
             togglePopUpDelete(customerId){
-                this.customerToDeleteId = customerId;
+                this.customerToDeleteId = customerId
                 this.showPopUpDelete = !this.showPopUpDelete
             },
-            
-            async getCustomers() {
-                await ApiService.query('customer')
+
+            async fetchCustomers() {
+                await CustomerService.search()
                 .then(response => {
-                    this.customers = response.data.map(customerData => new Customer({
-                        id: customerData.id, 
-                        fullName: customerData.fullName, 
-                        email: customerData.email, 
-                        telephone: customerData.telephone, 
-                        cpf: customerData.cpf}));
+                   this.customers = response
+                }).catch((error) => {
+                    console.error("Error when searching for customers: ", error)
                 })
             },
+
+            async deleteCustomer(){
+                await CustomerService.delete(this.customerToDeleteId)
+                .then(() => {
+                    this.customerToDeleteId = null
+                    this.togglePopUpDelete()
+                    this.fetchCustomers()
+                }).catch((error) => {
+                    console.error("Error when deleting customer: ", error)
+                })
+            },
+            
             redirectToUpdate(customerId){
                 this.$router.push({name: 'customers-form', params: { id: customerId }})
             }
         },
 
         mounted(){
-            this.getCustomers()
+            this.fetchCustomers()
         }
     }
 </script>
