@@ -38,7 +38,7 @@
     
                 <tbody v-if="!customers.length">
                     <tr class="list-table">
-                        <td colspan="5" class="tg-0lax column-list-table first-td last-td nullAlert">Nenhum cliente foi cadastrado!</td>
+                        <td colspan="5" class="tg-0lax column-list-table first-td last-td nullAlert">Nenhum cliente foi encontrado!</td>
                     </tr>
                 </tbody>
             </table>

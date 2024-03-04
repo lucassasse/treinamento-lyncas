@@ -8,42 +8,57 @@
 
         <div id="div-main">
             <form>
+
                 <h1>{{ CreateOrEdit }}</h1>
+
                 <div class="form" id="form-top">
+
                     <div class="div-left">
                         <InputSelect id="selectCustomer" label-for="selectCustomer" text-label="Cliente"
                             v-model="sale.fullName" ref="saleCustomer" :customers="customers" required />
                     </div>
+
                     <div class="div-right">
                         <InputDate id="date" label-for="date" text-label="Data de faturamento" v-model="sale.billingDate"
                             ref="saleBillingDate" required />
                     </div>
+
                 </div>
 
                 <h2 id="title">Itens do pedido</h2>
+
                 <div id="form-bottom">
                     <div action="send" class="form">
                         <div class="div-left">
+
                             <InputText id="description" label-for="description" text-label="Descrição do item"
-                                v-model="itemsList.description" ref="itemDescription" required />
+                                v-model="item.description" ref="itemDescription" required />
+
                             <InputMask id="quantity" label-for="quantity" text-label="Quantidade"
-                                v-model="itemsList.quantity" ref="itemQuantity" mask="#############" required />
+                                v-model="item.quantity" ref="itemQuantity" mask="#############" required />
                         </div>
+
                         <div class="div-right">
                             <InputMoney id="unityValue" label-for="unityValue" text-label="Valor unitário"
-                                v-model="itemsList.unityValue" ref="itemUnityValue" required />
+                                v-model="item.unityValue" ref="itemUnityValue" required />
+
                             <label id="label-form" for="totalValue">Valor total</label>
-                            <input id="totalValue" type="text" class="input-form" :value="totalValueLocal" disabled>
+                            <input id="totalValue" type="text" class="input-form" :value="item.totalValueItem" disabled>
                         </div>
+
                     </div>
+
                     <div id="div-btn">
                         <button id="btn-add-item" @click.prevent="addItem()">Adicionar Itens</button>
                     </div>
+
                 </div>
+
             </form>
 
-            <div id="div-table-items" v-if="itemsList.length > 0">
+            <div id="div-table-items" v-if="sale.item.length > 0">
                 <table>
+
                     <thead>
                         <tr>
                             <th class="tg-0lax column-header-table">Descrição</th>
@@ -53,6 +68,7 @@
                             <th class="tg-0lax column-header-table">Ações</th>
                         </tr>
                     </thead>
+
                     <tbody>
                         <tr v-for="(item, index) in sale.item" :key="index" class="list-table">
                             <td class="tg-0lax column-list-table first-td">{{ item.description }}</td>
@@ -61,10 +77,11 @@
                             <td class="tg-0lax column-list-table last-td">{{ item.totalValueItem }}</td>
                             <td class="tg-0lax column-list-form last-td">
                                 <ButtonTable classBtn="delete" textButton="Deletar" @click="togglePopUpDelete(index)" />
-                                <ButtonTable classBtn="edit" textButton="Editar" />
+                                <ButtonTable classBtn="edit" textButton="Editar" @click="toEditItem(index, item)"/>
                             </td>
                         </tr>
                     </tbody>
+
                 </table>
             </div>
 
@@ -72,14 +89,17 @@
                 <p id="total-value">Total: {{ finalValue || "R$ 0,00" }}</p>
                 <ButtonSave @click.prevent="sendForm()" />
             </div>
+
             <Transition>
                 <pop-up v-if="popUp" @close="togglePopUpSucess()" :message="messagePopUp"
                     :popUpClass="popUpSucessOrError" />
             </Transition>
+
             <Transition>
                 <PopUpDelete v-if="showPopUpDelete" @close="togglePopUpDelete()" @deleteItem="deleteConfirm()"
                     :itemId="index" />
             </Transition>
+
         </div>
     </div>
 </template>
@@ -96,9 +116,9 @@ import ButtonTable from '@/components/ButtonTable.vue'
 import PopUp from '@/components/PopUp.vue'
 import PopUpDelete from '@/components/PopUpDelete.vue'
 import ApiService from '@/common/apiService'
+import SaleService from '@/common/service/sale.service'
 import { Sale } from '@/models/Sale'
 import { Item } from '@/models/Item'
-import { Customer } from '@/models/Customer'
 
 export default {
     emits: ['input-change'],
@@ -121,8 +141,6 @@ export default {
             customers: [],
             sale: new Sale({ customerName: null, item: [] }),
             item: new Item({}),
-            itemsList: [],
-            finalValue: '',
             index: '',
             popUp: false,
             popUpSucessOrError: 'sucess',
@@ -130,62 +148,128 @@ export default {
             popUpRedirect: false,
             showPopUpDelete: false,
             itemInEddit: false,
-            isEdit: false
+            isEdit: false,
+            currentId: null
         }
     },
 
     computed: {
         txtButtonAdd(){ return window.innerWidth < 500 ? '<<' : 'Voltar' },
+
         CreateOrEdit() { return !this.isEdit ? 'Adicionar venda' : 'Editar venda' },
-        totalValueLocal: function () {
-            if (this.itemsList.quantity && this.itemsList.unityValue) {
-                this.itemsList.totalValueItem = (this.itemsList.quantity * this.itemsList.unityValue.replace(/[\"R$"\","\"."]/g, '') / 100)
-                    .toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
-                return this.itemsList.totalValueItem
-            } else {
-                return ''
-            }
-        }
+
+        finalValue() {
+            const sum = this.sale.item.reduce((sum, item) => {
+                return sum + Number(item.totalValueItem.replace(/[\"R$"\","\"."]/g, ''))
+            }, 0)
+
+            this.sale.saleTotalValue = (sum / 100).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
+            return this.sale.saleTotalValue
+        },
     },
 
     methods: {
+
+        async fetchCustomers() {
+            await ApiService.query('customer')
+                .then(response => {
+                    this.customers = response.data.map(customerData => ({ ...customerData }));
+                })
+                //console.log(this.customers)
+        },
+
         addItem() {
             this.validateItems()
             if (this.$refs.itemDescription.valid() && this.$refs.itemQuantity.valid() && this.$refs.itemUnityValue.valid()) {
+
+                this.item = new Item({
+                    description: this.item.description,
+                    quantity: this.item.quantity,
+                    unityValue: this.item.unityValue,
+                    totalValueItem: this.item.totalValueItem
+                })
+                
+                this.item.unityValue = Number(this.item.unityValue).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
+                
+                this.sale.item.push(this.item)
+                this.sale.saleTotalItems = this.sale.item.length
+                
                 this.popUpSucessOrError = 'sucess'
                 this.togglePopUpSucess("Item adicionado com sucesso!")
-                this.itemsList.unityValue = Number(this.itemsList.unityValue).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
-                let item = Object.assign({}, this.itemsList)
-                this.sale.item.push(item)
-                this.sumListTotalValue()
                 this.clearInputs()
-                this.isEdit = false
+                this.itemInEddit = false
             } else {
                 return
             }
         },
-        async createCustomer() {
-            try {
-                await ApiService.post('sale', this.sale)
-                this.popUpSucessOrError = 'sucess'
-                this.togglePopUpSucess("Formulário enviado com sucesso!")
-                this.popUpRedirect = false
-                this.clearAll()
-            } catch (error) {
-                console.error('Error adding customer:', error.message)
-            }
-        },
+
         validateItems() {
             this.$refs.itemDescription.valid()
             this.$refs.itemQuantity.valid()
             this.$refs.itemUnityValue.valid()
         },
+
+        async createSale() {
+            this.convertValueTypes()
+            console.log(this.sale)
+            try {
+                await SaleService.create(this.sale)
+                this.popUpSucessOrError = 'sucess'
+                this.togglePopUpSucess("Formulário enviado com sucesso!")
+                this.popUpRedirect = false
+                this.clearAll()
+            } catch (error) {
+                console.error('Error adding sale:', error.message)
+            }
+        },
+
+        async updateSale() {
+            this.convertValueTypes()
+            console.log(this.sale)
+            try {
+                await SaleService.create('sale', this.currentId, this.sale)
+                this.popUpSucessOrError = 'sucess'
+                this.togglePopUpSucess("Formulário atualizado com sucesso!")
+                this.popUpRedirect = false
+                this.clearAll()
+            } catch (error) {
+                console.error('Error updating sale:', error.message)
+            }
+        },
+
+        validateItems() {
+            this.$refs.itemDescription.valid()
+            this.$refs.itemQuantity.valid()
+            this.$refs.itemUnityValue.valid()
+        },
+
         validadeSale() {
             this.$refs.saleCustomer.valid()
             this.$refs.saleBillingDate.valid()
         },
+
+        convertValueTypes(){
+
+            //console.log(this.sale);
+
+            this.sale.saleTotalItems = parseInt(this.sale.saleTotalItems)
+            this.sale.saleTotalValue = this.sale.saleTotalValue.replace(/[\"R$"\" "]/g, '').replace(',', '.')
+            this.sale.saleDate = new Date().toISOString()
+
+            for (let i = 0; i < this.sale.item.length; i++) {
+                const currentItem = this.sale.item[i]
+
+                currentItem.quantity = parseInt(currentItem.quantity)
+                currentItem.unityValue = currentItem.unityValue.replace(/[\"R$"\" "]/g, '').replace(',', '.')
+
+                currentItem.totalValueItem = currentItem.totalValueItem.replace(/[\"R$"\" "]/g, '').replace(',', '.')
+            }
+
+            console.log(this.sale);
+        },
+
         sendForm() {
-            if (!this.itemsList.length) {
+            if (!this.sale.item.length) {
                 this.popUpSucessOrError = 'error'
                 this.togglePopUpSucess("Adicione pelo menos um item...")
                 return
@@ -193,83 +277,100 @@ export default {
 
             this.validadeSale()
             if (this.$refs.saleCustomer.valid() && this.$refs.saleBillingDate.valid()) {
-                this.createCustomer()
+                this.isEdit ? this.updateSale() : this.createSale()
             } else {
                 return
             }
         },
+
         clearInputs() {
             this.item = new Item({})
         },
+
         clearAll() {
             this.clearInputs()
-            this.itemsList = []
             this.finalValue = ''
             this.sale = new Sale({})
         },
-        sumListTotalValue() {
-            this.finalValue = 0
-            this.sale.item.forEach((item) => {  // Change here
-                let itemTemp = item.totalValueItem.replace(/[\"R$"\"."]/g, '')
-                itemTemp = itemTemp.replace(/[\","]/g, '.')
-                this.finalValue += Number(itemTemp)
-            })
-            this.finalValue = this.finalValue.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
-        },
+
         togglePopUpSucess(messagePopUp) {
             if (this.popUpRedirect) this.$router.push('/sales')
             this.messagePopUp = messagePopUp
             this.popUp = !this.popUp
         },
+
         deleteConfirm() {
-            this.itemsList.splice(this.id, 1)
+            this.sale.item.splice(this.id, 1)
             this.togglePopUpDelete()
         },
+
         togglePopUpDelete(item) {
             if (item)
-                this.id = this.itemsList.indexOf(item)
+                this.id = this.sale.item.indexOf(item)
             this.showPopUpDelete = !this.showPopUpDelete
         },
-        async fetchCustomers() {
-            await ApiService.query('customer')
-                .then(response => {
-                    this.customers = response.data.map(customerData => ({ ...customerData }));
-                })
-                console.log(this.customers)
+
+        calcTotalValueItems(){
+            if (this.item.quantity && this.item.unityValue) {
+                this.item.totalValueItem = (this.item.quantity * this.item.unityValue.replace(/[\"R$"\","\"."]/g, '') / 100)
+                    .toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
+                return this.item.totalValueItem
+            } else {
+                return ''
+            }
         },
-        toEditItem(item){
-                if(!this.itemInEddit){
+
+        toEditItem(index, item){
+            if(!this.itemInEddit){
                 this.itemInEddit = true
                 this.item.description = item.description
                 this.item.quantity = item.quantity
                 this.item.unityValue = item.unityValue
                 this.item.totalValue = item.totalValue
-                this.itemsList.splice(this.id, 1)
+                this.sale.item.splice(index, 1)
             }
             else{
                 alert("Já há um item em edição")
             }
         },
-        verifyCreateOrEditCustomer() {
+
+        verifyCreateOrEditSale() {
             const currentId = this.$route.params.id
 
             if (currentId){
                 this.isEdit = true
+                this.currentId = currentId
                 this.fetchSale(currentId)
             }
 
         },
+
         async fetchSale(id) {
-            console.log("Sale id: ", id)
-        }
+            await SaleService.searchById(id)
+            .then(response => {
+                this.sale = response
+            }).catch((error) => {
+                console.error(error)
+            })
+        },
     },
 
     mounted() {
         this.fetchCustomers()
-        this.verifyCreateOrEditCustomer()
-    }
+        this.verifyCreateOrEditSale()
+    },
+
+    watch: {
+        "item.quantity"(){
+            this.calcTotalValueItems()
+        },
+        "item.unityValue"(){
+            this.calcTotalValueItems()
+        }
+    },
 }
 </script>
+
 
 <style scoped>
 #div-main {

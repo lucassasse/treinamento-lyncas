@@ -67,6 +67,7 @@ import { Customer } from '@/models/Customer'
 
         computed:{
             txtButtonAdd(){ return window.innerWidth < 500 ? '<<' : 'Voltar' },
+            
             CreateOrEdit(){ return !this.isEdit ? 'Adicionar cliente' : 'Editar cliente' }
         },
 
@@ -85,7 +86,7 @@ import { Customer } from '@/models/Customer'
                 .then(response => {
                     this.customer = response
                 }).catch((error) => {
-                    console.log(error)
+                    console.error(error)
                 })
             },
 
@@ -118,11 +119,7 @@ import { Customer } from '@/models/Customer'
                 } catch (error) {
                     console.error('Error editting customer:', error.message)
                 }
-            },
-
-            
-
-            
+            },  
 
             clearInputs(){
                 this.customer = new Customer({})

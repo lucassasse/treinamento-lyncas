@@ -15,6 +15,26 @@ const SaleService = {
         
         return data
     },
+
+    async searchById(id) {
+        let { data } = await ApiService.get(`${apiBasePath}/${id}`)
+
+        data.saleDate = helpers.formatDate(data.saleDate);
+        data.billingDate = helpers.formatDate(data.billingDate);
+
+        return data
+    },
+
+    async edit(id, form) {
+        let { data } = await ApiService.put(`${apiBasePath}`, id, form)
+        return data
+    },
+
+    async create(form) {
+        let { data } = await ApiService.post(`${apiBasePath}`, form)
+        return data
+    },
+
     async delete(id) {
         let { data } = await ApiService.delete(`${apiBasePath}/${id}`)
         return data

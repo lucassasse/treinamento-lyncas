@@ -39,7 +39,7 @@
                 </tbody>
                 <tbody v-if="!sales.length">
                     <tr class="list-table">
-                        <td colspan="6" class="tg-0lax column-list-table first-td last-td nullAlert">Nenhuma venda foi cadastrada!</td>
+                        <td colspan="6" class="tg-0lax column-list-table first-td last-td nullAlert">Nenhuma venda foi encontrada!</td>
                     </tr>
                 </tbody>
             </table>
@@ -94,7 +94,7 @@ import { Sale } from '@/models/Sale'
                 .then(response => {
                    this.sales = response
                 }).catch((error) => {
-                    console.log(error)
+                    console.error(error)
                 })
             },
 
@@ -105,7 +105,7 @@ import { Sale } from '@/models/Sale'
                     this.togglePopUpDelete()
                     this.fetchSales()
                 }).catch((error) => {
-                    console.log("Erro ao deleter cliente: ", error)
+                    console.error("Erro ao deleter cliente: ", error)
                 })
             },
 
