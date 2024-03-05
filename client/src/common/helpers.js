@@ -49,12 +49,21 @@ const formatDate = (isoDate) => {
     const month = String(date.getMonth() + 1).padStart(2, '0');
     const year = date.getFullYear();
 
-    return `${day}/${month}/${year}`;
+    return `${day}-${month}-${year}`;
+}
+
+const revertDate = (isoDate) => {
+    var day  = isoDate.split("-")[0];
+    var month  = isoDate.split("-")[1];
+    var year  = isoDate.split("-")[2];
+
+    return year + '-' + ("0" + month).slice(-2) + '-' + ("0" + day).slice(-2);
 }
 
 export default{
     validEmail,
     validTelephone,
     validCpf,
-    formatDate
+    formatDate,
+    revertDate
 }

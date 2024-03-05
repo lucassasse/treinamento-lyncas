@@ -30,7 +30,7 @@
                         <td class="tg-0lax column-list-table">{{ sale.saleTotalItems }}</td>
                         <td class="tg-0lax column-list-table">{{ sale.saleDate }}</td>
                         <td class="tg-0lax column-list-table">{{ sale.billingDate }}</td>
-                        <td class="tg-0lax column-list-table">{{ sale.saleTotalValue }}</td>
+                        <td class="tg-0lax column-list-table">{{ sale.saleTotalValue.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' }) }}</td>
                         <td class="tg-0lax column-list-table last-td">
                             <ButtonTable classBtn="delete" textButton="Deletar" @click="togglePopUpDelete(sale.id)"/>
                             <ButtonTable classBtn="edit" textButton="Editar" @click="redirectToUpdate(sale.id)"/>
@@ -46,7 +46,7 @@
         </div>
 
         <Transition>
-            <PopUpDelete v-if="showPopUpDelete" @close="togglePopUpDelete()" @deleteItem="deleteConfirm()" :itemId="SaleToDeleteId"/>
+            <PopUpDelete v-if="showPopUpDelete" @close="togglePopUpDelete()" @deleteItem="deleteConfirm()" :itemId="saleToDeleteId"/>
         </Transition>
     </div>
 </template>

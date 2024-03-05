@@ -26,7 +26,7 @@ const SaleService = {
     },
 
     async edit(id, form) {
-        let { data } = await ApiService.put(`${apiBasePath}`, id, form)
+        let { data } = await ApiService.update(`${apiBasePath}`, id, form)
         return data
     },
 

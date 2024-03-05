@@ -25,8 +25,7 @@ export default {
         id: String,
         labelFor: String,
         textLabel: String,
-        modelValue: String,
-        vModel: [String, Number],
+        modelValue: [String, Number],
         isDisabled: {type: Boolean, default: false},
         required: {type: Boolean, default: false},
         customers: {type: Array, default: []}

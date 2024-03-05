@@ -15,7 +15,7 @@
 
                     <div class="div-left">
                         <InputSelect id="selectCustomer" label-for="selectCustomer" text-label="Cliente"
-                            v-model="sale.fullName" ref="saleCustomer" :customers="customers" required />
+                            v-model="sale.customerId" ref="saleCustomer" :customers="customers" required />
                     </div>
 
                     <div class="div-right">
@@ -43,7 +43,7 @@
                                 v-model="item.unityValue" ref="itemUnityValue" required />
 
                             <label id="label-form" for="totalValue">Valor total</label>
-                            <input id="totalValue" type="text" class="input-form" :value="item.totalValueItem" disabled>
+                            <input id="totalValue" type="text" class="input-form" :value="item.totalValue" disabled>
                         </div>
 
                     </div>
@@ -56,7 +56,7 @@
 
             </form>
 
-            <div id="div-table-items" v-if="sale.item.length > 0">
+            <div id="div-table-items" v-if="sale.saleItems.length && showItens">
                 <table>
 
                     <thead>
@@ -70,14 +70,14 @@
                     </thead>
 
                     <tbody>
-                        <tr v-for="(item, index) in sale.item" :key="index" class="list-table">
+                        <tr v-for="(item, index) in sale.saleItems" :key="index" class="list-table">
                             <td class="tg-0lax column-list-table first-td">{{ item.description }}</td>
                             <td class="tg-0lax column-list-table">{{ item.unityValue }}</td>
                             <td class="tg-0lax column-list-table">{{ item.quantity }}</td>
-                            <td class="tg-0lax column-list-table last-td">{{ item.totalValueItem }}</td>
+                            <td class="tg-0lax column-list-table last-td">{{ item.totalValue }}</td>
                             <td class="tg-0lax column-list-form last-td">
                                 <ButtonTable classBtn="delete" textButton="Deletar" @click="togglePopUpDelete(index)" />
-                                <ButtonTable classBtn="edit" textButton="Editar" @click="toEditItem(index, item)"/>
+                                <ButtonTable classBtn="edit" textButton="Editar" @click="toEditItem(index)"/>
                             </td>
                         </tr>
                     </tbody>
@@ -86,18 +86,16 @@
             </div>
 
             <div id="total-and-save">
-                <p id="total-value">Total: {{ finalValue || "R$ 0,00" }}</p>
+                <p id="total-value">Total: {{ sale.saleTotalValue || "R$ 0,00" }}</p>
                 <ButtonSave @click.prevent="sendForm()" />
             </div>
 
             <Transition>
-                <pop-up v-if="popUp" @close="togglePopUpSucess()" :message="messagePopUp"
-                    :popUpClass="popUpSucessOrError" />
+                <pop-up v-if="popUp" @close="togglePopUpSucess()" :message="messagePopUp" :popUpClass="popUpSucessOrError" />
             </Transition>
 
             <Transition>
-                <PopUpDelete v-if="showPopUpDelete" @close="togglePopUpDelete()" @deleteItem="deleteConfirm()"
-                    :itemId="index" />
+                <PopUpDelete v-if="showPopUpDelete" @close="togglePopUpDelete()" @deleteItem="deleteConfirm()"/>
             </Transition>
 
         </div>
@@ -115,6 +113,7 @@ import ButtonSave from '@/components/ButtonSave.vue'
 import ButtonTable from '@/components/ButtonTable.vue'
 import PopUp from '@/components/PopUp.vue'
 import PopUpDelete from '@/components/PopUpDelete.vue'
+import helpers from '@/common/helpers'
 import ApiService from '@/common/apiService'
 import SaleService from '@/common/service/sale.service'
 import { Sale } from '@/models/Sale'
@@ -139,9 +138,8 @@ export default {
     data() {
         return {
             customers: [],
-            sale: new Sale({ customerName: null, item: [] }),
+            sale: new Sale({ customerName: null, saleItems: [] }),
             item: new Item({}),
-            index: '',
             popUp: false,
             popUpSucessOrError: 'sucess',
             messagePopUp: '',
@@ -149,7 +147,9 @@ export default {
             showPopUpDelete: false,
             itemInEddit: false,
             isEdit: false,
-            currentId: null
+            currentId: null,
+            idToDelete: null,
+            showItens: true
         }
     },
 
@@ -157,26 +157,9 @@ export default {
         txtButtonAdd(){ return window.innerWidth < 500 ? '<<' : 'Voltar' },
 
         CreateOrEdit() { return !this.isEdit ? 'Adicionar venda' : 'Editar venda' },
-
-        finalValue() {
-            const sum = this.sale.item.reduce((sum, item) => {
-                return sum + Number(item.totalValueItem.replace(/[\"R$"\","\"."]/g, ''))
-            }, 0)
-
-            this.sale.saleTotalValue = (sum / 100).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
-            return this.sale.saleTotalValue
-        },
     },
 
     methods: {
-
-        async fetchCustomers() {
-            await ApiService.query('customer')
-                .then(response => {
-                    this.customers = response.data.map(customerData => ({ ...customerData }));
-                })
-                //console.log(this.customers)
-        },
 
         addItem() {
             this.validateItems()
@@ -186,18 +169,20 @@ export default {
                     description: this.item.description,
                     quantity: this.item.quantity,
                     unityValue: this.item.unityValue,
-                    totalValueItem: this.item.totalValueItem
+                    totalValue: this.item.totalValue
                 })
                 
                 this.item.unityValue = Number(this.item.unityValue).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
                 
-                this.sale.item.push(this.item)
-                this.sale.saleTotalItems = this.sale.item.length
+                this.sale.saleItems.push(this.item)
+                this.sale.saleTotalItems = this.sale.saleItems.length
                 
                 this.popUpSucessOrError = 'sucess'
                 this.togglePopUpSucess("Item adicionado com sucesso!")
                 this.clearInputs()
                 this.itemInEddit = false
+
+                this.finalValue()
             } else {
                 return
             }
@@ -210,28 +195,24 @@ export default {
         },
 
         async createSale() {
-            this.convertValueTypes()
-            console.log(this.sale)
+            await this.convertSendTypeValues()
             try {
                 await SaleService.create(this.sale)
                 this.popUpSucessOrError = 'sucess'
                 this.togglePopUpSucess("Formulário enviado com sucesso!")
-                this.popUpRedirect = false
-                this.clearAll()
+                this.popUpRedirect = true
             } catch (error) {
                 console.error('Error adding sale:', error.message)
             }
         },
 
         async updateSale() {
-            this.convertValueTypes()
-            console.log(this.sale)
+            this.convertSendTypeValues()
             try {
-                await SaleService.create('sale', this.currentId, this.sale)
+                await SaleService.edit(this.currentId, this.sale)
                 this.popUpSucessOrError = 'sucess'
                 this.togglePopUpSucess("Formulário atualizado com sucesso!")
-                this.popUpRedirect = false
-                this.clearAll()
+                this.popUpRedirect = true
             } catch (error) {
                 console.error('Error updating sale:', error.message)
             }
@@ -248,49 +229,66 @@ export default {
             this.$refs.saleBillingDate.valid()
         },
 
-        convertValueTypes(){
-
-            //console.log(this.sale);
-
-            this.sale.saleTotalItems = parseInt(this.sale.saleTotalItems)
-            this.sale.saleTotalValue = this.sale.saleTotalValue.replace(/[\"R$"\" "]/g, '').replace(',', '.')
+        async convertSendTypeValues(){
+            this.sale.saleTotalItems = Number(this.sale.saleTotalItems)
+            this.sale.customerId = parseInt(this.sale.customerId)
             this.sale.saleDate = new Date().toISOString()
+            this.sale.saleTotalValue = Number(this.sale.saleTotalValue.replace(/[\"R$"\"."]/g, '').replace(/[\"R$"\","]/g, '.'))
 
-            for (let i = 0; i < this.sale.item.length; i++) {
-                const currentItem = this.sale.item[i]
-
+            for (let i = 0; i < this.sale.saleItems.length; i++) {
+                const currentItem = this.sale.saleItems[i]
                 currentItem.quantity = parseInt(currentItem.quantity)
-                currentItem.unityValue = currentItem.unityValue.replace(/[\"R$"\" "]/g, '').replace(',', '.')
-
-                currentItem.totalValueItem = currentItem.totalValueItem.replace(/[\"R$"\" "]/g, '').replace(',', '.')
+                currentItem.unityValue = Number(currentItem.unityValue.replace(/[\"R$"\"."]/g, '').replace(/[\"R$"\","]/g, '.'))
+                currentItem.totalValue = Number(currentItem.totalValue.replace(/[\"R$"\"."]/g, '').replace(/[\"R$"\","]/g, '.'))
             }
+        },
 
-            console.log(this.sale);
+        async convertReceivedTypeValues(){
+            this.sale.saleTotalValue = this.sale.saleTotalValue.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
+            this.sale.billingDate = helpers.revertDate(this.sale.billingDate)
+
+            for (let i = 0; i < this.sale.saleItems.length; i++) {
+                const currentItem = this.sale.saleItems[i]
+                currentItem.unityValue = currentItem.unityValue.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
+                currentItem.totalValue = currentItem.totalValue.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
+            }
         },
 
         sendForm() {
-            if (!this.sale.item.length) {
+            if (!this.sale.saleItems.length) {
                 this.popUpSucessOrError = 'error'
                 this.togglePopUpSucess("Adicione pelo menos um item...")
                 return
             }
 
+            if(this.itemInEddit){
+                this.popUpSucessOrError = 'error'
+                this.togglePopUpSucess("Há um item em edição...")
+                return
+            }
+
             this.validadeSale()
             if (this.$refs.saleCustomer.valid() && this.$refs.saleBillingDate.valid()) {
+                this.showItens = false
                 this.isEdit ? this.updateSale() : this.createSale()
             } else {
                 return
             }
         },
 
-        clearInputs() {
-            this.item = new Item({})
+        finalValue() {
+            let sum = 0
+
+            for (let i = 0; i < this.sale.saleItems.length; i++) {
+                const currentItem = this.sale.saleItems[i]
+                sum += Number(currentItem.totalValue.replace(/[\"R$"\"."]/g, '').replace(/[\"R$"\","]/g, '.'))
+            }
+
+            this.sale.saleTotalValue = sum.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
         },
 
-        clearAll() {
-            this.clearInputs()
-            this.finalValue = ''
-            this.sale = new Sale({})
+        clearInputs() {
+            this.item = new Item({})
         },
 
         togglePopUpSucess(messagePopUp) {
@@ -300,38 +298,50 @@ export default {
         },
 
         deleteConfirm() {
-            this.sale.item.splice(this.id, 1)
+            this.sale.saleItems.splice(this.idToDelete, 1)
             this.togglePopUpDelete()
         },
 
-        togglePopUpDelete(item) {
-            if (item)
-                this.id = this.sale.item.indexOf(item)
+        togglePopUpDelete(index) {
+            if (index)
+                this.idToDelete = index
             this.showPopUpDelete = !this.showPopUpDelete
         },
 
         calcTotalValueItems(){
             if (this.item.quantity && this.item.unityValue) {
-                this.item.totalValueItem = (this.item.quantity * this.item.unityValue.replace(/[\"R$"\","\"."]/g, '') / 100)
+                this.item.totalValue = (this.item.quantity * this.item.unityValue.replace(/[\"R$"\","\"."]/g, '') / 100)
                     .toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
-                return this.item.totalValueItem
+                return this.item.totalValue
             } else {
                 return ''
             }
         },
 
-        toEditItem(index, item){
+        toEditItem(index){
             if(!this.itemInEddit){
                 this.itemInEddit = true
-                this.item.description = item.description
-                this.item.quantity = item.quantity
-                this.item.unityValue = item.unityValue
-                this.item.totalValue = item.totalValue
-                this.sale.item.splice(index, 1)
+
+                this.item.description = this.sale.saleItems[index].description,
+                this.item.quantity = this.sale.saleItems[index].quantity,
+                this.item.unityValue = this.sale.saleItems[index].unityValue,
+                this.item.totalValue = this.sale.saleItems[index].totalValue
+
+                this.sale.saleItems.splice(index, 1)
             }
             else{
                 alert("Já há um item em edição")
             }
+        },
+
+        async fetchSale(id) {
+            await SaleService.searchById(id)
+            .then(response => {
+                this.sale = response
+                this.convertReceivedTypeValues()
+            }).catch((error) => {
+                console.error(error)
+            })
         },
 
         verifyCreateOrEditSale() {
@@ -342,16 +352,13 @@ export default {
                 this.currentId = currentId
                 this.fetchSale(currentId)
             }
-
         },
 
-        async fetchSale(id) {
-            await SaleService.searchById(id)
-            .then(response => {
-                this.sale = response
-            }).catch((error) => {
-                console.error(error)
-            })
+        async fetchCustomers() {
+            await ApiService.query('customer')
+                .then(response => {
+                    this.customers = response.data.map(customerData => ({ ...customerData }))
+                })
         },
     },
 

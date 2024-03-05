@@ -14,8 +14,7 @@
 export default {
     props:{
         message: {type: String, default: ""},
-        popUpClass: {type: String, default: 'error'},
-        itemId: { type: Number }
+        popUpClass: {type: String, default: 'error'}
     },
     computed: {
         btnClass() {

@@ -24,7 +24,7 @@ export default {
         id: String,
         textLabel: String,
         textPlaceholder: String,
-        modelValue: String,
+        modelValue: [String, Number],
         mask: String,
         type: {type: String, default: "text"},
         required: {type: Boolean, default: false},

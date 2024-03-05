@@ -104,7 +104,6 @@ import { Customer } from '@/models/Customer'
                     await ApiService.post('customer', this.customer)
                     this.togglePopUp("Cliente adicionado com sucesso!")
                     this.popUpRedirect = true
-                    this.clearInputs()
                 } catch (error) {
                     console.error('Error adding customer:', error.message)
                 }
@@ -115,14 +114,9 @@ import { Customer } from '@/models/Customer'
                     await ApiService.put(`customer/${this.customer.id}`, this.customer)
                     this.togglePopUp("Cliente atualizado com sucesso!")
                     this.popUpRedirect = true
-                    this.clearInputs()
                 } catch (error) {
                     console.error('Error editting customer:', error.message)
                 }
-            },  
-
-            clearInputs(){
-                this.customer = new Customer({})
             },
 
             validate() {
