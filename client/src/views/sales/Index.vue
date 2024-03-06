@@ -8,7 +8,7 @@
     <div id="main">
         <div id="header">
             <h1>Lista de vendas</h1>
-            <InputSearch/>
+            <InputSearch v-model="searchTerm" @search-clicked="fetchSales"/>
         </div>
         
         <div id="table-div">
@@ -30,7 +30,7 @@
                         <td class="tg-0lax column-list-table">{{ sale.saleTotalItems }}</td>
                         <td class="tg-0lax column-list-table">{{ sale.saleDate }}</td>
                         <td class="tg-0lax column-list-table">{{ sale.billingDate }}</td>
-                        <td class="tg-0lax column-list-table">{{ sale.saleTotalValue.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' }) }}</td>
+                        <td class="tg-0lax column-list-table">{{ mountMoneyMask(sale.saleTotalValue) }}</td>
                         <td class="tg-0lax column-list-table last-td">
                             <ButtonTable classBtn="delete" textButton="Deletar" @click="togglePopUpDelete(sale.id)"/>
                             <ButtonTable classBtn="edit" textButton="Editar" @click="redirectToUpdate(sale.id)"/>
@@ -60,10 +60,6 @@ import SaleService from "@/common/service/sale.service"
 import { Sale } from '@/models/Sale'
 
     export default{
-        props: {
-            text: String,
-        },
-
         components:{
             InputSearch,
             ButtonTable,
@@ -75,7 +71,8 @@ import { Sale } from '@/models/Sale'
             return{
                 showPopUpDelete: false,
                 sales: new Sale({}),
-                saleToDeleteId: null
+                saleToDeleteId: null,
+                searchTerm: ''
             }
         },
 
@@ -84,18 +81,31 @@ import { Sale } from '@/models/Sale'
         },
 
         methods:{
+
+            mountMoneyMask(saleTotalValue){
+                return saleTotalValue.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
+            },
+
             togglePopUpDelete(saleId){
                 this.saleToDeleteId = saleId
                 this.showPopUpDelete = !this.showPopUpDelete
             },
 
-            async fetchSales(){
+            async fetchSales() {
                 await SaleService.search()
-                .then(response => {
-                   this.sales = response
-                }).catch((error) => {
-                    console.error(error)
-                })
+                    .then(response => {
+                        this.sales = response.filter(sale => {
+                            const fieldsToSearch = ['fullName', 'saleTotalItems', 'saleDate', 'billingDate', 'saleTotalValue']
+
+                            return fieldsToSearch.some(field => {
+                                const value = String(sale[field]).toLowerCase()
+                                return value.includes(this.searchTerm.toLowerCase())
+                            });
+                        });
+                    })
+                    .catch(e => {
+                        console.error(`Erro ao buscar vendas: ${e.message}`)
+                    });
             },
 
             async deleteConfirm(){
@@ -105,7 +115,7 @@ import { Sale } from '@/models/Sale'
                     this.togglePopUpDelete()
                     this.fetchSales()
                 }).catch((error) => {
-                    console.error("Erro ao deleter cliente: ", error)
+                    console.error(`Erro ao deletar venda: ${error.message}`)
                 })
             },
 

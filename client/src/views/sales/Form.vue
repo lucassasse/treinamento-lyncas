@@ -148,7 +148,7 @@ export default {
             itemInEddit: false,
             isEdit: false,
             currentId: null,
-            idToDelete: null,
+            indexToDelete: null,
             showItens: true
         }
     },
@@ -171,8 +171,6 @@ export default {
                     unityValue: this.item.unityValue,
                     totalValue: this.item.totalValue
                 })
-                
-                this.item.unityValue = Number(this.item.unityValue).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
                 
                 this.sale.saleItems.push(this.item)
                 this.sale.saleTotalItems = this.sale.saleItems.length
@@ -243,7 +241,7 @@ export default {
             }
         },
 
-        async convertReceivedTypeValues(){
+        convertReceivedTypeValues(){
             this.sale.saleTotalValue = this.sale.saleTotalValue.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
             this.sale.billingDate = helpers.revertDate(this.sale.billingDate)
 
@@ -298,13 +296,14 @@ export default {
         },
 
         deleteConfirm() {
-            this.sale.saleItems.splice(this.idToDelete, 1)
+            this.sale.saleItems.splice(this.indexToDelete, 1)
             this.togglePopUpDelete()
+            this.finalValue()
         },
 
         togglePopUpDelete(index) {
-            if (index)
-                this.idToDelete = index
+            if (index >= 0)
+                this.indexToDelete = index
             this.showPopUpDelete = !this.showPopUpDelete
         },
 

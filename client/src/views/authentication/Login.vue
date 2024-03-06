@@ -1,5 +1,6 @@
 <template>
     <div id="main">
+
         <div id="div-left">
             <img src="@/assets/images/img_logo_lyncas.png" alt="Logo Lyncas">
             <p>
@@ -8,15 +9,22 @@
         </div>
         
         <div id="div-right">
+
             <h1>Entrar</h1>
+
             <form action="login">
+
                 <InputText type="email" id="email" labelFor="email" textPlaceholder="E-mail" v-model="user.email" ref="loginEmail" required/>
                 <InputText type="password" id="password" textPlaceholder="Senha" v-model="user.password" ref="loginPassword" required/>
+                
                 <div class="btn-login">
                     <button id="btn-login" @click.prevent="login">Entrar</button>
                 </div>
+
             </form>
+
         </div>
+
     </div>
 </template>
 
@@ -28,11 +36,13 @@ import { User } from '@/models/User'
         components:{
             InputText,
         },
+
         data(){
             return{
                 user: new User({})
             }
         },
+
         methods:{
             login(){
                 this.validate()

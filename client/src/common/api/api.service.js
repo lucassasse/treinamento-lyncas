@@ -20,13 +20,6 @@ const ApiService = {
       return axios.get(`${resource}/`, { params });
   },
 
-  // query(resource, params) {
-  //   this.setHeader();
-  //   return axios.get(resource, params).catch((error) => {
-  //     throw new Error(`ApiService ${error}`);
-  //   });
-  // },
-
   post(resource, params, config = null) {
     this.setHeader();
     return axios.post(`${resource}`, params, config);
@@ -36,11 +29,6 @@ const ApiService = {
     this.setHeader();
     return axios.put(`${resource}/${slug}`, params);
   },
-
-  // put(resource, params) {
-  //   this.setHeader();
-  //   return axios.put(`${resource}`, params);
-  // },
 
   delete(resource) {
     this.setHeader();

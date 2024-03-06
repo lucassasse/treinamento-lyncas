@@ -1,11 +1,36 @@
 <template>
     <div id="div_input">
-        <input type="text" id="input_search" placeholder="Buscar cliente...">
-        <button id="btn_search">
-            <font-awesome-icon class="icon" icon="fa-magnifying-glass" />
-        </button>
+        <input
+            v-model="inputValue"
+            type="text" 
+            id="input_search" 
+            placeholder="Buscar cliente..."
+        >
+            <font-awesome-icon class="icon" icon="fa-magnifying-glass" id="btn_search" @click="searchClicked"/>
+        </input>
     </div>
 </template>
+
+<script>
+export default {
+    props: {
+        modelValue: String,
+    },
+
+    data() {
+        return {
+            inputValue: this.modelValue,
+        }
+    },
+
+    methods: {
+        searchClicked(event) {
+            this.$emit('update:modelValue', (this.inputValue));
+            this.$emit('search-clicked')
+        },
+    }
+}
+</script>
 
 <style scoped>
 #div_input{
@@ -20,7 +45,7 @@
 }
 
 #input_search{
-    padding: 10px 15px;
+    padding: 10px 50px 10px 15px;
     width: 400px;
     border: none;
     font-size: medium;
