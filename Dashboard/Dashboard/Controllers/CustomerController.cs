@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Dashboard.Domain.Dtos;
 using Dashboard.Domain.ViewModels;
+using Dashboard.Domain.Pagination;
 
 namespace Dashboard.Controllers
 {
@@ -42,6 +43,21 @@ namespace Dashboard.Controllers
                     return NotFound("Customer not found");
 
                 return Ok(customer);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+        }
+
+        [HttpPost("pagination")]
+        public async Task<IActionResult> GetByPagination([FromBody] PaginationModel paginationModel)
+        {
+            try
+            {
+                var pagedCustomer = await _customerService.GetByPagination(paginationModel.Page, paginationModel.PageNumber);
+                     
+                return Ok(pagedCustomer);
             }
             catch (Exception ex)
             {

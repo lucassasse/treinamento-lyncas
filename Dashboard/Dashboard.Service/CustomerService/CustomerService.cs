@@ -4,6 +4,8 @@ using Dashboard.Domain.Models;
 using Dashboard.Domain.ViewModels;
 using Dashboard.Domain.Dtos;
 using Dashboard.Service.Service;
+using Dashboard.Domain.Pagination;
+using Microsoft.EntityFrameworkCore;
 
 namespace Dashboard.Service.CustomerService
 {
@@ -28,6 +30,29 @@ namespace Dashboard.Service.CustomerService
             catch (Exception ex)
             {
                 throw new ApplicationException("Error occurred while getting customers.", ex);
+            }
+        }
+
+        public async Task<List<Customer>> GetByPagination(int page, int pageNumber)
+        {
+            try
+            {
+                return await _repository.GetByPagination(page, pageNumber);
+
+                //var totalCount = await _repository.GetByPagination().CountAsync();
+
+                //var data = _repository.GetByPagination()
+                //  .Skip((pagelist.Page - 1) * pagelist.PageSize)
+                //  .Take(pagelist.PageSize)
+                //  .ToList();
+
+                //var customerViewModel = _mapper.Map<List<CustomerViewModel>>(data);
+
+                //return new PageList<CustomerViewModel>(customerViewModel, pagelist.Page, pagelist.PageSize, totalCount);
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error occurred while getting paginated customers.", ex);
             }
         }
 

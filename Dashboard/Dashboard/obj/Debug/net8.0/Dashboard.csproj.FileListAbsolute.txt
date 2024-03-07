@@ -3,7 +3,6 @@ C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.Generated
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.AssemblyInfoInputs.cache
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.AssemblyInfo.cs
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.csproj.CoreCompileInputs.cache
-C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\appsettings.json
@@ -142,3 +141,8 @@ C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\refint\Dashboard.dl
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.pdb
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.genruntimeconfig.cache
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\ref\Dashboard.dll
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.MvcApplicationPartsAssemblyInfo.cs

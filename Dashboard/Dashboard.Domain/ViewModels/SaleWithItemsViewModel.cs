@@ -10,7 +10,11 @@ namespace Dashboard.Domain.ViewModels
         [Required]
         public DateTime BillingDate { get; set; }
         [Required]
+        public DateTime SaleDate { get; set; }
+        [Required]
         public double SaleTotalValue { get; set; }
+        [Required]
+        public double SaleTotalItems { get; set; }
         [Required]
         public IList<ItemSaleViewModel> SaleItems { get; set; }
     }

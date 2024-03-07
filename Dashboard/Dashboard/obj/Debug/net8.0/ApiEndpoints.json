@@ -89,6 +89,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Dashboard.Controllers.CustomerController",
+    "Method": "GetByPagination",
+    "RelativePath": "api/Customer/pagination",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "paginationModel",
+        "Type": "Dashboard.Domain.Pagination.PaginationModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Dashboard.Controllers.SaleController",
     "Method": "GetSalesAsync",
     "RelativePath": "api/Sale",
