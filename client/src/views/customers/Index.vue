@@ -8,7 +8,7 @@
     <div id="main">
         <div id="header">
             <h1>Lista de clientes</h1>
-            <InputSearch/>
+            <InputSearch v-model="searchTerm" @search-clicked="fetchCustomers"/>
         </div>
 
         <div id="table-div">
@@ -43,7 +43,9 @@
                 </tbody>
             </table>
         </div>
-        
+
+        <Pagination :totalPages="totalPages" :currentPage="currentPage" :prevPage="prevPage" :nextPage="nextPage" :gotoPage="gotoPage" />
+
         <Transition>
             <PopUpDelete v-if="showPopUpDelete" @close="togglePopUpDelete()" @deleteItem="deleteCustomer()" :itemId="customerToDeleteId"/>
         </Transition>
@@ -55,8 +57,8 @@ import InputSearch from '@/components/InputSearch.vue'
 import ButtonTable from '@/components/ButtonTable.vue'
 import Header from '@/layouts/Header.vue'
 import PopUpDelete from '@/components/PopUpDelete.vue'
+import Pagination from '@/components/Pagination.vue'
 import CustomerService from "@/common/service/customer.service"
-import { Customer } from '@/models/Customer'
 
     export default{
         props: {
@@ -67,19 +69,24 @@ import { Customer } from '@/models/Customer'
             InputSearch,
             ButtonTable,
             Header,
-            PopUpDelete
+            PopUpDelete,
+            Pagination
         },
 
         data(){
             return{
                 showPopUpDelete: false,
-                customers: new Customer({}),
-                customerToDeleteId: null
+                customers: [],
+                customerToDeleteId: null,
+                itemsPerPage: 5,
+                currentPage: 1,
+                totalPages: null,
+                searchTerm: ''
             }
         },
 
         computed:{
-            txtButtonAdd(){ return window.innerWidth < 500 ? '+' : 'Adicionar'; }
+            txtButtonAdd(){ return window.innerWidth < 500 ? '+' : 'Adicionar' }
         },
 
         methods:{
@@ -88,10 +95,45 @@ import { Customer } from '@/models/Customer'
                 this.showPopUpDelete = !this.showPopUpDelete
             },
 
+            calcTotalPages(){
+                let result = Math.ceil(this.totalItensInList / this.itemsPerPage)
+                this.totalPages = result
+            },
+
+            gotoPage(page) {
+                this.currentPage = page
+                this.fetchCustomers()
+            },
+
+            prevPage() {
+                if (this.currentPage > 1) {
+                    this.currentPage--
+                    this.fetchCustomers()
+                }
+            },
+
+            nextPage() {
+                if (this.currentPage < this.totalPages) {
+                    this.currentPage++
+                    this.fetchCustomers()
+                }
+            },
+
+            mountObj(){
+                return {
+                    page: this.currentPage,
+                    numberPerPage: this.itemsPerPage,
+                    filter: this.searchTerm
+                }
+            },
+
             async fetchCustomers() {
-                await CustomerService.search()
+                let obj = this.mountObj()
+                await CustomerService.searchFiltred('pagination', obj)
                 .then(response => {
-                   this.customers = response
+                    this.totalItensInList = response.totalCount
+                    this.calcTotalPages()
+                    this.customers = response.data;
                 }).catch((error) => {
                     console.error("Error when searching for customers: ", error)
                 })
@@ -121,89 +163,89 @@ import { Customer } from '@/models/Customer'
 
 <style scoped>
 
-#main{
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-}
-
-#header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-h1{
-    color: #26324B;
-    font-weight: 500;
-    margin-bottom: 0;
-}
-
-table{
-    width: 100%;
-    margin-top: 30px;
-    border-spacing: 0 15px;
-}
-
-.column-header-table{
-    text-align: left;
-    font-weight: 400;
-    font-size: large;
-    color: #767a7e;
-}
-
-.list-table{
-    background-color: white;
-}
-
-.column-list-table{
-    font-weight: 500;
-    color: #26324B;
-    padding: 10px;
-    text-align: left;
-}
-
-.first-td{
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-}
-
-.last-td{
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    width: 250px;
-}
-
-.nullAlert{
-    color: red;
-    text-align: center;
-}
-
-@media only screen and (max-width: 900px) {
     #main{
-        margin: 0;
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
     }
 
     #header{
-        margin-top: 15px;
-        flex-direction: column-reverse;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
-    #table-div{
-        overflow: auto;
-        margin: 0 15px;
+    h1{
+        color: #26324B;
+        font-weight: 500;
+        margin-bottom: 0;
     }
 
     table{
-        margin-top: 0;
+        width: 100%;
+        margin-top: 30px;
+        border-spacing: 0 15px;
+    }
+
+    .column-header-table{
+        text-align: left;
+        font-weight: 400;
+        font-size: large;
+        color: #767a7e;
+    }
+
+    .list-table{
+        background-color: white;
     }
 
     .column-list-table{
-        min-width: 150px;
+        font-weight: 500;
+        color: #26324B;
+        padding: 10px;
+        text-align: left;
+    }
+
+    .first-td{
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
     }
 
     .last-td{
-        max-width: 250px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        width: 250px;
     }
-}
+
+    .nullAlert{
+        color: red;
+        text-align: center;
+    }
+
+    @media only screen and (max-width: 900px) {
+        #main{
+            margin: 0;
+        }
+
+        #header{
+            margin-top: 15px;
+            flex-direction: column-reverse;
+        }
+
+        #table-div{
+            overflow: auto;
+            margin: 0 15px;
+        }
+
+        table{
+            margin-top: 0;
+        }
+
+        .column-list-table{
+            min-width: 150px;
+        }
+
+        .last-td{
+            max-width: 250px;
+        }
+    }
 </style>

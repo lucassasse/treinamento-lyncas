@@ -42,7 +42,6 @@ import InputText from '@/components/InputText.vue'
 import ButtonSave from '@/components/ButtonSave.vue'
 import Header from '@/layouts/Header.vue'
 import PopUp from '@/components/PopUp.vue'
-import ApiService from "@/common/apiService"
 import CustomerService from "@/common/service/customer.service"
 import { Customer } from '@/models/Customer'
 
@@ -101,7 +100,7 @@ import { Customer } from '@/models/Customer'
 
             async createCustomer(){
                 try {
-                    await ApiService.post('customer', this.customer)
+                    await CustomerService.create(this.customer)
                     this.togglePopUp("Cliente adicionado com sucesso!")
                     this.popUpRedirect = true
                 } catch (error) {
@@ -111,7 +110,7 @@ import { Customer } from '@/models/Customer'
 
             async updateCustomer(){
                 try {
-                    await ApiService.put(`customer/${this.customer.id}`, this.customer)
+                    await CustomerService.edit(this.customer.id, this.customer)
                     this.togglePopUp("Cliente atualizado com sucesso!")
                     this.popUpRedirect = true
                 } catch (error) {

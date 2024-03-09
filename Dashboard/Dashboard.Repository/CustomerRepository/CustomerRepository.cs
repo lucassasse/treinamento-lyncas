@@ -11,25 +11,6 @@ namespace Dashboard.Repository.CustomerRepository
         {
         }
 
-        public async Task<List<Customer>> GetByPagination(int page, int pageNumber)
-        {
-            try
-            {
-                return await _context.Customer
-                    .Skip((page -1) * pageNumber)
-                    .Take(page)
-                    .ToListAsync();
-
-                //return _context.Customer.AsQueryable()
-                //    .Where(x => x.SoftDeleted != true);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error when get customer by pagination. {ex.Message}");
-                throw;
-            }
-        }
-
         public async Task<bool> HasSales(int customerId)
         {
             try

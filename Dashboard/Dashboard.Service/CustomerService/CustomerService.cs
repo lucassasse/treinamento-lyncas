@@ -4,7 +4,6 @@ using Dashboard.Domain.Models;
 using Dashboard.Domain.ViewModels;
 using Dashboard.Domain.Dtos;
 using Dashboard.Service.Service;
-using Dashboard.Domain.Pagination;
 using Microsoft.EntityFrameworkCore;
 
 namespace Dashboard.Service.CustomerService
@@ -33,22 +32,24 @@ namespace Dashboard.Service.CustomerService
             }
         }
 
-        public async Task<List<Customer>> GetByPagination(int page, int pageNumber)
+        public async Task<(List<Customer> Data, int TotalCount)> GetByPagination(int page, int numberPerPage, string filter)
         {
             try
             {
-                return await _repository.GetByPagination(page, pageNumber);
+                var result = _repository.GetAll();
 
-                //var totalCount = await _repository.GetByPagination().CountAsync();
+                result = result
+                    .Where(x => x.SoftDeleted == false)
+                    .Where(x => x.FullName.Contains(filter) || x.Email.Contains(filter) || x.Telephone.Contains(filter) || x.Cpf.Contains(filter));
 
-                //var data = _repository.GetByPagination()
-                //  .Skip((pagelist.Page - 1) * pagelist.PageSize)
-                //  .Take(pagelist.PageSize)
-                //  .ToList();
+                int totalCount = result.Count();
 
-                //var customerViewModel = _mapper.Map<List<CustomerViewModel>>(data);
+                var data = await result
+                    .Skip((page - 1) * numberPerPage)
+                    .Take(numberPerPage)
+                    .ToListAsync();
 
-                //return new PageList<CustomerViewModel>(customerViewModel, pagelist.Page, pagelist.PageSize, totalCount);
+                return (data, totalCount);
             }
             catch (Exception ex)
             {

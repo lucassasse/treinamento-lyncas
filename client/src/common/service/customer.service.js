@@ -13,8 +13,8 @@ const CustomerService = {
         return data
     },
 
-    async edit(form) {
-        let { data } = await ApiService.put(`${apiBasePath}`, form)
+    async searchFiltred(search, infos) { //customer e //{page, pageNumber, search}
+        let { data } = await ApiService.post(`${apiBasePath}/${search}`, infos)
         return data
     },
 
@@ -22,7 +22,12 @@ const CustomerService = {
         let { data } = await ApiService.post(`${apiBasePath}`, form)
         return data
     },
-    
+
+    async edit(id, form) {
+        let { data } = await ApiService.update(`${apiBasePath}`, id, form)
+        return data
+    },
+ 
     async delete(id) {
         let { data } = await ApiService.delete(`${apiBasePath}/${id}`)
         return data

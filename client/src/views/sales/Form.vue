@@ -114,8 +114,8 @@ import ButtonTable from '@/components/ButtonTable.vue'
 import PopUp from '@/components/PopUp.vue'
 import PopUpDelete from '@/components/PopUpDelete.vue'
 import helpers from '@/common/helpers'
-import ApiService from '@/common/apiService'
 import SaleService from '@/common/service/sale.service'
+import CustomerService from '@/common/service/customer.service'
 import { Sale } from '@/models/Sale'
 import { Item } from '@/models/Item'
 
@@ -354,9 +354,9 @@ export default {
         },
 
         async fetchCustomers() {
-            await ApiService.query('customer')
+            await CustomerService.search()
                 .then(response => {
-                    this.customers = response.data.map(customerData => ({ ...customerData }))
+                    this.customers = response.map(customerData => ({ ...customerData }))
                 })
         },
     },

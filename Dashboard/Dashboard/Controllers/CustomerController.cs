@@ -55,9 +55,15 @@ namespace Dashboard.Controllers
         {
             try
             {
-                var pagedCustomer = await _customerService.GetByPagination(paginationModel.Page, paginationModel.PageNumber);
-                     
-                return Ok(pagedCustomer);
+                var (pagedCustomer, totalCount) = await _customerService.GetByPagination(paginationModel.Page, paginationModel.NumberPerPage, paginationModel.Filter);
+
+                var response = new
+                {
+                    Data = pagedCustomer,
+                    TotalCount = totalCount
+                };
+
+                return Ok(response);
             }
             catch (Exception ex)
             {

@@ -25,13 +25,13 @@ const SaleService = {
         return data
     },
 
-    async edit(id, form) {
-        let { data } = await ApiService.update(`${apiBasePath}`, id, form)
+    async create(form) {
+        let { data } = await ApiService.post(`${apiBasePath}`, form)
         return data
     },
 
-    async create(form) {
-        let { data } = await ApiService.post(`${apiBasePath}`, form)
+    async edit(id, form) {
+        let { data } = await ApiService.update(`${apiBasePath}`, id, form)
         return data
     },
 
