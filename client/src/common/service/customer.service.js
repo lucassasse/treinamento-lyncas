@@ -13,7 +13,7 @@ const CustomerService = {
         return data
     },
 
-    async searchFiltred(search, infos) { //customer e //{page, pageNumber, search}
+    async searchFiltred(search, infos) { //pagination e //{page, pageNumber, search}
         let { data } = await ApiService.post(`${apiBasePath}/${search}`, infos)
         return data
     },

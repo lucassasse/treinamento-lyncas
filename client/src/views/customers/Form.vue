@@ -5,7 +5,7 @@
         </template>
     </Header>
 
-    <div id="div-form">
+    <div id="div-form" v-if="!popUp">
         <div>
             <h1 id="title">{{CreateOrEdit}}</h1>
         </div>
@@ -29,11 +29,11 @@
                 </div>
             </div>
         </form>
-
-        <Transition>
-            <pop-up v-if="popUp" @close="togglePopUp()" :message="messagePopUp" popUpClass="sucess"/>
-        </Transition>
     </div>
+
+    <Transition>
+        <pop-up v-if="popUp" @close="togglePopUp()" :message="messagePopUp" popUpClass="sucess"/>
+    </Transition>
 </template>
 
 <script>

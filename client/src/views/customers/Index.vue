@@ -8,7 +8,7 @@
     <div id="main">
         <div id="header">
             <h1>Lista de clientes</h1>
-            <InputSearch v-model="searchTerm" @search-clicked="fetchCustomers"/>
+            <InputSearch v-model="searchTerm" @search-clicked="searchCustomers"/>
         </div>
 
         <div id="table-div">
@@ -125,6 +125,11 @@ import CustomerService from "@/common/service/customer.service"
                     numberPerPage: this.itemsPerPage,
                     filter: this.searchTerm
                 }
+            },
+
+            searchCustomers(){
+                this.currentPage = 1
+                this.fetchCustomers()
             },
 
             async fetchCustomers() {

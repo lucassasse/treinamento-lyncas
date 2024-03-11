@@ -1,12 +1,12 @@
 <template>
-    <div>
+    <div v-if="!popUp">
         <Header>
             <template #btnAdd>
                 <router-link to="/sales" tag="button" class="btn-back">{{ txtButtonAdd }}</router-link>
             </template>
         </Header>
 
-        <div id="div-main">
+        <div id="div-main" >
             <form>
 
                 <h1>{{ CreateOrEdit }}</h1>
@@ -90,16 +90,16 @@
                 <ButtonSave @click.prevent="sendForm()" />
             </div>
 
-            <Transition>
-                <pop-up v-if="popUp" @close="togglePopUpSucess()" :message="messagePopUp" :popUpClass="popUpSucessOrError" />
-            </Transition>
-
-            <Transition>
-                <PopUpDelete v-if="showPopUpDelete" @close="togglePopUpDelete()" @deleteItem="deleteConfirm()"/>
-            </Transition>
-
         </div>
     </div>
+
+    <Transition>
+        <pop-up v-if="popUp" @close="togglePopUpSucess()" :message="messagePopUp" :popUpClass="popUpSucessOrError" />
+    </Transition>
+
+    <Transition>
+        <PopUpDelete v-if="showPopUpDelete" @close="togglePopUpDelete()" @deleteItem="deleteConfirm()"/>
+    </Transition>
 </template>
 
 <script>
