@@ -1,21 +1,25 @@
 using Dashboard.Repository.CustomerRepository;
 using Dashboard.Repository.SaleRepository;
-using Dashboard.Repository.UserRepository;
 using Dashboard.Service.CustomerService;
 using Dashboard.Service.SaleService;
-using Dashboard.Service.UserService;
 using Microsoft.EntityFrameworkCore;
 using Dashboard.Domain.Mappers;
 using Domain.Data;
+using Dashboard.Service.AuthService;
+using Dashboard.Service.PasswordService;
+using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.Filters;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add CORS policy
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(builder =>
     {
-        builder.WithOrigins("http://localhost:8080") // Adjust the origin to match your client application
+        builder.WithOrigins("http://localhost:8080")
                .AllowAnyHeader()
                .AllowAnyMethod();
     });
@@ -25,9 +29,6 @@ builder.Services.AddControllers().AddNewtonsoftJson(options => {
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
 });
 
-builder.Services.AddControllers();
-builder.Services.AddSwaggerGen();
-
 builder.Services.AddAutoMapper(typeof(CustomerMapper), typeof(SaleMapper), typeof(UserMapper));
 
 builder.Services.AddDbContext<AppDbContext>(options =>
@@ -36,14 +37,39 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString);
 });
 
+builder.Services.AddSwaggerGen(options =>
+{
+    options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+    {
+        Description = "Standar Autorization header using the Bearer scheme (\"bearer {token}\")",
+        In = ParameterLocation.Header,
+        Name = "Autorization",
+        Type = SecuritySchemeType.ApiKey
+    });
+
+    options.OperationFilter<SecurityRequirementsOperationFilter>();
+
+});
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration.GetSection("AppSettings:Token").Value)),
+        ValidateAudience = false,
+        ValidateIssuer = false
+    };
+});
+
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 
 builder.Services.AddScoped<ISaleRepository, SaleRepository>();
 builder.Services.AddScoped<ISaleService, SaleService>();
 
-builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IPasswordService, PasswordService>();
 
 var app = builder.Build();
 
@@ -59,7 +85,6 @@ using (var scope = app.Services.CreateScope())
     db.Database.Migrate();
 }
 
-// Enable CORS
 app.UseCors();
 
 app.UseExceptionHandler(errorApp =>
@@ -79,6 +104,9 @@ app.UseExceptionHandler(errorApp =>
         });
     });
 });
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllers();
 

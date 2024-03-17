@@ -146,3 +146,7 @@ C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\Microsoft.AspNetCor
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
 C:\Users\Lyncas\Desktop\Dashboard\Dashboard\obj\Debug\net8.0\Dashboard.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\Scrutor.dll
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.dll
+C:\Users\Lyncas\Desktop\Dashboard\Dashboard\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
