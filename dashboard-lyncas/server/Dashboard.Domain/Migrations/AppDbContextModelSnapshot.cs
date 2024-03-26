@@ -138,9 +138,6 @@ namespace Dashboard.Domain.Migrations
                         .IsRequired()
                         .HasColumnType("varbinary(max)");
 
-                    b.Property<int>("Position")
-                        .HasColumnType("int");
-
                     b.Property<byte[]>("SaltPassword")
                         .IsRequired()
                         .HasColumnType("varbinary(max)");

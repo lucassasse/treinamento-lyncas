@@ -30,7 +30,6 @@ namespace Dashboard.Service.PasswordService
         {
             List<Claim> claims =
             [
-                new Claim("Position", user.Position.ToString()),
                 new Claim("Email", user.Email),
                 new Claim("Username", user.FullName)
             ];

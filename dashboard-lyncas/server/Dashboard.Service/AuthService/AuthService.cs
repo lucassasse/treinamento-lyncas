@@ -36,7 +36,6 @@ namespace Dashboard.Service.AuthService
                 {
                     FullName = userRegister.FullName,
                     Email = userRegister.Email,
-                    Position = userRegister.Position,
                     HashPassword = hashPassword,
                     SaltPassword = saltPassword
                 };

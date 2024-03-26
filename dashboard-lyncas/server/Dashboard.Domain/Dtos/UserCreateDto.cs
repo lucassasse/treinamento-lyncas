@@ -1,5 +1,4 @@
-﻿using Dashboard.Domain.Enum;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Dashboard.Domain.Dtos
 {
@@ -13,7 +12,5 @@ namespace Dashboard.Domain.Dtos
         public string Password { get; set; }
         [Compare("Password", ErrorMessage = "Senhas não coincidem.")]
         public string ConfirmPassword { get; set; }
-        [Required(ErrorMessage = "O campo cargo é obrigatório.")]
-        public Position Position { get; set; }
     }
 }

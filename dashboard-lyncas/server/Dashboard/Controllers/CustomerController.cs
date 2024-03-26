@@ -3,9 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 using Dashboard.Domain.Dtos;
 using Dashboard.Domain.ViewModels;
 using Dashboard.Domain.Pagination;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Dashboard.Controllers
 {
+    //[Authorize]
     [Route("/api/[controller]")]
     public class CustomerController : Controller
     {
