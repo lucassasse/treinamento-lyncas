@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Dashboard.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [Route("/api/[controller]")]
     public class SaleController : Controller
     {
