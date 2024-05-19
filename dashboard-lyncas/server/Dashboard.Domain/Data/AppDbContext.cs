@@ -1,10 +1,9 @@
 ﻿using Dashboard.Domain.Models;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Domain.Data
 {
-    public class AppDbContext : IdentityDbContext<ApplicationUser>
+    public class AppDbContext : DbContext
     {
         public DbSet<User> User { get; set; }
         public DbSet<Customer> Customer { get; set; }
@@ -13,11 +12,6 @@ namespace Domain.Data
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) {
             this.ChangeTracker.LazyLoadingEnabled = false;
-        }
-
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            base.OnModelCreating(builder);
         }
     }
 }

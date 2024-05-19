@@ -8,24 +8,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "model",
-        "Type": "Dashboard.Domain.Dtos.LoginDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Dashboard.Controllers.AuthController",
-    "Method": "RefreshToken",
-    "RelativePath": "api/Auth/refresh-token",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "model",
-        "Type": "Dashboard.Domain.Dtos.TokenDto",
+        "Name": "userLogin",
+        "Type": "Dashboard.Domain.Dtos.UserLoginDto",
         "IsRequired": true
       }
     ],
@@ -40,24 +24,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "model",
-        "Type": "Dashboard.Domain.Dtos.RegisterDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Dashboard.Controllers.AuthController",
-    "Method": "Revoke",
-    "RelativePath": "api/Auth/revoke/{username}",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "username",
-        "Type": "System.String",
+        "Name": "userRegister",
+        "Type": "Dashboard.Domain.Dtos.UserCreateDto",
         "IsRequired": true
       }
     ],
@@ -256,5 +224,25 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Dashboard.Controllers.UserController",
+    "Method": "GetUser",
+    "RelativePath": "api/User",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "Dashboard.Domain.Models.Response\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]

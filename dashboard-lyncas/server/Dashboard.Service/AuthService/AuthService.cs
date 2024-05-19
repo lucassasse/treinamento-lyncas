@@ -18,7 +18,7 @@ namespace Dashboard.Service.AuthService
 
         public async Task<Response<UserCreateDto>> Register(UserCreateDto userRegister)
         {
-            Response<UserCreateDto> responseService = new();
+            Response<UserCreateDto> responseService = new Response<UserCreateDto>();
 
             try
             {
@@ -32,10 +32,11 @@ namespace Dashboard.Service.AuthService
 
                 _passwordService.CreateHashPassword(userRegister.Password, out byte[] hashPassword, out byte[] saltPassword);
 
-                User user = new()
+                User user = new User()
                 {
                     FullName = userRegister.FullName,
                     Email = userRegister.Email,
+                    Position = userRegister.Position,
                     HashPassword = hashPassword,
                     SaltPassword = saltPassword
                 };
@@ -58,7 +59,7 @@ namespace Dashboard.Service.AuthService
 
         public async Task<Response<string>> Login(UserLoginDto userLogin)
         {
-            Response<string> responseService = new();
+            Response<string> responseService = new Response<string>();
 
             try
             {

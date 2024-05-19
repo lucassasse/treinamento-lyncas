@@ -2,11 +2,9 @@
 using Dashboard.Service.SaleService;
 using Microsoft.AspNetCore.Mvc;
 using Dashboard.Domain.Dtos;
-using Microsoft.AspNetCore.Authorization;
 
 namespace Dashboard.Controllers
 {
-    [Authorize]
     [Route("/api/[controller]")]
     public class SaleController : Controller
     {

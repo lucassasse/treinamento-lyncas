@@ -12,10 +12,9 @@ namespace Dashboard.Controllers
         [HttpGet]
         public ActionResult<Response<string>> GetUser()
         {
-            Response<string> response = new()
-            {
-                Message = "Acesso Realizado!"
-            };
+            Response<string> response = new Response<string>();
+
+            response.Message = "Acesso Realizado!";
 
             return Ok(response);
         }
