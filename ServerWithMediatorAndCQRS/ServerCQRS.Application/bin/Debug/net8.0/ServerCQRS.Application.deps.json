@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "ServerCQRS.Application/1.0.0": {
+        "dependencies": {
+          "ServerCQRS.Domain": "1.0.0"
+        },
+        "runtime": {
+          "ServerCQRS.Application.dll": {}
+        }
+      },
+      "ServerCQRS.Domain/1.0.0": {
+        "runtime": {
+          "ServerCQRS.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ServerCQRS.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ServerCQRS.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

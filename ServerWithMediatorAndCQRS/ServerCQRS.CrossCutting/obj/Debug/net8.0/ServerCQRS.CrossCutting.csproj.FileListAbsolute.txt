@@ -1,0 +1,6 @@
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.CrossCutting\obj\Debug\net8.0\ServerCQRS.CrossCutting.csproj.AssemblyReference.cache
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.CrossCutting\obj\Debug\net8.0\ServerCQRS.CrossCutting.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.CrossCutting\obj\Debug\net8.0\ServerCQRS.CrossCutting.AssemblyInfoInputs.cache
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.CrossCutting\obj\Debug\net8.0\ServerCQRS.CrossCutting.AssemblyInfo.cs
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.CrossCutting\obj\Debug\net8.0\ServerCQRS.CrossCutting.csproj.CoreCompileInputs.cache
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.CrossCutting\obj\Debug\net8.0\ServerCQRS.CrossCutting.sourcelink.json

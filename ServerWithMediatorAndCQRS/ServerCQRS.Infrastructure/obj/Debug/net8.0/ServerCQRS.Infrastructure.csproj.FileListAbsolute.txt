@@ -1,0 +1,6 @@
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Infrastructure\obj\Debug\net8.0\ServerCQRS.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Infrastructure\obj\Debug\net8.0\ServerCQRS.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Infrastructure\obj\Debug\net8.0\ServerCQRS.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Infrastructure\obj\Debug\net8.0\ServerCQRS.Infrastructure.AssemblyInfo.cs
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Infrastructure\obj\Debug\net8.0\ServerCQRS.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Infrastructure\obj\Debug\net8.0\ServerCQRS.Infrastructure.sourcelink.json

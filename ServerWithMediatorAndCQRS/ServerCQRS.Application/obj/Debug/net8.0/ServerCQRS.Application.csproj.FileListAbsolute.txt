@@ -1,0 +1,16 @@
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Application\bin\Debug\net8.0\ServerCQRS.Application.deps.json
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Application\bin\Debug\net8.0\ServerCQRS.Application.dll
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Application\bin\Debug\net8.0\ServerCQRS.Application.pdb
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Application\bin\Debug\net8.0\ServerCQRS.Domain.dll
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Application\bin\Debug\net8.0\ServerCQRS.Domain.pdb
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Application\obj\Debug\net8.0\ServerCQRS.Application.csproj.AssemblyReference.cache
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Application\obj\Debug\net8.0\ServerCQRS.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Application\obj\Debug\net8.0\ServerCQRS.Application.AssemblyInfoInputs.cache
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Application\obj\Debug\net8.0\ServerCQRS.Application.AssemblyInfo.cs
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Application\obj\Debug\net8.0\ServerCQRS.Application.csproj.CoreCompileInputs.cache
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Application\obj\Debug\net8.0\ServerCQRS.Application.sourcelink.json
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Application\obj\Debug\net8.0\ServerCQRS.Application.csproj.CopyComplete
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Application\obj\Debug\net8.0\ServerCQRS.Application.dll
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Application\obj\Debug\net8.0\refint\ServerCQRS.Application.dll
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Application\obj\Debug\net8.0\ServerCQRS.Application.pdb
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Application\obj\Debug\net8.0\ref\ServerCQRS.Application.dll
