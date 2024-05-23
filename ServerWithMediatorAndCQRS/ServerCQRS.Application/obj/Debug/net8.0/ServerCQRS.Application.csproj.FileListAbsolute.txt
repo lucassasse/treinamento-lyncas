@@ -14,3 +14,19 @@ C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorA
 C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Application\obj\Debug\net8.0\refint\ServerCQRS.Application.dll
 C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Application\obj\Debug\net8.0\ServerCQRS.Application.pdb
 C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Application\obj\Debug\net8.0\ref\ServerCQRS.Application.dll
+C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Application\bin\Debug\net8.0\ServerCQRS.Application.deps.json
+C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Application\bin\Debug\net8.0\ServerCQRS.Application.dll
+C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Application\bin\Debug\net8.0\ServerCQRS.Application.pdb
+C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Application\bin\Debug\net8.0\ServerCQRS.Domain.dll
+C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Application\bin\Debug\net8.0\ServerCQRS.Domain.pdb
+C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Application\obj\Debug\net8.0\ServerCQRS.Application.csproj.AssemblyReference.cache
+C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Application\obj\Debug\net8.0\ServerCQRS.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Application\obj\Debug\net8.0\ServerCQRS.Application.AssemblyInfoInputs.cache
+C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Application\obj\Debug\net8.0\ServerCQRS.Application.AssemblyInfo.cs
+C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Application\obj\Debug\net8.0\ServerCQRS.Application.csproj.CoreCompileInputs.cache
+C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Application\obj\Debug\net8.0\ServerCQRS.Application.sourcelink.json
+C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Application\obj\Debug\net8.0\ServerCQ.10ADD91F.Up2Date
+C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Application\obj\Debug\net8.0\ServerCQRS.Application.dll
+C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Application\obj\Debug\net8.0\refint\ServerCQRS.Application.dll
+C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Application\obj\Debug\net8.0\ServerCQRS.Application.pdb
+C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Application\obj\Debug\net8.0\ref\ServerCQRS.Application.dll

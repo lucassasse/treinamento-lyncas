@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ServerCQRS.Domain.Entities;
+using ServerCQRS.Infrastructure.EntityConfiguration;
 
 namespace ServerCQRS.Infrastructure.Context
 {

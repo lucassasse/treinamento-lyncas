@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lukas\\OneDrive\\Área de Trabalho\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Application\\ServerCQRS.Application.csproj": {}
+    "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Application\\ServerCQRS.Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lukas\\OneDrive\\Área de Trabalho\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Application\\ServerCQRS.Application.csproj": {
+    "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Application\\ServerCQRS.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lukas\\OneDrive\\Área de Trabalho\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Application\\ServerCQRS.Application.csproj",
+        "projectUniqueName": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Application\\ServerCQRS.Application.csproj",
         "projectName": "ServerCQRS.Application",
-        "projectPath": "C:\\Users\\lukas\\OneDrive\\Área de Trabalho\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Application\\ServerCQRS.Application.csproj",
-        "packagesPath": "C:\\Users\\lukas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lukas\\OneDrive\\Área de Trabalho\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Application\\obj\\",
+        "projectPath": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Application\\ServerCQRS.Application.csproj",
+        "packagesPath": "C:\\Users\\Lyncas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\lukas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Lyncas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\lukas\\OneDrive\\Área de Trabalho\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Domain\\ServerCQRS.Domain.csproj": {
-                "projectPath": "C:\\Users\\lukas\\OneDrive\\Área de Trabalho\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Domain\\ServerCQRS.Domain.csproj"
+              "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Domain\\ServerCQRS.Domain.csproj": {
+                "projectPath": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Domain\\ServerCQRS.Domain.csproj"
               }
             }
           }
@@ -38,6 +38,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -59,21 +64,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\lukas\\OneDrive\\Área de Trabalho\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Domain\\ServerCQRS.Domain.csproj": {
+    "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Domain\\ServerCQRS.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lukas\\OneDrive\\Área de Trabalho\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Domain\\ServerCQRS.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Domain\\ServerCQRS.Domain.csproj",
         "projectName": "ServerCQRS.Domain",
-        "projectPath": "C:\\Users\\lukas\\OneDrive\\Área de Trabalho\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Domain\\ServerCQRS.Domain.csproj",
-        "packagesPath": "C:\\Users\\lukas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lukas\\OneDrive\\Área de Trabalho\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Domain\\obj\\",
+        "projectPath": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Domain\\ServerCQRS.Domain.csproj",
+        "packagesPath": "C:\\Users\\Lyncas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\lukas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Lyncas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -93,6 +98,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -114,7 +124,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

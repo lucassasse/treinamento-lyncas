@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JwZYaJg3VP0PV+vhisGCMP6NBRw2bncZ5uYnNfrmEW/Je1fnmBL6Iz++1BReK7QuvYuduiTcZI7GazlPzxiEng==",
+  "dgSpecHash": "ynkeO/oQVHc4WZu6fMgLSBcnIUYrrKT8etRs6h7Fy1F/DTqyaltjP54SlfIaMobE1+2PkJ3Xps05nrj/7Qu/CA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lukas\\OneDrive\\Área de Trabalho\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Application\\ServerCQRS.Application.csproj",
+  "projectFilePath": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Application\\ServerCQRS.Application.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
