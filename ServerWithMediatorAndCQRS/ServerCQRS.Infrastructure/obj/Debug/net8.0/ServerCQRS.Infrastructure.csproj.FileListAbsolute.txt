@@ -22,3 +22,15 @@ C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.
 C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Infrastructure\obj\Debug\net8.0\ServerCQRS.Infrastructure.pdb
 C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Infrastructure\obj\Debug\net8.0\ServerCQRS.Infrastructure.genruntimeconfig.cache
 C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Infrastructure\obj\Debug\net8.0\ref\ServerCQRS.Infrastructure.dll
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Infrastructure\bin\Debug\net8.0\ServerCQRS.Infrastructure.deps.json
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Infrastructure\bin\Debug\net8.0\ServerCQRS.Infrastructure.runtimeconfig.json
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Infrastructure\bin\Debug\net8.0\ServerCQRS.Infrastructure.dll
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Infrastructure\bin\Debug\net8.0\ServerCQRS.Infrastructure.pdb
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Infrastructure\bin\Debug\net8.0\ServerCQRS.Domain.dll
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Infrastructure\bin\Debug\net8.0\ServerCQRS.Domain.pdb
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Infrastructure\obj\Debug\net8.0\ServerCQRS.Infrastructure.csproj.CopyComplete
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Infrastructure\obj\Debug\net8.0\ServerCQRS.Infrastructure.dll
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Infrastructure\obj\Debug\net8.0\refint\ServerCQRS.Infrastructure.dll
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Infrastructure\obj\Debug\net8.0\ServerCQRS.Infrastructure.pdb
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Infrastructure\obj\Debug\net8.0\ServerCQRS.Infrastructure.genruntimeconfig.cache
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Infrastructure\obj\Debug\net8.0\ref\ServerCQRS.Infrastructure.dll

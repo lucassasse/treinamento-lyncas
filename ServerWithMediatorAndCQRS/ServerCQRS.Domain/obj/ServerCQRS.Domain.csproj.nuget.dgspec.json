@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Domain\\ServerCQRS.Domain.csproj": {}
+    "C:\\Users\\lukas\\OneDrive\\Área de Trabalho\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Domain\\ServerCQRS.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Domain\\ServerCQRS.Domain.csproj": {
+    "C:\\Users\\lukas\\OneDrive\\Área de Trabalho\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Domain\\ServerCQRS.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Domain\\ServerCQRS.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\lukas\\OneDrive\\Área de Trabalho\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Domain\\ServerCQRS.Domain.csproj",
         "projectName": "ServerCQRS.Domain",
-        "projectPath": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Domain\\ServerCQRS.Domain.csproj",
-        "packagesPath": "C:\\Users\\Lyncas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Domain\\obj\\",
+        "projectPath": "C:\\Users\\lukas\\OneDrive\\Área de Trabalho\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Domain\\ServerCQRS.Domain.csproj",
+        "packagesPath": "C:\\Users\\lukas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lukas\\OneDrive\\Área de Trabalho\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Lyncas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lukas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,11 +34,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -60,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

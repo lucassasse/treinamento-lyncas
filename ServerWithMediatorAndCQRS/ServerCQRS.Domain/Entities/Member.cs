@@ -1,4 +1,5 @@
 ﻿using ServerCQRS.Domain.Validation;
+using System.Text.Json.Serialization;
 
 namespace ServerCQRS.Domain.Entities
 {
@@ -15,6 +16,9 @@ namespace ServerCQRS.Domain.Entities
             ValidateDomain(firstname, lastname, gender, email, active);
         }
 
+        public Member() { }
+
+        [JsonConstructor]
         public Member(int id, string firstname, string lastname, string gender, string email, bool? active)
         {
             DomainValidation.When(id < 0, "Invalid Id value.");

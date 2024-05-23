@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ServerCQRS.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+985edcb7cee6e0aad9595c6f9aec119b01cc46b3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9a4738866b57f5cf16ae8f699bac0adab8a18af3")]
 [assembly: System.Reflection.AssemblyProductAttribute("ServerCQRS.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ServerCQRS.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
