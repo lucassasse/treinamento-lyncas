@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ServerCQRS.CrossCutting")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+927fb29a9db3308c99956c2453f7fb7fb7154f24")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+985edcb7cee6e0aad9595c6f9aec119b01cc46b3")]
 [assembly: System.Reflection.AssemblyProductAttribute("ServerCQRS.CrossCutting")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ServerCQRS.CrossCutting")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{26229D34-58CA-413D-BE16-DD57D7016E9B}|ServerCQRS.Infrastructure\\ServerCQRS.Infrastructure.csproj|c:\\users\\lyncas\\desktop\\treinamento-lyncas\\serverwithmediatorandcqrs\\servercqrs.infrastructure\\servercqrs.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{26229D34-58CA-413D-BE16-DD57D7016E9B}|ServerCQRS.Infrastructure\\ServerCQRS.Infrastructure.csproj|solutionrelative:servercqrs.infrastructure\\servercqrs.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D9394991-77B5-4C9F-9FDF-CA73EC03CC87}|ServerCQRS.API\\ServerCQRS.API.csproj|c:\\users\\lyncas\\desktop\\treinamento-lyncas\\serverwithmediatorandcqrs\\servercqrs.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{D9394991-77B5-4C9F-9FDF-CA73EC03CC87}|ServerCQRS.API\\ServerCQRS.API.csproj|solutionrelative:servercqrs.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -30,24 +34,41 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
+              "Title": "ServerCQRS.Infrastructure",
+              "DocumentMoniker": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Infrastructure\\ServerCQRS.Infrastructure.csproj",
+              "RelativeDocumentMoniker": "ServerCQRS.Infrastructure\\ServerCQRS.Infrastructure.csproj",
+              "ToolTip": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Infrastructure\\ServerCQRS.Infrastructure.csproj",
+              "RelativeToolTip": "ServerCQRS.Infrastructure\\ServerCQRS.Infrastructure.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-05-23T17:38:10.056Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "MemberConfiguration.cs",
               "DocumentMoniker": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Infrastructure\\EntityConfiguration\\MemberConfiguration.cs",
               "RelativeDocumentMoniker": "ServerCQRS.Infrastructure\\EntityConfiguration\\MemberConfiguration.cs",
               "ToolTip": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Infrastructure\\EntityConfiguration\\MemberConfiguration.cs",
               "RelativeToolTip": "ServerCQRS.Infrastructure\\EntityConfiguration\\MemberConfiguration.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAYAAAAkAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAIBJwAYAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-23T13:22:12.786Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Infrastructure\\Context\\AppDbContext.cs",
               "RelativeDocumentMoniker": "ServerCQRS.Infrastructure\\Context\\AppDbContext.cs",
@@ -60,7 +81,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.API\\Program.cs",
               "RelativeDocumentMoniker": "ServerCQRS.API\\Program.cs",
@@ -72,12 +93,8 @@
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "DependencyInjection.cs",
               "DocumentMoniker": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.CrossCutting\\AppDependencies\\DependencyInjection.cs",
               "RelativeDocumentMoniker": "ServerCQRS.CrossCutting\\AppDependencies\\DependencyInjection.cs",
@@ -90,7 +107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.API\\appsettings.json",
               "RelativeDocumentMoniker": "ServerCQRS.API\\appsettings.json",

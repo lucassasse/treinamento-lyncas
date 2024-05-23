@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "w9AaG3NSIjU1vpcmbIie4ItIqqDAIrx4sjkP3JQhjmXjGRA1P9bzoAmmctyOYI9PbqGIjub+Tnb5RA8GVZGE7g==",
+  "dgSpecHash": "7wXDWocLIgh/h5UIo39OAgtk6K41/C2t4aGVCFBmPFSuEUipSwgGznacVu3NaZWFNW40WUKKwBmywtfpcJ42Wg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Lyncas\\Desktop\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.CrossCutting\\ServerCQRS.CrossCutting.csproj",
   "expectedPackageFiles": [

@@ -10,3 +10,17 @@ C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.
 C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.CrossCutting\obj\Debug\net8.0\ServerCQRS.CrossCutting.AssemblyInfo.cs
 C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.CrossCutting\obj\Debug\net8.0\ServerCQRS.CrossCutting.csproj.CoreCompileInputs.cache
 C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.CrossCutting\obj\Debug\net8.0\ServerCQRS.CrossCutting.sourcelink.json
+C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.CrossCutting\bin\Debug\net8.0\ServerCQRS.CrossCutting.deps.json
+C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.CrossCutting\bin\Debug\net8.0\ServerCQRS.CrossCutting.dll
+C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.CrossCutting\bin\Debug\net8.0\ServerCQRS.CrossCutting.pdb
+C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.CrossCutting\bin\Debug\net8.0\ServerCQRS.Application.dll
+C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.CrossCutting\bin\Debug\net8.0\ServerCQRS.Domain.dll
+C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.CrossCutting\bin\Debug\net8.0\ServerCQRS.Infrastructure.dll
+C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.CrossCutting\bin\Debug\net8.0\ServerCQRS.Application.pdb
+C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.CrossCutting\bin\Debug\net8.0\ServerCQRS.Domain.pdb
+C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.CrossCutting\bin\Debug\net8.0\ServerCQRS.Infrastructure.pdb
+C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.CrossCutting\obj\Debug\net8.0\ServerCQ.766C897D.Up2Date
+C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.CrossCutting\obj\Debug\net8.0\ServerCQRS.CrossCutting.dll
+C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.CrossCutting\obj\Debug\net8.0\refint\ServerCQRS.CrossCutting.dll
+C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.CrossCutting\obj\Debug\net8.0\ServerCQRS.CrossCutting.pdb
+C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.CrossCutting\obj\Debug\net8.0\ref\ServerCQRS.CrossCutting.dll
