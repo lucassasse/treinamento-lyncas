@@ -4,32 +4,26 @@ using ServerCQRS.Domain.Entities;
 
 namespace ServerCQRS.Application.Members.Commands
 {
-    public sealed class CreateMemberCommand : IRequest<Member>
+    public sealed class CreateMemberCommand : MemberCommandBase
     {
-        public string? FirstName { get; set; }
-        public string? LastName { get; set; }
-        public string? Gender { get; set; }
-        public string? Email { get; set; }
-        public bool? IsActive { get; set; }
-    }
-
-    public class CreateMemberCommandHandler : IRequestHandler<CreateMemberCommand, Member>
-    {
-        private readonly IUnitOfWork _unitOfWork;
-
-        public CreateMemberCommandHandler(IUnitOfWork unitOfWork)
+        public class CreateMemberCommandHandler : IRequestHandler<CreateMemberCommand, Member>
         {
-            _unitOfWork = unitOfWork;
-        }
+            private readonly IUnitOfWork _unitOfWork;
 
-        public async Task<Member> Handle(CreateMemberCommand request, CancellationToken cancellationToken)
-        {
-            var newMember = new Member(request.FirstName, request.LastName, request.Gender, request.Email, request.IsActive);
+            public CreateMemberCommandHandler(IUnitOfWork unitOfWork)
+            {
+                _unitOfWork = unitOfWork;
+            }
 
-            await _unitOfWork.MemberRepository.AddMember(newMember);
-            await _unitOfWork.CommitAsync();
+            public async Task<Member> Handle(CreateMemberCommand request, CancellationToken cancellationToken)
+            {
+                var newMember = new Member(request.FirstName, request.LastName, request.Gender, request.Email, request.IsActive);
 
-            return newMember;
+                await _unitOfWork.MemberRepository.AddMember(newMember);
+                await _unitOfWork.CommitAsync();
+
+                return newMember;
+            }
         }
     }
 }
