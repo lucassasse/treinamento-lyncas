@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "g9FEDLQaWeAIkLh67Pai27z4MW1MYLz8kscDtwU9WdRctUZh8WOH6iMxSsKIsCIwTrovF9180DHcMaZig9Wseg==",
+  "dgSpecHash": "MIEkKH8PYvsSHBajjWiMLBzvrmfMK0Ntd47A8F2rc5K+ZZ6wZiEvTX+hneIzm7m9fxmCrf4O1vn5hgaThWHL2Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\lukas\\OneDrive\\Área de Trabalho\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.CrossCutting\\ServerCQRS.CrossCutting.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lukas\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\lukas\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
+    "C:\\Users\\lukas\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\lukas\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\lukas\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.3\\microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",
     "C:\\Users\\lukas\\.nuget\\packages\\microsoft.codeanalysis.common\\4.5.0\\microsoft.codeanalysis.common.4.5.0.nupkg.sha512",

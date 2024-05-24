@@ -23,6 +23,9 @@ namespace ServerCQRS.CrossCutting.AppDependencies
             services.AddScoped<IMemberRepository, MemberRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
+            var myhandlers = AppDomain.CurrentDomain.Load("ServerCQRS.Application");
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(myhandlers));
+
             return services;
         }
     }
