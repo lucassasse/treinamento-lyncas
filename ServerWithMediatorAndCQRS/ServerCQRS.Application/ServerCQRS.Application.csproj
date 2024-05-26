@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <Folder Include="DOTs\" />
-    <Folder Include="Members\Queries\" />
   </ItemGroup>
 
   <ItemGroup>

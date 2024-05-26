@@ -1,9 +1,7 @@
 ﻿using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ServerCQRS.Application.Members.Commands;
-using ServerCQRS.Domain.Abstractions;
-using ServerCQRS.Domain.Entities;
+using ServerCQRS.Application.Members.Queries;
 
 namespace ServerCQRS.API.Controllers
 {
@@ -12,25 +10,36 @@ namespace ServerCQRS.API.Controllers
     public class MembersController : ControllerBase
     {
         private readonly IMediator _mediator;
-        private readonly IUnitOfWork _unitOfWork;
 
-        public MembersController(IMediator mediator, IUnitOfWork unitOfWork)
+        public MembersController(IMediator mediator)
         {
             _mediator = mediator;
-            _unitOfWork = unitOfWork;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetMembers()
+        {
+            var query = new GetMembersQuery();
+            var members = await _mediator.Send(query);
+
+            return Ok(members);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetMember(int id)
         {
-            var member = await _unitOfWork.MemberRepository.GetMemberById(id);
+            var query = new GetMemberByIdQuery { Id = id };
+            var member = await _mediator.Send(query);
+
             return member != null ? Ok(member) : NotFound("Member not found.");
         }
+
 
         [HttpPost]
         public async Task<IActionResult> CreateMember(CreateMemberCommand command)
         {
             var createdMember = await _mediator.Send(command);
+
             return CreatedAtAction(nameof(GetMember), new { id = createdMember.Id }, createdMember);
         }
 

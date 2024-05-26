@@ -3,7 +3,7 @@ using ServerCQRS.Domain.Entities;
 
 namespace ServerCQRS.Application.Members.Commands
 {
-    public class MemberCommandBase : IRequest<Member>
+    public abstract class MemberCommandBase : IRequest<Member>
     {
         public string? FirstName { get; set; }
         public string? LastName { get; set; }

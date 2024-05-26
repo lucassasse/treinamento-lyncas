@@ -34,9 +34,9 @@ namespace ServerCQRS.Infrastructure.Repositories
             return member;
         }
 
-        public async Task<Member> GetMemberById(int memberId)
+        public async Task<Member> GetMemberById(int id)
         {
-            var member = await db.Members.FirstAsync();
+            var member = await db.Members.FindAsync(id);
 
             if (member is null)
                 throw new InvalidOperationException("Member not found");

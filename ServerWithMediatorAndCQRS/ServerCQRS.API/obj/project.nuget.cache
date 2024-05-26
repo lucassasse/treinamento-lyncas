@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "7XN6jqFS0tRvhXhOgG+sMTvVtakbcBZcDowW50lMkXnorCePHWIWlX0Y4n9C7pWn+Chrz+sa3Gru2LWYLHOReQ==",
+  "dgSpecHash": "XZlgggw7oHwabksHzUZTzDx2dTyyBHUQjjG3pxMnI+SwJw56zeYQ9XqWNPQHJQCg2a8ahPUqvTIPF2s1XdGUEw==",
   "success": true,
   "projectFilePath": "C:\\Users\\lukas\\OneDrive\\Área de Trabalho\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.API\\ServerCQRS.API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\lukas\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\lukas\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\lukas\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
     "C:\\Users\\lukas\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",

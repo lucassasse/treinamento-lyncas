@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "MIEkKH8PYvsSHBajjWiMLBzvrmfMK0Ntd47A8F2rc5K+ZZ6wZiEvTX+hneIzm7m9fxmCrf4O1vn5hgaThWHL2Q==",
+  "dgSpecHash": "cpPwDxFvsPNFZJY/9y+pKhWActkoZHc/ADJF7NAjN5kwVblsXTq1x5JMQHfV/UGGgulujbjjp3hVX0NOdNCPGg==",
   "success": true,
   "projectFilePath": "C:\\Users\\lukas\\OneDrive\\Área de Trabalho\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.CrossCutting\\ServerCQRS.CrossCutting.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\lukas\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\lukas\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\lukas\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
     "C:\\Users\\lukas\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
