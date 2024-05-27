@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0yPoeaDKmlfl91fEpaws7zVPmSjKnWLINbHspHNkGvR9DJ+XAWx2Z6+cB53oHtwPEWCzEjmM1szwkyVu13NedQ==",
+  "dgSpecHash": "tflBsqBwrumST9618dXHeIdK3aTGpcDr6L40R+ygmNDpDCPkFZXvbcBx96kVgRZ61cHjhHY5SEOB7wPgG2A//A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lukas\\OneDrive\\Área de Trabalho\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.Application\\ServerCQRS.Application.csproj",
+  "projectFilePath": "C:\\Users\\lukas\\OneDrive\\Área de Trabalho\\treinamento-lyncas\\ServerCQRS-lyncasProject\\ServerCQRS.Application\\ServerCQRS.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lukas\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
     "C:\\Users\\lukas\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",

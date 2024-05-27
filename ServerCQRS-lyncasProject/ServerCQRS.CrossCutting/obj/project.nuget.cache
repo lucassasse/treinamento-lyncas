@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cpPwDxFvsPNFZJY/9y+pKhWActkoZHc/ADJF7NAjN5kwVblsXTq1x5JMQHfV/UGGgulujbjjp3hVX0NOdNCPGg==",
+  "dgSpecHash": "9pn8cavyOG6txluaPNs8RfJktpeX5ZYQQSuDbxvc8jUHeGIh08lNRIQgmunXOvGg/LJZ4m3VrdO3rTvCdf24cw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lukas\\OneDrive\\Área de Trabalho\\treinamento-lyncas\\ServerWithMediatorAndCQRS\\ServerCQRS.CrossCutting\\ServerCQRS.CrossCutting.csproj",
+  "projectFilePath": "C:\\Users\\lukas\\OneDrive\\Área de Trabalho\\treinamento-lyncas\\ServerCQRS-lyncasProject\\ServerCQRS.CrossCutting\\ServerCQRS.CrossCutting.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lukas\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\lukas\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
