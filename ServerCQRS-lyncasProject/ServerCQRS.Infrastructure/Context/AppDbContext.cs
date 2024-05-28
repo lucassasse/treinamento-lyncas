@@ -19,20 +19,8 @@ namespace ServerCQRS.Infrastructure.Context
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfiguration(new MemberConfiguration());
-        }
-
-        protected override void OnCustomerCreating(CustomerBuilder builder)
-        {
             builder.ApplyConfiguration(new CustomerConfiguration());
-        }
-
-        protected override void OnSaleCreating(SaleBuilder builder)
-        {
             builder.ApplyConfiguration(new SaleConfiguration());
-        }
-
-        protected override void OnItemSaleCreating(ItemSaleBuilder builder)
-        {
             builder.ApplyConfiguration(new ItemSaleConfiguration());
         }
     }

@@ -1,6 +1,4 @@
-﻿using ServerCQRS.Domain.Entities;
-
-namespace ServerCQRS.Domain.Validation
+﻿namespace ServerCQRS.Domain.Validation
 {
     public class DomainValidation : Exception
     {

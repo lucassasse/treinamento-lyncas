@@ -12,7 +12,7 @@ namespace ServerCQRS.Domain.Entities
         public bool? SoftDeleted { get; private set; }
         public DateTime? DeletedAt { get; private set; }
         //[JsonIgnore]
-        //public virtual List<Sale> Sales { get; set; }
+        public List<Sale> Sales { get; private set; }
 
         public Customer(string fullName, string email, string telephone, string cpf, bool softDeleted, DateTime deletedAt)
         {

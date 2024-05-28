@@ -22,3 +22,15 @@ C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.
 C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Domain\obj\Debug\net8.0\refint\ServerCQRS.Domain.dll
 C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Domain\obj\Debug\net8.0\ServerCQRS.Domain.pdb
 C:\Users\Lyncas\Desktop\treinamento-lyncas\ServerWithMediatorAndCQRS\ServerCQRS.Domain\obj\Debug\net8.0\ref\ServerCQRS.Domain.dll
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerCQRS-lyncasProject\ServerCQRS.Domain\bin\Debug\net8.0\ServerCQRS.Domain.deps.json
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerCQRS-lyncasProject\ServerCQRS.Domain\bin\Debug\net8.0\ServerCQRS.Domain.dll
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerCQRS-lyncasProject\ServerCQRS.Domain\bin\Debug\net8.0\ServerCQRS.Domain.pdb
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerCQRS-lyncasProject\ServerCQRS.Domain\obj\Debug\net8.0\ServerCQRS.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerCQRS-lyncasProject\ServerCQRS.Domain\obj\Debug\net8.0\ServerCQRS.Domain.AssemblyInfoInputs.cache
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerCQRS-lyncasProject\ServerCQRS.Domain\obj\Debug\net8.0\ServerCQRS.Domain.AssemblyInfo.cs
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerCQRS-lyncasProject\ServerCQRS.Domain\obj\Debug\net8.0\ServerCQRS.Domain.csproj.CoreCompileInputs.cache
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerCQRS-lyncasProject\ServerCQRS.Domain\obj\Debug\net8.0\ServerCQRS.Domain.sourcelink.json
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerCQRS-lyncasProject\ServerCQRS.Domain\obj\Debug\net8.0\ServerCQRS.Domain.dll
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerCQRS-lyncasProject\ServerCQRS.Domain\obj\Debug\net8.0\refint\ServerCQRS.Domain.dll
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerCQRS-lyncasProject\ServerCQRS.Domain\obj\Debug\net8.0\ServerCQRS.Domain.pdb
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerCQRS-lyncasProject\ServerCQRS.Domain\obj\Debug\net8.0\ref\ServerCQRS.Domain.dll

@@ -32,6 +32,8 @@ namespace ServerCQRS.CrossCutting.AppDependencies
             });
 
             services.AddScoped<IMemberRepository, MemberRepository>();
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<ISaleRepository, SaleRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IMemberDapperRepository, MemberDapperRepository>();
 
