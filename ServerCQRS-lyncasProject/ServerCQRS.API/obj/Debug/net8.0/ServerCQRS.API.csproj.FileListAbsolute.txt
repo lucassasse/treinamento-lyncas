@@ -165,7 +165,6 @@ C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerCQRS-lyncasPr
 C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerCQRS-lyncasProject\ServerCQRS.API\obj\Debug\net8.0\ServerCQRS.API.AssemblyInfoInputs.cache
 C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerCQRS-lyncasProject\ServerCQRS.API\obj\Debug\net8.0\ServerCQRS.API.AssemblyInfo.cs
 C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerCQRS-lyncasProject\ServerCQRS.API\obj\Debug\net8.0\ServerCQRS.API.csproj.CoreCompileInputs.cache
-C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerCQRS-lyncasProject\ServerCQRS.API\obj\Debug\net8.0\ServerCQRS.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerCQRS-lyncasProject\ServerCQRS.API\obj\Debug\net8.0\ServerCQRS.API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerCQRS-lyncasProject\ServerCQRS.API\obj\Debug\net8.0\ServerCQRS.API.sourcelink.json
 C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerCQRS-lyncasProject\ServerCQRS.API\obj\Debug\net8.0\ServerCQRS.API.dll
@@ -276,3 +275,4 @@ C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerCQRS-lyncasPr
 C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerCQRS-lyncasProject\ServerCQRS.API\obj\Debug\net8.0\ServerCQRS.API.csproj.CopyComplete
 C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerCQRS-lyncasProject\ServerCQRS.API\obj\Debug\net8.0\ServerCQRS.API.genruntimeconfig.cache
 C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerCQRS-lyncasProject\ServerCQRS.API\obj\Debug\net8.0\ref\ServerCQRS.API.dll
+C:\Users\lukas\OneDrive\Área de Trabalho\treinamento-lyncas\ServerCQRS-lyncasProject\ServerCQRS.API\obj\Debug\net8.0\ServerCQRS.API.MvcApplicationPartsAssemblyInfo.cs

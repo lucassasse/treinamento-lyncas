@@ -34,7 +34,6 @@ namespace ServerCQRS.API.Controllers
             return member != null ? Ok(member) : NotFound("Member not found.");
         }
 
-
         [HttpPost]
         public async Task<IActionResult> CreateMember(CreateMemberCommand command)
         {

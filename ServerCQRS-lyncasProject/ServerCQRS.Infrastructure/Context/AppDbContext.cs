@@ -11,7 +11,6 @@ namespace ServerCQRS.Infrastructure.Context
         }
 
         public DbSet<Member> Members { get; set; }
-
         public DbSet<Customer> Customer { get; set; }
         public DbSet<Sale> Sale { get; set; }
         public DbSet<ItemSale> ItemSale { get; set; }

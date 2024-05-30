@@ -10,31 +10,31 @@ namespace ServerCQRS.Domain.Entities
         public string? Telephone { get; private set; }
         public string? Cpf { get; private set; }
         public bool? SoftDeleted { get; private set; }
-        public DateTime? DeletedAt { get; private set; }
+        public DateTime DeletedAt { get; private set; }
         //[JsonIgnore]
-        public List<Sale> Sales { get; private set; }
+        public List<Sale>? Sale { get; private set; }
 
-        public Customer(string fullName, string email, string telephone, string cpf, bool softDeleted, DateTime deletedAt)
+        public Customer(string fullName, string email, string telephone, string cpf, bool softDeleted, DateTime deletedAt, List<Sale> sale)
         {
-            ValidateDomain(fullName, email, telephone, cpf, softDeleted, deletedAt);
+            ValidateDomain(fullName, email, telephone, cpf, softDeleted, deletedAt, sale);
         }
 
         public Customer() { }
 
         [JsonConstructor]
-        public Customer(int id, string fullName, string email, string telephone, string cpf, bool softDeleted, DateTime deletedAt)
+        public Customer(int id, string fullName, string email, string telephone, string cpf, bool softDeleted, DateTime deletedAt, List<Sale> sale)
         {
             DomainValidation.When(id < 0, "Invalid Id value.");
             Id = id;
-            ValidateDomain(fullName, email, telephone, cpf, softDeleted, deletedAt);
+            ValidateDomain(fullName, email, telephone, cpf, softDeleted, deletedAt, sale);
         }
 
-        public void Update(string fullName, string email, string telephone, string cpf, bool softDeleted, DateTime deletedAt)
+        public void Update(string fullName, string email, string telephone, string cpf, bool softDeleted, DateTime deletedAt, List<Sale> sale)
         {
-            ValidateDomain(fullName, email, telephone, cpf, softDeleted, deletedAt);
+            ValidateDomain(fullName, email, telephone, cpf, softDeleted, deletedAt, sale);
         }
 
-        private void ValidateDomain(string fullName, string email, string telephone, string cpf, bool softDeleted, DateTime deletedAt)
+        private void ValidateDomain(string fullName, string email, string telephone, string cpf, bool softDeleted, DateTime deletedAt, List<Sale> sale)
         {
             DomainValidation.When(string.IsNullOrEmpty(fullName),
                 "Invalid name. Fullname is required.");
@@ -65,6 +65,7 @@ namespace ServerCQRS.Domain.Entities
             Cpf = cpf;
             SoftDeleted = softDeleted;
             DeletedAt = deletedAt;
+            Sale = sale;
         }
     }
 }

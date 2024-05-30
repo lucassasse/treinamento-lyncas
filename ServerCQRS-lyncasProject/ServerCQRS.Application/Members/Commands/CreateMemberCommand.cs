@@ -4,7 +4,7 @@ using ServerCQRS.Domain.Entities;
 
 namespace ServerCQRS.Application.Members.Commands
 {
-    public sealed class CreateMemberCommand : MemberCommandBase
+    public class CreateMemberCommand : MemberCommandBase
     {
         public class CreateMemberCommandHandler : IRequestHandler<CreateMemberCommand, Member>
         {

@@ -32,10 +32,12 @@ namespace ServerCQRS.CrossCutting.AppDependencies
             });
 
             services.AddScoped<IMemberRepository, MemberRepository>();
-            services.AddScoped<ICustomerRepository, CustomerRepository>();
-            services.AddScoped<ISaleRepository, SaleRepository>();
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IMemberDapperRepository, MemberDapperRepository>();
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<ICustomerDapperRepository, CustomerDapperRepository>();
+            services.AddScoped<ISaleRepository, SaleRepository>();
+            services.AddScoped<ISaleDapperRepository, SaleDapperRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             var myhandlers = AppDomain.CurrentDomain.Load("ServerCQRS.Application");
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(myhandlers));
