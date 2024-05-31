@@ -1,0 +1,3 @@
+In domain console:
+dotnet ef migrations add Second --project ServerCQRS.Infrastructure -s ServerCQRS.API -c AppDbContext --verbose
+dotnet ef database update Second --project ServerCQRS.Infrastructure -s ServerCQRS.API -c AppDbContext

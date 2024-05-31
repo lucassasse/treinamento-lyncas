@@ -16,13 +16,13 @@ namespace ServerCQRS.Infrastructure.Repositories
 
         public async Task<Sale> GetSaleById(int id)
         {
-            string query = "SELECT * FROM Sales WHERE Id = @Id";
+            string query = "SELECT * FROM Sale WHERE Id = @Id";
             return await _dbConnection.QueryFirstOrDefaultAsync<Sale>(query, new { Id = id });
         }
 
         public async Task<IEnumerable<Sale>> GetSales()
         {
-            string query = "SELECT * FROM Sales";
+            string query = "SELECT * FROM Sale";
             return await _dbConnection.QueryAsync<Sale>(query);
         }
     }

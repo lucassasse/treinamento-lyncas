@@ -11,6 +11,6 @@ namespace ServerCQRS.Application.Sales.Commands
         public double SaleTotalItems { get; set; }
         public int CustomerId { get; set; }
         //public Customer Customer { get; set; }
-        public List<ItemSale> SaleItems { get; set; }
+        public List<ItemSale>? SaleItems { get; set; }
     }
 }

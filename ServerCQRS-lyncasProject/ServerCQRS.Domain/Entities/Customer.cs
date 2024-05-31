@@ -11,7 +11,7 @@ namespace ServerCQRS.Domain.Entities
         public string? Cpf { get; private set; }
         public bool? SoftDeleted { get; private set; }
         public DateTime DeletedAt { get; private set; }
-        //[JsonIgnore]
+        [JsonIgnore]
         public List<Sale>? Sale { get; private set; }
 
         public Customer(string fullName, string email, string telephone, string cpf, bool softDeleted, DateTime deletedAt, List<Sale> sale)

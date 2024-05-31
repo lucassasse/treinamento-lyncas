@@ -35,7 +35,7 @@ namespace ServerCQRS.Infrastructure.Migrations
                         .HasMaxLength(14)
                         .HasColumnType("varchar(14)");
 
-                    b.Property<DateTime?>("DeletedAt")
+                    b.Property<DateTime>("DeletedAt")
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Email")
@@ -193,7 +193,7 @@ namespace ServerCQRS.Infrastructure.Migrations
             modelBuilder.Entity("ServerCQRS.Domain.Entities.Sale", b =>
                 {
                     b.HasOne("ServerCQRS.Domain.Entities.Customer", null)
-                        .WithMany("Sales")
+                        .WithMany("Sale")
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -201,7 +201,7 @@ namespace ServerCQRS.Infrastructure.Migrations
 
             modelBuilder.Entity("ServerCQRS.Domain.Entities.Customer", b =>
                 {
-                    b.Navigation("Sales");
+                    b.Navigation("Sale");
                 });
 
             modelBuilder.Entity("ServerCQRS.Domain.Entities.Sale", b =>

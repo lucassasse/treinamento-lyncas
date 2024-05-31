@@ -11,7 +11,7 @@ namespace ServerCQRS.Domain.Entities
         public double SaleTotalItems { get; private set; }
         public int CustomerId { get; private set; }
         //public Customer Customer { get; private set; }
-        public List<ItemSale> SaleItems { get; private set; }
+        public List<ItemSale>? SaleItems { get; private set; }
 
         public Sale(DateTime saleDate, DateTime billingDate, double saleTotalValue, double saleTotalItems, int customerId, List<ItemSale> saleItems)
         {

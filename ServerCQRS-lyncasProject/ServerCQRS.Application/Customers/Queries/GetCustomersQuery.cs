@@ -17,7 +17,7 @@ namespace ServerCQRS.Application.Customers.Queries
 
             public async Task<IEnumerable<Customer>> Handle(GetCustomersQuery request, CancellationToken cancellationToken)
             {
-                var customers = await _customerDapperRepository.GetCustomer();
+                var customers = await _customerDapperRepository.GetCustomers();
                 return customers;
             }
         }

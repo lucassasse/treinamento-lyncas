@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ServerCQRS.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+78ac10d5e82d49b87d8426ac02ff95b246702948")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aaa9eb90e7ca21639bef985fd80460279691d672")]
 [assembly: System.Reflection.AssemblyProductAttribute("ServerCQRS.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ServerCQRS.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -2,9 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using ServerCQRS.Application.Customers.Commands;
 using ServerCQRS.Application.Customers.Queries;
-using ServerCQRS.Application.Members.Commands;
-using ServerCQRS.Application.Members.Queries;
-using ServerCQRS.Domain.Entities;
 
 namespace ServerCQRS.API.Controllers
 {

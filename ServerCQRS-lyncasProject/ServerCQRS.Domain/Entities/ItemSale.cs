@@ -10,39 +10,38 @@ namespace ServerCQRS.Domain.Entities
         public double UnityValue { get; private set; }
         public double TotalValue { get; private set; }
         public int SaleId { get; private set; }
-        //[JsonIgnore]
+        [JsonIgnore]
         public Sale Sale { get; private set; }
 
-        public ItemSale(string description, int quantity, double UnityValue, double TotalValue, int SaleId, Sale sale)
+        public ItemSale(string description, int quantity, double unityValue, double totalValue, int saleId)
         {
-            ValidateDomain(description, quantity, UnityValue, TotalValue, SaleId, sale);
+            ValidateDomain(description, quantity, unityValue, totalValue, saleId);
         }
 
         public ItemSale() { }
 
         [JsonConstructor]
-        public ItemSale(int id, string description, int quantity, double UnityValue, double TotalValue, int SaleId, Sale sale)
+        public ItemSale(int id, string description, int quantity, double unityValue, double totalValue, int saleId)
         {
             DomainValidation.When(id < 0, "Invalid Id value.");
             Id = id;
-            ValidateDomain(description, quantity, UnityValue, TotalValue, SaleId, sale);
+            ValidateDomain(description, quantity, unityValue, totalValue, saleId);
         }
 
-        public void Update(string description, int quantity, double UnityValue, double TotalValue, int SaleId, Sale sale)
+        public void Update(string description, int quantity, double unityValue, double totalValue, int saleId, Sale sale)
         {
-            ValidateDomain(description, quantity, UnityValue, TotalValue, SaleId, sale);
+            ValidateDomain(description, quantity, unityValue, totalValue, saleId);
         }
 
-        private void ValidateDomain(string description, int quantity, double UnityValue, double TotalValue, int SaleId, Sale sale)
+        private void ValidateDomain(string description, int quantity, double unityValue, double totalValue, int saleId)
         {
             // Possibilidade de adicionar mais várias validações
 
             Description = description;
             Quantity = quantity;
-            UnityValue = UnityValue;
-            TotalValue = TotalValue;
-            SaleId = SaleId;
-            Sale = sale;
+            UnityValue = unityValue;
+            TotalValue = totalValue;
+            SaleId = saleId;
         }
     }
 }

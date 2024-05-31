@@ -16,13 +16,13 @@ namespace ServerCQRS.Infrastructure.Repositories
 
         public async Task<Customer> GetCustomerById(int id)
         {
-            string query = "SELECT * FROM Customers WHERE Id = @Id AND SoftDeleted <> 'true'";
+            string query = "SELECT * FROM Customer WHERE Id = @Id AND SoftDeleted <> 'true'";
             return await _dbConnection.QueryFirstOrDefaultAsync<Customer>(query, new { Id = id });
         }
 
         public async Task<IEnumerable<Customer>> GetCustomers()
         {
-            string query = "SELECT * FROM Customers";
+            string query = "SELECT * FROM Customer";
             return await _dbConnection.QueryAsync<Customer>(query);
         }
     }

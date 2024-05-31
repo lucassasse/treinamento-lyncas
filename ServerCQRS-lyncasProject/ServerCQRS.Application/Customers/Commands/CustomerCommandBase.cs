@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using ServerCQRS.Domain.Entities;
+using System.Text.Json.Serialization;
 
 namespace ServerCQRS.Application.Customers.Commands
 {
@@ -11,7 +12,7 @@ namespace ServerCQRS.Application.Customers.Commands
         public string? Cpf { get; set; }
         public bool SoftDeleted { get; set; }
         public DateTime DeletedAt { get; set; }
-        //[JsonIgnore]
+        [JsonIgnore]
         public List<Sale>? Sale { get; set; }
     }
 }
